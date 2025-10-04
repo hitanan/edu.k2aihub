@@ -195,27 +195,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa B2B và B2C trong TMĐT xuyên biên giới là gì?',
-        answer: 'B2C (Business-to-Consumer) là bán hàng trực tiếp cho người tiêu dùng cá nhân, thường với số lượng nhỏ. B2B (Business-to-Business) là bán hàng cho các doanh nghiệp khác, thường với số lượng lớn. Alibaba là nền tảng B2B hàng đầu, trong khi Amazon và Etsy chủ yếu là B2C.',
+        answer:
+          'B2C (Business-to-Consumer) là bán hàng trực tiếp cho người tiêu dùng cá nhân, thường với số lượng nhỏ. B2B (Business-to-Business) là bán hàng cho các doanh nghiệp khác, thường với số lượng lớn. Alibaba là nền tảng B2B hàng đầu, trong khi Amazon và Etsy chủ yếu là B2C.',
       },
       {
         question: 'Product-Market Fit là gì và tại sao nó quan trọng?',
-        answer: 'Product-Market Fit là điểm mà sản phẩm của bạn đáp ứng được nhu cầu mạnh mẽ của một thị trường cụ thể. Việc đạt được Product-Market Fit là cực kỳ quan trọng trước khi mở rộng quy mô, vì nó đảm bảo rằng có một lượng khách hàng thực sự muốn mua sản phẩm của bạn.',
+        answer:
+          'Product-Market Fit là điểm mà sản phẩm của bạn đáp ứng được nhu cầu mạnh mẽ của một thị trường cụ thể. Việc đạt được Product-Market Fit là cực kỳ quan trọng trước khi mở rộng quy mô, vì nó đảm bảo rằng có một lượng khách hàng thực sự muốn mua sản phẩm của bạn.',
       },
       {
         question: 'Tôi có cần phải biết tiếng Anh giỏi để kinh doanh xuyên biên giới không?',
-        answer: 'Biết tiếng Anh là một lợi thế lớn, nhưng không phải là điều kiện bắt buộc. Bạn có thể sử dụng các công cụ dịch thuật và thuê các freelancer để hỗ trợ viết mô tả sản phẩm và dịch vụ khách hàng. Quan trọng hơn là hiểu biết về thị trường và sản phẩm.',
+        answer:
+          'Biết tiếng Anh là một lợi thế lớn, nhưng không phải là điều kiện bắt buộc. Bạn có thể sử dụng các công cụ dịch thuật và thuê các freelancer để hỗ trợ viết mô tả sản phẩm và dịch vụ khách hàng. Quan trọng hơn là hiểu biết về thị trường và sản phẩm.',
       },
       {
         question: 'Chi phí ban đầu để bắt đầu kinh doanh trên Amazon là bao nhiêu?',
-        answer: 'Chi phí có thể dao động rất nhiều. Các khoản chính bao gồm: phí tài khoản người bán chuyên nghiệp của Amazon (~$39.99/tháng), chi phí sản xuất hoặc nhập hàng, chi phí vận chuyển hàng đến kho Amazon (FBA), chi phí marketing ban đầu, và chi phí cho các công cụ nghiên cứu. Một ngân sách khởi đầu an toàn có thể từ vài nghìn đô la.',
+        answer:
+          'Chi phí có thể dao động rất nhiều. Các khoản chính bao gồm: phí tài khoản người bán chuyên nghiệp của Amazon (~$39.99/tháng), chi phí sản xuất hoặc nhập hàng, chi phí vận chuyển hàng đến kho Amazon (FBA), chi phí marketing ban đầu, và chi phí cho các công cụ nghiên cứu. Một ngân sách khởi đầu an toàn có thể từ vài nghìn đô la.',
       },
       {
         question: 'Làm thế nào để nghiên cứu đối thủ cạnh tranh một cách hiệu quả?',
-        answer: 'Hãy tìm những người bán hàng đầu trong ngách của bạn trên các sàn TMĐT. Phân tích sản phẩm, giá cả, hình ảnh, mô tả và đặc biệt là các đánh giá của khách hàng (cả tích cực và tiêu cực) của họ. Điều này sẽ cho bạn biết họ đang làm tốt điều gì và khách hàng đang mong muốn điều gì mà họ chưa đáp ứng được.',
+        answer:
+          'Hãy tìm những người bán hàng đầu trong ngách của bạn trên các sàn TMĐT. Phân tích sản phẩm, giá cả, hình ảnh, mô tả và đặc biệt là các đánh giá của khách hàng (cả tích cực và tiêu cực) của họ. Điều này sẽ cho bạn biết họ đang làm tốt điều gì và khách hàng đang mong muốn điều gì mà họ chưa đáp ứng được.',
       },
       {
         question: 'Mô hình D2C (Direct-to-Consumer) có phù hợp cho người mới bắt đầu không?',
-        answer: 'D2C (bán hàng qua website riêng) mang lại sự kiểm soát tối đa nhưng cũng đòi hỏi bạn phải tự mình thu hút lưu lượng truy cập, điều này rất khó khăn và tốn kém khi mới bắt đầu. Một chiến lược phổ biến là bắt đầu trên các sàn TMĐT lớn như Amazon để tận dụng lượng khách hàng có sẵn, sau đó xây dựng website D2C song song để dần dần xây dựng thương hiệu riêng.',
+        answer:
+          'D2C (bán hàng qua website riêng) mang lại sự kiểm soát tối đa nhưng cũng đòi hỏi bạn phải tự mình thu hút lưu lượng truy cập, điều này rất khó khăn và tốn kém khi mới bắt đầu. Một chiến lược phổ biến là bắt đầu trên các sàn TMĐT lớn như Amazon để tận dụng lượng khách hàng có sẵn, sau đó xây dựng website D2C song song để dần dần xây dựng thương hiệu riêng.',
       },
     ],
   },
@@ -369,27 +375,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'A+ Content (hoặc Enhanced Brand Content) trên Amazon là gì?',
-        answer: 'Đây là một tính năng cho phép các chủ sở hữu thương hiệu đã đăng ký Brand Registry có thể thêm hình ảnh, văn bản và các module thiết kế phong phú vào phần mô tả sản phẩm. A+ Content giúp trang sản phẩm của bạn trông chuyên nghiệp hơn, kể câu chuyện thương hiệu và có thể tăng tỷ lệ chuyển đổi.',
+        answer:
+          'Đây là một tính năng cho phép các chủ sở hữu thương hiệu đã đăng ký Brand Registry có thể thêm hình ảnh, văn bản và các module thiết kế phong phú vào phần mô tả sản phẩm. A+ Content giúp trang sản phẩm của bạn trông chuyên nghiệp hơn, kể câu chuyện thương hiệu và có thể tăng tỷ lệ chuyển đổi.',
       },
       {
         question: 'Từ khóa backend (backend keywords) là gì?',
-        answer: 'Đây là những từ khóa bạn có thể thêm vào phần cài đặt sản phẩm trên Amazon mà khách hàng không nhìn thấy. Đây là nơi để bạn thêm các từ khóa đồng nghĩa, các lỗi chính tả phổ biến, hoặc các thuật ngữ liên quan mà bạn không muốn đưa vào tiêu đề hoặc mô tả chính.',
+        answer:
+          'Đây là những từ khóa bạn có thể thêm vào phần cài đặt sản phẩm trên Amazon mà khách hàng không nhìn thấy. Đây là nơi để bạn thêm các từ khóa đồng nghĩa, các lỗi chính tả phổ biến, hoặc các thuật ngữ liên quan mà bạn không muốn đưa vào tiêu đề hoặc mô tả chính.',
       },
       {
         question: 'Làm thế nào để có được huy hiệu "Bestseller" trên Amazon?',
-        answer: 'Huy hiệu "Bestseller" được trao cho sản phẩm có doanh số bán hàng cao nhất trong một danh mục hoặc danh mục con cụ thể. Nó được cập nhật hàng giờ. Để đạt được nó, bạn cần có một sản phẩm tốt, được tối ưu hóa tốt và thường cần một chiến lược ra mắt sản phẩm mạnh mẽ để tạo ra doanh số đột biến trong thời gian ngắn.',
+        answer:
+          'Huy hiệu "Bestseller" được trao cho sản phẩm có doanh số bán hàng cao nhất trong một danh mục hoặc danh mục con cụ thể. Nó được cập nhật hàng giờ. Để đạt được nó, bạn cần có một sản phẩm tốt, được tối ưu hóa tốt và thường cần một chiến lược ra mắt sản phẩm mạnh mẽ để tạo ra doanh số đột biến trong thời gian ngắn.',
       },
       {
         question: 'Sự khác biệt giữa bán hàng trên Amazon và eBay là gì?',
-        answer: 'Amazon tập trung vào các sản phẩm mới và trải nghiệm mua sắm nhanh chóng (đặc biệt với FBA). eBay khởi đầu là một trang đấu giá và vẫn còn mạnh về các mặt hàng đã qua sử dụng, đồ sưu tầm, và các sản phẩm độc lạ. Cấu trúc phí và mức độ cạnh tranh trên hai nền tảng này cũng khác nhau.',
+        answer:
+          'Amazon tập trung vào các sản phẩm mới và trải nghiệm mua sắm nhanh chóng (đặc biệt với FBA). eBay khởi đầu là một trang đấu giá và vẫn còn mạnh về các mặt hàng đã qua sử dụng, đồ sưu tầm, và các sản phẩm độc lạ. Cấu trúc phí và mức độ cạnh tranh trên hai nền tảng này cũng khác nhau.',
       },
       {
         question: 'Tôi có nên chạy quảng cáo trả phí (PPC) trên các sàn TMĐT không?',
-        answer: 'Có, quảng cáo PPC (Pay-Per-Click) là một phần gần như không thể thiếu để thành công trên các sàn cạnh tranh như Amazon. Nó giúp sản phẩm của bạn được hiển thị ở các vị trí hàng đầu ngay cả khi bạn là người bán mới, giúp bạn có được những đơn hàng và đánh giá đầu tiên để xây dựng đà tăng trưởng.',
+        answer:
+          'Có, quảng cáo PPC (Pay-Per-Click) là một phần gần như không thể thiếu để thành công trên các sàn cạnh tranh như Amazon. Nó giúp sản phẩm của bạn được hiển thị ở các vị trí hàng đầu ngay cả khi bạn là người bán mới, giúp bạn có được những đơn hàng và đánh giá đầu tiên để xây dựng đà tăng trưởng.',
       },
       {
         question: 'Làm thế nào để bảo vệ thương hiệu của tôi trên Amazon?',
-        answer: 'Cách tốt nhất là đăng ký chương trình Amazon Brand Registry. Điều này yêu cầu bạn phải có một nhãn hiệu đã được đăng ký chính thức. Brand Registry cung cấp cho bạn các công cụ mạnh mẽ để loại bỏ những người bán hàng giả, kiểm soát trang sản phẩm của bạn và truy cập các tính năng marketing nâng cao như A+ Content.',
+        answer:
+          'Cách tốt nhất là đăng ký chương trình Amazon Brand Registry. Điều này yêu cầu bạn phải có một nhãn hiệu đã được đăng ký chính thức. Brand Registry cung cấp cho bạn các công cụ mạnh mẽ để loại bỏ những người bán hàng giả, kiểm soát trang sản phẩm của bạn và truy cập các tính năng marketing nâng cao như A+ Content.',
       },
     ],
   },
@@ -548,27 +560,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Thuế nhập khẩu (Import Duty) và thuế VAT/Sales Tax có giống nhau không?',
-        answer: 'Không. Thuế nhập khẩu là thuế do hải quan thu khi hàng hóa vào một quốc gia. Thuế VAT (ở châu Âu) hoặc Sales Tax (ở Mỹ) là thuế tiêu dùng được tính trên giá bán cuối cùng cho khách hàng. Bạn có thể phải chịu cả hai loại thuế này.',
+        answer:
+          'Không. Thuế nhập khẩu là thuế do hải quan thu khi hàng hóa vào một quốc gia. Thuế VAT (ở châu Âu) hoặc Sales Tax (ở Mỹ) là thuế tiêu dùng được tính trên giá bán cuối cùng cho khách hàng. Bạn có thể phải chịu cả hai loại thuế này.',
       },
       {
         question: 'Làm thế nào để tính toán chi phí vận chuyển cho khách hàng?',
-        answer: 'Bạn có thể cung cấp các mức phí vận chuyển khác nhau: miễn phí vận chuyển (tích hợp chi phí vào giá sản phẩm), phí vận chuyển cố định (flat rate), hoặc phí vận chuyển được tính toán theo thời gian thực dựa trên trọng lượng, kích thước và địa chỉ của khách hàng. Các sàn TMĐT và nền tảng website thường có công cụ để giúp bạn thiết lập việc này.',
+        answer:
+          'Bạn có thể cung cấp các mức phí vận chuyển khác nhau: miễn phí vận chuyển (tích hợp chi phí vào giá sản phẩm), phí vận chuyển cố định (flat rate), hoặc phí vận chuyển được tính toán theo thời gian thực dựa trên trọng lượng, kích thước và địa chỉ của khách hàng. Các sàn TMĐT và nền tảng website thường có công cụ để giúp bạn thiết lập việc này.',
       },
       {
         question: 'Incoterms là gì?',
-        answer: 'Incoterms là một bộ các quy tắc thương mại quốc tế quy định trách nhiệm của người bán và người mua trong việc giao nhận hàng hóa. Các điều khoản phổ biến bao gồm EXW (Ex Works), FOB (Free On Board), và DDP (Delivered Duty Paid). Hiểu rõ Incoterms rất quan trọng khi làm việc với các nhà cung cấp và công ty vận chuyển.',
+        answer:
+          'Incoterms là một bộ các quy tắc thương mại quốc tế quy định trách nhiệm của người bán và người mua trong việc giao nhận hàng hóa. Các điều khoản phổ biến bao gồm EXW (Ex Works), FOB (Free On Board), và DDP (Delivered Duty Paid). Hiểu rõ Incoterms rất quan trọng khi làm việc với các nhà cung cấp và công ty vận chuyển.',
       },
       {
         question: 'Làm thế nào để xử lý việc trả hàng (returns) từ khách hàng quốc tế?',
-        answer: 'Việc trả hàng quốc tế rất tốn kém. Một số giải pháp bao gồm: thuê một địa chỉ trả hàng ở nước ngoài (thông qua 3PL), chỉ chấp nhận trả hàng cho các sản phẩm giá trị cao, hoặc trong một số trường hợp, hoàn tiền cho khách hàng mà không yêu cầu họ gửi trả lại sản phẩm (đối với các mặt hàng giá trị thấp).',
+        answer:
+          'Việc trả hàng quốc tế rất tốn kém. Một số giải pháp bao gồm: thuê một địa chỉ trả hàng ở nước ngoài (thông qua 3PL), chỉ chấp nhận trả hàng cho các sản phẩm giá trị cao, hoặc trong một số trường hợp, hoàn tiền cho khách hàng mà không yêu cầu họ gửi trả lại sản phẩm (đối với các mặt hàng giá trị thấp).',
       },
       {
         question: 'Freight Forwarder (công ty giao nhận vận tải) có vai trò gì?',
-        answer: 'Freight Forwarder là một đối tác cực kỳ quan trọng. Họ không sở hữu tàu hay máy bay, nhưng họ sắp xếp và quản lý toàn bộ quá trình vận chuyển hàng hóa của bạn từ Việt Nam đến kho ở nước ngoài, bao gồm việc xử lý thủ tục hải quan, giấy tờ và lựa chọn hãng vận chuyển tốt nhất.',
+        answer:
+          'Freight Forwarder là một đối tác cực kỳ quan trọng. Họ không sở hữu tàu hay máy bay, nhưng họ sắp xếp và quản lý toàn bộ quá trình vận chuyển hàng hóa của bạn từ Việt Nam đến kho ở nước ngoài, bao gồm việc xử lý thủ tục hải quan, giấy tờ và lựa chọn hãng vận chuyển tốt nhất.',
       },
       {
         question: 'Làm thế nào để giảm thời gian vận chuyển quốc tế?',
-        answer: 'Sử dụng dịch vụ vận chuyển hàng không thay vì đường biển là cách nhanh nhất nhưng cũng đắt nhất. Một chiến lược cân bằng là sử dụng mô hình FBA hoặc 3PL: bạn vận chuyển số lượng lớn hàng hóa bằng đường biển đến kho ở nước ngoài, sau đó các đơn hàng lẻ sẽ được giao nhanh chóng từ kho nội địa đó đến tay khách hàng.',
+        answer:
+          'Sử dụng dịch vụ vận chuyển hàng không thay vì đường biển là cách nhanh nhất nhưng cũng đắt nhất. Một chiến lược cân bằng là sử dụng mô hình FBA hoặc 3PL: bạn vận chuyển số lượng lớn hàng hóa bằng đường biển đến kho ở nước ngoài, sau đó các đơn hàng lẻ sẽ được giao nhanh chóng từ kho nội địa đó đến tay khách hàng.',
       },
     ],
   },
@@ -735,27 +753,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Chargeback (đòi lại tiền) là gì và làm thế nào để phòng tránh?',
-        answer: 'Chargeback xảy ra khi một khách hàng yêu cầu công ty thẻ tín dụng của họ hoàn lại một giao dịch. Để phòng tránh, hãy cung cấp mô tả sản phẩm rõ ràng, giao hàng đúng hẹn, có bằng chứng giao hàng (tracking), và cung cấp dịch vụ khách hàng tốt để giải quyết vấn đề trước khi khách hàng phải yêu cầu chargeback.',
+        answer:
+          'Chargeback xảy ra khi một khách hàng yêu cầu công ty thẻ tín dụng của họ hoàn lại một giao dịch. Để phòng tránh, hãy cung cấp mô tả sản phẩm rõ ràng, giao hàng đúng hẹn, có bằng chứng giao hàng (tracking), và cung cấp dịch vụ khách hàng tốt để giải quyết vấn đề trước khi khách hàng phải yêu cầu chargeback.',
       },
       {
         question: 'Tại sao tài khoản PayPal của tôi lại dễ bị giới hạn hoặc khóa?',
-        answer: 'PayPal có các thuật toán chống gian lận rất nghiêm ngặt. Các hoạt động bất thường như doanh thu tăng đột biến, tỷ lệ chargeback cao, hoặc bán các mặt hàng có rủi ro cao có thể kích hoạt cơ chế bảo vệ của họ. Hãy luôn cung cấp đầy đủ giấy tờ kinh doanh và thông tin theo dõi đơn hàng để xây dựng lòng tin với PayPal.',
+        answer:
+          'PayPal có các thuật toán chống gian lận rất nghiêm ngặt. Các hoạt động bất thường như doanh thu tăng đột biến, tỷ lệ chargeback cao, hoặc bán các mặt hàng có rủi ro cao có thể kích hoạt cơ chế bảo vệ của họ. Hãy luôn cung cấp đầy đủ giấy tờ kinh doanh và thông tin theo dõi đơn hàng để xây dựng lòng tin với PayPal.',
       },
       {
         question: 'Wise (trước đây là TransferWise) hoạt động như thế nào?',
-        answer: 'Wise là một dịch vụ chuyển tiền thông minh. Thay vì chuyển tiền trực tiếp qua biên giới, nó sử dụng một mạng lưới các tài khoản ngân hàng địa phương. Ví dụ, khi bạn chuyển tiền từ Mỹ về Việt Nam, tiền của bạn sẽ được chuyển vào tài khoản của Wise ở Mỹ, và sau đó tài khoản của Wise ở Việt Nam sẽ chuyển tiền cho người nhận. Điều này giúp giảm đáng kể phí và có tỷ giá hối đoái thực tế.',
+        answer:
+          'Wise là một dịch vụ chuyển tiền thông minh. Thay vì chuyển tiền trực tiếp qua biên giới, nó sử dụng một mạng lưới các tài khoản ngân hàng địa phương. Ví dụ, khi bạn chuyển tiền từ Mỹ về Việt Nam, tiền của bạn sẽ được chuyển vào tài khoản của Wise ở Mỹ, và sau đó tài khoản của Wise ở Việt Nam sẽ chuyển tiền cho người nhận. Điều này giúp giảm đáng kể phí và có tỷ giá hối đoái thực tế.',
       },
       {
         question: 'Làm thế nào để tích hợp nhiều cổng thanh toán trên website của tôi?',
-        answer: 'Các nền tảng website TMĐT như Shopify hay WooCommerce thường cho phép bạn dễ dàng tích hợp nhiều cổng thanh toán khác nhau thông qua các ứng dụng hoặc plugin. Việc cung cấp nhiều lựa chọn (ví dụ: Stripe cho thẻ tín dụng, PayPal, Apple Pay) có thể giúp tăng tỷ lệ chuyển đổi.',
+        answer:
+          'Các nền tảng website TMĐT như Shopify hay WooCommerce thường cho phép bạn dễ dàng tích hợp nhiều cổng thanh toán khác nhau thông qua các ứng dụng hoặc plugin. Việc cung cấp nhiều lựa chọn (ví dụ: Stripe cho thẻ tín dụng, PayPal, Apple Pay) có thể giúp tăng tỷ lệ chuyển đổi.',
       },
       {
         question: 'Tỷ giá hối đoái mà tôi thấy trên Google có giống với tỷ giá tôi nhận được không?',
-        answer: 'Thường là không. Tỷ giá bạn thấy trên Google là tỷ giá liên ngân hàng (mid-market rate). Các ngân hàng và dịch vụ thanh toán thường sẽ cộng thêm một khoản chênh lệch (spread) vào tỷ giá đó để kiếm lời. Các dịch vụ như Wise nổi tiếng vì sử dụng tỷ giá gần với tỷ giá thực tế nhất.',
+        answer:
+          'Thường là không. Tỷ giá bạn thấy trên Google là tỷ giá liên ngân hàng (mid-market rate). Các ngân hàng và dịch vụ thanh toán thường sẽ cộng thêm một khoản chênh lệch (spread) vào tỷ giá đó để kiếm lời. Các dịch vụ như Wise nổi tiếng vì sử dụng tỷ giá gần với tỷ giá thực tế nhất.',
       },
       {
         question: 'Tôi có cần phải có công ty ở nước ngoài để sử dụng Stripe không?',
-        answer: 'Tính đến hiện tại, Stripe chưa hỗ trợ trực tiếp cho các doanh nghiệp đăng ký tại Việt Nam. Do đó, để sử dụng Stripe, nhiều doanh nghiệp Việt Nam phải sử dụng các dịch vụ như Stripe Atlas để thành lập một công ty tại Mỹ (thường là ở bang Delaware), đi kèm với việc mở tài khoản ngân hàng và mã số thuế tại Mỹ.',
+        answer:
+          'Tính đến hiện tại, Stripe chưa hỗ trợ trực tiếp cho các doanh nghiệp đăng ký tại Việt Nam. Do đó, để sử dụng Stripe, nhiều doanh nghiệp Việt Nam phải sử dụng các dịch vụ như Stripe Atlas để thành lập một công ty tại Mỹ (thường là ở bang Delaware), đi kèm với việc mở tài khoản ngân hàng và mã số thuế tại Mỹ.',
       },
     ],
   },
@@ -920,27 +944,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Màu sắc có ý nghĩa khác nhau ở các nền văn hóa không?',
-        answer: 'Chắc chắn có. Ví dụ, màu trắng ở phương Tây thường tượng trưng cho sự tinh khôi và đám cưới, nhưng ở nhiều nước châu Á, nó lại liên quan đến tang lễ. Màu đỏ ở Trung Quốc và Việt Nam là may mắn, nhưng ở Nam Phi lại là màu của tang tóc. Hiểu ý nghĩa màu sắc là một phần quan trọng của localization.',
+        answer:
+          'Chắc chắn có. Ví dụ, màu trắng ở phương Tây thường tượng trưng cho sự tinh khôi và đám cưới, nhưng ở nhiều nước châu Á, nó lại liên quan đến tang lễ. Màu đỏ ở Trung Quốc và Việt Nam là may mắn, nhưng ở Nam Phi lại là màu của tang tóc. Hiểu ý nghĩa màu sắc là một phần quan trọng của localization.',
       },
       {
         question: 'High-context và low-context culture là gì?',
-        answer: 'Low-context cultures (văn hóa ngữ cảnh thấp) như Mỹ hay Đức ưa chuộng giao tiếp trực tiếp, rõ ràng và minh bạch. High-context cultures (văn hóa ngữ cảnh cao) như Nhật Bản hay Việt Nam lại dựa nhiều vào các yếu tố phi ngôn ngữ, mối quan hệ và bối cảnh. Điều này ảnh hưởng đến cách bạn viết email, quảng cáo và đàm phán.',
+        answer:
+          'Low-context cultures (văn hóa ngữ cảnh thấp) như Mỹ hay Đức ưa chuộng giao tiếp trực tiếp, rõ ràng và minh bạch. High-context cultures (văn hóa ngữ cảnh cao) như Nhật Bản hay Việt Nam lại dựa nhiều vào các yếu tố phi ngôn ngữ, mối quan hệ và bối cảnh. Điều này ảnh hưởng đến cách bạn viết email, quảng cáo và đàm phán.',
       },
       {
         question: 'Làm thế nào để bản địa hóa hình ảnh và video?',
-        answer: 'Hãy sử dụng người mẫu, bối cảnh và các vật dụng quen thuộc với văn hóa địa phương. Ví dụ, một quảng cáo về đồ ăn ở Việt Nam có thể có hình ảnh gia đình quây quần bên mâm cơm, trong khi ở Mỹ có thể là một nhóm bạn bè đang tổ chức tiệc BBQ ngoài trời.',
+        answer:
+          'Hãy sử dụng người mẫu, bối cảnh và các vật dụng quen thuộc với văn hóa địa phương. Ví dụ, một quảng cáo về đồ ăn ở Việt Nam có thể có hình ảnh gia đình quây quần bên mâm cơm, trong khi ở Mỹ có thể là một nhóm bạn bè đang tổ chức tiệc BBQ ngoài trời.',
       },
       {
         question: 'Transcreation là gì?',
-        answer: 'Transcreation (dịch sáng tạo) còn đi xa hơn cả localization. Đó là quá trình lấy một thông điệp cốt lõi và sáng tạo lại nó một cách hoàn toàn mới để phù hợp với văn hóa địa phương, trong khi vẫn giữ được tinh thần của thương hiệu. Nó thường được sử dụng cho các slogan hoặc các chiến dịch marketing lớn.',
+        answer:
+          'Transcreation (dịch sáng tạo) còn đi xa hơn cả localization. Đó là quá trình lấy một thông điệp cốt lõi và sáng tạo lại nó một cách hoàn toàn mới để phù hợp với văn hóa địa phương, trong khi vẫn giữ được tinh thần của thương hiệu. Nó thường được sử dụng cho các slogan hoặc các chiến dịch marketing lớn.',
       },
       {
         question: 'Tôi có nên sử dụng các meme hoặc trend địa phương trong marketing không?',
-        answer: 'Có thể, nhưng hãy cực kỳ cẩn thận. Nếu làm đúng, nó có thể giúp thương hiệu của bạn trở nên gần gũi và hợp thời. Nhưng nếu làm sai, bạn có thể trông lạc lõng, thiếu hiểu biết hoặc thậm chí là xúc phạm. Hãy đảm bảo bạn thực sự hiểu sâu sắc về trend đó trước khi sử dụng.',
+        answer:
+          'Có thể, nhưng hãy cực kỳ cẩn thận. Nếu làm đúng, nó có thể giúp thương hiệu của bạn trở nên gần gũi và hợp thời. Nhưng nếu làm sai, bạn có thể trông lạc lõng, thiếu hiểu biết hoặc thậm chí là xúc phạm. Hãy đảm bảo bạn thực sự hiểu sâu sắc về trend đó trước khi sử dụng.',
       },
       {
         question: 'Làm thế nào để đo lường hiệu quả của việc localization?',
-        answer: 'Bạn có thể theo dõi các chỉ số như tỷ lệ chuyển đổi, tỷ lệ thoát trang (bounce rate), và thời gian trên trang cho các phiên bản website đã được bản địa hóa. So sánh các chỉ số này giữa các thị trường khác nhau sẽ cho bạn thấy nỗ lực localization của mình có mang lại kết quả hay không.',
+        answer:
+          'Bạn có thể theo dõi các chỉ số như tỷ lệ chuyển đổi, tỷ lệ thoát trang (bounce rate), và thời gian trên trang cho các phiên bản website đã được bản địa hóa. So sánh các chỉ số này giữa các thị trường khác nhau sẽ cho bạn thấy nỗ lực localization của mình có mang lại kết quả hay không.',
       },
     ],
   },
@@ -1095,27 +1125,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa bản quyền (copyright) và nhãn hiệu (trademark) là gì?',
-        answer: 'Bản quyền bảo vệ các tác phẩm sáng tạo gốc (ví dụ: hình ảnh sản phẩm, mô tả sản phẩm, video). Nhãn hiệu bảo vệ các yếu tố nhận diện thương hiệu (tên thương hiệu, logo) khỏi việc bị người khác sử dụng gây nhầm lẫn.',
+        answer:
+          'Bản quyền bảo vệ các tác phẩm sáng tạo gốc (ví dụ: hình ảnh sản phẩm, mô tả sản phẩm, video). Nhãn hiệu bảo vệ các yếu tố nhận diện thương hiệu (tên thương hiệu, logo) khỏi việc bị người khác sử dụng gây nhầm lẫn.',
       },
       {
         question: 'Hệ thống Madrid để đăng ký nhãn hiệu hoạt động như thế nào?',
-        answer: 'Hệ thống Madrid cho phép bạn nộp một đơn đăng ký duy nhất, bằng một ngôn ngữ duy nhất, và trả một bộ phí duy nhất để đăng ký bảo hộ nhãn hiệu của mình ở nhiều quốc gia thành viên. Nó đơn giản hóa đáng kể quy trình đăng ký nhãn hiệu quốc tế.',
+        answer:
+          'Hệ thống Madrid cho phép bạn nộp một đơn đăng ký duy nhất, bằng một ngôn ngữ duy nhất, và trả một bộ phí duy nhất để đăng ký bảo hộ nhãn hiệu của mình ở nhiều quốc gia thành viên. Nó đơn giản hóa đáng kể quy trình đăng ký nhãn hiệu quốc tế.',
       },
       {
         question: 'Tôi có cần phải lo lắng về luật bảo vệ người tiêu dùng ở tất cả các nước không?',
-        answer: 'Về nguyên tắc, bạn phải tuân thủ luật của quốc gia nơi khách hàng của bạn sinh sống. Tuy nhiên, các khu vực có luật nghiêm ngặt nhất là EU, Bắc Mỹ và Úc. Nếu bạn tuân thủ các quy định ở những nơi này (ví dụ: chính sách đổi trả trong 14-30 ngày), bạn thường sẽ đáp ứng được yêu cầu của hầu hết các quốc gia khác.',
+        answer:
+          'Về nguyên tắc, bạn phải tuân thủ luật của quốc gia nơi khách hàng của bạn sinh sống. Tuy nhiên, các khu vực có luật nghiêm ngặt nhất là EU, Bắc Mỹ và Úc. Nếu bạn tuân thủ các quy định ở những nơi này (ví dụ: chính sách đổi trả trong 14-30 ngày), bạn thường sẽ đáp ứng được yêu cầu của hầu hết các quốc gia khác.',
       },
       {
         question: 'Làm thế nào để đảm bảo sản phẩm của tôi tuân thủ các tiêu chuẩn an toàn ở nước ngoài?',
-        answer: 'Mỗi thị trường có các tiêu chuẩn an toàn riêng (ví dụ: dấu CE ở châu Âu, chứng nhận của CPSC ở Mỹ). Bạn cần nghiên cứu các yêu cầu đối với ngành hàng của mình và có thể cần phải gửi sản phẩm đến các phòng thí nghiệm được công nhận để kiểm tra và cấp chứng nhận. Đây là điều đặc biệt quan trọng đối với các sản phẩm dành cho trẻ em, đồ điện tử, và mỹ phẩm.',
+        answer:
+          'Mỗi thị trường có các tiêu chuẩn an toàn riêng (ví dụ: dấu CE ở châu Âu, chứng nhận của CPSC ở Mỹ). Bạn cần nghiên cứu các yêu cầu đối với ngành hàng của mình và có thể cần phải gửi sản phẩm đến các phòng thí nghiệm được công nhận để kiểm tra và cấp chứng nhận. Đây là điều đặc biệt quan trọng đối với các sản phẩm dành cho trẻ em, đồ điện tử, và mỹ phẩm.',
       },
       {
         question: 'Dropshipping có những rủi ro pháp lý nào?',
-        answer: 'Khi bạn dropship, bạn vẫn là người bán hàng và chịu trách nhiệm pháp lý đối với khách hàng, ngay cả khi bạn không trực tiếp cầm sản phẩm. Các rủi ro bao gồm: nhà cung cấp gửi hàng kém chất lượng, vi phạm sở hữu trí tuệ, hoặc không tuân thủ các tiêu chuẩn an toàn sản phẩm. Do đó, việc lựa chọn nhà cung cấp uy tín là cực kỳ quan trọng.',
+        answer:
+          'Khi bạn dropship, bạn vẫn là người bán hàng và chịu trách nhiệm pháp lý đối với khách hàng, ngay cả khi bạn không trực tiếp cầm sản phẩm. Các rủi ro bao gồm: nhà cung cấp gửi hàng kém chất lượng, vi phạm sở hữu trí tuệ, hoặc không tuân thủ các tiêu chuẩn an toàn sản phẩm. Do đó, việc lựa chọn nhà cung cấp uy tín là cực kỳ quan trọng.',
       },
       {
         question: 'Hiệp định tránh đánh thuế hai lần là gì?',
-        answer: 'Đây là các hiệp định giữa hai quốc gia nhằm ngăn chặn việc một cá nhân hoặc doanh nghiệp phải đóng cùng một loại thuế trên cùng một khoản thu nhập ở cả hai quốc gia. Việt Nam đã ký hiệp định này với nhiều nước, giúp giảm bớt gánh nặng thuế cho các doanh nghiệp kinh doanh quốc tế.',
+        answer:
+          'Đây là các hiệp định giữa hai quốc gia nhằm ngăn chặn việc một cá nhân hoặc doanh nghiệp phải đóng cùng một loại thuế trên cùng một khoản thu nhập ở cả hai quốc gia. Việt Nam đã ký hiệp định này với nhiều nước, giúp giảm bớt gánh nặng thuế cho các doanh nghiệp kinh doanh quốc tế.',
       },
     ],
   },
@@ -1283,27 +1319,33 @@ const crossBorderEcommerceLessonsData: CrossBorderEcommerceLessonData[] = [
       },
       {
         question: 'Tỷ lệ bỏ giỏ hàng (Cart Abandonment Rate) cao nói lên điều gì?',
-        answer: 'Một tỷ lệ bỏ giỏ hàng cao thường cho thấy có vấn đề trong quy trình thanh toán của bạn. Nguyên nhân có thể là chi phí vận chuyển bất ngờ, quy trình quá phức tạp, yêu cầu tạo tài khoản bắt buộc, hoặc thiếu các phương thức thanh toán đáng tin cậy. Phân tích và tối ưu hóa bước này có thể làm tăng doanh thu đáng kể.',
+        answer:
+          'Một tỷ lệ bỏ giỏ hàng cao thường cho thấy có vấn đề trong quy trình thanh toán của bạn. Nguyên nhân có thể là chi phí vận chuyển bất ngờ, quy trình quá phức tạp, yêu cầu tạo tài khoản bắt buộc, hoặc thiếu các phương thức thanh toán đáng tin cậy. Phân tích và tối ưu hóa bước này có thể làm tăng doanh thu đáng kể.',
       },
       {
         question: 'Hotjar là gì và nó giúp ích như thế nào?',
-        answer: 'Hotjar là một công cụ phân tích hành vi người dùng. Nó cung cấp các "bản đồ nhiệt" (heatmaps) cho thấy nơi người dùng nhấp chuột và di chuyển chuột nhiều nhất, cũng như các bản ghi phiên (session recordings) cho phép bạn xem lại chính xác cách một người dùng đã tương tác với trang web của bạn. Nó giúp bạn hiểu "tại sao" đằng sau các con số trong Google Analytics.',
+        answer:
+          'Hotjar là một công cụ phân tích hành vi người dùng. Nó cung cấp các "bản đồ nhiệt" (heatmaps) cho thấy nơi người dùng nhấp chuột và di chuyển chuột nhiều nhất, cũng như các bản ghi phiên (session recordings) cho phép bạn xem lại chính xác cách một người dùng đã tương tác với trang web của bạn. Nó giúp bạn hiểu "tại sao" đằng sau các con số trong Google Analytics.',
       },
       {
         question: 'Làm thế nào để tính toán Giá trị vòng đời khách hàng (LTV)?',
-        answer: 'Một cách tính đơn giản là: LTV = (Giá trị đơn hàng trung bình) x (Số lần mua hàng trung bình mỗi năm) x (Số năm trung bình một khách hàng gắn bó). Hiểu được LTV giúp bạn biết mình có thể chi bao nhiêu tiền để thu hút một khách hàng mới (CAC) mà vẫn có lãi.',
+        answer:
+          'Một cách tính đơn giản là: LTV = (Giá trị đơn hàng trung bình) x (Số lần mua hàng trung bình mỗi năm) x (Số năm trung bình một khách hàng gắn bó). Hiểu được LTV giúp bạn biết mình có thể chi bao nhiêu tiền để thu hút một khách hàng mới (CAC) mà vẫn có lãi.',
       },
       {
         question: 'Phân tích theo phân khúc (cohort analysis) có lợi ích gì?',
-        answer: 'Nó giúp bạn so sánh hành vi của các nhóm người dùng khác nhau theo thời gian. Ví dụ, bạn có thể so sánh xem nhóm khách hàng đăng ký vào tháng 1 có giữ chân tốt hơn nhóm đăng ký vào tháng 2 hay không. Điều này giúp bạn xác định tác động của các thay đổi về sản phẩm hoặc marketing.',
+        answer:
+          'Nó giúp bạn so sánh hành vi của các nhóm người dùng khác nhau theo thời gian. Ví dụ, bạn có thể so sánh xem nhóm khách hàng đăng ký vào tháng 1 có giữ chân tốt hơn nhóm đăng ký vào tháng 2 hay không. Điều này giúp bạn xác định tác động của các thay đổi về sản phẩm hoặc marketing.',
       },
       {
         question: 'Tôi có nên tin vào dữ liệu 100% không?',
-        answer: 'Dữ liệu rất quan trọng, nhưng nó không phải là tất cả. Dữ liệu cho bạn biết "cái gì" đang xảy ra, nhưng không phải lúc nào cũng cho biết "tại sao". Hãy kết hợp dữ liệu định lượng (quantitative data) từ Google Analytics với dữ liệu định tính (qualitative data) từ các cuộc khảo sát, phỏng vấn khách hàng, và trực giác kinh doanh của bạn để có được bức tranh toàn cảnh.',
+        answer:
+          'Dữ liệu rất quan trọng, nhưng nó không phải là tất cả. Dữ liệu cho bạn biết "cái gì" đang xảy ra, nhưng không phải lúc nào cũng cho biết "tại sao". Hãy kết hợp dữ liệu định lượng (quantitative data) từ Google Analytics với dữ liệu định tính (qualitative data) từ các cuộc khảo sát, phỏng vấn khách hàng, và trực giác kinh doanh của bạn để có được bức tranh toàn cảnh.',
       },
       {
         question: 'Làm thế nào để bắt đầu với A/B testing mà không cần các công cụ đắt tiền?',
-        answer: 'Bạn có thể thực hiện các thử nghiệm A/B thủ công. Ví dụ, chạy một chiến dịch quảng cáo Facebook với hai hình ảnh khác nhau trong một tuần và so sánh tỷ lệ nhấp chuột (CTR). Hoặc gửi hai tiêu đề email khác nhau cho hai nửa danh sách email của bạn và xem tiêu đề nào có tỷ lệ mở cao hơn. Quan trọng là chỉ thay đổi một yếu-tố-duy-nhất trong mỗi thử nghiệm.',
+        answer:
+          'Bạn có thể thực hiện các thử nghiệm A/B thủ công. Ví dụ, chạy một chiến dịch quảng cáo Facebook với hai hình ảnh khác nhau trong một tuần và so sánh tỷ lệ nhấp chuột (CTR). Hoặc gửi hai tiêu đề email khác nhau cho hai nửa danh sách email của bạn và xem tiêu đề nào có tỷ lệ mở cao hơn. Quan trọng là chỉ thay đổi một yếu-tố-duy-nhất trong mỗi thử nghiệm.',
       },
     ],
   },

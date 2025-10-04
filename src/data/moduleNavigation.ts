@@ -25,6 +25,7 @@ import { physicsInLifeModuleData } from '@/data/modules/physics-in-life';
 import { scientificResearchSkillsModuleData } from '@/data/modules/scientific-research-skills';
 
 // Existing Modules (alphabetical order)
+import { aiCodingAssistantsModuleData } from '@/data/ai-coding-assistants';
 import { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creative-skills';
 import { aiArtCreativeTechModuleData } from '@/data/modules/ai-art-creative-tech';
 import { aiForStudentsModuleData } from '@/data/modules/ai-for-students';
@@ -162,6 +163,7 @@ export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   scientificResearchSkillsModuleData,
 
   // Existing Modules
+  aiCodingAssistantsModuleData,
   advancedCreativeSkillsModuleData,
   aiArtCreativeTechModuleData,
   aiForStudentsModuleData,

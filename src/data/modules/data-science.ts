@@ -212,23 +212,28 @@ export const dataScienceLessons: DataScienceLesson[] = [
       },
       {
         question: 'CRISP-DM là gì?',
-        answer: 'CRISP-DM (Cross-Industry Standard Process for Data Mining) là một phương pháp luận phổ biến cho các dự án khoa học dữ liệu. Nó cung cấp một quy trình có cấu trúc gồm 6 giai đoạn: Hiểu biết kinh doanh, Hiểu biết dữ liệu, Chuẩn bị dữ liệu, Mô hình hóa, Đánh giá và Triển khai.',
+        answer:
+          'CRISP-DM (Cross-Industry Standard Process for Data Mining) là một phương pháp luận phổ biến cho các dự án khoa học dữ liệu. Nó cung cấp một quy trình có cấu trúc gồm 6 giai đoạn: Hiểu biết kinh doanh, Hiểu biết dữ liệu, Chuẩn bị dữ liệu, Mô hình hóa, Đánh giá và Triển khai.',
       },
       {
         question: 'Dữ liệu có cấu trúc và dữ liệu phi cấu trúc khác nhau như thế nào?',
-        answer: 'Dữ liệu có cấu trúc được tổ chức theo một định dạng xác định, như trong bảng tính Excel hoặc cơ sở dữ liệu SQL. Dữ liệu phi cấu trúc không có một mô hình được xác định trước, ví dụ như văn bản trong email, hình ảnh, video, hoặc các bài đăng trên mạng xã hội.',
+        answer:
+          'Dữ liệu có cấu trúc được tổ chức theo một định dạng xác định, như trong bảng tính Excel hoặc cơ sở dữ liệu SQL. Dữ liệu phi cấu trúc không có một mô hình được xác định trước, ví dụ như văn bản trong email, hình ảnh, video, hoặc các bài đăng trên mạng xã hội.',
       },
       {
         question: 'Một "insight" trong khoa học dữ liệu là gì?',
-        answer: 'Insight không chỉ là một thông tin hay một con số. Đó là một sự thật sâu sắc, bất ngờ và có giá trị hành động được khám phá từ dữ liệu, có thể giúp doanh nghiệp đưa ra quyết định tốt hơn hoặc thay đổi chiến lược. Ví dụ: "Chúng tôi phát hiện ra rằng những khách hàng mua hàng vào thứ Ba thường có giá trị vòng đời cao hơn 30%".',
+        answer:
+          'Insight không chỉ là một thông tin hay một con số. Đó là một sự thật sâu sắc, bất ngờ và có giá trị hành động được khám phá từ dữ liệu, có thể giúp doanh nghiệp đưa ra quyết định tốt hơn hoặc thay đổi chiến lược. Ví dụ: "Chúng tôi phát hiện ra rằng những khách hàng mua hàng vào thứ Ba thường có giá trị vòng đời cao hơn 30%".',
       },
       {
         question: 'Tại sao cần phải chia dữ liệu thành tập huấn luyện (train) và tập kiểm tra (test)?',
-        answer: 'Chúng ta sử dụng tập huấn luyện để "dạy" cho mô hình học máy. Sau đó, chúng ta sử dụng tập kiểm tra, một tập dữ liệu mà mô hình chưa từng thấy trước đây, để đánh giá hiệu suất thực sự của nó. Điều này giúp đảm bảo rằng mô hình không chỉ "học vẹt" dữ liệu huấn luyện mà còn có khả năng tổng quát hóa cho dữ liệu mới.',
+        answer:
+          'Chúng ta sử dụng tập huấn luyện để "dạy" cho mô hình học máy. Sau đó, chúng ta sử dụng tập kiểm tra, một tập dữ liệu mà mô hình chưa từng thấy trước đây, để đánh giá hiệu suất thực sự của nó. Điều này giúp đảm bảo rằng mô hình không chỉ "học vẹt" dữ liệu huấn luyện mà còn có khả năng tổng quát hóa cho dữ liệu mới.',
       },
       {
         question: 'Tôi nên bắt đầu học khoa học dữ liệu từ đâu?',
-        answer: 'Hãy bắt đầu với nền tảng toán học (xác suất thống kê, đại số tuyến tính), sau đó học một ngôn ngữ lập trình (Python là lựa chọn phổ biến nhất). Tiếp theo, hãy làm quen với các thư viện cốt lõi như Pandas, NumPy, và Matplotlib. Cuối cùng, hãy bắt tay vào các dự án thực tế nhỏ để áp dụng kiến thức.',
+        answer:
+          'Hãy bắt đầu với nền tảng toán học (xác suất thống kê, đại số tuyến tính), sau đó học một ngôn ngữ lập trình (Python là lựa chọn phổ biến nhất). Tiếp theo, hãy làm quen với các thư viện cốt lõi như Pandas, NumPy, và Matplotlib. Cuối cùng, hãy bắt tay vào các dự án thực tế nhỏ để áp dụng kiến thức.',
       },
     ],
   },
@@ -391,43 +396,53 @@ export const dataScienceLessons: DataScienceLesson[] = [
     faqs: [
       {
         question: 'Feature Engineering là gì và tại sao nó quan trọng?',
-        answer: 'Feature Engineering là nghệ thuật và khoa học của việc tạo ra các biến đầu vào (features) mới từ dữ liệu thô để giúp mô hình học máy hoạt động hiệu quả hơn. Một feature được thiết kế tốt có thể làm tăng đáng kể độ chính xác của mô hình. Ví dụ, từ ngày tháng, bạn có thể tạo ra các feature như "thứ trong tuần" hoặc "mùa trong năm".',
+        answer:
+          'Feature Engineering là nghệ thuật và khoa học của việc tạo ra các biến đầu vào (features) mới từ dữ liệu thô để giúp mô hình học máy hoạt động hiệu quả hơn. Một feature được thiết kế tốt có thể làm tăng đáng kể độ chính xác của mô hình. Ví dụ, từ ngày tháng, bạn có thể tạo ra các feature như "thứ trong tuần" hoặc "mùa trong năm".',
       },
       {
         question: 'Sự khác biệt giữa Classification (Phân loại) và Regression (Hồi quy) là gì?',
-        answer: 'Đây là hai loại bài toán phổ biến trong học có giám sát. Bài toán Classification dự đoán một nhãn rời rạc (ví dụ: "spam" hoặc "không spam", "mèo" hoặc "chó"). Bài toán Regression dự đoán một giá trị liên tục (ví dụ: giá nhà, nhiệt độ).',
+        answer:
+          'Đây là hai loại bài toán phổ biến trong học có giám sát. Bài toán Classification dự đoán một nhãn rời rạc (ví dụ: "spam" hoặc "không spam", "mèo" hoặc "chó"). Bài toán Regression dự đoán một giá trị liên tục (ví dụ: giá nhà, nhiệt độ).',
       },
       {
         question: 'K-Means Clustering là gì?',
-        answer: 'Đây là một thuật toán học không giám sát phổ biến dùng để phân nhóm dữ liệu. Bạn xác định trước số lượng nhóm (k), và thuật toán sẽ cố gắng phân chia các điểm dữ liệu vào k nhóm sao cho các điểm trong cùng một nhóm giống nhau nhất và khác với các điểm ở nhóm khác.',
+        answer:
+          'Đây là một thuật toán học không giám sát phổ biến dùng để phân nhóm dữ liệu. Bạn xác định trước số lượng nhóm (k), và thuật toán sẽ cố gắng phân chia các điểm dữ liệu vào k nhóm sao cho các điểm trong cùng một nhóm giống nhau nhất và khác với các điểm ở nhóm khác.',
       },
       {
         question: 'Random Forest là thuật toán gì?',
-        answer: 'Random Forest là một thuật toán học có giám sát thuộc loại "ensemble learning". Nó xây dựng nhiều cây quyết định (decision trees) trong quá trình huấn luyện và đưa ra dự đoán dựa trên sự "biểu quyết" của đa số các cây. Nó thường cho kết quả rất tốt và ít bị overfitting hơn một cây quyết định đơn lẻ.',
+        answer:
+          'Random Forest là một thuật toán học có giám sát thuộc loại "ensemble learning". Nó xây dựng nhiều cây quyết định (decision trees) trong quá trình huấn luyện và đưa ra dự đoán dựa trên sự "biểu quyết" của đa số các cây. Nó thường cho kết quả rất tốt và ít bị overfitting hơn một cây quyết định đơn lẻ.',
       },
       {
         question: 'Hyperparameter là gì?',
-        answer: 'Hyperparameter là các tham số của một mô hình học máy mà giá trị của chúng được thiết lập trước khi quá trình huấn luyện bắt đầu. Chúng không được học từ dữ liệu. Ví dụ, số lượng cây trong Random Forest, hoặc tốc độ học (learning rate) trong mạng nơ-ron. Việc tìm ra bộ hyperparameter tối ưu (tuning) là một bước quan trọng để cải thiện hiệu suất mô hình.',
+        answer:
+          'Hyperparameter là các tham số của một mô hình học máy mà giá trị của chúng được thiết lập trước khi quá trình huấn luyện bắt đầu. Chúng không được học từ dữ liệu. Ví dụ, số lượng cây trong Random Forest, hoặc tốc độ học (learning rate) trong mạng nơ-ron. Việc tìm ra bộ hyperparameter tối ưu (tuning) là một bước quan trọng để cải thiện hiệu suất mô hình.',
       },
       {
         question: 'Precision và Recall là gì?',
-        answer: 'Đây là hai chỉ số quan trọng để đánh giá mô hình phân loại. Precision đo lường độ chính xác trong số các dự đoán tích cực (trong số những cái được dự đoán là "spam", bao nhiêu cái thực sự là "spam"?). Recall đo lường khả năng phát hiện tất cả các trường hợp tích cực (trong số tất cả các email "spam" thực tế, mô hình tìm thấy được bao nhiêu?).',
+        answer:
+          'Đây là hai chỉ số quan trọng để đánh giá mô hình phân loại. Precision đo lường độ chính xác trong số các dự đoán tích cực (trong số những cái được dự đoán là "spam", bao nhiêu cái thực sự là "spam"?). Recall đo lường khả năng phát hiện tất cả các trường hợp tích cực (trong số tất cả các email "spam" thực tế, mô hình tìm thấy được bao nhiêu?).',
       },
       {
         question: 'Học tăng cường (Reinforcement Learning) hoạt động như thế nào?',
-        answer: 'Trong học tăng cường, một "tác nhân" (agent) học cách hành động trong một "môi trường" (environment) để tối đa hóa "phần thưởng" (reward). Nó học thông qua thử và sai, giống như cách bạn huấn luyện một chú chó bằng cách thưởng cho nó khi nó làm đúng. Đây là công nghệ đằng sau AlphaGo và xe tự lái.',
+        answer:
+          'Trong học tăng cường, một "tác nhân" (agent) học cách hành động trong một "môi trường" (environment) để tối đa hóa "phần thưởng" (reward). Nó học thông qua thử và sai, giống như cách bạn huấn luyện một chú chó bằng cách thưởng cho nó khi nó làm đúng. Đây là công nghệ đằng sau AlphaGo và xe tự lái.',
       },
       {
         question: 'Mạng nơ-ron (Neural Network) là gì?',
-        answer: 'Mạng nơ-ron là một mô hình tính toán được lấy cảm hứng từ bộ não sinh học. Nó bao gồm các "nơ-ron" nhân tạo được kết nối với nhau theo từng lớp. Dữ liệu được truyền qua mạng, và các kết nối được điều chỉnh trong quá trình huấn luyện để mô hình có thể học được các mẫu phức tạp. Đây là nền tảng của Deep Learning.',
+        answer:
+          'Mạng nơ-ron là một mô hình tính toán được lấy cảm hứng từ bộ não sinh học. Nó bao gồm các "nơ-ron" nhân tạo được kết nối với nhau theo từng lớp. Dữ liệu được truyền qua mạng, và các kết nối được điều chỉnh trong quá trình huấn luyện để mô hình có thể học được các mẫu phức tạp. Đây là nền tảng của Deep Learning.',
       },
       {
         question: 'Sự khác biệt giữa một thuật toán và một mô hình là gì?',
-        answer: 'Thuật toán là một quy trình hoặc một tập hợp các quy tắc được sử dụng để giải quyết một vấn đề. Mô hình là kết quả đầu ra của việc chạy một thuật toán trên dữ liệu. Ví dụ, Random Forest là một thuật toán, và mô hình Random Forest cụ thể bạn tạo ra để dự đoán giá nhà là một mô hình.',
+        answer:
+          'Thuật toán là một quy trình hoặc một tập hợp các quy tắc được sử dụng để giải quyết một vấn đề. Mô hình là kết quả đầu ra của việc chạy một thuật toán trên dữ liệu. Ví dụ, Random Forest là một thuật toán, và mô hình Random Forest cụ thể bạn tạo ra để dự đoán giá nhà là một mô hình.',
       },
       {
         question: 'Làm thế nào để chọn thuật toán học máy phù hợp?',
-        answer: 'Việc lựa chọn phụ thuộc vào nhiều yếu tố: loại bài toán (phân loại, hồi quy, phân cụm), kích thước và đặc điểm của bộ dữ liệu, yêu cầu về khả năng diễn giải của mô hình, và tài nguyên tính toán có sẵn. Thường thì không có câu trả lời duy nhất, và các nhà khoa học dữ liệu thường thử nghiệm nhiều thuật toán khác nhau.',
+        answer:
+          'Việc lựa chọn phụ thuộc vào nhiều yếu tố: loại bài toán (phân loại, hồi quy, phân cụm), kích thước và đặc điểm của bộ dữ liệu, yêu cầu về khả năng diễn giải của mô hình, và tài nguyên tính toán có sẵn. Thường thì không có câu trả lời duy nhất, và các nhà khoa học dữ liệu thường thử nghiệm nhiều thuật toán khác nhau.',
       },
     ],
   },
@@ -576,43 +591,53 @@ export const dataScienceLessons: DataScienceLesson[] = [
     faqs: [
       {
         question: 'Data Lake và Data Warehouse khác nhau như thế nào?',
-        answer: 'Data Warehouse lưu trữ dữ liệu đã được xử lý, có cấu trúc, sẵn sàng cho việc phân tích và báo cáo. Data Lake là một kho lưu trữ trung tâm cho phép bạn lưu trữ tất cả dữ liệu có cấu trúc và phi cấu trúc ở mọi quy mô. Data Lake linh hoạt hơn nhưng đòi hỏi nhiều công sức xử lý hơn trước khi phân tích.',
+        answer:
+          'Data Warehouse lưu trữ dữ liệu đã được xử lý, có cấu trúc, sẵn sàng cho việc phân tích và báo cáo. Data Lake là một kho lưu trữ trung tâm cho phép bạn lưu trữ tất cả dữ liệu có cấu trúc và phi cấu trúc ở mọi quy mô. Data Lake linh hoạt hơn nhưng đòi hỏi nhiều công sức xử lý hơn trước khi phân tích.',
       },
       {
         question: 'ETL là viết tắt của gì?',
-        answer: 'ETL là viết tắt của Extract, Transform, Load (Trích xuất, Biến đổi, Tải). Đây là một quy trình phổ biến trong kỹ thuật dữ liệu: Trích xuất dữ liệu từ các nguồn khác nhau, Biến đổi dữ liệu (làm sạch, chuẩn hóa, kết hợp), và Tải dữ liệu vào một hệ thống đích (thường là Data Warehouse).',
+        answer:
+          'ETL là viết tắt của Extract, Transform, Load (Trích xuất, Biến đổi, Tải). Đây là một quy trình phổ biến trong kỹ thuật dữ liệu: Trích xuất dữ liệu từ các nguồn khác nhau, Biến đổi dữ liệu (làm sạch, chuẩn hóa, kết hợp), và Tải dữ liệu vào một hệ thống đích (thường là Data Warehouse).',
       },
       {
         question: 'Apache Kafka là gì và nó được sử dụng để làm gì?',
-        answer: 'Apache Kafka là một nền tảng xử lý luồng phân tán. Nó hoạt động như một hệ thống "nhắn tin" cho phép các ứng dụng khác nhau có thể "xuất bản" và "đăng ký" các luồng dữ liệu trong thời gian thực. Nó là xương sống của nhiều hệ thống xử lý dữ liệu lớn, thời gian thực.',
+        answer:
+          'Apache Kafka là một nền tảng xử lý luồng phân tán. Nó hoạt động như một hệ thống "nhắn tin" cho phép các ứng dụng khác nhau có thể "xuất bản" và "đăng ký" các luồng dữ liệu trong thời gian thực. Nó là xương sống của nhiều hệ thống xử lý dữ liệu lớn, thời gian thực.',
       },
       {
         question: 'Tại sao xử lý dữ liệu trên đám mây (cloud) lại phổ biến?',
-        answer: 'Các nền tảng đám mây như AWS, Google Cloud, Azure cung cấp khả năng mở rộng linh hoạt. Bạn có thể dễ dàng tăng hoặc giảm tài nguyên tính toán (máy chủ) theo nhu cầu mà không cần phải đầu tư vào phần cứng đắt tiền. Điều này rất lý tưởng cho các tác vụ Big Data có yêu cầu tài nguyên biến đổi.',
+        answer:
+          'Các nền tảng đám mây như AWS, Google Cloud, Azure cung cấp khả năng mở rộng linh hoạt. Bạn có thể dễ dàng tăng hoặc giảm tài nguyên tính toán (máy chủ) theo nhu cầu mà không cần phải đầu tư vào phần cứng đắt tiền. Điều này rất lý tưởng cho các tác vụ Big Data có yêu cầu tài nguyên biến đổi.',
       },
       {
         question: 'NoSQL database là gì?',
-        answer: 'NoSQL (Not only SQL) là một loại cơ sở dữ liệu không tuân theo mô hình quan hệ dạng bảng truyền thống. Chúng rất linh hoạt trong việc lưu trữ các loại dữ liệu khác nhau (văn bản, JSON, đồ thị) và thường có khả năng mở rộng theo chiều ngang tốt hơn, phù hợp cho các ứng dụng Big Data.',
+        answer:
+          'NoSQL (Not only SQL) là một loại cơ sở dữ liệu không tuân theo mô hình quan hệ dạng bảng truyền thống. Chúng rất linh hoạt trong việc lưu trữ các loại dữ liệu khác nhau (văn bản, JSON, đồ thị) và thường có khả năng mở rộng theo chiều ngang tốt hơn, phù hợp cho các ứng dụng Big Data.',
       },
       {
         question: 'Tính toán song song (Parallel Computing) là gì?',
-        answer: 'Đây là việc thực hiện nhiều phép tính hoặc quy trình cùng một lúc. Trong Big Data, thay vì một máy tính xử lý toàn bộ công việc một cách tuần tự, công việc được chia nhỏ và gửi đến nhiều máy tính trong một cụm để xử lý đồng thời, giúp giảm đáng kể thời gian hoàn thành.',
+        answer:
+          'Đây là việc thực hiện nhiều phép tính hoặc quy trình cùng một lúc. Trong Big Data, thay vì một máy tính xử lý toàn bộ công việc một cách tuần tự, công việc được chia nhỏ và gửi đến nhiều máy tính trong một cụm để xử lý đồng thời, giúp giảm đáng kể thời gian hoàn thành.',
       },
       {
         question: 'Sharding trong cơ sở dữ liệu là gì?',
-        answer: 'Sharding là một kỹ thuật phân chia một cơ sở dữ liệu lớn thành các phần nhỏ hơn, gọi là "shards", và lưu trữ chúng trên các máy chủ khác nhau. Điều này giúp cải thiện hiệu suất và khả năng mở rộng bằng cách phân tán tải công việc.',
+        answer:
+          'Sharding là một kỹ thuật phân chia một cơ sở dữ liệu lớn thành các phần nhỏ hơn, gọi là "shards", và lưu trữ chúng trên các máy chủ khác nhau. Điều này giúp cải thiện hiệu suất và khả năng mở rộng bằng cách phân tán tải công việc.',
       },
       {
         question: 'CAP Theorem là gì?',
-        answer: 'Định lý CAP là một nguyên tắc cơ bản trong thiết kế hệ thống phân tán. Nó nói rằng một hệ thống phân tán chỉ có thể đảm bảo tối đa hai trong ba thuộc tính sau: Consistency (Tính nhất quán), Availability (Tính sẵn sàng), và Partition Tolerance (Khả năng chịu lỗi phân vùng). Điều này tạo ra một sự đánh đổi quan trọng khi thiết kế các hệ thống Big Data.',
+        answer:
+          'Định lý CAP là một nguyên tắc cơ bản trong thiết kế hệ thống phân tán. Nó nói rằng một hệ thống phân tán chỉ có thể đảm bảo tối đa hai trong ba thuộc tính sau: Consistency (Tính nhất quán), Availability (Tính sẵn sàng), và Partition Tolerance (Khả năng chịu lỗi phân vùng). Điều này tạo ra một sự đánh đổi quan trọng khi thiết kế các hệ thống Big Data.',
       },
       {
         question: 'ELT khác ETL như thế nào?',
-        answer: 'ELT là viết tắt của Extract, Load, Transform. Trong mô hình này, dữ liệu thô được tải trực tiếp vào Data Warehouse (hoặc Data Lake) trước, sau đó mới được biến đổi tại đó. Cách tiếp cận này tận dụng sức mạnh tính toán của các hệ thống lưu trữ hiện đại và linh hoạt hơn ETL truyền thống.',
+        answer:
+          'ELT là viết tắt của Extract, Load, Transform. Trong mô hình này, dữ liệu thô được tải trực tiếp vào Data Warehouse (hoặc Data Lake) trước, sau đó mới được biến đổi tại đó. Cách tiếp cận này tận dụng sức mạnh tính toán của các hệ thống lưu trữ hiện đại và linh hoạt hơn ETL truyền thống.',
       },
       {
         question: 'Lambda Architecture là gì?',
-        answer: 'Đây là một kiến trúc xử lý dữ liệu được thiết kế để xử lý các tập dữ liệu lớn. Nó kết hợp cả xử lý theo lô (batch layer) để cung cấp các chế độ xem toàn diện, chính xác và xử lý luồng (speed layer) để cung cấp các chế độ xem thời gian thực. Kết quả từ cả hai lớp được kết hợp để trả lời các truy vấn.',
+        answer:
+          'Đây là một kiến trúc xử lý dữ liệu được thiết kế để xử lý các tập dữ liệu lớn. Nó kết hợp cả xử lý theo lô (batch layer) để cung cấp các chế độ xem toàn diện, chính xác và xử lý luồng (speed layer) để cung cấp các chế độ xem thời gian thực. Kết quả từ cả hai lớp được kết hợp để trả lời các truy vấn.',
       },
     ],
   },
@@ -771,43 +796,53 @@ export const dataScienceLessons: DataScienceLesson[] = [
     faqs: [
       {
         question: 'Một dashboard tốt cần có những đặc điểm gì?',
-        answer: 'Một dashboard tốt nên tập trung vào một vài chỉ số quan trọng nhất (KPIs), trình bày thông tin một cách rõ ràng và không gây rối mắt, cho phép người dùng tương tác (ví dụ: lọc, xem chi tiết), và quan trọng nhất là phải có khả năng thúc đẩy hành động.',
+        answer:
+          'Một dashboard tốt nên tập trung vào một vài chỉ số quan trọng nhất (KPIs), trình bày thông tin một cách rõ ràng và không gây rối mắt, cho phép người dùng tương tác (ví dụ: lọc, xem chi tiết), và quan trọng nhất là phải có khả năng thúc đẩy hành động.',
       },
       {
         question: 'Tại sao nên tránh sử dụng biểu đồ tròn 3D?',
-        answer: 'Hiệu ứng 3D làm sai lệch góc nhìn và tỷ lệ của các phần, khiến người xem khó so sánh chính xác kích thước của chúng. Các phần ở gần hơn có vẻ lớn hơn các phần ở xa. Nguyên tắc chung là luôn ưu tiên sự rõ ràng và chính xác hơn là các hiệu ứng hình ảnh phức tạp.',
+        answer:
+          'Hiệu ứng 3D làm sai lệch góc nhìn và tỷ lệ của các phần, khiến người xem khó so sánh chính xác kích thước của chúng. Các phần ở gần hơn có vẻ lớn hơn các phần ở xa. Nguyên tắc chung là luôn ưu tiên sự rõ ràng và chính xác hơn là các hiệu ứng hình ảnh phức tạp.',
       },
       {
         question: 'Data-Ink Ratio là gì?',
-        answer: 'Đây là một khái niệm được đưa ra bởi Edward Tufte, một chuyên gia về trực quan hóa dữ liệu. Nó là tỷ lệ giữa lượng "mực" được sử dụng để biểu diễn dữ liệu và tổng lượng "mực" trên biểu đồ. Mục tiêu là tối đa hóa tỷ lệ này, tức là loại bỏ mọi yếu tố trang trí không cần thiết (đường viền, nền, hiệu ứng) để làm nổi bật dữ liệu.',
+        answer:
+          'Đây là một khái niệm được đưa ra bởi Edward Tufte, một chuyên gia về trực quan hóa dữ liệu. Nó là tỷ lệ giữa lượng "mực" được sử dụng để biểu diễn dữ liệu và tổng lượng "mực" trên biểu đồ. Mục tiêu là tối đa hóa tỷ lệ này, tức là loại bỏ mọi yếu tố trang trí không cần thiết (đường viền, nền, hiệu ứng) để làm nổi bật dữ liệu.',
       },
       {
         question: 'Khi nào nên sử dụng biểu đồ hộp (Box Plot)?',
-        answer: 'Biểu đồ hộp rất hữu ích để hiển thị sự phân phối của một tập dữ liệu số. Nó cho thấy giá trị trung vị, các phân vị (quartiles), và các giá trị ngoại lai (outliers) một cách trực quan. Nó đặc biệt tốt khi bạn muốn so sánh sự phân phối của nhiều nhóm khác nhau.',
+        answer:
+          'Biểu đồ hộp rất hữu ích để hiển thị sự phân phối của một tập dữ liệu số. Nó cho thấy giá trị trung vị, các phân vị (quartiles), và các giá trị ngoại lai (outliers) một cách trực quan. Nó đặc biệt tốt khi bạn muốn so sánh sự phân phối của nhiều nhóm khác nhau.',
       },
       {
         question: 'Làm thế nào để sử dụng màu sắc một cách hiệu quả trong biểu đồ?',
-        answer: 'Hãy sử dụng màu sắc một cách có chủ đích, không chỉ để trang trí. Dùng màu sắc để làm nổi bật các điểm dữ liệu quan trọng, để phân biệt các danh mục, hoặc để biểu thị một thang đo (ví dụ: từ xanh đến đỏ để thể hiện từ thấp đến cao). Tránh sử dụng quá nhiều màu sắc gây rối mắt.',
+        answer:
+          'Hãy sử dụng màu sắc một cách có chủ đích, không chỉ để trang trí. Dùng màu sắc để làm nổi bật các điểm dữ liệu quan trọng, để phân biệt các danh mục, hoặc để biểu thị một thang đo (ví dụ: từ xanh đến đỏ để thể hiện từ thấp đến cao). Tránh sử dụng quá nhiều màu sắc gây rối mắt.',
       },
       {
         question: 'Sự khác biệt giữa một báo cáo (report) và một dashboard là gì?',
-        answer: 'Một báo cáo thường là một tài liệu tĩnh, cung cấp thông tin chi tiết về một chủ đề cụ thể trong một khoảng thời gian nhất định. Một dashboard thường là một công cụ tương tác, được cập nhật liên tục, cung cấp một cái nhìn tổng quan, thời gian thực về các chỉ số hiệu suất chính.',
+        answer:
+          'Một báo cáo thường là một tài liệu tĩnh, cung cấp thông tin chi tiết về một chủ đề cụ thể trong một khoảng thời gian nhất định. Một dashboard thường là một công cụ tương tác, được cập nhật liên tục, cung cấp một cái nhìn tổng quan, thời gian thực về các chỉ số hiệu suất chính.',
       },
       {
         question: 'Làm thế nào để kể một câu chuyện hấp dẫn với dữ liệu?',
-        answer: 'Hãy bắt đầu bằng việc xác định khán giả của bạn là ai và thông điệp chính bạn muốn truyền tải. Xây dựng một cấu trúc câu chuyện rõ ràng với mở đầu, thân bài, và kết luận. Sử dụng các biểu đồ để minh họa cho các điểm chính của bạn và kết thúc bằng một lời kêu gọi hành động rõ ràng.',
+        answer:
+          'Hãy bắt đầu bằng việc xác định khán giả của bạn là ai và thông điệp chính bạn muốn truyền tải. Xây dựng một cấu trúc câu chuyện rõ ràng với mở đầu, thân bài, và kết luận. Sử dụng các biểu đồ để minh họa cho các điểm chính của bạn và kết thúc bằng một lời kêu gọi hành động rõ ràng.',
       },
       {
         question: 'Power BI và Tableau, công cụ nào tốt hơn?',
-        answer: 'Không có câu trả lời tuyệt đối. Cả hai đều là những công cụ mạnh mẽ. Power BI (của Microsoft) thường được tích hợp tốt hơn với hệ sinh thái Microsoft (Excel, Azure) và có thể thân thiện hơn với người mới bắt đầu. Tableau thường được coi là linh hoạt và mạnh mẽ hơn trong việc tạo ra các trực quan hóa phức tạp và tùy chỉnh.',
+        answer:
+          'Không có câu trả lời tuyệt đối. Cả hai đều là những công cụ mạnh mẽ. Power BI (của Microsoft) thường được tích hợp tốt hơn với hệ sinh thái Microsoft (Excel, Azure) và có thể thân thiện hơn với người mới bắt đầu. Tableau thường được coi là linh hoạt và mạnh mẽ hơn trong việc tạo ra các trực quan hóa phức tạp và tùy chỉnh.',
       },
       {
         question: 'Biểu đồ nhiệt (Heatmap) được sử dụng để làm gì?',
-        answer: 'Biểu đồ nhiệt sử dụng màu sắc để biểu diễn cường độ của dữ liệu trong một ma trận hai chiều. Nó rất hữu ích để phát hiện các mẫu và các điểm tập trung trong các tập dữ liệu lớn, ví dụ như xem các giờ cao điểm trong ngày và các ngày trong tuần trên một trang web.',
+        answer:
+          'Biểu đồ nhiệt sử dụng màu sắc để biểu diễn cường độ của dữ liệu trong một ma trận hai chiều. Nó rất hữu ích để phát hiện các mẫu và các điểm tập trung trong các tập dữ liệu lớn, ví dụ như xem các giờ cao điểm trong ngày và các ngày trong tuần trên một trang web.',
       },
       {
         question: 'Làm thế nào để chọn đúng thông điệp chính cho câu chuyện dữ liệu của mình?',
-        answer: 'Hãy tự hỏi: "Nếu khán giả chỉ nhớ được một điều duy nhất từ bài trình bày của mình, đó sẽ là gì?". Thông điệp chính của bạn nên là insight quan trọng nhất, bất ngờ nhất, hoặc có tính hành động cao nhất mà bạn đã khám phá ra từ dữ liệu.',
+        answer:
+          'Hãy tự hỏi: "Nếu khán giả chỉ nhớ được một điều duy nhất từ bài trình bày của mình, đó sẽ là gì?". Thông điệp chính của bạn nên là insight quan trọng nhất, bất ngờ nhất, hoặc có tính hành động cao nhất mà bạn đã khám phá ra từ dữ liệu.',
       },
     ],
   },

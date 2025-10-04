@@ -117,35 +117,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Cảm biến IoT trong nông nghiệp có thể đo được những thông số gì?',
-        answer: 'Các cảm biến phổ biến có thể đo độ ẩm đất, nhiệt độ và độ ẩm không khí, độ pH của đất, độ dẫn điện (EC) để ước tính dinh dưỡng, cường độ ánh sáng, và thậm chí cả nồng độ CO2 trong nhà kính.',
+        answer:
+          'Các cảm biến phổ biến có thể đo độ ẩm đất, nhiệt độ và độ ẩm không khí, độ pH của đất, độ dẫn điện (EC) để ước tính dinh dưỡng, cường độ ánh sáng, và thậm chí cả nồng độ CO2 trong nhà kính.',
       },
       {
         question: 'Làm thế nào để kết nối các cảm biến ở những nơi không có Wi-Fi?',
-        answer: 'Ở những khu vực rộng lớn hoặc không có Wi-Fi, các công nghệ kết nối không dây tầm xa, năng lượng thấp như LoRaWAN hoặc NB-IoT thường được sử dụng để truyền dữ liệu từ cảm biến về trạm trung tâm.',
+        answer:
+          'Ở những khu vực rộng lớn hoặc không có Wi-Fi, các công nghệ kết nối không dây tầm xa, năng lượng thấp như LoRaWAN hoặc NB-IoT thường được sử dụng để truyền dữ liệu từ cảm biến về trạm trung tâm.',
       },
       {
         question: 'Dữ liệu từ nông nghiệp thông minh được lưu trữ và xử lý ở đâu?',
-        answer: 'Dữ liệu thường được gửi lên một nền tảng đám mây (cloud platform). Tại đây, dữ liệu được lưu trữ, phân tích và trực quan hóa thành các biểu đồ, cảnh báo dễ hiểu mà người nông dân có thể truy cập qua điện thoại hoặc máy tính.',
+        answer:
+          'Dữ liệu thường được gửi lên một nền tảng đám mây (cloud platform). Tại đây, dữ liệu được lưu trữ, phân tích và trực quan hóa thành các biểu đồ, cảnh báo dễ hiểu mà người nông dân có thể truy cập qua điện thoại hoặc máy tính.',
       },
       {
         question: 'Nông nghiệp thông minh có áp dụng được cho quy mô nhỏ, hộ gia đình không?',
-        answer: 'Chắc chắn có. Hiện nay có nhiều bộ kit IoT nông nghiệp với chi phí hợp lý, cho phép các hộ gia đình tự động hóa việc tưới tiêu cho vườn rau sân thượng hoặc giám sát điều kiện cho cây trồng trong nhà.',
+        answer:
+          'Chắc chắn có. Hiện nay có nhiều bộ kit IoT nông nghiệp với chi phí hợp lý, cho phép các hộ gia đình tự động hóa việc tưới tiêu cho vườn rau sân thượng hoặc giám sát điều kiện cho cây trồng trong nhà.',
       },
       {
         question: 'Thách thức lớn nhất khi triển khai nông nghiệp thông minh ở Việt Nam là gì?',
-        answer: 'Ngoài chi phí đầu tư ban đầu, thách thức lớn là việc đào tạo và thay đổi tư duy của người nông dân. Các giải pháp công nghệ cần phải thực sự dễ sử dụng, đáng tin cậy và chứng minh được hiệu quả kinh tế rõ ràng.',
+        answer:
+          'Ngoài chi phí đầu tư ban đầu, thách thức lớn là việc đào tạo và thay đổi tư duy của người nông dân. Các giải pháp công nghệ cần phải thực sự dễ sử dụng, đáng tin cậy và chứng minh được hiệu quả kinh tế rõ ràng.',
       },
       {
         question: 'Truy xuất nguồn gốc sản phẩm có liên quan gì đến nông nghiệp thông minh?',
-        answer: 'Nông nghiệp thông minh tạo ra một "nhật ký số" chi tiết về quá trình sinh trưởng của sản phẩm (ngày gieo trồng, lượng nước tưới, loại phân bón...). Dữ liệu này có thể được sử dụng để tạo ra các hệ thống truy xuất nguồn gốc minh bạch, tăng niềm tin cho người tiêu dùng.',
+        answer:
+          'Nông nghiệp thông minh tạo ra một "nhật ký số" chi tiết về quá trình sinh trưởng của sản phẩm (ngày gieo trồng, lượng nước tưới, loại phân bón...). Dữ liệu này có thể được sử dụng để tạo ra các hệ thống truy xuất nguồn gốc minh bạch, tăng niềm tin cho người tiêu dùng.',
       },
       {
         question: 'Văn hóa "canh tác theo kinh nghiệm" ảnh hưởng đến việc áp dụng công nghệ như thế nào?',
-        answer: 'Đây là một rào cản. Nhiều nông dân tin vào kinh nghiệm lâu năm của mình hơn là dữ liệu từ cảm biến. Để vượt qua, các công ty công nghệ cần chứng minh rằng dữ liệu có thể bổ sung và nâng cao kinh nghiệm, giúp đưa ra quyết định chính xác hơn, đặc biệt trong bối cảnh biến đổi khí hậu làm cho các "kinh nghiệm" cũ không còn luôn đúng.',
+        answer:
+          'Đây là một rào cản. Nhiều nông dân tin vào kinh nghiệm lâu năm của mình hơn là dữ liệu từ cảm biến. Để vượt qua, các công ty công nghệ cần chứng minh rằng dữ liệu có thể bổ sung và nâng cao kinh nghiệm, giúp đưa ra quyết định chính xác hơn, đặc biệt trong bối cảnh biến đổi khí hậu làm cho các "kinh nghiệm" cũ không còn luôn đúng.',
       },
       {
         question: 'Chính phủ Việt Nam có chính sách gì để hỗ trợ nông nghiệp thông minh?',
-        answer: 'Chính phủ đã có nhiều chương trình và đề án hỗ trợ, như "Chương trình chuyển đổi số quốc gia", trong đó nông nghiệp là một lĩnh vực ưu tiên. Các chính sách bao gồm hỗ trợ vốn vay ưu đãi, khuyến khích nghiên cứu và phát triển, và xây dựng các khu nông nghiệp công nghệ cao làm mô hình thí điểm.',
+        answer:
+          'Chính phủ đã có nhiều chương trình và đề án hỗ trợ, như "Chương trình chuyển đổi số quốc gia", trong đó nông nghiệp là một lĩnh vực ưu tiên. Các chính sách bao gồm hỗ trợ vốn vay ưu đãi, khuyến khích nghiên cứu và phát triển, và xây dựng các khu nông nghiệp công nghệ cao làm mô hình thí điểm.',
       },
     ],
   },
@@ -255,35 +263,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Drone phun thuốc trừ sâu có ưu điểm gì so với phun tay?',
-        answer: 'Drone phun thuốc nhanh hơn, đều hơn và giúp người nông dân tránh tiếp xúc trực tiếp với hóa chất độc hại. Nó cũng tạo ra luồng gió từ cánh quạt giúp thuốc bám đều cả mặt trên và mặt dưới của lá, tăng hiệu quả và giảm lượng thuốc cần dùng.',
+        answer:
+          'Drone phun thuốc nhanh hơn, đều hơn và giúp người nông dân tránh tiếp xúc trực tiếp với hóa chất độc hại. Nó cũng tạo ra luồng gió từ cánh quạt giúp thuốc bám đều cả mặt trên và mặt dưới của lá, tăng hiệu quả và giảm lượng thuốc cần dùng.',
       },
       {
         question: 'Chi phí đầu tư một chiếc drone nông nghiệp là bao nhiêu?',
-        answer: 'Chi phí có thể dao động rất lớn, từ vài chục triệu đồng cho một chiếc drone giám sát nhỏ, đến vài trăm triệu đồng cho một chiếc drone phun thuốc chuyên dụng có tải trọng lớn. Tuy nhiên, ngày càng có nhiều dịch vụ cho thuê drone, giúp nông dân tiếp cận công nghệ mà không cần đầu tư lớn ban đầu.',
+        answer:
+          'Chi phí có thể dao động rất lớn, từ vài chục triệu đồng cho một chiếc drone giám sát nhỏ, đến vài trăm triệu đồng cho một chiếc drone phun thuốc chuyên dụng có tải trọng lớn. Tuy nhiên, ngày càng có nhiều dịch vụ cho thuê drone, giúp nông dân tiếp cận công nghệ mà không cần đầu tư lớn ban đầu.',
       },
       {
         question: 'Làm thế nào để xử lý hàng trăm hoặc hàng nghìn bức ảnh từ drone?',
-        answer: 'Các phần mềm chuyên dụng như Agisoft Metashape hoặc Pix4D được sử dụng để "ghép" (stitching) hàng nghìn bức ảnh lại với nhau, tạo thành một bản đồ trực quan (orthomosaic map) duy nhất của toàn bộ khu vực khảo sát.',
+        answer:
+          'Các phần mềm chuyên dụng như Agisoft Metashape hoặc Pix4D được sử dụng để "ghép" (stitching) hàng nghìn bức ảnh lại với nhau, tạo thành một bản đồ trực quan (orthomosaic map) duy nhất của toàn bộ khu vực khảo sát.',
       },
       {
         question: 'Drone có thể bay trong điều kiện thời tiết xấu không?',
-        answer: 'Hầu hết các drone nông nghiệp không nên bay khi có mưa hoặc gió mạnh (thường trên 30-40 km/h). Gió mạnh có thể ảnh hưởng đến sự ổn định của drone và làm tản mát thuốc phun không đều. Mưa có thể làm hỏng các linh kiện điện tử.',
+        answer:
+          'Hầu hết các drone nông nghiệp không nên bay khi có mưa hoặc gió mạnh (thường trên 30-40 km/h). Gió mạnh có thể ảnh hưởng đến sự ổn định của drone và làm tản mát thuốc phun không đều. Mưa có thể làm hỏng các linh kiện điện tử.',
       },
       {
         question: 'Ngoài giám sát cây trồng, drone còn có ứng dụng gì khác trong nông nghiệp?',
-        answer: 'Drone còn được dùng để gieo hạt, thụ phấn cho cây trồng, đếm số lượng cây, đánh giá thiệt hại sau thiên tai, và thậm chí là lùa gia súc ở các trang trại lớn.',
+        answer:
+          'Drone còn được dùng để gieo hạt, thụ phấn cho cây trồng, đếm số lượng cây, đánh giá thiệt hại sau thiên tai, và thậm chí là lùa gia súc ở các trang trại lớn.',
       },
       {
         question: 'AI có vai trò gì trong việc phân tích ảnh từ drone?',
-        answer: 'AI (Trí tuệ nhân tạo), đặc biệt là các mô hình Computer Vision, có thể tự động phân tích hình ảnh từ drone để đếm cây, xác định loài cỏ dại, phát hiện các khu vực cây trồng bị bệnh hoặc thiếu dinh dưỡng, và tạo ra "bản đồ sức khỏe" cho toàn bộ cánh đồng.',
+        answer:
+          'AI (Trí tuệ nhân tạo), đặc biệt là các mô hình Computer Vision, có thể tự động phân tích hình ảnh từ drone để đếm cây, xác định loài cỏ dại, phát hiện các khu vực cây trồng bị bệnh hoặc thiếu dinh dưỡng, và tạo ra "bản đồ sức khỏe" cho toàn bộ cánh đồng.',
       },
       {
         question: 'Độ chính xác của việc phun thuốc bằng drone như thế nào?',
-        answer: 'Các drone hiện đại được trang bị GPS RTK (Real-Time Kinematic) có thể đạt độ chính xác đến từng centimet. Điều này cho phép phun thuốc một cách cực kỳ chính xác vào các khu vực cần thiết, tránh lãng phí và giảm tác động đến môi trường.',
+        answer:
+          'Các drone hiện đại được trang bị GPS RTK (Real-Time Kinematic) có thể đạt độ chính xác đến từng centimet. Điều này cho phép phun thuốc một cách cực kỳ chính xác vào các khu vực cần thiết, tránh lãng phí và giảm tác động đến môi trường.',
       },
       {
         question: 'Tương lai của drone trong nông nghiệp Việt Nam sẽ như thế nào?',
-        answer: 'Trong tương lai, chúng ta có thể thấy các "đàn" drone (drone swarms) hoạt động phối hợp với nhau một cách tự động để quản lý các trang trại lớn, tích hợp dữ liệu với robot mặt đất và các hệ thống IoT để tạo thành một hệ sinh thái nông nghiệp hoàn toàn tự động.',
+        answer:
+          'Trong tương lai, chúng ta có thể thấy các "đàn" drone (drone swarms) hoạt động phối hợp với nhau một cách tự động để quản lý các trang trại lớn, tích hợp dữ liệu với robot mặt đất và các hệ thống IoT để tạo thành một hệ sinh thái nông nghiệp hoàn toàn tự động.',
       },
     ],
   },
@@ -393,35 +409,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Hệ thống tưới thông minh có thể giúp bón phân không?',
-        answer: 'Có, kỹ thuật này được gọi là "fertigation" (bón phân qua tưới). Hệ thống có thể tự động hòa tan phân bón vào nước tưới với nồng độ chính xác và cung cấp dinh dưỡng cho cây một cách đều đặn, hiệu quả hơn nhiều so với bón phân thủ công.',
+        answer:
+          'Có, kỹ thuật này được gọi là "fertigation" (bón phân qua tưới). Hệ thống có thể tự động hòa tan phân bón vào nước tưới với nồng độ chính xác và cung cấp dinh dưỡng cho cây một cách đều đặn, hiệu quả hơn nhiều so với bón phân thủ công.',
       },
       {
         question: 'Chi phí lắp đặt một hệ thống tưới thông minh có cao không?',
-        answer: 'Chi phí ban đầu có thể cao hơn so với hệ thống truyền thống, nhưng khoản đầu tư này thường được bù đắp trong vài năm nhờ việc tiết kiệm nước, phân bón, chi phí nhân công và tăng năng suất cây trồng.',
+        answer:
+          'Chi phí ban đầu có thể cao hơn so với hệ thống truyền thống, nhưng khoản đầu tư này thường được bù đắp trong vài năm nhờ việc tiết kiệm nước, phân bón, chi phí nhân công và tăng năng suất cây trồng.',
       },
       {
         question: 'Cảm biến độ ẩm đất hoạt động như thế nào?',
-        answer: 'Có hai loại chính: cảm biến điện dung (capacitive) và cảm biến điện trở (resistive). Cảm biến điện dung đo sự thay đổi điện dung của đất, vốn bị ảnh hưởng bởi hàm lượng nước. Chúng thường chính xác và bền hơn cảm biến điện trở, loại đo điện trở của đất.',
+        answer:
+          'Có hai loại chính: cảm biến điện dung (capacitive) và cảm biến điện trở (resistive). Cảm biến điện dung đo sự thay đổi điện dung của đất, vốn bị ảnh hưởng bởi hàm lượng nước. Chúng thường chính xác và bền hơn cảm biến điện trở, loại đo điện trở của đất.',
       },
       {
         question: 'Hệ thống có thể điều khiển các khu vực tưới khác nhau một cách độc lập không?',
-        answer: 'Có. Một hệ thống tưới thông minh tốt cho phép chia trang trại thành nhiều "vùng" (zones). Mỗi vùng có thể được điều khiển độc lập dựa trên loại cây trồng, loại đất và dữ liệu từ cảm biến riêng của vùng đó.',
+        answer:
+          'Có. Một hệ thống tưới thông minh tốt cho phép chia trang trại thành nhiều "vùng" (zones). Mỗi vùng có thể được điều khiển độc lập dựa trên loại cây trồng, loại đất và dữ liệu từ cảm biến riêng của vùng đó.',
       },
       {
         question: 'Nếu mất kết nối internet, hệ thống có còn hoạt động không?',
-        answer: 'Nhiều bộ điều khiển thông minh hiện đại có khả năng lưu trữ lịch trình tưới cơ bản và hoạt động ngoại tuyến. Tuy nhiên, chúng sẽ không thể cập nhật dữ liệu thời tiết hoặc nhận lệnh điều khiển từ xa cho đến khi kết nối được khôi phục.',
+        answer:
+          'Nhiều bộ điều khiển thông minh hiện đại có khả năng lưu trữ lịch trình tưới cơ bản và hoạt động ngoại tuyến. Tuy nhiên, chúng sẽ không thể cập nhật dữ liệu thời tiết hoặc nhận lệnh điều khiển từ xa cho đến khi kết nối được khôi phục.',
       },
       {
         question: 'Làm thế nào để bảo trì một hệ thống tưới nhỏ giọt?',
-        answer: 'Bảo trì bao gồm việc kiểm tra và làm sạch các bộ lọc, xả cặn định kỳ các đường ống, và kiểm tra các đầu nhỏ giọt để đảm bảo chúng không bị tắc nghẽn bởi cặn khoáng hoặc rêu.',
+        answer:
+          'Bảo trì bao gồm việc kiểm tra và làm sạch các bộ lọc, xả cặn định kỳ các đường ống, và kiểm tra các đầu nhỏ giọt để đảm bảo chúng không bị tắc nghẽn bởi cặn khoáng hoặc rêu.',
       },
       {
         question: 'Hệ thống tưới thông minh có phù hợp với mọi loại đất không?',
-        answer: 'Hệ thống này có thể được điều chỉnh để phù hợp với nhiều loại đất. Ví dụ, đối với đất sét giữ nước tốt, hệ thống sẽ tưới với tần suất thấp hơn nhưng thời gian dài hơn. Đối với đất cát thoát nước nhanh, hệ thống sẽ tưới với tần suất cao hơn nhưng thời gian ngắn hơn.',
+        answer:
+          'Hệ thống này có thể được điều chỉnh để phù hợp với nhiều loại đất. Ví dụ, đối với đất sét giữ nước tốt, hệ thống sẽ tưới với tần suất thấp hơn nhưng thời gian dài hơn. Đối với đất cát thoát nước nhanh, hệ thống sẽ tưới với tần suất cao hơn nhưng thời gian ngắn hơn.',
       },
       {
         question: 'Tôi có thể tự lắp đặt một hệ thống tưới thông minh không?',
-        answer: 'Đối với các khu vườn nhỏ hoặc quy mô gia đình, việc tự lắp đặt là hoàn toàn khả thi với các bộ kit có sẵn trên thị trường. Tuy nhiên, đối với các trang trại lớn, việc thuê một công ty chuyên nghiệp để thiết kế và lắp đặt sẽ đảm bảo hiệu quả và độ tin cậy của hệ thống.',
+        answer:
+          'Đối với các khu vườn nhỏ hoặc quy mô gia đình, việc tự lắp đặt là hoàn toàn khả thi với các bộ kit có sẵn trên thị trường. Tuy nhiên, đối với các trang trại lớn, việc thuê một công ty chuyên nghiệp để thiết kế và lắp đặt sẽ đảm bảo hiệu quả và độ tin cậy của hệ thống.',
       },
     ],
   },
@@ -536,35 +560,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Dữ liệu trên blockchain có hoàn toàn an toàn không?',
-        answer: 'Bản thân dữ liệu một khi đã được ghi vào blockchain thì rất an toàn và gần như không thể thay đổi. Tuy nhiên, điểm yếu nằm ở khâu nhập dữ liệu ban đầu (nguyên tắc "rác vào, rác ra"). Nếu thông tin sai được nhập vào blockchain ngay từ đầu, hệ thống vẫn sẽ ghi lại thông tin sai đó. Do đó, việc kết hợp blockchain với các cảm biến IoT để tự động thu thập dữ liệu là rất quan trọng.',
+        answer:
+          'Bản thân dữ liệu một khi đã được ghi vào blockchain thì rất an toàn và gần như không thể thay đổi. Tuy nhiên, điểm yếu nằm ở khâu nhập dữ liệu ban đầu (nguyên tắc "rác vào, rác ra"). Nếu thông tin sai được nhập vào blockchain ngay từ đầu, hệ thống vẫn sẽ ghi lại thông tin sai đó. Do đó, việc kết hợp blockchain với các cảm biến IoT để tự động thu thập dữ liệu là rất quan trọng.',
       },
       {
         question: 'Public Blockchain và Private Blockchain khác nhau như thế nào?',
-        answer: 'Public Blockchain (như Bitcoin, Ethereum) cho phép bất kỳ ai cũng có thể tham gia và xem dữ liệu. Private Blockchain (hoặc Consortium Blockchain như Hyperledger Fabric) chỉ cho phép các bên được cấp phép tham gia. Đối với chuỗi cung ứng doanh nghiệp, Private Blockchain thường được ưa chuộng hơn vì nó cho phép kiểm soát quyền riêng tư và hiệu suất tốt hơn.',
+        answer:
+          'Public Blockchain (như Bitcoin, Ethereum) cho phép bất kỳ ai cũng có thể tham gia và xem dữ liệu. Private Blockchain (hoặc Consortium Blockchain như Hyperledger Fabric) chỉ cho phép các bên được cấp phép tham gia. Đối với chuỗi cung ứng doanh nghiệp, Private Blockchain thường được ưa chuộng hơn vì nó cho phép kiểm soát quyền riêng tư và hiệu suất tốt hơn.',
       },
       {
         question: 'Chi phí để triển khai blockchain cho chuỗi cung ứng có đắt không?',
-        answer: 'Chi phí ban đầu có thể đáng kể, bao gồm chi phí phát triển nền tảng, tích hợp với các hệ thống hiện có, và đào tạo nhân viên. Tuy nhiên, nhiều công ty cung cấp các giải pháp "Blockchain-as-a-Service" (BaaS), cho phép doanh nghiệp sử dụng công nghệ blockchain trên cơ sở thuê bao, giảm bớt gánh nặng đầu tư ban đầu.',
+        answer:
+          'Chi phí ban đầu có thể đáng kể, bao gồm chi phí phát triển nền tảng, tích hợp với các hệ thống hiện có, và đào tạo nhân viên. Tuy nhiên, nhiều công ty cung cấp các giải pháp "Blockchain-as-a-Service" (BaaS), cho phép doanh nghiệp sử dụng công nghệ blockchain trên cơ sở thuê bao, giảm bớt gánh nặng đầu tư ban đầu.',
       },
       {
         question: 'Làm thế nào để kết nối sản phẩm vật lý với bản ghi kỹ thuật số trên blockchain?',
-        answer: 'Điều này thường được thực hiện bằng cách gán cho mỗi sản phẩm hoặc lô sản phẩm một mã định danh duy nhất, thường là dưới dạng mã QR, NFC hoặc thẻ RFID. Người dùng có thể quét mã này để truy cập thông tin tương ứng trên blockchain.',
+        answer:
+          'Điều này thường được thực hiện bằng cách gán cho mỗi sản phẩm hoặc lô sản phẩm một mã định danh duy nhất, thường là dưới dạng mã QR, NFC hoặc thẻ RFID. Người dùng có thể quét mã này để truy cập thông tin tương ứng trên blockchain.',
       },
       {
         question: 'Blockchain có thể giúp nông dân nhỏ lẻ không?',
-        answer: 'Có, về lý thuyết. Blockchain có thể giúp nông dân nhỏ lẻ tiếp cận thị trường tốt hơn và nhận được giá bán công bằng hơn bằng cách chứng minh chất lượng và nguồn gốc sản phẩm của họ. Tuy nhiên, thách thức là làm cho công nghệ trở nên dễ tiếp cận và dễ sử dụng đối với họ.',
+        answer:
+          'Có, về lý thuyết. Blockchain có thể giúp nông dân nhỏ lẻ tiếp cận thị trường tốt hơn và nhận được giá bán công bằng hơn bằng cách chứng minh chất lượng và nguồn gốc sản phẩm của họ. Tuy nhiên, thách thức là làm cho công nghệ trở nên dễ tiếp cận và dễ sử dụng đối với họ.',
       },
       {
         question: 'Ngoài truy xuất nguồn gốc, blockchain còn có ứng dụng gì khác trong nông nghiệp?',
-        answer: 'Blockchain còn có thể được sử dụng để quản lý tài chính nông nghiệp (cho vay vi mô, bảo hiểm mùa màng dựa trên smart contract), quản lý quyền sử dụng đất, và tạo ra các thị trường giao dịch nông sản phi tập trung.',
+        answer:
+          'Blockchain còn có thể được sử dụng để quản lý tài chính nông nghiệp (cho vay vi mô, bảo hiểm mùa màng dựa trên smart contract), quản lý quyền sử dụng đất, và tạo ra các thị trường giao dịch nông sản phi tập trung.',
       },
       {
         question: 'Tốc độ giao dịch của blockchain có phải là một vấn đề không?',
-        answer: 'Đối với các public blockchain như Bitcoin, tốc độ giao dịch chậm có thể là một vấn đề. Tuy nhiên, các private blockchain được thiết kế cho doanh nghiệp như Hyperledger Fabric có thể xử lý hàng nghìn giao dịch mỗi giây, đủ nhanh cho hầu hết các ứng dụng chuỗi cung ứng.',
+        answer:
+          'Đối với các public blockchain như Bitcoin, tốc độ giao dịch chậm có thể là một vấn đề. Tuy nhiên, các private blockchain được thiết kế cho doanh nghiệp như Hyperledger Fabric có thể xử lý hàng nghìn giao dịch mỗi giây, đủ nhanh cho hầu hết các ứng dụng chuỗi cung ứng.',
       },
       {
         question: 'Ai là người sở hữu và kiểm soát dữ liệu trên một private blockchain?',
-        answer: 'Trong một private blockchain (hoặc consortium blockchain), quyền sở hữu và kiểm soát được chia sẻ giữa các thành viên tham gia (ví dụ: nông dân, nhà chế biến, nhà vận chuyển, nhà bán lẻ). Các quy tắc về ai có thể xem và ghi dữ liệu nào được xác định trước bởi các thành viên này.',
+        answer:
+          'Trong một private blockchain (hoặc consortium blockchain), quyền sở hữu và kiểm soát được chia sẻ giữa các thành viên tham gia (ví dụ: nông dân, nhà chế biến, nhà vận chuyển, nhà bán lẻ). Các quy tắc về ai có thể xem và ghi dữ liệu nào được xác định trước bởi các thành viên này.',
       },
     ],
   },
@@ -679,35 +711,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa Hydroponics, Aeroponics và Aquaponics là gì?',
-        answer: 'Cả ba đều là phương pháp trồng cây không cần đất. Hydroponics: rễ cây được ngâm trong dung dịch dinh dưỡng. Aeroponics: rễ cây được treo lơ lửng trong không khí và được phun sương dinh dưỡng. Aquaponics: kết hợp nuôi cá và trồng cây; chất thải từ cá được vi khuẩn chuyển hóa thành dinh dưỡng cho cây.',
+        answer:
+          'Cả ba đều là phương pháp trồng cây không cần đất. Hydroponics: rễ cây được ngâm trong dung dịch dinh dưỡng. Aeroponics: rễ cây được treo lơ lửng trong không khí và được phun sương dinh dưỡng. Aquaponics: kết hợp nuôi cá và trồng cây; chất thải từ cá được vi khuẩn chuyển hóa thành dinh dưỡng cho cây.',
       },
       {
         question: 'Những loại cây nào phù hợp nhất để trồng trong trang trại thẳng đứng?',
-        answer: 'Các loại cây phát triển nhanh, có giá trị cao và không chiếm nhiều không gian là phù hợp nhất, chẳng hạn như các loại rau diếp, cải bó xôi, cải xoăn, các loại thảo mộc (húng quế, bạc hà), và dâu tây.',
+        answer:
+          'Các loại cây phát triển nhanh, có giá trị cao và không chiếm nhiều không gian là phù hợp nhất, chẳng hạn như các loại rau diếp, cải bó xôi, cải xoăn, các loại thảo mộc (húng quế, bạc hà), và dâu tây.',
       },
       {
         question: 'Năng suất của vertical farming so với nông nghiệp truyền thống như thế nào?',
-        answer: 'Năng suất trên một mét vuông của vertical farming có thể cao hơn hàng chục, thậm chí hàng trăm lần so với nông nghiệp truyền thống, vì nó cho phép trồng nhiều lớp và có thể thu hoạch quanh năm, không phụ thuộc vào mùa vụ.',
+        answer:
+          'Năng suất trên một mét vuông của vertical farming có thể cao hơn hàng chục, thậm chí hàng trăm lần so với nông nghiệp truyền thống, vì nó cho phép trồng nhiều lớp và có thể thu hoạch quanh năm, không phụ thuộc vào mùa vụ.',
       },
       {
         question: 'Hệ thống kiểm soát khí hậu (HVAC) có vai trò gì?',
-        answer: 'Hệ thống HVAC (Heating, Ventilation, and Air Conditioning) rất quan trọng để duy trì nhiệt độ, độ ẩm và luồng không khí tối ưu cho cây trồng. Nó cũng giúp kiểm soát nồng độ CO2, một yếu tố quan trọng cho quá trình quang hợp.',
+        answer:
+          'Hệ thống HVAC (Heating, Ventilation, and Air Conditioning) rất quan trọng để duy trì nhiệt độ, độ ẩm và luồng không khí tối ưu cho cây trồng. Nó cũng giúp kiểm soát nồng độ CO2, một yếu tố quan trọng cho quá trình quang hợp.',
       },
       {
         question: 'Chi phí vận hành chính của một trang trại thẳng đứng là gì?',
-        answer: 'Chi phí vận hành lớn nhất thường là tiền điện để chạy hệ thống chiếu sáng và kiểm soát khí hậu. Các chi phí khác bao gồm dung dịch dinh dưỡng, hạt giống và nhân công.',
+        answer:
+          'Chi phí vận hành lớn nhất thường là tiền điện để chạy hệ thống chiếu sáng và kiểm soát khí hậu. Các chi phí khác bao gồm dung dịch dinh dưỡng, hạt giống và nhân công.',
       },
       {
         question: 'Trang trại thẳng đứng có thể trồng được các loại cây lương thực như lúa hoặc ngô không?',
-        answer: 'Về mặt kỹ thuật là có thể, nhưng không kinh tế. Các loại cây lương thực cần rất nhiều không gian và ánh sáng, và giá trị sản phẩm trên mỗi kg không đủ cao để bù đắp cho chi phí vận hành của một trang trại thẳng đứng. Mô hình này hiệu quả hơn với các loại cây trồng có giá trị cao.',
+        answer:
+          'Về mặt kỹ thuật là có thể, nhưng không kinh tế. Các loại cây lương thực cần rất nhiều không gian và ánh sáng, và giá trị sản phẩm trên mỗi kg không đủ cao để bù đắp cho chi phí vận hành của một trang trại thẳng đứng. Mô hình này hiệu quả hơn với các loại cây trồng có giá trị cao.',
       },
       {
         question: 'Làm thế nào để đảm bảo cây trồng trong hệ thống hydroponics không bị bệnh?',
-        answer: 'Môi trường được kiểm soát chặt chẽ của trang trại thẳng đứng giúp giảm nguy cơ sâu bệnh. Tuy nhiên, các bệnh do nấm hoặc vi khuẩn lây lan qua nước vẫn có thể xảy ra. Việc khử trùng nước (ví dụ bằng tia UV) và duy trì vệ sinh hệ thống là rất quan trọng.',
+        answer:
+          'Môi trường được kiểm soát chặt chẽ của trang trại thẳng đứng giúp giảm nguy cơ sâu bệnh. Tuy nhiên, các bệnh do nấm hoặc vi khuẩn lây lan qua nước vẫn có thể xảy ra. Việc khử trùng nước (ví dụ bằng tia UV) và duy trì vệ sinh hệ thống là rất quan trọng.',
       },
       {
         question: 'Tương lai của vertical farming sẽ như thế nào?',
-        answer: 'Tương lai của vertical farming có thể sẽ tích hợp sâu hơn với AI để tối ưu hóa mọi yếu tố, sử dụng robot để tự động hóa hoàn toàn việc gieo trồng và thu hoạch, và được cung cấp năng lượng hoàn toàn từ các nguồn tái tạo, trở thành một phần không thể thiếu của các thành phố thông minh.',
+        answer:
+          'Tương lai của vertical farming có thể sẽ tích hợp sâu hơn với AI để tối ưu hóa mọi yếu tố, sử dụng robot để tự động hóa hoàn toàn việc gieo trồng và thu hoạch, và được cung cấp năng lượng hoàn toàn từ các nguồn tái tạo, trở thành một phần không thể thiếu của các thành phố thông minh.',
       },
     ],
   },
@@ -822,35 +862,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Data Augmentation (Tăng cường dữ liệu) trong ngữ cảnh này là gì?',
-        answer: 'Là kỹ thuật tạo ra các phiên bản ảnh mới từ ảnh gốc bằng cách xoay, lật, thay đổi độ sáng, độ tương phản, hoặc thêm nhiễu. Điều này giúp mô hình học được cách nhận diện bệnh trong nhiều điều kiện ánh sáng và góc chụp khác nhau, làm cho nó trở nên mạnh mẽ hơn.',
+        answer:
+          'Là kỹ thuật tạo ra các phiên bản ảnh mới từ ảnh gốc bằng cách xoay, lật, thay đổi độ sáng, độ tương phản, hoặc thêm nhiễu. Điều này giúp mô hình học được cách nhận diện bệnh trong nhiều điều kiện ánh sáng và góc chụp khác nhau, làm cho nó trở nên mạnh mẽ hơn.',
       },
       {
         question: 'Mô hình AI có thể phân biệt được giữa bệnh và tình trạng thiếu dinh dưỡng không?',
-        answer: 'Có, nếu nó được huấn luyện trên một tập dữ liệu đủ lớn và đa dạng, bao gồm cả hình ảnh của cây bị bệnh và cây bị thiếu các loại dinh dưỡng khác nhau. Đây là một bài toán phân loại đa lớp phức tạp nhưng hoàn toàn khả thi.',
+        answer:
+          'Có, nếu nó được huấn luyện trên một tập dữ liệu đủ lớn và đa dạng, bao gồm cả hình ảnh của cây bị bệnh và cây bị thiếu các loại dinh dưỡng khác nhau. Đây là một bài toán phân loại đa lớp phức tạp nhưng hoàn toàn khả thi.',
       },
       {
         question: 'Làm thế nào để thu thập dữ liệu hình ảnh để huấn luyện mô hình?',
-        answer: 'Dữ liệu có thể được thu thập từ nhiều nguồn: chụp ảnh trực tiếp tại các trang trại, hợp tác với các viện nghiên cứu nông nghiệp, hoặc sử dụng các bộ dữ liệu công khai như PlantVillage. Việc có các chuyên gia nông nghiệp gán nhãn chính xác cho các hình ảnh là cực kỳ quan trọng.',
+        answer:
+          'Dữ liệu có thể được thu thập từ nhiều nguồn: chụp ảnh trực tiếp tại các trang trại, hợp tác với các viện nghiên cứu nông nghiệp, hoặc sử dụng các bộ dữ liệu công khai như PlantVillage. Việc có các chuyên gia nông nghiệp gán nhãn chính xác cho các hình ảnh là cực kỳ quan trọng.',
       },
       {
         question: 'CNN (Convolutional Neural Network) là gì và tại sao nó phù hợp cho việc nhận diện hình ảnh?',
-        answer: 'CNN là một loại mạng nơ-ron nhân tạo được thiết kế đặc biệt để xử lý dữ liệu hình ảnh. Nó phù hợp vì kiến trúc của nó, với các lớp tích chập (convolutional layers), có khả năng tự động và hiệu quả trong việc học các đặc trưng phân cấp từ hình ảnh, từ các cạnh và góc đơn giản đến các cấu trúc phức tạp như mắt hoặc khuôn mặt. Điều này bắt chước cách hệ thống thị giác của con người hoạt động.',
+        answer:
+          'CNN là một loại mạng nơ-ron nhân tạo được thiết kế đặc biệt để xử lý dữ liệu hình ảnh. Nó phù hợp vì kiến trúc của nó, với các lớp tích chập (convolutional layers), có khả năng tự động và hiệu quả trong việc học các đặc trưng phân cấp từ hình ảnh, từ các cạnh và góc đơn giản đến các cấu trúc phức tạp như mắt hoặc khuôn mặt. Điều này bắt chước cách hệ thống thị giác của con người hoạt động.',
       },
       {
         question: 'Mô hình có thể đưa ra mức độ nghiêm trọng của bệnh không?',
-        answer: 'Có. Thay vì chỉ phân loại bệnh, mô hình có thể được huấn luyện để phân loại mức độ nghiêm trọng (ví dụ: nhẹ, trung bình, nặng) dựa trên tỷ lệ diện tích lá bị ảnh hưởng. Đây là một bài toán hồi quy hoặc phân loại theo thứ tự.',
+        answer:
+          'Có. Thay vì chỉ phân loại bệnh, mô hình có thể được huấn luyện để phân loại mức độ nghiêm trọng (ví dụ: nhẹ, trung bình, nặng) dựa trên tỷ lệ diện tích lá bị ảnh hưởng. Đây là một bài toán hồi quy hoặc phân loại theo thứ tự.',
       },
       {
         question: 'Làm thế nào để người nông dân tin tưởng vào kết quả chẩn đoán của AI?',
-        answer: 'Để xây dựng lòng tin, các ứng dụng AI nên cung cấp "bằng chứng" cho chẩn đoán của mình, ví dụ bằng cách làm nổi bật các vùng trên ảnh mà mô hình cho là có dấu hiệu bệnh. Ngoài ra, việc cung cấp thông tin về độ tin cậy (confidence score) của dự đoán cũng rất hữu ích.',
+        answer:
+          'Để xây dựng lòng tin, các ứng dụng AI nên cung cấp "bằng chứng" cho chẩn đoán của mình, ví dụ bằng cách làm nổi bật các vùng trên ảnh mà mô hình cho là có dấu hiệu bệnh. Ngoài ra, việc cung cấp thông tin về độ tin cậy (confidence score) của dự đoán cũng rất hữu ích.',
       },
       {
         question: 'AI có thể dự đoán sự bùng phát của dịch bệnh không?',
-        answer: 'Có, bằng cách kết hợp dữ liệu phát hiện bệnh từ nhiều người dùng với dữ liệu thời tiết và các yếu tố môi trường khác, các mô hình AI có thể dự đoán nguy cơ bùng phát dịch bệnh ở một khu vực cụ thể, giúp đưa ra cảnh báo sớm cho cộng đồng.',
+        answer:
+          'Có, bằng cách kết hợp dữ liệu phát hiện bệnh từ nhiều người dùng với dữ liệu thời tiết và các yếu tố môi trường khác, các mô hình AI có thể dự đoán nguy cơ bùng phát dịch bệnh ở một khu vực cụ thể, giúp đưa ra cảnh báo sớm cho cộng đồng.',
       },
       {
         question: 'Việc phát triển các mô hình AI này có tốn kém không?',
-        answer: 'Việc huấn luyện các mô hình lớn từ đầu đòi hỏi tài nguyên tính toán đáng kể. Tuy nhiên, kỹ thuật Transfer Learning cho phép các nhà phát triển tận dụng các mô hình đã được huấn luyện trước, giảm đáng kể chi phí và thời gian phát triển, làm cho công nghệ này ngày càng dễ tiếp cận hơn.',
+        answer:
+          'Việc huấn luyện các mô hình lớn từ đầu đòi hỏi tài nguyên tính toán đáng kể. Tuy nhiên, kỹ thuật Transfer Learning cho phép các nhà phát triển tận dụng các mô hình đã được huấn luyện trước, giảm đáng kể chi phí và thời gian phát triển, làm cho công nghệ này ngày càng dễ tiếp cận hơn.',
       },
     ],
   },
@@ -965,35 +1013,43 @@ export const AgriTechLessons: AgriTechLessonData[] = [
       },
       {
         question: 'Làm thế nào để một robot thu hoạch phân biệt được quả chín và quả xanh?',
-        answer: 'Robot sử dụng camera kết hợp với các thuật toán Computer Vision. Mô hình AI được huấn luyện để nhận diện màu sắc, kích thước và hình dạng của quả chín. Một số robot còn có thể sử dụng cảm biến quang phổ để phân tích thành phần hóa học của quả.',
+        answer:
+          'Robot sử dụng camera kết hợp với các thuật toán Computer Vision. Mô hình AI được huấn luyện để nhận diện màu sắc, kích thước và hình dạng của quả chín. Một số robot còn có thể sử dụng cảm biến quang phổ để phân tích thành phần hóa học của quả.',
       },
       {
         question: 'Robot nông nghiệp có thể làm việc trong mọi điều kiện thời tiết không?',
-        answer: 'Không. Hầu hết các robot hiện nay hoạt động tốt nhất trong điều kiện khô ráo. Mưa, bùn lầy và sương mù dày đặc có thể ảnh hưởng đến hoạt động của các cảm biến (như camera, LiDAR) và khả năng di chuyển của robot.',
+        answer:
+          'Không. Hầu hết các robot hiện nay hoạt động tốt nhất trong điều kiện khô ráo. Mưa, bùn lầy và sương mù dày đặc có thể ảnh hưởng đến hoạt động của các cảm biến (như camera, LiDAR) và khả năng di chuyển của robot.',
       },
       {
         question: 'Chi phí của một robot nông nghiệp là bao nhiêu?',
-        answer: 'Chi phí rất đa dạng, từ vài nghìn đô la cho một robot làm cỏ đơn giản đến hàng trăm nghìn đô la cho một máy thu hoạch tự động phức tạp. Tuy nhiên, mô hình "Robotics-as-a-Service" (RaaS), nơi nông dân thuê robot theo giờ hoặc theo diện tích, đang trở nên phổ biến.',
+        answer:
+          'Chi phí rất đa dạng, từ vài nghìn đô la cho một robot làm cỏ đơn giản đến hàng trăm nghìn đô la cho một máy thu hoạch tự động phức tạp. Tuy nhiên, mô hình "Robotics-as-a-Service" (RaaS), nơi nông dân thuê robot theo giờ hoặc theo diện tích, đang trở nên phổ biến.',
       },
       {
         question: 'Tay gắp (end-effector) của robot thu hoạch được thiết kế như thế nào?',
-        answer: 'Thiết kế tay gắp là một trong những thách thức lớn nhất. Chúng thường được làm bằng vật liệu mềm (soft robotics) và sử dụng khí nén hoặc thủy lực để tạo ra một lực kẹp đủ chắc để giữ quả nhưng đủ nhẹ nhàng để không làm dập nát.',
+        answer:
+          'Thiết kế tay gắp là một trong những thách thức lớn nhất. Chúng thường được làm bằng vật liệu mềm (soft robotics) và sử dụng khí nén hoặc thủy lực để tạo ra một lực kẹp đủ chắc để giữ quả nhưng đủ nhẹ nhàng để không làm dập nát.',
       },
       {
         question: 'Robot có thể giúp giảm việc sử dụng thuốc diệt cỏ không?',
-        answer: 'Chắc chắn có. Các robot làm cỏ sử dụng camera để xác định chính xác vị trí của cây cỏ dại và tiêu diệt chúng bằng nhiều phương pháp như nhổ cơ học, đốt bằng laser, hoặc phun một lượng nhỏ thuốc diệt cỏ chính xác vào cây cỏ đó, thay vì phun tràn lan ra cả cánh đồng.',
+        answer:
+          'Chắc chắn có. Các robot làm cỏ sử dụng camera để xác định chính xác vị trí của cây cỏ dại và tiêu diệt chúng bằng nhiều phương pháp như nhổ cơ học, đốt bằng laser, hoặc phun một lượng nhỏ thuốc diệt cỏ chính xác vào cây cỏ đó, thay vì phun tràn lan ra cả cánh đồng.',
       },
       {
         question: 'Làm thế nào để robot và con người có thể làm việc an toàn cùng nhau trong một trang trại?',
-        answer: 'Robot được trang bị nhiều lớp cảm biến an toàn như LiDAR, camera và cảm biến va chạm để phát hiện người và các vật cản. Chúng được lập trình để dừng lại hoặc thay đổi đường đi khi có người đến gần. Các quy trình an toàn và khu vực làm việc được phân định rõ ràng cũng rất quan trọng.',
+        answer:
+          'Robot được trang bị nhiều lớp cảm biến an toàn như LiDAR, camera và cảm biến va chạm để phát hiện người và các vật cản. Chúng được lập trình để dừng lại hoặc thay đổi đường đi khi có người đến gần. Các quy trình an toàn và khu vực làm việc được phân định rõ ràng cũng rất quan trọng.',
       },
       {
         question: 'Robot nông nghiệp có thể được điều khiển từ xa không?',
-        answer: 'Có. Hầu hết các robot đều có khả năng được giám sát và điều khiển từ xa thông qua máy tính hoặc điện thoại thông minh. Điều này cho phép một người vận hành có thể quản lý cả một đội robot từ một trung tâm điều khiển.',
+        answer:
+          'Có. Hầu hết các robot đều có khả năng được giám sát và điều khiển từ xa thông qua máy tính hoặc điện thoại thông minh. Điều này cho phép một người vận hành có thể quản lý cả một đội robot từ một trung tâm điều khiển.',
       },
       {
         question: 'Tương lai của robot nông nghiệp là gì?',
-        answer: 'Tương lai là các trang trại hoàn toàn tự động, nơi các đội robot (robot mặt đất và drone) phối hợp với nhau, chia sẻ dữ liệu và đưa ra quyết định một cách tự chủ để tối ưu hóa toàn bộ quá trình sản xuất từ gieo trồng đến thu hoạch.',
+        answer:
+          'Tương lai là các trang trại hoàn toàn tự động, nơi các đội robot (robot mặt đất và drone) phối hợp với nhau, chia sẻ dữ liệu và đưa ra quyết định một cách tự chủ để tối ưu hóa toàn bộ quá trình sản xuất từ gieo trồng đến thu hoạch.',
       },
     ],
   },

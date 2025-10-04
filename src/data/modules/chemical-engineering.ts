@@ -69,27 +69,34 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
       },
       {
         question: 'Chất xúc tác (catalyst) có vai trò gì trong quy trình hóa học?',
-        answer: 'Chất xúc tác là một chất làm tăng tốc độ của một phản ứng hóa học mà không bị tiêu hao trong quá trình đó. Việc sử dụng chất xúc tác hiệu quả là chìa khóa để sản xuất nhiều hóa chất một cách kinh tế và bền vững.',
+        answer:
+          'Chất xúc tác là một chất làm tăng tốc độ của một phản ứng hóa học mà không bị tiêu hao trong quá trình đó. Việc sử dụng chất xúc tác hiệu quả là chìa khóa để sản xuất nhiều hóa chất một cách kinh tế và bền vững.',
       },
       {
-        question: 'Sự khác biệt giữa lò phản ứng gián đoạn (batch reactor) và lò phản ứng liên tục (continuous reactor) là gì?',
-        answer: 'Lò phản ứng gián đoạn xử lý một lượng nguyên liệu cố định tại một thời điểm, giống như nấu một nồi súp. Lò phản ứng liên tục có dòng nguyên liệu đi vào và dòng sản phẩm đi ra liên tục, giống như một dây chuyền sản xuất. Lò liên tục thường hiệu quả hơn cho sản xuất quy mô lớn.',
+        question:
+          'Sự khác biệt giữa lò phản ứng gián đoạn (batch reactor) và lò phản ứng liên tục (continuous reactor) là gì?',
+        answer:
+          'Lò phản ứng gián đoạn xử lý một lượng nguyên liệu cố định tại một thời điểm, giống như nấu một nồi súp. Lò phản ứng liên tục có dòng nguyên liệu đi vào và dòng sản phẩm đi ra liên tục, giống như một dây chuyền sản xuất. Lò liên tục thường hiệu quả hơn cho sản xuất quy mô lớn.',
       },
       {
         question: 'Tháp chưng cất (distillation column) hoạt động như thế nào?',
-        answer: 'Tháp chưng cất được sử dụng để tách các chất lỏng có nhiệt độ sôi khác nhau. Hỗn hợp được đun nóng, chất có nhiệt độ sôi thấp hơn sẽ bay hơi trước, đi lên cao trong tháp, ngưng tụ và được thu lại. Đây là quy trình cốt lõi trong ngành công nghiệp lọc dầu.',
+        answer:
+          'Tháp chưng cất được sử dụng để tách các chất lỏng có nhiệt độ sôi khác nhau. Hỗn hợp được đun nóng, chất có nhiệt độ sôi thấp hơn sẽ bay hơi trước, đi lên cao trong tháp, ngưng tụ và được thu lại. Đây là quy trình cốt lõi trong ngành công nghiệp lọc dầu.',
       },
       {
         question: 'Kỹ thuật hóa học có liên quan đến phát triển bền vững không?',
-        answer: 'Rất liên quan. Các kỹ sư hóa học đang đi đầu trong việc phát triển các quy trình "hóa học xanh" - sử dụng nguyên liệu tái tạo, giảm thiểu chất thải, và thiết kế các sản phẩm có thể phân hủy sinh học, góp phần giải quyết các thách thức về môi trường.',
+        answer:
+          'Rất liên quan. Các kỹ sư hóa học đang đi đầu trong việc phát triển các quy trình "hóa học xanh" - sử dụng nguyên liệu tái tạo, giảm thiểu chất thải, và thiết kế các sản phẩm có thể phân hủy sinh học, góp phần giải quyết các thách thức về môi trường.',
       },
       {
         question: 'ROI (Return on Investment) trong cải tiến quy trình được tính như thế nào?',
-        answer: 'ROI được tính bằng cách lấy lợi ích tài chính thu được từ việc cải tiến (ví dụ: tiết kiệm năng lượng, tăng sản lượng) trừ đi chi phí thực hiện cải tiến, sau đó chia cho chi phí thực hiện. Nó cho biết mức độ hiệu quả về mặt tài chính của một dự án cải tiến.',
+        answer:
+          'ROI được tính bằng cách lấy lợi ích tài chính thu được từ việc cải tiến (ví dụ: tiết kiệm năng lượng, tăng sản lượng) trừ đi chi phí thực hiện cải tiến, sau đó chia cho chi phí thực hiện. Nó cho biết mức độ hiệu quả về mặt tài chính của một dự án cải tiến.',
       },
       {
         question: 'An toàn quy trình (process safety) là gì?',
-        answer: 'An toàn quy trình là một lĩnh vực trong kỹ thuật hóa học tập trung vào việc ngăn chặn các sự cố cháy nổ, rò rỉ hóa chất độc hại trong các nhà máy công nghiệp. Nó bao gồm việc thiết kế các hệ thống an toàn, phân tích rủi ro và xây dựng các quy trình vận hành an toàn.',
+        answer:
+          'An toàn quy trình là một lĩnh vực trong kỹ thuật hóa học tập trung vào việc ngăn chặn các sự cố cháy nổ, rò rỉ hóa chất độc hại trong các nhà máy công nghiệp. Nó bao gồm việc thiết kế các hệ thống an toàn, phân tích rủi ro và xây dựng các quy trình vận hành an toàn.',
       },
     ],
   },
@@ -151,27 +158,33 @@ export const chemicalEngineeringLessons: BaseLessonData[] = [
       },
       {
         question: 'Xử lý nước thải bằng phương pháp sinh học hoạt động như thế nào?',
-        answer: 'Phương pháp này sử dụng các vi sinh vật (như vi khuẩn) để "ăn" và phân hủy các chất ô nhiễm hữu cơ trong nước thải, chuyển hóa chúng thành các chất ít độc hại hơn như CO2, nước và sinh khối mới. Đây là phương pháp cốt lõi trong hầu hết các nhà máy xử lý nước thải đô thị.',
+        answer:
+          'Phương pháp này sử dụng các vi sinh vật (như vi khuẩn) để "ăn" và phân hủy các chất ô nhiễm hữu cơ trong nước thải, chuyển hóa chúng thành các chất ít độc hại hơn như CO2, nước và sinh khối mới. Đây là phương pháp cốt lõi trong hầu hết các nhà máy xử lý nước thải đô thị.',
       },
       {
         question: 'Scrubber (tháp rửa khí) trong xử lý khí thải là gì?',
-        answer: 'Scrubber là một thiết bị dùng để loại bỏ các chất ô nhiễm dạng hạt hoặc khí khỏi dòng khí thải công nghiệp. Một tháp rửa khí ướt (wet scrubber) hoạt động bằng cách phun một chất lỏng (thường là nước) vào dòng khí thải, các chất ô nhiễm sẽ hòa tan hoặc bị giữ lại trong chất lỏng đó.',
+        answer:
+          'Scrubber là một thiết bị dùng để loại bỏ các chất ô nhiễm dạng hạt hoặc khí khỏi dòng khí thải công nghiệp. Một tháp rửa khí ướt (wet scrubber) hoạt động bằng cách phun một chất lỏng (thường là nước) vào dòng khí thải, các chất ô nhiễm sẽ hòa tan hoặc bị giữ lại trong chất lỏng đó.',
       },
       {
         question: 'Màng lọc thẩm thấu ngược (Reverse Osmosis - RO) được sử dụng để làm gì?',
-        answer: 'RO là một công nghệ xử lý nước sử dụng một màng bán thấm để loại bỏ các ion, phân tử và các hạt lớn hơn khỏi nước uống. Nó có thể loại bỏ hầu hết các chất rắn hòa tan, làm cho nó trở thành một công nghệ quan trọng trong việc khử muối nước biển và sản xuất nước siêu tinh khiết.',
+        answer:
+          'RO là một công nghệ xử lý nước sử dụng một màng bán thấm để loại bỏ các ion, phân tử và các hạt lớn hơn khỏi nước uống. Nó có thể loại bỏ hầu hết các chất rắn hòa tan, làm cho nó trở thành một công nghệ quan trọng trong việc khử muối nước biển và sản xuất nước siêu tinh khiết.',
       },
       {
         question: 'Các quy chuẩn môi trường của Việt Nam (QCVN) có vai trò gì?',
-        answer: 'QCVN là các quy chuẩn kỹ thuật quốc gia về môi trường, đặt ra các giới hạn tối đa cho phép đối với các chất ô nhiễm trong nước thải, khí thải... Các nhà máy công nghiệp bắt buộc phải tuân thủ các quy chuẩn này để được phép hoạt động, và kỹ sư hóa học môi trường có nhiệm vụ thiết kế các hệ thống xử lý để đạt được các tiêu chuẩn đó.',
+        answer:
+          'QCVN là các quy chuẩn kỹ thuật quốc gia về môi trường, đặt ra các giới hạn tối đa cho phép đối với các chất ô nhiễm trong nước thải, khí thải... Các nhà máy công nghiệp bắt buộc phải tuân thủ các quy chuẩn này để được phép hoạt động, và kỹ sư hóa học môi trường có nhiệm vụ thiết kế các hệ thống xử lý để đạt được các tiêu chuẩn đó.',
       },
       {
         question: 'Chất thải nguy hại là gì và được xử lý như thế nào?',
-        answer: 'Chất thải nguy hại là chất thải có chứa các yếu tố độc hại, dễ cháy, dễ nổ, hoặc có khả năng gây bệnh. Việc xử lý chúng đòi hỏi các quy trình đặc biệt và nghiêm ngặt hơn so với chất thải thông thường, ví dụ như thiêu đốt ở nhiệt độ cao, ổn định hóa rắn, hoặc chôn lấp trong các bãi chôn lấp an toàn.',
+        answer:
+          'Chất thải nguy hại là chất thải có chứa các yếu tố độc hại, dễ cháy, dễ nổ, hoặc có khả năng gây bệnh. Việc xử lý chúng đòi hỏi các quy trình đặc biệt và nghiêm ngặt hơn so với chất thải thông thường, ví dụ như thiêu đốt ở nhiệt độ cao, ổn định hóa rắn, hoặc chôn lấp trong các bãi chôn lấp an toàn.',
       },
       {
         question: 'Kinh tế tuần hoàn (circular economy) có liên quan gì đến kiểm soát ô nhiễm?',
-        answer: 'Kinh tế tuần hoàn là một mô hình kinh tế nhằm mục đích loại bỏ chất thải và giữ cho các vật liệu được sử dụng càng lâu càng tốt. Thay vì chỉ "xử lý" ô nhiễm ở cuối đường ống, kinh tế tuần hoàn tập trung vào việc thiết kế lại các quy trình để biến chất thải của một quy trình này thành nguyên liệu đầu vào cho một quy trình khác, tiếp cận vấn đề ô nhiễm từ gốc rễ.',
+        answer:
+          'Kinh tế tuần hoàn là một mô hình kinh tế nhằm mục đích loại bỏ chất thải và giữ cho các vật liệu được sử dụng càng lâu càng tốt. Thay vì chỉ "xử lý" ô nhiễm ở cuối đường ống, kinh tế tuần hoàn tập trung vào việc thiết kế lại các quy trình để biến chất thải của một quy trình này thành nguyên liệu đầu vào cho một quy trình khác, tiếp cận vấn đề ô nhiễm từ gốc rễ.',
       },
     ],
   },

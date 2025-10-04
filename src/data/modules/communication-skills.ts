@@ -145,27 +145,33 @@ export const communicationSkillsLessons: BaseLessonData[] = [
       },
       {
         question: 'Phương pháp STAR là gì và khi nào nên sử dụng nó?',
-        answer: 'STAR là viết tắt của Situation (Tình huống), Task (Nhiệm vụ), Action (Hành động), Result (Kết quả). Đây là một phương pháp cấu trúc câu trả lời rất hiệu quả trong các cuộc phỏng vấn xin việc, giúp bạn kể một câu chuyện rõ ràng, súc tích về kinh nghiệm và thành tích của mình.',
+        answer:
+          'STAR là viết tắt của Situation (Tình huống), Task (Nhiệm vụ), Action (Hành động), Result (Kết quả). Đây là một phương pháp cấu trúc câu trả lời rất hiệu quả trong các cuộc phỏng vấn xin việc, giúp bạn kể một câu chuyện rõ ràng, súc tích về kinh nghiệm và thành tích của mình.',
       },
       {
         question: 'Làm thế nào để đưa ra phản hồi mang tính xây dựng mà không làm mất lòng người khác?',
-        answer: 'Hãy sử dụng phương pháp "Sandwich": Bắt đầu bằng một lời khen hoặc điểm tích cực, sau đó đưa ra góp ý cần cải thiện một cách cụ thể và khách quan, và kết thúc bằng một lời động viên hoặc khẳng định lại điểm mạnh của họ. Luôn tập trung vào hành vi, không phải con người.',
+        answer:
+          'Hãy sử dụng phương pháp "Sandwich": Bắt đầu bằng một lời khen hoặc điểm tích cực, sau đó đưa ra góp ý cần cải thiện một cách cụ thể và khách quan, và kết thúc bằng một lời động viên hoặc khẳng định lại điểm mạnh của họ. Luôn tập trung vào hành vi, không phải con người.',
       },
       {
         question: 'Sự khác biệt giữa nghe và lắng nghe là gì?',
-        answer: 'Nghe là một hành động sinh lý thụ động của việc tiếp nhận âm thanh. Lắng nghe là một kỹ năng chủ động, đòi hỏi sự tập trung, thấu hiểu, diễn giải và ghi nhớ thông điệp. Lắng nghe thực sự là nền tảng của giao tiếp hiệu quả.',
+        answer:
+          'Nghe là một hành động sinh lý thụ động của việc tiếp nhận âm thanh. Lắng nghe là một kỹ năng chủ động, đòi hỏi sự tập trung, thấu hiểu, diễn giải và ghi nhớ thông điệp. Lắng nghe thực sự là nền tảng của giao tiếp hiệu quả.',
       },
       {
         question: 'Làm thế nào để cải thiện kỹ năng giao tiếp qua email?',
-        answer: 'Hãy viết tiêu đề rõ ràng, đi thẳng vào vấn đề, sử dụng ngôn ngữ chuyên nghiệp nhưng dễ hiểu, và kiểm tra lại lỗi chính tả, ngữ pháp trước khi gửi. Với các vấn đề phức tạp, một cuộc gọi điện thoại có thể hiệu quả hơn email.',
+        answer:
+          'Hãy viết tiêu đề rõ ràng, đi thẳng vào vấn đề, sử dụng ngôn ngữ chuyên nghiệp nhưng dễ hiểu, và kiểm tra lại lỗi chính tả, ngữ pháp trước khi gửi. Với các vấn đề phức tạp, một cuộc gọi điện thoại có thể hiệu quả hơn email.',
       },
       {
         question: 'Giao tiếp không đồng bộ (asynchronous) là gì?',
-        answer: 'Là hình thức giao tiếp không yêu cầu các bên phải có mặt cùng một lúc, ví dụ như email, tin nhắn văn bản, hoặc bình luận trên một tài liệu chung. Nó cho phép sự linh hoạt nhưng đòi hỏi sự rõ ràng và mạch lạc hơn trong thông điệp.',
+        answer:
+          'Là hình thức giao tiếp không yêu cầu các bên phải có mặt cùng một lúc, ví dụ như email, tin nhắn văn bản, hoặc bình luận trên một tài liệu chung. Nó cho phép sự linh hoạt nhưng đòi hỏi sự rõ ràng và mạch lạc hơn trong thông điệp.',
       },
       {
         question: 'Làm thế nào để xây dựng sự tự tin trong giao tiếp?',
-        answer: 'Sự tự tin đến từ sự chuẩn bị và thực hành. Hãy hiểu rõ về chủ đề bạn nói, tin vào giá trị của thông điệp bạn muốn truyền tải, và luyện tập thường xuyên. Bắt đầu từ những cuộc trò chuyện nhỏ và dần dần thử thách bản thân ở những tình huống lớn hơn.',
+        answer:
+          'Sự tự tin đến từ sự chuẩn bị và thực hành. Hãy hiểu rõ về chủ đề bạn nói, tin vào giá trị của thông điệp bạn muốn truyền tải, và luyện tập thường xuyên. Bắt đầu từ những cuộc trò chuyện nhỏ và dần dần thử thách bản thân ở những tình huống lớn hơn.',
       },
     ],
   },
@@ -290,27 +296,33 @@ export const communicationSkillsLessons: BaseLessonData[] = [
       },
       {
         question: 'Quy tắc 10/20/30 của Guy Kawasaki trong thuyết trình là gì?',
-        answer: 'Đây là một quy tắc nổi tiếng cho các bài thuyết trình gọi vốn: một bài thuyết trình không nên có quá 10 slide, kéo dài không quá 20 phút, và sử dụng cỡ chữ không nhỏ hơn 30. Mục tiêu là sự ngắn gọn, súc tích và dễ đọc.',
+        answer:
+          'Đây là một quy tắc nổi tiếng cho các bài thuyết trình gọi vốn: một bài thuyết trình không nên có quá 10 slide, kéo dài không quá 20 phút, và sử dụng cỡ chữ không nhỏ hơn 30. Mục tiêu là sự ngắn gọn, súc tích và dễ đọc.',
       },
       {
         question: 'Làm thế nào để mở đầu một bài thuyết trình một cách ấn tượng?',
-        answer: 'Hãy bắt đầu bằng một câu chuyện hấp dẫn, một câu hỏi gây tò mò, một số liệu thống kê gây sốc, hoặc một hình ảnh ấn tượng. Mục tiêu là thu hút sự chú ý của khán giả ngay từ những giây đầu tiên và cho họ lý do để lắng nghe.',
+        answer:
+          'Hãy bắt đầu bằng một câu chuyện hấp dẫn, một câu hỏi gây tò mò, một số liệu thống kê gây sốc, hoặc một hình ảnh ấn tượng. Mục tiêu là thu hút sự chú ý của khán giả ngay từ những giây đầu tiên và cho họ lý do để lắng nghe.',
       },
       {
         question: 'Tầm quan trọng của ngôn ngữ cơ thể khi thuyết trình là gì?',
-        answer: 'Ngôn ngữ cơ thể (ánh mắt, cử chỉ tay, tư thế đứng) truyền tải sự tự tin, nhiệt huyết và sự chân thành của bạn. Giao tiếp bằng mắt với khán giả, sử dụng cử chỉ tay một cách tự nhiên và đứng thẳng sẽ giúp bạn tạo kết nối và tăng sức thuyết phục cho bài nói.',
+        answer:
+          'Ngôn ngữ cơ thể (ánh mắt, cử chỉ tay, tư thế đứng) truyền tải sự tự tin, nhiệt huyết và sự chân thành của bạn. Giao tiếp bằng mắt với khán giả, sử dụng cử chỉ tay một cách tự nhiên và đứng thẳng sẽ giúp bạn tạo kết nối và tăng sức thuyết phục cho bài nói.',
       },
       {
         question: 'Làm thế nào để kết thúc một bài thuyết trình một cách đáng nhớ?',
-        answer: 'Hãy tóm tắt lại các điểm chính, đưa ra một lời kêu gọi hành động (call to action) rõ ràng, và kết thúc bằng một câu nói mạnh mẽ, một câu chuyện ý nghĩa hoặc một tầm nhìn truyền cảm hứng. Đừng kết thúc bằng một câu "Cảm ơn đã lắng nghe" đơn điệu.',
+        answer:
+          'Hãy tóm tắt lại các điểm chính, đưa ra một lời kêu gọi hành động (call to action) rõ ràng, và kết thúc bằng một câu nói mạnh mẽ, một câu chuyện ý nghĩa hoặc một tầm nhìn truyền cảm hứng. Đừng kết thúc bằng một câu "Cảm ơn đã lắng nghe" đơn điệu.',
       },
       {
         question: 'Prezi khác biệt gì so với PowerPoint?',
-        answer: 'Prezi sử dụng một khung vẽ lớn, không tuyến tính, cho phép bạn phóng to và di chuyển giữa các ý tưởng, tạo ra một trải nghiệm kể chuyện năng động và trực quan hơn. Trong khi đó, PowerPoint theo cấu trúc slide tuyến tính truyền thống. Prezi phù hợp để thể hiện mối quan hệ giữa các ý tưởng.',
+        answer:
+          'Prezi sử dụng một khung vẽ lớn, không tuyến tính, cho phép bạn phóng to và di chuyển giữa các ý tưởng, tạo ra một trải nghiệm kể chuyện năng động và trực quan hơn. Trong khi đó, PowerPoint theo cấu trúc slide tuyến tính truyền thống. Prezi phù hợp để thể hiện mối quan hệ giữa các ý tưởng.',
       },
       {
         question: 'Tại sao cần phải biết rõ khán giả của mình là ai trước khi thuyết trình?',
-        answer: 'Hiểu rõ khán giả (kiến thức nền, mối quan tâm, kỳ vọng của họ) giúp bạn điều chỉnh nội dung, ngôn ngữ và phong cách thuyết trình cho phù hợp. Một bài thuyết trình thành công là bài thuyết trình nói "với" khán giả, chứ không phải nói "cho" khán giả nghe.',
+        answer:
+          'Hiểu rõ khán giả (kiến thức nền, mối quan tâm, kỳ vọng của họ) giúp bạn điều chỉnh nội dung, ngôn ngữ và phong cách thuyết trình cho phù hợp. Một bài thuyết trình thành công là bài thuyết trình nói "với" khán giả, chứ không phải nói "cho" khán giả nghe.',
       },
     ],
   },
@@ -441,27 +453,33 @@ export const communicationSkillsLessons: BaseLessonData[] = [
       },
       {
         question: 'Văn hóa "Monochronic" và "Polychronic" khác nhau như thế nào?',
-        answer: 'Văn hóa Monochronic (ví dụ: Đức, Mỹ) xem thời gian là tuyến tính và quý giá; họ tập trung làm một việc tại một thời điểm và rất đúng giờ. Văn hóa Polychronic (ví dụ: Mỹ Latinh, Trung Đông) xem thời gian là linh hoạt; họ có thể làm nhiều việc cùng lúc và ưu tiên mối quan hệ hơn là lịch trình cứng nhắc.',
+        answer:
+          'Văn hóa Monochronic (ví dụ: Đức, Mỹ) xem thời gian là tuyến tính và quý giá; họ tập trung làm một việc tại một thời điểm và rất đúng giờ. Văn hóa Polychronic (ví dụ: Mỹ Latinh, Trung Đông) xem thời gian là linh hoạt; họ có thể làm nhiều việc cùng lúc và ưu tiên mối quan hệ hơn là lịch trình cứng nhắc.',
       },
       {
         question: 'Làm thế nào để đưa ra phản hồi tiêu cực cho một người từ nền văn hóa giao tiếp gián tiếp?',
-        answer: 'Hãy tiếp cận một cách nhẹ nhàng và riêng tư. Sử dụng các kỹ thuật làm mềm lời nói, ví dụ như bắt đầu bằng những điểm tích cực, và tập trung vào hành vi cụ thể thay vì chỉ trích cá nhân. Đôi khi, việc nhờ một bên thứ ba đáng tin cậy để truyền đạt thông điệp cũng là một lựa chọn.',
+        answer:
+          'Hãy tiếp cận một cách nhẹ nhàng và riêng tư. Sử dụng các kỹ thuật làm mềm lời nói, ví dụ như bắt đầu bằng những điểm tích cực, và tập trung vào hành vi cụ thể thay vì chỉ trích cá nhân. Đôi khi, việc nhờ một bên thứ ba đáng tin cậy để truyền đạt thông điệp cũng là một lựa chọn.',
       },
       {
         question: 'Tại sao một trò đùa lại có thể gây xúc phạm trong một nền văn hóa khác?',
-        answer: 'Sự hài hước rất phụ thuộc vào văn hóa. Những gì được coi là hài hước ở một nơi có thể là cấm kỵ hoặc vô duyên ở nơi khác. Các chủ đề nhạy cảm như chính trị, tôn giáo, hoặc các vấn đề cá nhân thường không phải là chủ đề an toàn để đùa giỡn trong môi trường đa văn hóa.',
+        answer:
+          'Sự hài hước rất phụ thuộc vào văn hóa. Những gì được coi là hài hước ở một nơi có thể là cấm kỵ hoặc vô duyên ở nơi khác. Các chủ đề nhạy cảm như chính trị, tôn giáo, hoặc các vấn đề cá nhân thường không phải là chủ đề an toàn để đùa giỡn trong môi trường đa văn hóa.',
       },
       {
         question: 'Stereotyping (rập khuôn) là gì và tại sao nó nguy hiểm?',
-        answer: 'Rập khuôn là việc khái quát hóa một cách quá đơn giản về một nhóm người, bỏ qua sự đa dạng và khác biệt cá nhân. Nó nguy hiểm vì nó dẫn đến định kiến, phán xét sai lầm và ngăn cản chúng ta nhìn nhận người khác như những cá nhân độc đáo.',
+        answer:
+          'Rập khuôn là việc khái quát hóa một cách quá đơn giản về một nhóm người, bỏ qua sự đa dạng và khác biệt cá nhân. Nó nguy hiểm vì nó dẫn đến định kiến, phán xét sai lầm và ngăn cản chúng ta nhìn nhận người khác như những cá nhân độc đáo.',
       },
       {
         question: 'Làm thế nào để xây dựng lòng tin trong một đội nhóm đa quốc gia?',
-        answer: 'Lòng tin được xây dựng thông qua sự nhất quán, đáng tin cậy và giao tiếp cởi mở. Hãy thể hiện sự tôn trọng đối với các nền văn hóa khác nhau, dành thời gian để tìm hiểu về đồng nghiệp ở mức độ cá nhân, và luôn giữ lời hứa của mình. Sự minh bạch trong giao tiếp là chìa khóa.',
+        answer:
+          'Lòng tin được xây dựng thông qua sự nhất quán, đáng tin cậy và giao tiếp cởi mở. Hãy thể hiện sự tôn trọng đối với các nền văn hóa khác nhau, dành thời gian để tìm hiểu về đồng nghiệp ở mức độ cá nhân, và luôn giữ lời hứa của mình. Sự minh bạch trong giao tiếp là chìa khóa.',
       },
       {
         question: 'Khi đàm phán với đối tác quốc tế, yếu tố nào quan trọng hơn: giá cả hay mối quan hệ?',
-        answer: 'Điều này phụ thuộc vào nền văn hóa. Trong các nền văn hóa tập trung vào mối quan hệ (relationship-oriented) như ở châu Á hay Mỹ Latinh, việc xây dựng lòng tin và mối quan hệ lâu dài thường được ưu tiên hơn là đạt được thỏa thuận giá tốt nhất ngay lập tức. Ngược lại, các nền văn hóa tập trung vào giao dịch (deal-oriented) có thể đi thẳng vào vấn đề giá cả.',
+        answer:
+          'Điều này phụ thuộc vào nền văn hóa. Trong các nền văn hóa tập trung vào mối quan hệ (relationship-oriented) như ở châu Á hay Mỹ Latinh, việc xây dựng lòng tin và mối quan hệ lâu dài thường được ưu tiên hơn là đạt được thỏa thuận giá tốt nhất ngay lập tức. Ngược lại, các nền văn hóa tập trung vào giao dịch (deal-oriented) có thể đi thẳng vào vấn đề giá cả.',
       },
     ],
   },

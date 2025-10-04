@@ -114,35 +114,43 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
       },
       {
         question: 'Ensemble Learning là gì?',
-        answer: 'Ensemble Learning là một kỹ thuật kết hợp nhiều mô hình học máy (gọi là "base learners") lại với nhau để tạo ra một mô hình dự đoán tổng thể tốt hơn. Ý tưởng là sự kết hợp của nhiều mô hình yếu có thể tạo ra một mô hình mạnh. Random Forest và Gradient Boosting là hai ví dụ phổ biến.',
+        answer:
+          'Ensemble Learning là một kỹ thuật kết hợp nhiều mô hình học máy (gọi là "base learners") lại với nhau để tạo ra một mô hình dự đoán tổng thể tốt hơn. Ý tưởng là sự kết hợp của nhiều mô hình yếu có thể tạo ra một mô hình mạnh. Random Forest và Gradient Boosting là hai ví dụ phổ biến.',
       },
       {
         question: 'Sự khác biệt giữa Bagging và Boosting là gì?',
-        answer: 'Cả hai đều là kỹ thuật ensemble. Bagging (như Random Forest) xây dựng các mô hình một cách độc lập và song song trên các mẫu con khác nhau của dữ liệu. Boosting (như Gradient Boosting) xây dựng các mô hình một cách tuần tự, trong đó mỗi mô hình mới cố gắng sửa chữa những sai sót của mô hình trước đó.',
+        answer:
+          'Cả hai đều là kỹ thuật ensemble. Bagging (như Random Forest) xây dựng các mô hình một cách độc lập và song song trên các mẫu con khác nhau của dữ liệu. Boosting (như Gradient Boosting) xây dựng các mô hình một cách tuần tự, trong đó mỗi mô hình mới cố gắng sửa chữa những sai sót của mô hình trước đó.',
       },
       {
         question: 'Regularization (Điều chuẩn hóa) trong hồi quy có tác dụng gì?',
-        answer: 'Regularization là một kỹ thuật được sử dụng để ngăn chặn overfitting trong các mô hình hồi quy. Nó hoạt động bằng cách thêm một "hình phạt" vào hàm mất mát dựa trên độ lớn của các hệ số của mô hình. Hồi quy Lasso (L1) có thể đưa một số hệ số về 0, giúp lựa chọn đặc trưng. Hồi quy Ridge (L2) thu nhỏ các hệ số nhưng không đưa chúng về 0.',
+        answer:
+          'Regularization là một kỹ thuật được sử dụng để ngăn chặn overfitting trong các mô hình hồi quy. Nó hoạt động bằng cách thêm một "hình phạt" vào hàm mất mát dựa trên độ lớn của các hệ số của mô hình. Hồi quy Lasso (L1) có thể đưa một số hệ số về 0, giúp lựa chọn đặc trưng. Hồi quy Ridge (L2) thu nhỏ các hệ số nhưng không đưa chúng về 0.',
       },
       {
         question: 'DBSCAN khác với K-Means như thế nào?',
-        answer: 'K-Means là một thuật toán phân cụm yêu cầu bạn phải chỉ định trước số lượng cụm (K). Nó có xu hướng tạo ra các cụm có hình cầu và kích thước tương tự nhau. DBSCAN (Density-Based Spatial Clustering of Applications with Noise) không yêu cầu số lượng cụm; thay vào đó, nó nhóm các điểm dữ liệu dựa trên mật độ, cho phép nó tìm thấy các cụm có hình dạng bất kỳ và xác định các điểm nhiễu (outliers).',
+        answer:
+          'K-Means là một thuật toán phân cụm yêu cầu bạn phải chỉ định trước số lượng cụm (K). Nó có xu hướng tạo ra các cụm có hình cầu và kích thước tương tự nhau. DBSCAN (Density-Based Spatial Clustering of Applications with Noise) không yêu cầu số lượng cụm; thay vào đó, nó nhóm các điểm dữ liệu dựa trên mật độ, cho phép nó tìm thấy các cụm có hình dạng bất kỳ và xác định các điểm nhiễu (outliers).',
       },
       {
         question: 'Hyperparameter là gì và tại sao cần phải tối ưu hóa chúng?',
-        answer: 'Hyperparameter là các tham số cấu hình của một thuật toán mà không được học từ dữ liệu (ví dụ: số lượng cây trong Random Forest, tốc độ học trong Gradient Boosting). Việc lựa chọn các giá trị hyperparameter phù hợp có ảnh hưởng lớn đến hiệu suất của mô hình. Tối ưu hóa hyperparameter (Hyperparameter Tuning) là quá trình tìm kiếm bộ giá trị tốt nhất cho chúng, thường được thực hiện bằng các kỹ thuật như Grid Search hoặc Randomized Search.',
+        answer:
+          'Hyperparameter là các tham số cấu hình của một thuật toán mà không được học từ dữ liệu (ví dụ: số lượng cây trong Random Forest, tốc độ học trong Gradient Boosting). Việc lựa chọn các giá trị hyperparameter phù hợp có ảnh hưởng lớn đến hiệu suất của mô hình. Tối ưu hóa hyperparameter (Hyperparameter Tuning) là quá trình tìm kiếm bộ giá trị tốt nhất cho chúng, thường được thực hiện bằng các kỹ thuật như Grid Search hoặc Randomized Search.',
       },
       {
         question: 'Cross-validation (Kiểm tra chéo) được sử dụng để làm gì?',
-        answer: 'Cross-validation là một kỹ thuật đánh giá mô hình giúp ước tính hiệu suất của mô hình trên dữ liệu chưa thấy một cách đáng tin cậy hơn. Thay vì chỉ chia dữ liệu thành một cặp train/test, nó chia dữ liệu thành nhiều "fold" (phần), sau đó lần lượt huấn luyện và kiểm tra trên các kết hợp khác nhau của các fold này, rồi lấy kết quả trung bình.',
+        answer:
+          'Cross-validation là một kỹ thuật đánh giá mô hình giúp ước tính hiệu suất của mô hình trên dữ liệu chưa thấy một cách đáng tin cậy hơn. Thay vì chỉ chia dữ liệu thành một cặp train/test, nó chia dữ liệu thành nhiều "fold" (phần), sau đó lần lượt huấn luyện và kiểm tra trên các kết hợp khác nhau của các fold này, rồi lấy kết quả trung bình.',
       },
       {
         question: 'Stacking trong Ensemble Learning là gì?',
-        answer: 'Stacking là một kỹ thuật ensemble nâng cao. Nó kết hợp các dự đoán từ nhiều mô hình khác nhau (ví dụ: Random Forest, SVM, Neural Network) bằng cách sử dụng một "meta-model" (siêu mô hình) khác. Siêu mô hình này học cách kết hợp các dự đoán của các mô hình cơ sở một cách thông minh để đưa ra dự đoán cuối cùng, thường là tốt hơn so với bất kỳ mô hình đơn lẻ nào.',
+        answer:
+          'Stacking là một kỹ thuật ensemble nâng cao. Nó kết hợp các dự đoán từ nhiều mô hình khác nhau (ví dụ: Random Forest, SVM, Neural Network) bằng cách sử dụng một "meta-model" (siêu mô hình) khác. Siêu mô hình này học cách kết hợp các dự đoán của các mô hình cơ sở một cách thông minh để đưa ra dự đoán cuối cùng, thường là tốt hơn so với bất kỳ mô hình đơn lẻ nào.',
       },
       {
         question: 'UMAP là gì và nó có ưu điểm gì so với t-SNE?',
-        answer: 'UMAP (Uniform Manifold Approximation and Projection) là một kỹ thuật giảm chiều và trực quan hóa dữ liệu hiện đại, tương tự như t-SNE. Ưu điểm chính của UMAP là nó thường nhanh hơn đáng kể so với t-SNE và có khả năng bảo toàn cấu trúc toàn cục (global structure) của dữ liệu tốt hơn, trong khi t-SNE chủ yếu tập trung vào cấu trúc cục bộ.',
+        answer:
+          'UMAP (Uniform Manifold Approximation and Projection) là một kỹ thuật giảm chiều và trực quan hóa dữ liệu hiện đại, tương tự như t-SNE. Ưu điểm chính của UMAP là nó thường nhanh hơn đáng kể so với t-SNE và có khả năng bảo toàn cấu trúc toàn cục (global structure) của dữ liệu tốt hơn, trong khi t-SNE chủ yếu tập trung vào cấu trúc cục bộ.',
       },
     ],
   },
@@ -258,35 +266,44 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa Deep Learning và Machine Learning là gì?',
-        answer: 'Machine Learning truyền thống thường yêu cầu con người phải thực hiện bước "trích xuất đặc trưng" (feature engineering) thủ công. Deep Learning, với kiến trúc nhiều lớp của nó, có khả năng tự động học các đặc trưng này trực tiếp từ dữ liệu thô. Điều này làm cho Deep Learning đặc biệt mạnh mẽ đối với các loại dữ liệu phức tạp như hình ảnh, âm thanh và văn bản.',
+        answer:
+          'Machine Learning truyền thống thường yêu cầu con người phải thực hiện bước "trích xuất đặc trưng" (feature engineering) thủ công. Deep Learning, với kiến trúc nhiều lớp của nó, có khả năng tự động học các đặc trưng này trực tiếp từ dữ liệu thô. Điều này làm cho Deep Learning đặc biệt mạnh mẽ đối với các loại dữ liệu phức tạp như hình ảnh, âm thanh và văn bản.',
       },
       {
-        question: 'Mạng RNN (Recurrent Neural Network) và LSTM (Long Short-Term Memory) được sử dụng cho loại bài toán nào?',
-        answer: 'RNN và LSTM được thiết kế đặc biệt để xử lý dữ liệu dạng chuỗi (sequential data), nơi thứ tự của dữ liệu là quan trọng. Chúng được ứng dụng rộng rãi trong xử lý ngôn ngữ tự nhiên (dịch máy, phân tích văn bản), nhận dạng giọng nói, và dự báo chuỗi thời gian.',
+        question:
+          'Mạng RNN (Recurrent Neural Network) và LSTM (Long Short-Term Memory) được sử dụng cho loại bài toán nào?',
+        answer:
+          'RNN và LSTM được thiết kế đặc biệt để xử lý dữ liệu dạng chuỗi (sequential data), nơi thứ tự của dữ liệu là quan trọng. Chúng được ứng dụng rộng rãi trong xử lý ngôn ngữ tự nhiên (dịch máy, phân tích văn bản), nhận dạng giọng nói, và dự báo chuỗi thời gian.',
       },
       {
         question: 'Vấn đề "vanishing gradient" (gradient biến mất) trong mạng RNN là gì?',
-        answer: 'Trong quá trình huấn luyện RNN trên các chuỗi dài, gradient (đạo hàm của sai số) có thể trở nên rất nhỏ khi được lan truyền ngược qua nhiều bước thời gian. Điều này làm cho các lớp ở đầu chuỗi học rất chậm hoặc không học được gì cả. LSTM được phát minh để giải quyết vấn đề này bằng cách sử dụng các "cổng" (gates) để kiểm soát luồng thông tin.',
+        answer:
+          'Trong quá trình huấn luyện RNN trên các chuỗi dài, gradient (đạo hàm của sai số) có thể trở nên rất nhỏ khi được lan truyền ngược qua nhiều bước thời gian. Điều này làm cho các lớp ở đầu chuỗi học rất chậm hoặc không học được gì cả. LSTM được phát minh để giải quyết vấn đề này bằng cách sử dụng các "cổng" (gates) để kiểm soát luồng thông tin.',
       },
       {
         question: 'Tại sao cần các hàm kích hoạt (activation functions) như ReLU trong mạng nơ-ron?',
-        answer: 'Nếu không có các hàm kích hoạt phi tuyến (như ReLU, Sigmoid, Tanh), một mạng n-ron sâu dù có bao nhiêu lớp cũng chỉ tương đương với một mô hình tuyến tính duy nhất. Các hàm kích hoạt phi tuyến cho phép mạng học được các mối quan hệ phức tạp và phi tuyến trong dữ liệu.',
+        answer:
+          'Nếu không có các hàm kích hoạt phi tuyến (như ReLU, Sigmoid, Tanh), một mạng n-ron sâu dù có bao nhiêu lớp cũng chỉ tương đương với một mô hình tuyến tính duy nhất. Các hàm kích hoạt phi tuyến cho phép mạng học được các mối quan hệ phức tạp và phi tuyến trong dữ liệu.',
       },
       {
         question: 'Dropout là một kỹ thuật regularization hoạt động như thế nào?',
-        answer: 'Trong mỗi lần lặp của quá trình huấn luyện, Dropout sẽ tạm thời "tắt" một cách ngẫu nhiên một số nơ-ron trong mạng. Điều này buộc mạng phải học các đặc trưng một cách dư thừa và không quá phụ thuộc vào bất kỳ một nơ-ron nào, từ đó giúp giảm overfitting.',
+        answer:
+          'Trong mỗi lần lặp của quá trình huấn luyện, Dropout sẽ tạm thời "tắt" một cách ngẫu nhiên một số nơ-ron trong mạng. Điều này buộc mạng phải học các đặc trưng một cách dư thừa và không quá phụ thuộc vào bất kỳ một nơ-ron nào, từ đó giúp giảm overfitting.',
       },
       {
         question: 'Batch Normalization có tác dụng gì?',
-        answer: 'Batch Normalization chuẩn hóa đầu vào của mỗi lớp trong mạng để có giá trị trung bình bằng 0 và phương sai bằng 1. Kỹ thuật này giúp ổn định và tăng tốc đáng kể quá trình huấn luyện, cho phép sử dụng tốc độ học (learning rate) cao hơn và làm cho việc khởi tạo trọng số trở nên ít quan trọng hơn.',
+        answer:
+          'Batch Normalization chuẩn hóa đầu vào của mỗi lớp trong mạng để có giá trị trung bình bằng 0 và phương sai bằng 1. Kỹ thuật này giúp ổn định và tăng tốc đáng kể quá trình huấn luyện, cho phép sử dụng tốc độ học (learning rate) cao hơn và làm cho việc khởi tạo trọng số trở nên ít quan trọng hơn.',
       },
       {
         question: 'Sự khác biệt giữa TensorFlow và PyTorch là gì?',
-        answer: 'Cả hai đều là các thư viện deep learning hàng đầu. PyTorch được biết đến với tính linh hoạt, giao diện "Pythonic" và cơ chế "đồ thị động", rất phổ biến trong giới nghiên cứu. TensorFlow (đặc biệt với API Keras) mạnh về khả-năng triển khai sản phẩm (deployment) và có một hệ sinh thái công cụ hỗ trợ rộng lớn.',
+        answer:
+          'Cả hai đều là các thư viện deep learning hàng đầu. PyTorch được biết đến với tính linh hoạt, giao diện "Pythonic" và cơ chế "đồ thị động", rất phổ biến trong giới nghiên cứu. TensorFlow (đặc biệt với API Keras) mạnh về khả-năng triển khai sản phẩm (deployment) và có một hệ sinh thái công cụ hỗ trợ rộng lớn.',
       },
       {
         question: 'Generative AI (AI tạo sinh) là gì?',
-        answer: 'Generative AI là một nhánh của AI tập trung vào việc tạo ra dữ liệu mới thay vì chỉ phân tích hoặc phân loại dữ liệu hiện có. Các mô hình như GANs (Generative Adversarial Networks) và các mô hình ngôn ngữ lớn (LLMs) như GPT là những ví dụ điển hình, có khả năng tạo ra hình ảnh, văn bản, âm nhạc mới.',
+        answer:
+          'Generative AI là một nhánh của AI tập trung vào việc tạo ra dữ liệu mới thay vì chỉ phân tích hoặc phân loại dữ liệu hiện có. Các mô hình như GANs (Generative Adversarial Networks) và các mô hình ngôn ngữ lớn (LLMs) như GPT là những ví dụ điển hình, có khả năng tạo ra hình ảnh, văn bản, âm nhạc mới.',
       },
     ],
   },
@@ -404,35 +421,43 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa BERT và GPT là gì?',
-        answer: 'Cả hai đều là các mô hình Transformer, nhưng có sự khác biệt cốt lõi trong kiến trúc. BERT là một mô hình "encoder", nó nhìn vào toàn bộ câu (cả hai chiều) để hiểu ngữ cảnh, rất mạnh cho các tác vụ phân tích như phân loại văn bản, nhận dạng thực thể. GPT là một mô hình "decoder", nó xử lý văn bản từ trái sang phải, rất mạnh cho các tác vụ sinh văn bản (text generation).',
+        answer:
+          'Cả hai đều là các mô hình Transformer, nhưng có sự khác biệt cốt lõi trong kiến trúc. BERT là một mô hình "encoder", nó nhìn vào toàn bộ câu (cả hai chiều) để hiểu ngữ cảnh, rất mạnh cho các tác vụ phân tích như phân loại văn bản, nhận dạng thực thể. GPT là một mô hình "decoder", nó xử lý văn bản từ trái sang phải, rất mạnh cho các tác vụ sinh văn bản (text generation).',
       },
       {
         question: 'Named Entity Recognition (NER) là gì?',
-        answer: 'NER là một tác vụ của NLP nhằm xác định và phân loại các thực thể được đặt tên trong văn bản vào các danh mục được xác định trước như tên người, tổ chức, địa điểm, ngày tháng, v.v. Ví dụ, trong câu "FPT đã tổ chức sự kiện tại Hà Nội", NER sẽ xác định "FPT" là Tổ chức và "Hà Nội" là Địa điểm.',
+        answer:
+          'NER là một tác vụ của NLP nhằm xác định và phân loại các thực thể được đặt tên trong văn bản vào các danh mục được xác định trước như tên người, tổ chức, địa điểm, ngày tháng, v.v. Ví dụ, trong câu "FPT đã tổ chức sự kiện tại Hà Nội", NER sẽ xác định "FPT" là Tổ chức và "Hà Nội" là Địa điểm.',
       },
       {
         question: 'Topic Modeling là gì?',
-        answer: 'Topic Modeling là một kỹ thuật học không giám sát được sử dụng để khám phá các "chủ đề" trừu tượng xuất hiện trong một tập hợp các tài liệu. Ví dụ, từ một kho các bài báo, nó có thể tự động nhóm các từ như "bầu cử", "tổng thống", "quốc hội" vào chủ đề "chính trị".',
+        answer:
+          'Topic Modeling là một kỹ thuật học không giám sát được sử dụng để khám phá các "chủ đề" trừu tượng xuất hiện trong một tập hợp các tài liệu. Ví dụ, từ một kho các bài báo, nó có thể tự động nhóm các từ như "bầu cử", "tổng thống", "quốc hội" vào chủ đề "chính trị".',
       },
       {
         question: 'Tại sao cần phải có các mô hình ngôn ngữ dành riêng cho Tiếng Việt như PhoBERT?',
-        answer: 'Các mô hình ngôn ngữ lớn được huấn luyện trên dữ liệu tiếng Anh sẽ không hiểu được các sắc thái, ngữ pháp và văn hóa của tiếng Việt. Các mô hình như PhoBERT được huấn luyện từ đầu trên một kho dữ liệu tiếng Việt khổng lồ, giúp chúng hiểu sâu sắc và xử lý tiếng Việt một cách chính xác hơn nhiều.',
+        answer:
+          'Các mô hình ngôn ngữ lớn được huấn luyện trên dữ liệu tiếng Anh sẽ không hiểu được các sắc thái, ngữ pháp và văn hóa của tiếng Việt. Các mô hình như PhoBERT được huấn luyện từ đầu trên một kho dữ liệu tiếng Việt khổng lồ, giúp chúng hiểu sâu sắc và xử lý tiếng Việt một cách chính xác hơn nhiều.',
       },
       {
         question: 'Hệ thống Hỏi-Đáp (Question-Answering System) hoạt động như thế nào?',
-        answer: 'Có hai loại chính. Hệ thống Hỏi-Đáp trích xuất (extractive QA) tìm kiếm và trích xuất một đoạn văn bản từ một tài liệu cho trước để trả lời câu hỏi. Hệ thống Hỏi-Đáp tạo sinh (generative QA) tự tạo ra một câu trả lời hoàn toàn mới dựa trên kiến thức đã học, tương tự như cách ChatGPT hoạt động.',
+        answer:
+          'Có hai loại chính. Hệ thống Hỏi-Đáp trích xuất (extractive QA) tìm kiếm và trích xuất một đoạn văn bản từ một tài liệu cho trước để trả lời câu hỏi. Hệ thống Hỏi-Đáp tạo sinh (generative QA) tự tạo ra một câu trả lời hoàn toàn mới dựa trên kiến thức đã học, tương tự như cách ChatGPT hoạt động.',
       },
       {
         question: 'TF-IDF là gì?',
-        answer: 'TF-IDF (Term Frequency-Inverse Document Frequency) là một thước đo thống kê dùng để đánh giá tầm quan trọng của một từ trong một tài liệu so với một kho tài liệu. Nó giúp xác định các từ khóa quan trọng của một văn bản bằng cách tăng trọng số cho các từ xuất hiện thường xuyên trong văn bản đó nhưng lại ít xuất hiện trong các văn bản khác.',
+        answer:
+          'TF-IDF (Term Frequency-Inverse Document Frequency) là một thước đo thống kê dùng để đánh giá tầm quan trọng của một từ trong một tài liệu so với một kho tài liệu. Nó giúp xác định các từ khóa quan trọng của một văn bản bằng cách tăng trọng số cho các từ xuất hiện thường xuyên trong văn bản đó nhưng lại ít xuất hiện trong các văn bản khác.',
       },
       {
         question: 'Làm thế nào để xử lý từ viết tắt, tiếng lóng trên mạng xã hội Việt Nam?',
-        answer: 'Đây là một thách thức lớn. Một cách tiếp cận phổ biến là xây dựng một bộ từ điển để chuẩn hóa các từ này về dạng chuẩn trước khi đưa vào mô hình (ví dụ: "ko" -> "không", "bt" -> "bình thường"). Việc này đòi hỏi sự cập nhật liên tục vì ngôn ngữ mạng xã hội thay đổi rất nhanh.',
+        answer:
+          'Đây là một thách thức lớn. Một cách tiếp cận phổ biến là xây dựng một bộ từ điển để chuẩn hóa các từ này về dạng chuẩn trước khi đưa vào mô hình (ví dụ: "ko" -> "không", "bt" -> "bình thường"). Việc này đòi hỏi sự cập nhật liên tục vì ngôn ngữ mạng xã hội thay đổi rất nhanh.',
       },
       {
         question: 'Dịch máy thần kinh (Neural Machine Translation - NMT) là gì?',
-        answer: 'NMT là phương pháp dịch máy hiện đại sử dụng các mạng nơ-ron sâu (thường là kiến trúc Transformer). Thay vì dịch từng từ hoặc cụm từ như các hệ thống cũ, NMT đọc toàn bộ câu nguồn để hiểu ngữ cảnh, sau đó tạo ra câu đích. Điều này giúp tạo ra các bản dịch tự nhiên và chính xác hơn nhiều.',
+        answer:
+          'NMT là phương pháp dịch máy hiện đại sử dụng các mạng nơ-ron sâu (thường là kiến trúc Transformer). Thay vì dịch từng từ hoặc cụm từ như các hệ thống cũ, NMT đọc toàn bộ câu nguồn để hiểu ngữ cảnh, sau đó tạo ra câu đích. Điều này giúp tạo ra các bản dịch tự nhiên và chính xác hơn nhiều.',
       },
     ],
   },
@@ -549,35 +574,43 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa Semantic Segmentation và Instance Segmentation là gì?',
-        answer: 'Cả hai đều phân loại từng pixel. Tuy nhiên, Semantic Segmentation chỉ quan tâm đến loại đối tượng (ví dụ: tất cả "người" trong ảnh đều có cùng một màu). Instance Segmentation đi xa hơn, nó phân biệt được các thực thể khác nhau của cùng một loại đối tượng (ví dụ: "người 1" có màu xanh, "người 2" có màu đỏ).',
+        answer:
+          'Cả hai đều phân loại từng pixel. Tuy nhiên, Semantic Segmentation chỉ quan tâm đến loại đối tượng (ví dụ: tất cả "người" trong ảnh đều có cùng một màu). Instance Segmentation đi xa hơn, nó phân biệt được các thực thể khác nhau của cùng một loại đối tượng (ví dụ: "người 1" có màu xanh, "người 2" có màu đỏ).',
       },
       {
         question: 'Làm thế nào để một mô hình nhận dạng khuôn mặt hoạt động?',
-        answer: 'Hệ thống thường bao gồm hai bước: phát hiện khuôn mặt trong ảnh, sau đó trích xuất các đặc trưng của khuôn mặt đó thành một vector số (gọi là "embedding"). Vector này sau đó được so sánh với các vector trong cơ sở dữ liệu để tìm ra người tương ứng. Các mô hình hiện đại sử dụng mạng nơ-ron sâu để học cách tạo ra các embedding này.',
+        answer:
+          'Hệ thống thường bao gồm hai bước: phát hiện khuôn mặt trong ảnh, sau đó trích xuất các đặc trưng của khuôn mặt đó thành một vector số (gọi là "embedding"). Vector này sau đó được so sánh với các vector trong cơ sở dữ liệu để tìm ra người tương ứng. Các mô hình hiện đại sử dụng mạng nơ-ron sâu để học cách tạo ra các embedding này.',
       },
       {
         question: 'OpenCV là gì?',
-        answer: 'OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở khổng lồ chứa hàng ngàn thuật toán xử lý ảnh và thị giác máy tính. Nó cung cấp các công cụ từ cơ bản (đọc/ghi ảnh, vẽ hình) đến phức tạp (phát hiện đối tượng, theo dõi chuyển động) và là công cụ không thể thiếu cho bất kỳ ai làm việc trong lĩnh vực này.',
+        answer:
+          'OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở khổng lồ chứa hàng ngàn thuật toán xử lý ảnh và thị giác máy tính. Nó cung cấp các công cụ từ cơ bản (đọc/ghi ảnh, vẽ hình) đến phức tạp (phát hiện đối tượng, theo dõi chuyển động) và là công cụ không thể thiếu cho bất kỳ ai làm việc trong lĩnh vực này.',
       },
       {
         question: 'Làm thế nào để đánh giá hiệu suất của một mô hình phát hiện đối tượng?',
-        answer: 'Các chỉ số phổ biến bao gồm Precision (độ chính xác) và Recall (độ bao phủ). Mean Average Precision (mAP) là một chỉ số tổng hợp thường được sử dụng, nó tính toán giá trị trung bình của Average Precision trên tất cả các lớp đối tượng và các ngưỡng IoU (Intersection over Union) khác nhau.',
+        answer:
+          'Các chỉ số phổ biến bao gồm Precision (độ chính xác) và Recall (độ bao phủ). Mean Average Precision (mAP) là một chỉ số tổng hợp thường được sử dụng, nó tính toán giá trị trung bình của Average Precision trên tất cả các lớp đối tượng và các ngưỡng IoU (Intersection over Union) khác nhau.',
       },
       {
         question: 'U-Net là kiến trúc gì và tại sao nó hiệu quả cho phân đoạn ảnh y tế?',
-        answer: 'U-Net là một kiến trúc mạng CNN có hình dạng chữ U. Nó bao gồm một đường đi xuống (encoder) để nắm bắt ngữ cảnh và một đường đi lên (decoder) đối xứng để cho phép bản địa hóa chính xác. Kiến trúc này rất hiệu quả trong việc phân đoạn ảnh y tế vì nó hoạt động tốt ngay cả với tập dữ liệu tương đối nhỏ và cho ra kết quả phân đoạn rất chính xác.',
+        answer:
+          'U-Net là một kiến trúc mạng CNN có hình dạng chữ U. Nó bao gồm một đường đi xuống (encoder) để nắm bắt ngữ cảnh và một đường đi lên (decoder) đối xứng để cho phép bản địa hóa chính xác. Kiến trúc này rất hiệu quả trong việc phân đoạn ảnh y tế vì nó hoạt động tốt ngay cả với tập dữ liệu tương đối nhỏ và cho ra kết quả phân đoạn rất chính xác.',
       },
       {
         question: 'Làm thế nào để xử lý vấn đề ánh sáng và góc nhìn khác nhau trong Computer Vision?',
-        answer: 'Data Augmentation là một cách hiệu quả, bằng cách tạo ra các phiên bản ảnh với độ sáng, độ tương phản và góc nhìn khác nhau. Ngoài ra, các kiến trúc mạng nơ-ron hiện đại, đặc biệt là CNN, có khả năng học các đặc trưng bất biến (invariant features), tức là các đặc trưng không thay đổi dù đối tượng bị xoay, thay đổi kích thước hoặc chiếu sáng khác đi.',
+        answer:
+          'Data Augmentation là một cách hiệu quả, bằng cách tạo ra các phiên bản ảnh với độ sáng, độ tương phản và góc nhìn khác nhau. Ngoài ra, các kiến trúc mạng nơ-ron hiện đại, đặc biệt là CNN, có khả năng học các đặc trưng bất biến (invariant features), tức là các đặc trưng không thay đổi dù đối tượng bị xoay, thay đổi kích thước hoặc chiếu sáng khác đi.',
       },
       {
         question: 'Optical Character Recognition (OCR) là gì?',
-        answer: 'OCR là công nghệ cho phép máy tính "đọc" văn bản từ hình ảnh. Nó được ứng dụng rộng rãi trong việc số hóa tài liệu, nhận dạng biển số xe, hoặc trích xuất thông tin từ hóa đơn, chứng minh nhân dân.',
+        answer:
+          'OCR là công nghệ cho phép máy tính "đọc" văn bản từ hình ảnh. Nó được ứng dụng rộng rãi trong việc số hóa tài liệu, nhận dạng biển số xe, hoặc trích xuất thông tin từ hóa đơn, chứng minh nhân dân.',
       },
       {
         question: 'Làm thế nào để triển khai một mô hình Computer Vision trên thiết bị di động?',
-        answer: 'Để chạy trên các thiết bị có tài nguyên hạn chế, các mô hình cần được tối ưu hóa. Các kỹ thuật phổ biến bao gồm lượng tử hóa (quantization - giảm độ chính xác của các con số), cắt tỉa (pruning - loại bỏ các kết nối không quan trọng), và sử dụng các kiến trúc mạng nhẹ được thiết kế riêng cho di động như MobileNet hoặc EfficientNet.',
+        answer:
+          'Để chạy trên các thiết bị có tài nguyên hạn chế, các mô hình cần được tối ưu hóa. Các kỹ thuật phổ biến bao gồm lượng tử hóa (quantization - giảm độ chính xác của các con số), cắt tỉa (pruning - loại bỏ các kết nối không quan trọng), và sử dụng các kiến trúc mạng nhẹ được thiết kế riêng cho di động như MobileNet hoặc EfficientNet.',
       },
     ],
   },
@@ -701,35 +734,43 @@ export const advancedDataScienceLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa xử lý theo lô (batch processing) và xử lý luồng (stream processing) là gì?',
-        answer: 'Xử lý theo lô xử lý một lượng lớn dữ liệu đã được lưu trữ trong một khoảng thời gian (ví dụ: xử lý dữ liệu bán hàng của ngày hôm qua vào mỗi đêm). Xử lý luồng xử lý dữ liệu ngay khi nó được tạo ra, trong thời gian gần như thực (ví dụ: phát hiện giao dịch thẻ tín dụng gian lận ngay lập tức).',
+        answer:
+          'Xử lý theo lô xử lý một lượng lớn dữ liệu đã được lưu trữ trong một khoảng thời gian (ví dụ: xử lý dữ liệu bán hàng của ngày hôm qua vào mỗi đêm). Xử lý luồng xử lý dữ liệu ngay khi nó được tạo ra, trong thời gian gần như thực (ví dụ: phát hiện giao dịch thẻ tín dụng gian lận ngay lập tức).',
       },
       {
         question: 'Apache Kafka được sử dụng để làm gì?',
-        answer: 'Apache Kafka là một nền tảng truyền tin phân tán (distributed streaming platform). Nó hoạt động như một hệ thống "nhắn tin" tốc độ cao, cho phép các ứng dụng khác nhau có thể gửi và nhận các luồng dữ liệu (streams of records) một cách đáng tin cậy và có khả năng chịu lỗi.',
+        answer:
+          'Apache Kafka là một nền tảng truyền tin phân tán (distributed streaming platform). Nó hoạt động như một hệ thống "nhắn tin" tốc độ cao, cho phép các ứng dụng khác nhau có thể gửi và nhận các luồng dữ liệu (streams of records) một cách đáng tin cậy và có khả năng chịu lỗi.',
       },
       {
         question: 'Định dạng file Parquet và ORC có ưu điểm gì trong hệ sinh thái Big Data?',
-        answer: 'Parquet và ORC là các định dạng lưu trữ dạng cột (columnar storage). Thay vì lưu trữ dữ liệu theo hàng như file CSV, chúng lưu trữ theo cột. Điều này giúp nén dữ liệu hiệu quả hơn và tăng tốc độ truy vấn đáng kể, đặc biệt khi các truy vấn chỉ cần truy cập vào một vài cột nhất định trong một bảng có nhiều cột.',
+        answer:
+          'Parquet và ORC là các định dạng lưu trữ dạng cột (columnar storage). Thay vì lưu trữ dữ liệu theo hàng như file CSV, chúng lưu trữ theo cột. Điều này giúp nén dữ liệu hiệu quả hơn và tăng tốc độ truy vấn đáng kể, đặc biệt khi các truy vấn chỉ cần truy cập vào một vài cột nhất định trong một bảng có nhiều cột.',
       },
       {
         question: 'Lambda Architecture là gì?',
-        answer: 'Lambda Architecture là một mẫu thiết kế hệ thống dữ liệu nhằm xử lý một lượng lớn dữ liệu bằng cách kết hợp cả phương pháp xử lý theo lô và xử lý luồng. Nó bao gồm một "lớp tốc độ" (speed layer) để cung cấp các kết quả thời gian thực và một "lớp lô" (batch layer) để cung cấp các kết quả toàn diện và chính xác hơn.',
+        answer:
+          'Lambda Architecture là một mẫu thiết kế hệ thống dữ liệu nhằm xử lý một lượng lớn dữ liệu bằng cách kết hợp cả phương pháp xử lý theo lô và xử lý luồng. Nó bao gồm một "lớp tốc độ" (speed layer) để cung cấp các kết quả thời gian thực và một "lớp lô" (batch layer) để cung cấp các kết quả toàn diện và chính xác hơn.',
       },
       {
         question: 'Một kỹ sư dữ liệu (Data Engineer) làm những công việc gì?',
-        answer: 'Một kỹ sư dữ liệu chịu trách nhiệm thiết kế, xây dựng và duy trì các hệ thống và đường ống dữ liệu (data pipelines). Công việc của họ là đảm bảo dữ liệu được thu thập, lưu trữ, và cung cấp một cách hiệu quả, đáng tin cậy và có thể mở rộng để các nhà khoa học dữ liệu và nhà phân tích có thể sử dụng.',
+        answer:
+          'Một kỹ sư dữ liệu chịu trách nhiệm thiết kế, xây dựng và duy trì các hệ thống và đường ống dữ liệu (data pipelines). Công việc của họ là đảm bảo dữ liệu được thu thập, lưu trữ, và cung cấp một cách hiệu quả, đáng tin cậy và có thể mở rộng để các nhà khoa học dữ liệu và nhà phân tích có thể sử dụng.',
       },
       {
         question: 'SQL vẫn còn quan trọng trong thế giới Big Data không?',
-        answer: 'Rất quan trọng. SQL (Structured Query Language) vẫn là ngôn ngữ tiêu chuẩn để truy vấn và thao tác dữ liệu. Nhiều công cụ Big Data như Spark (với Spark SQL), Hive, Presto đều cung cấp các giao diện giống SQL, cho phép các nhà phân tích và kỹ sư dễ dàng làm việc với dữ liệu lớn mà không cần phải viết các đoạn mã phức tạp.',
+        answer:
+          'Rất quan trọng. SQL (Structured Query Language) vẫn là ngôn ngữ tiêu chuẩn để truy vấn và thao tác dữ liệu. Nhiều công cụ Big Data như Spark (với Spark SQL), Hive, Presto đều cung cấp các giao diện giống SQL, cho phép các nhà phân tích và kỹ sư dễ dàng làm việc với dữ liệu lớn mà không cần phải viết các đoạn mã phức tạp.',
       },
       {
         question: 'Data Governance (Quản trị dữ liệu) là gì?',
-        answer: 'Data Governance là một tập hợp các quy trình, chính sách, tiêu chuẩn và vai trò nhằm đảm bảo dữ liệu trong một tổ chức được quản lý một cách nhất quán và hiệu quả. Nó giải quyết các vấn đề như chất lượng dữ liệu, bảo mật dữ liệu, quyền riêng tư và tuân thủ quy định.',
+        answer:
+          'Data Governance là một tập hợp các quy trình, chính sách, tiêu chuẩn và vai trò nhằm đảm bảo dữ liệu trong một tổ chức được quản lý một cách nhất quán và hiệu quả. Nó giải quyết các vấn đề như chất lượng dữ liệu, bảo mật dữ liệu, quyền riêng tư và tuân thủ quy định.',
       },
       {
         question: 'Sự khác biệt giữa Data Lake, Data Warehouse và Data Mart là gì?',
-        answer: 'Data Lake lưu trữ dữ liệu thô ở mọi định dạng. Data Warehouse lưu trữ dữ liệu có cấu trúc, đã được làm sạch cho mục đích phân tích toàn doanh nghiệp. Data Mart là một phiên bản nhỏ hơn của Data Warehouse, thường tập trung vào dữ liệu của một bộ phận hoặc một lĩnh vực kinh doanh cụ thể (ví dụ: Data Mart cho phòng Marketing).',
+        answer:
+          'Data Lake lưu trữ dữ liệu thô ở mọi định dạng. Data Warehouse lưu trữ dữ liệu có cấu trúc, đã được làm sạch cho mục đích phân tích toàn doanh nghiệp. Data Mart là một phiên bản nhỏ hơn của Data Warehouse, thường tập trung vào dữ liệu của một bộ phận hoặc một lĩnh vực kinh doanh cụ thể (ví dụ: Data Mart cho phòng Marketing).',
       },
     ],
   },

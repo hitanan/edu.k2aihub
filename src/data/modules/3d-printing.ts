@@ -109,35 +109,43 @@ export const threeDPrintingLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt chính giữa in 3D và các phương pháp sản xuất truyền thống là gì?',
-        answer: 'Sản xuất truyền thống (như tiện, phay) là sản xuất "trừ", tức là loại bỏ vật liệu từ một khối lớn. In 3D là sản xuất "cộng", tức là xây dựng vật thể từng lớp một từ vật liệu thô. Điều này giúp tiết kiệm vật liệu và cho phép tạo ra các hình dạng phức tạp mà phương pháp truyền thống không thể làm được.',
+        answer:
+          'Sản xuất truyền thống (như tiện, phay) là sản xuất "trừ", tức là loại bỏ vật liệu từ một khối lớn. In 3D là sản xuất "cộng", tức là xây dựng vật thể từng lớp một từ vật liệu thô. Điều này giúp tiết kiệm vật liệu và cho phép tạo ra các hình dạng phức tạp mà phương pháp truyền thống không thể làm được.',
       },
       {
         question: 'In 3D có nhanh không?',
-        answer: 'Thời gian in phụ thuộc rất nhiều vào kích thước, độ phức tạp và chất lượng mong muốn của sản phẩm. Một vật thể nhỏ có thể chỉ mất vài chục phút, nhưng các mô hình lớn và chi tiết có thể mất hàng chục giờ hoặc thậm chí vài ngày để hoàn thành.',
+        answer:
+          'Thời gian in phụ thuộc rất nhiều vào kích thước, độ phức tạp và chất lượng mong muốn của sản phẩm. Một vật thể nhỏ có thể chỉ mất vài chục phút, nhưng các mô hình lớn và chi tiết có thể mất hàng chục giờ hoặc thậm chí vài ngày để hoàn thành.',
       },
       {
         question: 'Công nghệ FDM hoạt động như thế nào?',
-        answer: 'FDM (Fused Deposition Modeling) hoạt động bằng cách đùn một sợi nhựa (filament) qua một đầu phun được nung nóng, làm cho nhựa chảy ra. Đầu phun di chuyển theo các tọa độ được lập trình sẵn để vẽ từng lớp của vật thể. Lớp này chồng lên lớp kia và nguội đi, tạo thành một vật thể rắn.',
+        answer:
+          'FDM (Fused Deposition Modeling) hoạt động bằng cách đùn một sợi nhựa (filament) qua một đầu phun được nung nóng, làm cho nhựa chảy ra. Đầu phun di chuyển theo các tọa độ được lập trình sẵn để vẽ từng lớp của vật thể. Lớp này chồng lên lớp kia và nguội đi, tạo thành một vật thể rắn.',
       },
       {
         question: 'Tôi có thể tự thiết kế mô hình để in 3D không?',
-        answer: 'Chắc chắn rồi! Đó là một phần thú vị nhất của in 3D. Bạn có thể bắt đầu với các phần mềm miễn phí và dễ sử dụng như Tinkercad, hoặc các phần mềm mạnh mẽ hơn như Blender, Fusion 360. Ngoài ra, có hàng triệu mô hình 3D miễn phí trên các trang web như Thingiverse, Printables để bạn tải về và in.',
+        answer:
+          'Chắc chắn rồi! Đó là một phần thú vị nhất của in 3D. Bạn có thể bắt đầu với các phần mềm miễn phí và dễ sử dụng như Tinkercad, hoặc các phần mềm mạnh mẽ hơn như Blender, Fusion 360. Ngoài ra, có hàng triệu mô hình 3D miễn phí trên các trang web như Thingiverse, Printables để bạn tải về và in.',
       },
       {
         question: 'In 3D có an toàn không?',
-        answer: 'Khi vận hành đúng cách, in 3D là an toàn. Tuy nhiên, cần lưu ý: máy in có các bộ phận nóng (đầu phun, bàn in) có thể gây bỏng. Một số loại nhựa như ABS khi in có thể tạo ra khói có mùi và tiềm ẩn nguy cơ sức khỏe, do đó cần in ở nơi thông thoáng. Nhựa PLA được coi là an toàn và dễ in nhất.',
+        answer:
+          'Khi vận hành đúng cách, in 3D là an toàn. Tuy nhiên, cần lưu ý: máy in có các bộ phận nóng (đầu phun, bàn in) có thể gây bỏng. Một số loại nhựa như ABS khi in có thể tạo ra khói có mùi và tiềm ẩn nguy cơ sức khỏe, do đó cần in ở nơi thông thoáng. Nhựa PLA được coi là an toàn và dễ in nhất.',
       },
       {
         question: 'Độ phân giải của máy in 3D là gì?',
-        answer: 'Độ phân giải trong in 3D thường được đo bằng chiều cao của mỗi lớp in (layer height). Chiều cao lớp càng nhỏ (ví dụ 0.1mm) thì độ phân giải càng cao, bề mặt vật thể càng mịn và chi tiết. Tuy nhiên, in với độ phân giải cao sẽ mất nhiều thời gian hơn.',
+        answer:
+          'Độ phân giải trong in 3D thường được đo bằng chiều cao của mỗi lớp in (layer height). Chiều cao lớp càng nhỏ (ví dụ 0.1mm) thì độ phân giải càng cao, bề mặt vật thể càng mịn và chi tiết. Tuy nhiên, in với độ phân giải cao sẽ mất nhiều thời gian hơn.',
       },
       {
         question: 'Tại sao in 3D được gọi là công nghệ tạo mẫu nhanh (Rapid Prototyping)?',
-        answer: 'Bởi vì nó cho phép các nhà thiết kế và kỹ sư chuyển đổi một bản vẽ kỹ thuật số thành một nguyên mẫu vật lý trong vài giờ hoặc vài ngày, thay vì vài tuần hoặc vài tháng như các phương pháp truyền thống. Điều này giúp đẩy nhanh đáng kể chu kỳ phát triển sản phẩm.',
+        answer:
+          'Bởi vì nó cho phép các nhà thiết kế và kỹ sư chuyển đổi một bản vẽ kỹ thuật số thành một nguyên mẫu vật lý trong vài giờ hoặc vài ngày, thay vì vài tuần hoặc vài tháng như các phương pháp truyền thống. Điều này giúp đẩy nhanh đáng kể chu kỳ phát triển sản phẩm.',
       },
       {
         question: 'Liệu in 3D có thể thay thế hoàn toàn sản xuất hàng loạt không?',
-        answer: 'Hiện tại thì chưa. In 3D rất mạnh trong việc tạo mẫu, sản xuất số lượng nhỏ và các sản phẩm tùy biến cao. Đối với sản xuất hàng triệu sản phẩm giống hệt nhau, các phương pháp truyền thống như ép phun vẫn hiệu quả và kinh tế hơn nhiều.',
+        answer:
+          'Hiện tại thì chưa. In 3D rất mạnh trong việc tạo mẫu, sản xuất số lượng nhỏ và các sản phẩm tùy biến cao. Đối với sản xuất hàng triệu sản phẩm giống hệt nhau, các phương pháp truyền thống như ép phun vẫn hiệu quả và kinh tế hơn nhiều.',
       },
     ],
   },
@@ -218,35 +226,43 @@ export const threeDPrintingLessons: BaseLessonData[] = [
       },
       {
         question: 'File .STL là gì và tại sao nó quan trọng?',
-        answer: 'STL (Stereolithography) là một định dạng file tiêu chuẩn trong ngành in 3D. Nó mô tả bề mặt của một vật thể 3D bằng một loạt các hình tam giác nhỏ. Hầu hết tất cả các phần mềm Slicer đều sử dụng file STL làm đầu vào để chuẩn bị cho quá trình in.',
+        answer:
+          'STL (Stereolithography) là một định dạng file tiêu chuẩn trong ngành in 3D. Nó mô tả bề mặt của một vật thể 3D bằng một loạt các hình tam giác nhỏ. Hầu hết tất cả các phần mềm Slicer đều sử dụng file STL làm đầu vào để chuẩn bị cho quá trình in.',
       },
       {
         question: 'Làm thế nào để tạo một lỗ hổng trong một vật thể trên Tinkercad?',
-        answer: 'Bạn chọn một hình dạng bất kỳ, sau đó trong bảng thuộc tính của nó, chọn tùy chọn "Hole". Đặt hình dạng "Hole" này vào vị trí bạn muốn cắt trên một vật thể rắn khác, sau đó chọn cả hai và nhấn nút "Group". Hình dạng "Hole" sẽ cắt bỏ phần giao nhau.',
+        answer:
+          'Bạn chọn một hình dạng bất kỳ, sau đó trong bảng thuộc tính của nó, chọn tùy chọn "Hole". Đặt hình dạng "Hole" này vào vị trí bạn muốn cắt trên một vật thể rắn khác, sau đó chọn cả hai và nhấn nút "Group". Hình dạng "Hole" sẽ cắt bỏ phần giao nhau.',
       },
       {
         question: 'Tôi có thể nhập các mô hình 3D từ bên ngoài vào Tinkercad không?',
-        answer: 'Có, Tinkercad hỗ trợ nhập các file định dạng STL, OBJ và SVG. Điều này cho phép bạn chỉnh sửa các mô hình có sẵn hoặc kết hợp chúng vào thiết kế của mình.',
+        answer:
+          'Có, Tinkercad hỗ trợ nhập các file định dạng STL, OBJ và SVG. Điều này cho phép bạn chỉnh sửa các mô hình có sẵn hoặc kết hợp chúng vào thiết kế của mình.',
       },
       {
         question: 'Công cụ "Align" trong Tinkercad dùng để làm gì?',
-        answer: 'Công cụ "Align" (Căn chỉnh) rất hữu ích. Nó cho phép bạn căn chỉnh các đối tượng được chọn theo các cạnh hoặc tâm của chúng một cách chính xác, giúp bạn dễ dàng sắp xếp các bộ phận của thiết kế.',
+        answer:
+          'Công cụ "Align" (Căn chỉnh) rất hữu ích. Nó cho phép bạn căn chỉnh các đối tượng được chọn theo các cạnh hoặc tâm của chúng một cách chính xác, giúp bạn dễ dàng sắp xếp các bộ phận của thiết kế.',
       },
       {
         question: 'Tinkercad có hoàn toàn miễn phí không?',
-        answer: 'Có, Tinkercad là một sản phẩm của Autodesk và nó hoàn toàn miễn phí cho tất cả mọi người, từ học sinh, giáo viên đến những người có sở thích. Bạn chỉ cần tạo một tài khoản Autodesk miễn phí để sử dụng.',
+        answer:
+          'Có, Tinkercad là một sản phẩm của Autodesk và nó hoàn toàn miễn phí cho tất cả mọi người, từ học sinh, giáo viên đến những người có sở thích. Bạn chỉ cần tạo một tài khoản Autodesk miễn phí để sử dụng.',
       },
       {
         question: 'Thiết kế của tôi trên Tinkercad có được lưu trữ ở đâu?',
-        answer: 'Tất cả các thiết kế của bạn được tự động lưu vào tài khoản Tinkercad của bạn trên đám mây. Bạn có thể truy cập và chỉnh sửa chúng từ bất kỳ máy tính nào có kết nối internet.',
+        answer:
+          'Tất cả các thiết kế của bạn được tự động lưu vào tài khoản Tinkercad của bạn trên đám mây. Bạn có thể truy cập và chỉnh sửa chúng từ bất kỳ máy tính nào có kết nối internet.',
       },
       {
         question: 'Ngoài thiết kế 3D, Tinkercad còn có tính năng nào khác không?',
-        answer: 'Có, Tinkercad còn có các mô-đun "Circuits" để mô phỏng mạch điện tử với Arduino và "Codeblocks" để tạo ra các thiết kế 3D bằng cách lập trình trực quan, kéo thả các khối lệnh.',
+        answer:
+          'Có, Tinkercad còn có các mô-đun "Circuits" để mô phỏng mạch điện tử với Arduino và "Codeblocks" để tạo ra các thiết kế 3D bằng cách lập trình trực quan, kéo thả các khối lệnh.',
       },
       {
         question: 'Làm cách nào để đảm bảo kích thước thiết kế của tôi là chính xác?',
-        answer: 'Khi bạn chọn một đối tượng, các kích thước của nó sẽ hiện ra. Bạn có thể nhấp vào các con số đó và nhập kích thước chính xác mà bạn muốn. Công cụ "Ruler" (Thước) cũng có thể được kéo ra không gian làm việc để giúp bạn đo đạc dễ dàng hơn.',
+        answer:
+          'Khi bạn chọn một đối tượng, các kích thước của nó sẽ hiện ra. Bạn có thể nhấp vào các con số đó và nhập kích thước chính xác mà bạn muốn. Công cụ "Ruler" (Thước) cũng có thể được kéo ra không gian làm việc để giúp bạn đo đạc dễ dàng hơn.',
       },
     ],
   },
@@ -330,35 +346,43 @@ export const threeDPrintingLessons: BaseLessonData[] = [
       },
       {
         question: 'Cấu trúc hỗ trợ (Supports) là gì và khi nào cần dùng đến nó?',
-        answer: 'Supports là các cấu trúc tạm thời mà Slicer tự động tạo ra để đỡ những phần của mô hình bị nhô ra không trung (overhangs) hoặc các cây cầu (bridges) quá dài. Nếu không có supports, những phần này sẽ bị in lỗi hoặc sụp đổ do không có gì ở dưới để đỡ. Sau khi in xong, supports sẽ được bóc hoặc bẻ đi.',
+        answer:
+          'Supports là các cấu trúc tạm thời mà Slicer tự động tạo ra để đỡ những phần của mô hình bị nhô ra không trung (overhangs) hoặc các cây cầu (bridges) quá dài. Nếu không có supports, những phần này sẽ bị in lỗi hoặc sụp đổ do không có gì ở dưới để đỡ. Sau khi in xong, supports sẽ được bóc hoặc bẻ đi.',
       },
       {
         question: 'Sự khác biệt giữa "Skirt", "Brim" và "Raft" là gì?',
-        answer: 'Đây là các tùy chọn bám dính (Adhesion). "Skirt" là một đường bao quanh vật thể nhưng không chạm vào nó, giúp mồi nhựa cho đầu in. "Brim" là một vài lớp in rộng, phẳng, tiếp xúc trực tiếp với các cạnh của vật thể, giúp tăng diện tích tiếp xúc và chống cong vênh. "Raft" là một lớp đế dày bên dưới toàn bộ vật thể, vật thể sẽ được in trên lớp đế này thay vì in trực tiếp lên bàn in.',
+        answer:
+          'Đây là các tùy chọn bám dính (Adhesion). "Skirt" là một đường bao quanh vật thể nhưng không chạm vào nó, giúp mồi nhựa cho đầu in. "Brim" là một vài lớp in rộng, phẳng, tiếp xúc trực tiếp với các cạnh của vật thể, giúp tăng diện tích tiếp xúc và chống cong vênh. "Raft" là một lớp đế dày bên dưới toàn bộ vật thể, vật thể sẽ được in trên lớp đế này thay vì in trực tiếp lên bàn in.',
       },
       {
         question: 'Tôi có thể dùng một file G-code cho nhiều loại máy in khác nhau không?',
-        answer: 'Không nên. Mỗi file G-code được tạo ra cho một cấu hình máy in cụ thể (kích thước bàn in, loại firmware...). Sử dụng G-code của máy này cho máy khác có thể gây ra lỗi hoặc thậm chí làm hỏng máy.',
+        answer:
+          'Không nên. Mỗi file G-code được tạo ra cho một cấu hình máy in cụ thể (kích thước bàn in, loại firmware...). Sử dụng G-code của máy này cho máy khác có thể gây ra lỗi hoặc thậm chí làm hỏng máy.',
       },
       {
         question: 'Phần mềm Slicer nào là tốt nhất?',
-        answer: 'Không có câu trả lời tuyệt đối. Cura, PrusaSlicer và Bambu Studio là ba trong số những Slicer miễn phí và phổ biến nhất hiện nay. Mỗi cái đều có điểm mạnh riêng và giao diện hơi khác nhau. Lựa chọn tốt nhất phụ thuộc vào máy in bạn đang dùng và sở thích cá nhân.',
+        answer:
+          'Không có câu trả lời tuyệt đối. Cura, PrusaSlicer và Bambu Studio là ba trong số những Slicer miễn phí và phổ biến nhất hiện nay. Mỗi cái đều có điểm mạnh riêng và giao diện hơi khác nhau. Lựa chọn tốt nhất phụ thuộc vào máy in bạn đang dùng và sở thích cá nhân.',
       },
       {
         question: 'Tốc độ in (Print Speed) ảnh hưởng đến chất lượng như thế nào?',
-        answer: 'In càng nhanh, thời gian hoàn thành càng sớm nhưng có thể làm giảm chất lượng bề mặt, các chi tiết nhỏ có thể bị lỗi và các lớp có thể liên kết kém hơn. In chậm hơn thường cho kết quả đẹp và chắc chắn hơn. Việc tìm ra tốc độ tối ưu là một sự cân bằng giữa thời gian và chất lượng.',
+        answer:
+          'In càng nhanh, thời gian hoàn thành càng sớm nhưng có thể làm giảm chất lượng bề mặt, các chi tiết nhỏ có thể bị lỗi và các lớp có thể liên kết kém hơn. In chậm hơn thường cho kết quả đẹp và chắc chắn hơn. Việc tìm ra tốc độ tối ưu là một sự cân bằng giữa thời gian và chất lượng.',
       },
       {
         question: 'Tại sao cần phải xem trước (Preview) trong Slicer trước khi in?',
-        answer: 'Chế độ xem trước cho phép bạn mô phỏng lại toàn bộ quá trình in, lớp này qua lớp khác. Nó cực kỳ hữu ích để kiểm tra xem có lỗi nào trong quá trình cắt lớp không, cấu trúc hỗ trợ có được tạo đúng chỗ không, và ước tính thời gian cũng như lượng vật liệu sẽ tiêu thụ.',
+        answer:
+          'Chế độ xem trước cho phép bạn mô phỏng lại toàn bộ quá trình in, lớp này qua lớp khác. Nó cực kỳ hữu ích để kiểm tra xem có lỗi nào trong quá trình cắt lớp không, cấu trúc hỗ trợ có được tạo đúng chỗ không, và ước tính thời gian cũng như lượng vật liệu sẽ tiêu thụ.',
       },
       {
         question: 'Tôi có thể thay đổi thông số in giữa chừng khi đang in không?',
-        answer: 'Hầu hết các máy in 3D hiện đại cho phép bạn tinh chỉnh một số thông số cơ bản ngay trên màn hình của máy khi đang in, chẳng hạn như tốc độ in (Print Speed), nhiệt độ đầu phun (Nozzle Temperature) và tốc độ quạt (Fan Speed). Điều này rất hữu ích để "cứu" một bản in khi bạn thấy có vấn đề.',
+        answer:
+          'Hầu hết các máy in 3D hiện đại cho phép bạn tinh chỉnh một số thông số cơ bản ngay trên màn hình của máy khi đang in, chẳng hạn như tốc độ in (Print Speed), nhiệt độ đầu phun (Nozzle Temperature) và tốc độ quạt (Fan Speed). Điều này rất hữu ích để "cứu" một bản in khi bạn thấy có vấn đề.',
       },
       {
         question: 'Làm thế nào để giảm thời gian in?',
-        answer: 'Có nhiều cách: tăng chiều cao lớp in (Layer Height), giảm mật độ lấp đầy (Infill), tăng tốc độ in, hoặc sử dụng đầu phun có đường kính lớn hơn. Tuy nhiên, mỗi thay đổi này đều có thể ảnh hưởng đến chất lượng hoặc độ bền của sản phẩm.',
+        answer:
+          'Có nhiều cách: tăng chiều cao lớp in (Layer Height), giảm mật độ lấp đầy (Infill), tăng tốc độ in, hoặc sử dụng đầu phun có đường kính lớn hơn. Tuy nhiên, mỗi thay đổi này đều có thể ảnh hưởng đến chất lượng hoặc độ bền của sản phẩm.',
       },
     ],
   },
@@ -439,35 +463,43 @@ export const threeDPrintingLessons: BaseLessonData[] = [
       },
       {
         question: '"Cân bàn in" (Bed Leveling) là gì và tại sao nó lại quan trọng đến vậy?',
-        answer: 'Cân bàn in là quá trình điều chỉnh để đảm bảo khoảng cách giữa đầu phun và bề mặt bàn in là như nhau ở mọi điểm. Đây là bước quan trọng nhất để có một lớp in đầu tiên hoàn hảo. Nếu khoảng cách quá xa, nhựa sẽ không dính. Nếu quá gần, nhựa sẽ không thể thoát ra hoặc làm xước bàn in.',
+        answer:
+          'Cân bàn in là quá trình điều chỉnh để đảm bảo khoảng cách giữa đầu phun và bề mặt bàn in là như nhau ở mọi điểm. Đây là bước quan trọng nhất để có một lớp in đầu tiên hoàn hảo. Nếu khoảng cách quá xa, nhựa sẽ không dính. Nếu quá gần, nhựa sẽ không thể thoát ra hoặc làm xước bàn in.',
       },
       {
         question: 'Lớp in đầu tiên là quan trọng nhất, đúng hay sai?',
-        answer: 'Đúng. Lớp in đầu tiên là nền móng cho toàn bộ vật thể. Một lớp đầu tiên tốt, bám dính đều trên toàn bộ bề mặt sẽ quyết định đến 90% sự thành công của bản in.',
+        answer:
+          'Đúng. Lớp in đầu tiên là nền móng cho toàn bộ vật thể. Một lớp đầu tiên tốt, bám dính đều trên toàn bộ bề mặt sẽ quyết định đến 90% sự thành công của bản in.',
       },
       {
         question: 'Hiện tượng "cong vênh" (warping) là gì và làm sao để khắc phục?',
-        answer: 'Cong vênh là hiện tượng các góc của vật thể bị co lại và nhấc lên khỏi bàn in. Nó xảy ra do sự co ngót không đồng đều của nhựa khi nguội đi. Cách khắc phục bao gồm: đảm bảo bàn in sạch, sử dụng Brim hoặc Raft, tăng nhiệt độ bàn in, hoặc sử dụng buồng in kín để duy trì nhiệt độ ổn định.',
+        answer:
+          'Cong vênh là hiện tượng các góc của vật thể bị co lại và nhấc lên khỏi bàn in. Nó xảy ra do sự co ngót không đồng đều của nhựa khi nguội đi. Cách khắc phục bao gồm: đảm bảo bàn in sạch, sử dụng Brim hoặc Raft, tăng nhiệt độ bàn in, hoặc sử dụng buồng in kín để duy trì nhiệt độ ổn định.',
       },
       {
         question: 'Tôi nên sử dụng nhựa PLA hay ABS?',
-        answer: 'Đối với người mới bắt đầu, PLA là lựa chọn tốt nhất. Nó dễ in, ít cong vênh, không yêu cầu bàn in nhiệt độ cao và không có mùi khó chịu. ABS bền hơn và chịu nhiệt tốt hơn nhưng khó in hơn, đòi hỏi nhiệt độ cao và dễ bị cong vênh, cần in trong buồng kín.',
+        answer:
+          'Đối với người mới bắt đầu, PLA là lựa chọn tốt nhất. Nó dễ in, ít cong vênh, không yêu cầu bàn in nhiệt độ cao và không có mùi khó chịu. ABS bền hơn và chịu nhiệt tốt hơn nhưng khó in hơn, đòi hỏi nhiệt độ cao và dễ bị cong vênh, cần in trong buồng kín.',
       },
       {
         question: 'Làm thế nào để bảo quản cuộn nhựa in (filament)?',
-        answer: 'Hầu hết các loại nhựa in, đặc biệt là PLA và PETG, đều hút ẩm từ không khí. Nhựa bị ẩm sẽ gây ra nhiều vấn đề khi in như tiếng nổ lách tách, bề mặt sần sùi, và sợi nhựa giòn dễ gãy. Bạn nên bảo quản filament trong túi zip kín hoặc hộp chống ẩm cùng với các gói hút ẩm.',
+        answer:
+          'Hầu hết các loại nhựa in, đặc biệt là PLA và PETG, đều hút ẩm từ không khí. Nhựa bị ẩm sẽ gây ra nhiều vấn đề khi in như tiếng nổ lách tách, bề mặt sần sùi, và sợi nhựa giòn dễ gãy. Bạn nên bảo quản filament trong túi zip kín hoặc hộp chống ẩm cùng với các gói hút ẩm.',
       },
       {
         question: 'Hiện tượng "tưa" hoặc "kéo sợi" (stringing) là gì?',
-        answer: 'Stringing là những sợi nhựa mỏng giống như mạng nhện xuất hiện giữa các bộ phận riêng biệt của mô hình. Nó xảy ra khi đầu in di chuyển từ điểm này sang điểm khác mà nhựa vẫn tiếp tục rỉ ra. Cách khắc phục là điều chỉnh cài đặt "Retraction" (rút nhựa) trong Slicer.',
+        answer:
+          'Stringing là những sợi nhựa mỏng giống như mạng nhện xuất hiện giữa các bộ phận riêng biệt của mô hình. Nó xảy ra khi đầu in di chuyển từ điểm này sang điểm khác mà nhựa vẫn tiếp tục rỉ ra. Cách khắc phục là điều chỉnh cài đặt "Retraction" (rút nhựa) trong Slicer.',
       },
       {
         question: 'Tôi có cần phải ở bên cạnh máy in trong suốt quá trình in không?',
-        answer: 'Bạn nên quan sát kỹ lớp in đầu tiên để đảm bảo mọi thứ ổn thỏa. Sau đó, bạn không cần phải theo dõi liên tục, nhưng nên thỉnh thoảng kiểm tra. Hầu hết các máy in hiện đại đều khá đáng tin cậy, nhưng lỗi vẫn có thể xảy ra. Không bao giờ để máy in hoạt động mà không có người giám sát trong một thời gian dài, đặc biệt là qua đêm.',
+        answer:
+          'Bạn nên quan sát kỹ lớp in đầu tiên để đảm bảo mọi thứ ổn thỏa. Sau đó, bạn không cần phải theo dõi liên tục, nhưng nên thỉnh thoảng kiểm tra. Hầu hết các máy in hiện đại đều khá đáng tin cậy, nhưng lỗi vẫn có thể xảy ra. Không bao giờ để máy in hoạt động mà không có người giám sát trong một thời gian dài, đặc biệt là qua đêm.',
       },
       {
         question: 'Sau khi in xong, tôi cần làm gì tiếp theo?',
-        answer: 'Chờ cho bàn in nguội xuống một chút, vật thể sẽ dễ lấy ra hơn. Sau đó, bạn có thể cần phải loại bỏ các cấu trúc hỗ trợ (supports) và brim/raft. Tùy thuộc vào yêu cầu, bạn có thể thực hiện các bước xử lý hậu kỳ như chà nhám, sơn hoặc lắp ráp các bộ phận lại với nhau.',
+        answer:
+          'Chờ cho bàn in nguội xuống một chút, vật thể sẽ dễ lấy ra hơn. Sau đó, bạn có thể cần phải loại bỏ các cấu trúc hỗ trợ (supports) và brim/raft. Tùy thuộc vào yêu cầu, bạn có thể thực hiện các bước xử lý hậu kỳ như chà nhám, sơn hoặc lắp ráp các bộ phận lại với nhau.',
       },
     ],
   },

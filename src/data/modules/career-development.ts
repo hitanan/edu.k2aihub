@@ -81,28 +81,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: 'Tôi nên cập nhật kế hoạch nghề nghiệp của mình bao lâu một lần?',
-        answer: 'Bạn nên xem lại và cập nhật kế hoạch nghề nghiệp của mình ít nhất mỗi năm một lần, hoặc bất cứ khi nào có sự thay đổi lớn trong cuộc sống hoặc công việc của bạn, chẳng hạn như được thăng chức, thay đổi công ty, hoặc khi mục tiêu dài hạn của bạn thay đổi.'
+        answer:
+          'Bạn nên xem lại và cập nhật kế hoạch nghề nghiệp của mình ít nhất mỗi năm một lần, hoặc bất cứ khi nào có sự thay đổi lớn trong cuộc sống hoặc công việc của bạn, chẳng hạn như được thăng chức, thay đổi công ty, hoặc khi mục tiêu dài hạn của bạn thay đổi.',
       },
       {
         question: 'Phân tích SWOT cá nhân là gì và nó giúp ích gì?',
-        answer: 'Phân tích SWOT (Strengths, Weaknesses, Opportunities, Threats) cá nhân là một công cụ giúp bạn xác định Điểm mạnh, Điểm yếu, Cơ hội và Thách thức liên quan đến sự nghiệp của mình. Nó cung cấp một cái nhìn tổng quan để bạn có thể tận dụng điểm mạnh, khắc phục điểm yếu, nắm bắt cơ hội và đối phó với các mối đe dọa.'
+        answer:
+          'Phân tích SWOT (Strengths, Weaknesses, Opportunities, Threats) cá nhân là một công cụ giúp bạn xác định Điểm mạnh, Điểm yếu, Cơ hội và Thách thức liên quan đến sự nghiệp của mình. Nó cung cấp một cái nhìn tổng quan để bạn có thể tận dụng điểm mạnh, khắc phục điểm yếu, nắm bắt cơ hội và đối phó với các mối đe dọa.',
       },
       {
         question: 'Làm thế nào để xây dựng một lộ trình phát triển kỹ năng hiệu quả?',
-        answer: 'Bắt đầu bằng việc xác định khoảng cách kỹ năng giữa vị trí hiện tại và mục tiêu nghề nghiệp của bạn. Sau đó, ưu tiên các kỹ năng quan trọng nhất và tìm kiếm các nguồn học tập phù hợp như các khóa học trực tuyến, chứng chỉ chuyên môn, hội thảo, hoặc tìm một người cố vấn.'
+        answer:
+          'Bắt đầu bằng việc xác định khoảng cách kỹ năng giữa vị trí hiện tại và mục tiêu nghề nghiệp của bạn. Sau đó, ưu tiên các kỹ năng quan trọng nhất và tìm kiếm các nguồn học tập phù hợp như các khóa học trực tuyến, chứng chỉ chuyên môn, hội thảo, hoặc tìm một người cố vấn.',
       },
       {
         question: 'Vai trò của người cố vấn (mentor) trong phát triển sự nghiệp là gì?',
-        answer: 'Một người cố vấn có thể cung cấp hướng dẫn, lời khuyên dựa trên kinh nghiệm của họ, giúp bạn mở rộng mạng lưới quan hệ và đưa ra những góc nhìn khách quan về con đường sự nghiệp của bạn. Tìm một người cố vấn là một trong những bước đi chiến lược nhất để thúc đẩy sự nghiệp.'
+        answer:
+          'Một người cố vấn có thể cung cấp hướng dẫn, lời khuyên dựa trên kinh nghiệm của họ, giúp bạn mở rộng mạng lưới quan hệ và đưa ra những góc nhìn khách quan về con đường sự nghiệp của bạn. Tìm một người cố vấn là một trong những bước đi chiến lược nhất để thúc đẩy sự nghiệp.',
       },
       {
         question: 'Tôi nên làm gì nếu cảm thấy "mắc kẹt" trong sự nghiệp hiện tại?',
-        answer: 'Đây là một tín hiệu tốt để bạn xem xét lại kế hoạch nghề nghiệp của mình. Hãy thử đánh giá lại giá trị và sở thích của bạn, nói chuyện với các chuyên gia trong lĩnh vực bạn quan tâm, hoặc thử nghiệm các dự án phụ để khám phá những hướng đi mới. Đôi khi, một sự thay đổi nhỏ cũng có thể tạo ra động lực lớn.'
+        answer:
+          'Đây là một tín hiệu tốt để bạn xem xét lại kế hoạch nghề nghiệp của mình. Hãy thử đánh giá lại giá trị và sở thích của bạn, nói chuyện với các chuyên gia trong lĩnh vực bạn quan tâm, hoặc thử nghiệm các dự án phụ để khám phá những hướng đi mới. Đôi khi, một sự thay đổi nhỏ cũng có thể tạo ra động lực lớn.',
       },
       {
         question: 'Làm thế nào để cân bằng giữa công việc và cuộc sống khi lập kế hoạch nghề nghiệp?',
-        answer: 'Một kế hoạch nghề nghiệp tốt phải tích hợp cả mục tiêu cá nhân và mục tiêu công việc. Hãy đảm bảo rằng các mục tiêu nghề nghiệp của bạn phù hợp với lối sống mà bạn mong muốn. Đặt ra các ranh giới rõ ràng và đừng ngần ngại điều chỉnh lộ trình của mình để đảm bảo sự cân bằng bền vững.'
-      }
+        answer:
+          'Một kế hoạch nghề nghiệp tốt phải tích hợp cả mục tiêu cá nhân và mục tiêu công việc. Hãy đảm bảo rằng các mục tiêu nghề nghiệp của bạn phù hợp với lối sống mà bạn mong muốn. Đặt ra các ranh giới rõ ràng và đừng ngần ngại điều chỉnh lộ trình của mình để đảm bảo sự cân bằng bền vững.',
+      },
     ],
   },
   {
@@ -163,28 +169,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: 'Xây dựng thương hiệu cá nhân mất bao lâu?',
-        answer: 'Xây dựng thương hiệu cá nhân là một quá trình liên tục, không phải là một dự án có điểm kết thúc. Tuy nhiên, bạn có thể bắt đầu thấy những kết quả ban đầu sau khoảng 3-6 tháng nỗ lực nhất quán trong việc tạo nội dung và kết nối.'
+        answer:
+          'Xây dựng thương hiệu cá nhân là một quá trình liên tục, không phải là một dự án có điểm kết thúc. Tuy nhiên, bạn có thể bắt đầu thấy những kết quả ban đầu sau khoảng 3-6 tháng nỗ lực nhất quán trong việc tạo nội dung và kết nối.',
       },
       {
         question: 'Content marketing cá nhân là gì?',
-        answer: 'Đó là việc bạn tạo và chia sẻ các nội dung (bài viết blog, video, bài đăng trên mạng xã hội) liên quan đến lĩnh vực chuyên môn của mình. Mục đích là để thể hiện kiến thức, xây dựng uy tín và thu hút một cộng đồng quan tâm đến những gì bạn làm.'
+        answer:
+          'Đó là việc bạn tạo và chia sẻ các nội dung (bài viết blog, video, bài đăng trên mạng xã hội) liên quan đến lĩnh vực chuyên môn của mình. Mục đích là để thể hiện kiến thức, xây dựng uy tín và thu hút một cộng đồng quan tâm đến những gì bạn làm.',
       },
       {
         question: 'Làm thế nào để đo lường hiệu quả của việc xây dựng thương hiệu cá nhân?',
-        answer: 'Bạn có thể đo lường qua các chỉ số như: số lượng người theo dõi/kết nối mới, mức độ tương tác trên các bài đăng, số lượng lời mời phỏng vấn hoặc hợp tác, và các cơ hội mới đến với bạn một cách tự nhiên mà không cần tìm kiếm.'
+        answer:
+          'Bạn có thể đo lường qua các chỉ số như: số lượng người theo dõi/kết nối mới, mức độ tương tác trên các bài đăng, số lượng lời mời phỏng vấn hoặc hợp tác, và các cơ hội mới đến với bạn một cách tự nhiên mà không cần tìm kiếm.',
       },
       {
         question: 'Một "elevator pitch" tốt nên có những yếu tố nào?',
-        answer: 'Một elevator pitch hiệu quả nên ngắn gọn (khoảng 30-60 giây), rõ ràng và hấp dẫn. Nó nên trả lời các câu hỏi: Bạn là ai? Bạn làm gì? Bạn giúp được ai và giải quyết vấn đề gì? Và điều gì làm bạn khác biệt?'
+        answer:
+          'Một elevator pitch hiệu quả nên ngắn gọn (khoảng 30-60 giây), rõ ràng và hấp dẫn. Nó nên trả lời các câu hỏi: Bạn là ai? Bạn làm gì? Bạn giúp được ai và giải quyết vấn đề gì? Và điều gì làm bạn khác biệt?',
       },
       {
         question: 'Tôi có nên có một trang web cá nhân không?',
-        answer: 'Rất nên có. Một trang web cá nhân (portfolio online) là "ngôi nhà" của thương hiệu cá nhân bạn. Không giống như mạng xã hội, bạn hoàn toàn kiểm soát nội dung và hình thức của nó. Đây là nơi tuyệt vời để trưng bày các dự án, bài viết và thông tin liên hệ.'
+        answer:
+          'Rất nên có. Một trang web cá nhân (portfolio online) là "ngôi nhà" của thương hiệu cá nhân bạn. Không giống như mạng xã hội, bạn hoàn toàn kiểm soát nội dung và hình thức của nó. Đây là nơi tuyệt vời để trưng bày các dự án, bài viết và thông tin liên hệ.',
       },
       {
         question: 'Làm thế nào để câu chuyện nghề nghiệp của tôi trở nên hấp dẫn?',
-        answer: 'Một câu chuyện hấp dẫn không chỉ liệt kê các công việc bạn đã làm. Nó nên có một "nhân vật chính" (là bạn), một "thử thách" bạn đã đối mặt, "hành trình" bạn đã trải qua để vượt qua nó, và "kết quả" hoặc bài học bạn đã rút ra. Hãy thể hiện sự phát triển và đam mê của bạn.'
-      }
+        answer:
+          'Một câu chuyện hấp dẫn không chỉ liệt kê các công việc bạn đã làm. Nó nên có một "nhân vật chính" (là bạn), một "thử thách" bạn đã đối mặt, "hành trình" bạn đã trải qua để vượt qua nó, và "kết quả" hoặc bài học bạn đã rút ra. Hãy thể hiện sự phát triển và đam mê của bạn.',
+      },
     ],
   },
   {
@@ -245,28 +257,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: 'Làm thế nào để bắt đầu một cuộc trò chuyện tại một sự kiện networking?',
-        answer: 'Một cách đơn giản là hỏi những câu hỏi mở, ví dụ: "Điều gì đưa anh/chị đến sự kiện hôm nay?" hoặc "Anh/chị thấy phần trình bày vừa rồi thế nào?". Hãy thể hiện sự tò mò chân thành về người đối diện thay vì chỉ nói về bản thân.'
+        answer:
+          'Một cách đơn giản là hỏi những câu hỏi mở, ví dụ: "Điều gì đưa anh/chị đến sự kiện hôm nay?" hoặc "Anh/chị thấy phần trình bày vừa rồi thế nào?". Hãy thể hiện sự tò mò chân thành về người đối diện thay vì chỉ nói về bản thân.',
       },
       {
         question: 'Tôi nên chuẩn bị gì trước khi tham gia một sự kiện networking?',
-        answer: 'Hãy chuẩn bị "elevator pitch" của bạn, xác định mục tiêu (bạn muốn gặp ai, muốn học hỏi điều gì), và nghiên cứu trước về một vài diễn giả hoặc công ty tham gia. Mang theo danh thiếp hoặc chuẩn bị sẵn mã QR LinkedIn để dễ dàng kết nối.'
+        answer:
+          'Hãy chuẩn bị "elevator pitch" của bạn, xác định mục tiêu (bạn muốn gặp ai, muốn học hỏi điều gì), và nghiên cứu trước về một vài diễn giả hoặc công ty tham gia. Mang theo danh thiếp hoặc chuẩn bị sẵn mã QR LinkedIn để dễ dàng kết nối.',
       },
       {
         question: 'Làm thế nào để kết thúc một cuộc trò chuyện một cách lịch sự?',
-        answer: 'Bạn có thể nói: "Rất vui được trò chuyện với anh/chị. Tôi xin phép đi gặp một người bạn/lấy chút nước. Hy vọng chúng ta sẽ giữ liên lạc." Sau đó, hãy chắc chắn rằng bạn đã trao đổi thông tin liên lạc.'
+        answer:
+          'Bạn có thể nói: "Rất vui được trò chuyện với anh/chị. Tôi xin phép đi gặp một người bạn/lấy chút nước. Hy vọng chúng ta sẽ giữ liên lạc." Sau đó, hãy chắc chắn rằng bạn đã trao đổi thông tin liên lạc.',
       },
       {
         question: 'Chất lượng và số lượng trong networking, điều gì quan trọng hơn?',
-        answer: 'Chất lượng luôn quan trọng hơn số lượng. Một vài mối quan hệ sâu sắc, tin cậy sẽ có giá trị hơn hàng trăm kết nối hời hợt. Hãy tập trung vào việc xây dựng những kết nối thực sự có ý nghĩa.'
+        answer:
+          'Chất lượng luôn quan trọng hơn số lượng. Một vài mối quan hệ sâu sắc, tin cậy sẽ có giá trị hơn hàng trăm kết nối hời hợt. Hãy tập trung vào việc xây dựng những kết nối thực sự có ý nghĩa.',
       },
       {
         question: 'Làm thế nào để biến một kết nối thành một mối quan hệ bền vững?',
-        answer: 'Hãy luôn tìm cách "cho đi trước khi nhận lại". Chia sẻ thông tin hữu ích, giới thiệu họ với người khác trong mạng lưới của bạn, hoặc đơn giản là hỏi thăm công việc của họ. Sự quan tâm chân thành sẽ xây dựng lòng tin và củng cố mối quan hệ.'
+        answer:
+          'Hãy luôn tìm cách "cho đi trước khi nhận lại". Chia sẻ thông tin hữu ích, giới thiệu họ với người khác trong mạng lưới của bạn, hoặc đơn giản là hỏi thăm công việc của họ. Sự quan tâm chân thành sẽ xây dựng lòng tin và củng cố mối quan hệ.',
       },
       {
         question: 'Tôi có nên kết nối với tất cả mọi người trên LinkedIn không?',
-        answer: 'Không nhất thiết. Hãy ưu tiên kết nối với những người trong ngành của bạn, những người bạn đã gặp trực tiếp, hoặc những người mà bạn thực sự muốn học hỏi. Khi gửi lời mời kết nối, hãy luôn kèm theo một tin nhắn cá nhân ngắn gọn để nhắc họ về bạn hoặc lý do bạn muốn kết nối.'
-      }
+        answer:
+          'Không nhất thiết. Hãy ưu tiên kết nối với những người trong ngành của bạn, những người bạn đã gặp trực tiếp, hoặc những người mà bạn thực sự muốn học hỏi. Khi gửi lời mời kết nối, hãy luôn kèm theo một tin nhắn cá nhân ngắn gọn để nhắc họ về bạn hoặc lý do bạn muốn kết nối.',
+      },
     ],
   },
   {
@@ -327,28 +345,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: 'Trang phục phỏng vấn nên như thế nào?',
-        answer: 'Nguyên tắc chung là ăn mặc chuyên nghiệp và phù hợp với văn hóa công ty. Nếu không chắc chắn, hãy chọn trang phục lịch sự hơn một chút so với trang phục hàng ngày của công ty đó. Tốt hơn là ăn mặc quá trang trọng còn hơn là quá xuề xòa.'
+        answer:
+          'Nguyên tắc chung là ăn mặc chuyên nghiệp và phù hợp với văn hóa công ty. Nếu không chắc chắn, hãy chọn trang phục lịch sự hơn một chút so với trang phục hàng ngày của công ty đó. Tốt hơn là ăn mặc quá trang trọng còn hơn là quá xuề xòa.',
       },
       {
         question: 'Tôi nên làm gì sau buổi phỏng vấn?',
-        answer: 'Hãy gửi một email cảm ơn đến nhà tuyển dụng trong vòng 24 giờ. Trong email, hãy bày tỏ lòng biết ơn về thời gian của họ, tái khẳng định sự quan tâm của bạn đối với vị trí này, và có thể nhắc lại một điểm nổi bật trong cuộc trò chuyện để tạo ấn tượng.'
+        answer:
+          'Hãy gửi một email cảm ơn đến nhà tuyển dụng trong vòng 24 giờ. Trong email, hãy bày tỏ lòng biết ơn về thời gian của họ, tái khẳng định sự quan tâm của bạn đối với vị trí này, và có thể nhắc lại một điểm nổi bật trong cuộc trò chuyện để tạo ấn tượng.',
       },
       {
         question: 'Làm thế nào để đàm phán lương một cách hiệu quả?',
-        answer: 'Hãy nghiên cứu trước về mức lương trung bình cho vị trí tương tự trong ngành và khu vực của bạn. Đừng là người đầu tiên đưa ra con số. Khi nhận được lời đề nghị, hãy thể hiện sự biết ơn và sau đó trình bày một cách lịch sự đề nghị của bạn dựa trên nghiên cứu và giá trị bạn mang lại.'
+        answer:
+          'Hãy nghiên cứu trước về mức lương trung bình cho vị trí tương tự trong ngành và khu vực của bạn. Đừng là người đầu tiên đưa ra con số. Khi nhận được lời đề nghị, hãy thể hiện sự biết ơn và sau đó trình bày một cách lịch sự đề nghị của bạn dựa trên nghiên cứu và giá trị bạn mang lại.',
       },
       {
         question: 'Ngôn ngữ cơ thể quan trọng như thế nào trong một cuộc phỏng vấn?',
-        answer: 'Rất quan trọng. Hãy duy trì giao tiếp bằng mắt, ngồi thẳng, mỉm cười và sử dụng các cử chỉ tay tự nhiên. Một cái bắt tay chắc chắn (nếu có) cũng tạo ra ấn tượng ban đầu tốt. Ngôn ngữ cơ thể tự tin cho thấy bạn thoải mái và chuyên nghiệp.'
+        answer:
+          'Rất quan trọng. Hãy duy trì giao tiếp bằng mắt, ngồi thẳng, mỉm cười và sử dụng các cử chỉ tay tự nhiên. Một cái bắt tay chắc chắn (nếu có) cũng tạo ra ấn tượng ban đầu tốt. Ngôn ngữ cơ thể tự tin cho thấy bạn thoải mái và chuyên nghiệp.',
       },
       {
         question: 'Phải làm gì nếu tôi không biết câu trả lời cho một câu hỏi phỏng vấn?',
-        answer: 'Đừng hoảng sợ. Hãy thành thật. Bạn có thể nói: "Đó là một câu hỏi rất hay. Tôi chưa có kinh nghiệm trực tiếp về vấn đề này, nhưng dựa trên hiểu biết của tôi, tôi sẽ tiếp cận nó như sau...". Điều này cho thấy khả năng suy luận và giải quyết vấn đề của bạn.'
+        answer:
+          'Đừng hoảng sợ. Hãy thành thật. Bạn có thể nói: "Đó là một câu hỏi rất hay. Tôi chưa có kinh nghiệm trực tiếp về vấn đề này, nhưng dựa trên hiểu biết của tôi, tôi sẽ tiếp cận nó như sau...". Điều này cho thấy khả năng suy luận và giải quyết vấn đề của bạn.',
       },
       {
         question: 'Sự khác biệt giữa CV và cover letter là gì?',
-        answer: 'CV (Curriculum Vitae) là một bản tóm tắt về kinh nghiệm làm việc, học vấn và kỹ năng của bạn. Cover letter (Thư xin việc) là một tài liệu để bạn thể hiện cá tính, giải thích tại sao bạn quan tâm đến công ty và vị trí cụ thể này, và kết nối kinh nghiệm của bạn với các yêu cầu của công việc.'
-      }
+        answer:
+          'CV (Curriculum Vitae) là một bản tóm tắt về kinh nghiệm làm việc, học vấn và kỹ năng của bạn. Cover letter (Thư xin việc) là một tài liệu để bạn thể hiện cá tính, giải thích tại sao bạn quan tâm đến công ty và vị trí cụ thể này, và kết nối kinh nghiệm của bạn với các yêu cầu của công việc.',
+      },
     ],
   },
   {
@@ -409,28 +433,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: 'Có những phong cách lãnh đạo phổ biến nào?',
-        answer: 'Một số phong cách phổ biến bao gồm: lãnh đạo chuyển đổi (truyền cảm hứng và thúc đẩy thay đổi), lãnh đạo phục vụ (đặt nhu cầu của nhóm lên hàng đầu), lãnh đạo dân chủ (khuyến khích sự tham gia), và lãnh đạo chuyên quyền (ra quyết định một mình). Nhà lãnh đạo hiệu quả thường linh hoạt kết hợp các phong cách.'
+        answer:
+          'Một số phong cách phổ biến bao gồm: lãnh đạo chuyển đổi (truyền cảm hứng và thúc đẩy thay đổi), lãnh đạo phục vụ (đặt nhu cầu của nhóm lên hàng đầu), lãnh đạo dân chủ (khuyến khích sự tham gia), và lãnh đạo chuyên quyền (ra quyết định một mình). Nhà lãnh đạo hiệu quả thường linh hoạt kết hợp các phong cách.',
       },
       {
         question: 'Làm thế nào để thúc đẩy động lực cho đội nhóm?',
-        answer: 'Động lực không chỉ đến từ tiền bạc. Hãy công nhận thành tích, trao quyền tự chủ, tạo cơ hội phát triển, và đảm bảo mọi người hiểu được ý nghĩa và tác động của công việc họ đang làm. Một môi trường làm việc tích cực và minh bạch cũng rất quan trọng.'
+        answer:
+          'Động lực không chỉ đến từ tiền bạc. Hãy công nhận thành tích, trao quyền tự chủ, tạo cơ hội phát triển, và đảm bảo mọi người hiểu được ý nghĩa và tác động của công việc họ đang làm. Một môi trường làm việc tích cực và minh bạch cũng rất quan trọng.',
       },
       {
         question: 'Kỹ năng quan trọng nhất của một nhà lãnh đạo là gì?',
-        answer: 'Thật khó để chọn chỉ một, nhưng giao tiếp hiệu quả thường được coi là nền tảng. Khả năng lắng nghe, truyền đạt tầm nhìn một cách rõ ràng, và đưa ra phản hồi một cách xây dựng là cực kỳ quan trọng để dẫn dắt một đội nhóm thành công.'
+        answer:
+          'Thật khó để chọn chỉ một, nhưng giao tiếp hiệu quả thường được coi là nền tảng. Khả năng lắng nghe, truyền đạt tầm nhìn một cách rõ ràng, và đưa ra phản hồi một cách xây dựng là cực kỳ quan trọng để dẫn dắt một đội nhóm thành công.',
       },
       {
         question: 'Làm thế nào để xây dựng một đội nhóm có hiệu suất cao (high-performance team)?',
-        answer: 'Một đội nhóm hiệu suất cao cần có: mục tiêu rõ ràng và chung, sự tin tưởng và an toàn tâm lý, vai trò và trách nhiệm được xác định rõ, giao tiếp cởi mở, và sự đa dạng về kỹ năng và quan điểm. Nhà lãnh đạo có vai trò vun đắp những yếu tố này.'
+        answer:
+          'Một đội nhóm hiệu suất cao cần có: mục tiêu rõ ràng và chung, sự tin tưởng và an toàn tâm lý, vai trò và trách nhiệm được xác định rõ, giao tiếp cởi mở, và sự đa dạng về kỹ năng và quan điểm. Nhà lãnh đạo có vai trò vun đắp những yếu tố này.',
       },
       {
         question: 'Làm thế nào để giải quyết xung đột trong đội nhóm?',
-        answer: 'Đừng né tránh xung đột. Hãy tạo điều kiện cho một cuộc thảo luận cởi mở và tôn trọng, tập trung vào vấn đề chứ không phải cá nhân. Lắng nghe tất cả các bên và làm trung gian để tìm ra một giải pháp mà mọi người đều có thể đồng ý.'
+        answer:
+          'Đừng né tránh xung đột. Hãy tạo điều kiện cho một cuộc thảo luận cởi mở và tôn trọng, tập trung vào vấn đề chứ không phải cá nhân. Lắng nghe tất cả các bên và làm trung gian để tìm ra một giải pháp mà mọi người đều có thể đồng ý.',
       },
       {
         question: 'Làm thế nào để một người không có chức danh quản lý vẫn có thể thể hiện khả năng lãnh đạo?',
-        answer: 'Lãnh đạo là một hành động, không phải một chức danh. Bạn có thể thể hiện khả năng lãnh đạo bằng cách chủ động nhận trách nhiệm, giúp đỡ đồng nghiệp, đề xuất các ý tưởng cải tiến, và luôn duy trì thái độ tích cực. Đây được gọi là "lãnh đạo không chính thức".'
-      }
+        answer:
+          'Lãnh đạo là một hành động, không phải một chức danh. Bạn có thể thể hiện khả năng lãnh đạo bằng cách chủ động nhận trách nhiệm, giúp đỡ đồng nghiệp, đề xuất các ý tưởng cải tiến, và luôn duy trì thái độ tích cực. Đây được gọi là "lãnh đạo không chính thức".',
+      },
     ],
   },
   {
@@ -492,28 +522,34 @@ export const careerDevelopmentLessons: BaseLessonData[] = [
       },
       {
         question: '"Pivot" trong khởi nghiệp nghĩa là gì?',
-        answer: 'Pivot là một sự thay đổi chiến lược có định hướng trong mô hình kinh doanh của một startup. Đó không phải là từ bỏ ý tưởng ban đầu, mà là điều chỉnh một hoặc nhiều yếu tố cốt lõi (như phân khúc khách hàng, kênh phân phối, giải pháp) dựa trên những gì đã học được từ thị trường.'
+        answer:
+          'Pivot là một sự thay đổi chiến lược có định hướng trong mô hình kinh doanh của một startup. Đó không phải là từ bỏ ý tưởng ban đầu, mà là điều chỉnh một hoặc nhiều yếu tố cốt lõi (như phân khúc khách hàng, kênh phân phối, giải pháp) dựa trên những gì đã học được từ thị trường.',
       },
       {
         question: 'Làm thế nào để tìm được người đồng sáng lập (co-founder) phù hợp?',
-        answer: 'Hãy tìm một người có bộ kỹ năng bổ sung cho bạn (ví dụ: một người kỹ thuật và một người kinh doanh). Quan trọng hơn, hãy đảm bảo các bạn có chung tầm nhìn, giá trị cốt lõi và sự cam kết. Mối quan hệ với co-founder giống như một cuộc hôn nhân kinh doanh.'
+        answer:
+          'Hãy tìm một người có bộ kỹ năng bổ sung cho bạn (ví dụ: một người kỹ thuật và một người kinh doanh). Quan trọng hơn, hãy đảm bảo các bạn có chung tầm nhìn, giá trị cốt lõi và sự cam kết. Mối quan hệ với co-founder giống như một cuộc hôn nhân kinh doanh.',
       },
       {
         question: 'Các nguồn vốn phổ biến cho startup ở giai đoạn đầu là gì?',
-        answer: 'Các nguồn phổ biến bao gồm: tự bỏ vốn (bootstrapping), bạn bè và gia đình (friends and family), các nhà đầu tư thiên thần (angel investors), và các quỹ đầu tư mạo hiểm giai đoạn sớm (seed-stage venture capital). Mỗi loại có ưu và nhược điểm riêng.'
+        answer:
+          'Các nguồn phổ biến bao gồm: tự bỏ vốn (bootstrapping), bạn bè và gia đình (friends and family), các nhà đầu tư thiên thần (angel investors), và các quỹ đầu tư mạo hiểm giai đoạn sớm (seed-stage venture capital). Mỗi loại có ưu và nhược điểm riêng.',
       },
       {
         question: 'Tinh thần doanh nhân (entrepreneurship) có thể học được không?',
-        answer: 'Chắc chắn rồi. Mặc dù một số người có tố chất bẩm sinh, nhưng tinh thần doanh nhân là một tập hợp các kỹ năng và tư duy có thể được học hỏi và rèn luyện, chẳng hạn như khả năng chấp nhận rủi ro có tính toán, sự kiên trì, và khả năng nhìn thấy cơ hội ở nơi người khác thấy vấn đề.'
+        answer:
+          'Chắc chắn rồi. Mặc dù một số người có tố chất bẩm sinh, nhưng tinh thần doanh nhân là một tập hợp các kỹ năng và tư duy có thể được học hỏi và rèn luyện, chẳng hạn như khả năng chấp nhận rủi ro có tính toán, sự kiên trì, và khả năng nhìn thấy cơ hội ở nơi người khác thấy vấn đề.',
       },
       {
         question: 'Một "pitch deck" tốt cần có những slide nào?',
-        answer: 'Một pitch deck tiêu chuẩn thường có 10-12 slide, bao gồm: Vấn đề, Giải pháp, Sản phẩm (MVP), Quy mô thị trường, Mô hình kinh doanh, Đội ngũ sáng lập, Lợi thế cạnh tranh, Kế hoạch tiếp cận thị trường, Các chỉ số đã đạt được (traction), và Lời kêu gọi (số tiền cần huy động).'
+        answer:
+          'Một pitch deck tiêu chuẩn thường có 10-12 slide, bao gồm: Vấn đề, Giải pháp, Sản phẩm (MVP), Quy mô thị trường, Mô hình kinh doanh, Đội ngũ sáng lập, Lợi thế cạnh tranh, Kế hoạch tiếp cận thị trường, Các chỉ số đã đạt được (traction), và Lời kêu gọi (số tiền cần huy động).',
       },
       {
         question: 'Thất bại lớn nhất của các startup là gì?',
-        answer: 'Theo nhiều nghiên cứu, lý do hàng đầu khiến các startup thất bại là "không có nhu cầu thị trường". Họ tạo ra một sản phẩm mà không ai muốn hoặc cần. Đây là lý do tại sao việc xác thực ý tưởng và nói chuyện với khách hàng ngay từ đầu lại cực kỳ quan trọng.'
-      }
+        answer:
+          'Theo nhiều nghiên cứu, lý do hàng đầu khiến các startup thất bại là "không có nhu cầu thị trường". Họ tạo ra một sản phẩm mà không ai muốn hoặc cần. Đây là lý do tại sao việc xác thực ý tưởng và nói chuyện với khách hàng ngay từ đầu lại cực kỳ quan trọng.',
+      },
     ],
   },
 ];

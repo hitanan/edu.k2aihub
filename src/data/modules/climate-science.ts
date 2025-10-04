@@ -121,27 +121,33 @@ export const ClimateLessons: BaseLessonData[] = [
       },
       {
         question: 'Sự khác biệt giữa thời tiết và khí hậu là gì?',
-        answer: 'Thời tiết là trạng thái của khí quyển tại một địa điểm và thời gian cụ thể (ví dụ: hôm nay trời mưa). Khí hậu là mô hình thời tiết trung bình của một khu vực trong một khoảng thời gian dài (ví dụ: Sài Gòn có khí hậu nóng ẩm). Biến đổi khí hậu là sự thay đổi của các mô hình trung bình này.',
+        answer:
+          'Thời tiết là trạng thái của khí quyển tại một địa điểm và thời gian cụ thể (ví dụ: hôm nay trời mưa). Khí hậu là mô hình thời tiết trung bình của một khu vực trong một khoảng thời gian dài (ví dụ: Sài Gòn có khí hậu nóng ẩm). Biến đổi khí hậu là sự thay đổi của các mô hình trung bình này.',
       },
       {
         question: 'Albedo là gì và nó ảnh hưởng đến khí hậu như thế nào?',
-        answer: 'Albedo là thước đo khả năng phản xạ ánh sáng mặt trời của một bề mặt. Các bề mặt sáng màu như băng tuyết có albedo cao (phản xạ nhiều), giúp làm mát Trái Đất. Khi băng tan, nó để lộ ra các bề mặt tối màu hơn (đất, nước biển) có albedo thấp (hấp thụ nhiều), góp phần làm Trái Đất nóng lên. Đây là một vòng lặp phản hồi tích cực.',
+        answer:
+          'Albedo là thước đo khả năng phản xạ ánh sáng mặt trời của một bề mặt. Các bề mặt sáng màu như băng tuyết có albedo cao (phản xạ nhiều), giúp làm mát Trái Đất. Khi băng tan, nó để lộ ra các bề mặt tối màu hơn (đất, nước biển) có albedo thấp (hấp thụ nhiều), góp phần làm Trái Đất nóng lên. Đây là một vòng lặp phản hồi tích cực.',
       },
       {
         question: 'Các chu trình Milankovitch là gì?',
-        answer: 'Đây là những thay đổi có chu kỳ trong quỹ đạo của Trái Đất quanh Mặt Trời, ảnh hưởng đến lượng bức xạ mặt trời mà Trái Đất nhận được. Chúng là một trong những yếu tố tự nhiên gây ra các kỷ băng hà trong quá khứ, nhưng chúng diễn ra trên quy mô hàng chục nghìn năm và không thể giải thích cho sự nóng lên nhanh chóng hiện nay.',
+        answer:
+          'Đây là những thay đổi có chu kỳ trong quỹ đạo của Trái Đất quanh Mặt Trời, ảnh hưởng đến lượng bức xạ mặt trời mà Trái Đất nhận được. Chúng là một trong những yếu tố tự nhiên gây ra các kỷ băng hà trong quá khứ, nhưng chúng diễn ra trên quy mô hàng chục nghìn năm và không thể giải thích cho sự nóng lên nhanh chóng hiện nay.',
       },
       {
         question: 'Axit hóa đại dương là gì?',
-        answer: 'Đại dương hấp thụ khoảng một phần tư lượng CO2 do con người thải ra. Khi CO2 hòa tan trong nước biển, nó tạo thành axit cacbonic, làm giảm độ pH của nước. Quá trình này được gọi là axit hóa đại dương, gây hại cho các sinh vật biển có vỏ hoặc xương như san hô và sò.',
+        answer:
+          'Đại dương hấp thụ khoảng một phần tư lượng CO2 do con người thải ra. Khi CO2 hòa tan trong nước biển, nó tạo thành axit cacbonic, làm giảm độ pH của nước. Quá trình này được gọi là axit hóa đại dương, gây hại cho các sinh vật biển có vỏ hoặc xương như san hô và sò.',
       },
       {
         question: 'Làm thế nào các nhà khoa học biết được nồng độ CO2 trong quá khứ?',
-        answer: 'Các nhà khoa học nghiên cứu các lõi băng được khoan từ các tảng băng ở Nam Cực và Greenland. Các bong bóng khí bị mắc kẹt trong băng chứa các mẫu khí quyển từ hàng trăm nghìn năm trước, cho phép họ đo trực tiếp nồng độ CO2 và các khí nhà kính khác trong quá khứ.',
+        answer:
+          'Các nhà khoa học nghiên cứu các lõi băng được khoan từ các tảng băng ở Nam Cực và Greenland. Các bong bóng khí bị mắc kẹt trong băng chứa các mẫu khí quyển từ hàng trăm nghìn năm trước, cho phép họ đo trực tiếp nồng độ CO2 và các khí nhà kính khác trong quá khứ.',
       },
       {
         question: 'Điểm tới hạn (Tipping Point) trong khí hậu là gì?',
-        answer: 'Điểm tới hạn là một ngưỡng mà khi bị vượt qua, có thể dẫn đến những thay đổi lớn, đột ngột và không thể đảo ngược trong hệ thống khí hậu. Ví dụ như sự sụp đổ của dải băng Greenland hoặc sự tan chảy hoàn toàn của băng vĩnh cửu, giải phóng một lượng lớn khí metan.',
+        answer:
+          'Điểm tới hạn là một ngưỡng mà khi bị vượt qua, có thể dẫn đến những thay đổi lớn, đột ngột và không thể đảo ngược trong hệ thống khí hậu. Ví dụ như sự sụp đổ của dải băng Greenland hoặc sự tan chảy hoàn toàn của băng vĩnh cửu, giải phóng một lượng lớn khí metan.',
       },
     ],
   },
@@ -257,27 +263,33 @@ export const ClimateLessons: BaseLessonData[] = [
       },
       {
         question: 'Data Assimilation (đồng hóa dữ liệu) trong mô hình khí hậu là gì?',
-        answer: 'Đây là quá trình kết hợp các quan sát thực tế (từ vệ tinh, trạm thời tiết) vào một mô hình máy tính đang chạy. Việc này giúp điều chỉnh mô hình, làm cho nó phản ánh chính xác hơn trạng thái hiện tại của hệ thống khí hậu và cải thiện độ chính xác của các dự báo trong tương lai.',
+        answer:
+          'Đây là quá trình kết hợp các quan sát thực tế (từ vệ tinh, trạm thời tiết) vào một mô hình máy tính đang chạy. Việc này giúp điều chỉnh mô hình, làm cho nó phản ánh chính xác hơn trạng thái hiện tại của hệ thống khí hậu và cải thiện độ chính xác của các dự báo trong tương lai.',
       },
       {
         question: 'Các kịch bản phát thải (SSP - Shared Socioeconomic Pathways) là gì?',
-        answer: 'Các kịch bản SSP mô tả các con đường phát triển kinh tế-xã hội khác nhau của thế giới trong tương lai (ví dụ: một thế giới phát triển bền vững, một thế giới cạnh tranh khu vực). Các mô hình khí hậu sử dụng các kịch bản này làm đầu vào để dự báo các mức độ biến đổi khí hậu khác nhau có thể xảy ra.',
+        answer:
+          'Các kịch bản SSP mô tả các con đường phát triển kinh tế-xã hội khác nhau của thế giới trong tương lai (ví dụ: một thế giới phát triển bền vững, một thế giới cạnh tranh khu vực). Các mô hình khí hậu sử dụng các kịch bản này làm đầu vào để dự báo các mức độ biến đổi khí hậu khác nhau có thể xảy ra.',
       },
       {
         question: 'Tại sao việc dự báo các hiện tượng thời tiết cực đoan lại khó?',
-        answer: 'Các hiện tượng cực đoan như bão hay lũ quét thường xảy ra ở quy mô nhỏ và phát triển nhanh. Các mô hình khí hậu toàn cầu có độ phân giải quá thấp để nắm bắt chúng một cách chi tiết. Do đó, cần có các mô hình khu vực có độ phân giải cao và các kỹ thuật thống kê để dự báo các sự kiện này.',
+        answer:
+          'Các hiện tượng cực đoan như bão hay lũ quét thường xảy ra ở quy mô nhỏ và phát triển nhanh. Các mô hình khí hậu toàn cầu có độ phân giải quá thấp để nắm bắt chúng một cách chi tiết. Do đó, cần có các mô hình khu vực có độ phân giải cao và các kỹ thuật thống kê để dự báo các sự kiện này.',
       },
       {
         question: 'Big data có vai trò gì trong việc giám sát nạn phá rừng?',
-        answer: 'Dữ liệu vệ tinh có độ phân giải cao được cập nhật hàng ngày cung cấp một lượng lớn dữ liệu (big data). Các thuật toán học máy có thể tự động phân tích những hình ảnh này để phát hiện các khu vực rừng bị chặt phá gần như trong thời gian thực, giúp các cơ quan chức năng có hành động can thiệp kịp thời.',
+        answer:
+          'Dữ liệu vệ tinh có độ phân giải cao được cập nhật hàng ngày cung cấp một lượng lớn dữ liệu (big data). Các thuật toán học máy có thể tự động phân tích những hình ảnh này để phát hiện các khu vực rừng bị chặt phá gần như trong thời gian thực, giúp các cơ quan chức năng có hành động can thiệp kịp thời.',
       },
       {
         question: 'Mô hình khí hậu có thể dự báo chính xác thời tiết trong 100 năm tới không?',
-        answer: 'Không. Điều quan trọng là phải phân biệt giữa dự báo thời tiết và dự báo khí hậu. Mô hình khí hậu không dự báo thời tiết của một ngày cụ thể trong tương lai xa, mà nó dự báo các xu hướng thống kê và trạng thái trung bình của khí hậu (ví dụ: nhiệt độ trung bình của thập kỷ 2090-2100 sẽ cao hơn bao nhiêu).',
+        answer:
+          'Không. Điều quan trọng là phải phân biệt giữa dự báo thời tiết và dự báo khí hậu. Mô hình khí hậu không dự báo thời tiết của một ngày cụ thể trong tương lai xa, mà nó dự báo các xu hướng thống kê và trạng thái trung bình của khí hậu (ví dụ: nhiệt độ trung bình của thập kỷ 2090-2100 sẽ cao hơn bao nhiêu).',
       },
       {
         question: 'Làm thế nào để một người mới bắt đầu có thể làm việc với dữ liệu khí hậu?',
-        answer: 'Có nhiều tài nguyên tuyệt vời! Bạn có thể bắt đầu với các bộ dữ liệu công khai từ NASA, NOAA, hoặc Copernicus. Các thư viện Python như xarray, pandas, và cartopy rất mạnh mẽ để phân tích và trực quan hóa. Nhiều khóa học trực tuyến và hướng dẫn trên mạng cũng có sẵn để giúp bạn bắt đầu.',
+        answer:
+          'Có nhiều tài nguyên tuyệt vời! Bạn có thể bắt đầu với các bộ dữ liệu công khai từ NASA, NOAA, hoặc Copernicus. Các thư viện Python như xarray, pandas, và cartopy rất mạnh mẽ để phân tích và trực quan hóa. Nhiều khóa học trực tuyến và hướng dẫn trên mạng cũng có sẵn để giúp bạn bắt đầu.',
       },
     ],
   },
@@ -384,27 +396,33 @@ export const ClimateLessons: BaseLessonData[] = [
       },
       {
         question: 'Năng lượng địa nhiệt hoạt động như thế nào?',
-        answer: 'Năng lượng địa nhiệt khai thác nhiệt từ bên trong lõi Trái Đất. Nước hoặc hơi nước nóng được đưa lên bề mặt để chạy tua-bin phát điện. Đây là một nguồn năng lượng tái tạo ổn định, không phụ thuộc vào thời tiết.',
+        answer:
+          'Năng lượng địa nhiệt khai thác nhiệt từ bên trong lõi Trái Đất. Nước hoặc hơi nước nóng được đưa lên bề mặt để chạy tua-bin phát điện. Đây là một nguồn năng lượng tái tạo ổn định, không phụ thuộc vào thời tiết.',
       },
       {
         question: 'Hydro xanh, xám và xanh lam khác nhau như thế nào?',
-        answer: 'Hydro xanh (Green Hydrogen) được sản xuất bằng cách điện phân nước sử dụng năng lượng tái tạo, không phát thải CO2. Hydro xám (Gray Hydrogen) được sản xuất từ khí tự nhiên, phát thải CO2. Hydro xanh lam (Blue Hydrogen) cũng được sản xuất từ khí tự nhiên, nhưng CO2 được thu giữ và lưu trữ (CCUS).',
+        answer:
+          'Hydro xanh (Green Hydrogen) được sản xuất bằng cách điện phân nước sử dụng năng lượng tái tạo, không phát thải CO2. Hydro xám (Gray Hydrogen) được sản xuất từ khí tự nhiên, phát thải CO2. Hydro xanh lam (Blue Hydrogen) cũng được sản xuất từ khí tự nhiên, nhưng CO2 được thu giữ và lưu trữ (CCUS).',
       },
       {
         question: 'Nông nghiệp bền vững có phải là một giải pháp khí hậu không?',
-        answer: 'Có, nó đóng một vai trò quan trọng. Các phương pháp như nông nghiệp không cày xới, trồng cây che phủ, và quản lý đất đai tốt hơn có thể giúp đất hấp thụ và lưu trữ một lượng lớn carbon từ khí quyển. Nó cũng giúp tăng khả năng chống chịu của hệ thống lương thực trước biến đổi khí hậu.',
+        answer:
+          'Có, nó đóng một vai trò quan trọng. Các phương pháp như nông nghiệp không cày xới, trồng cây che phủ, và quản lý đất đai tốt hơn có thể giúp đất hấp thụ và lưu trữ một lượng lớn carbon từ khí quyển. Nó cũng giúp tăng khả năng chống chịu của hệ thống lương thực trước biến đổi khí hậu.',
       },
       {
         question: 'Tòa nhà xanh (Green Building) là gì?',
-        answer: 'Tòa nhà xanh là những công trình được thiết kế, xây dựng và vận hành để giảm thiểu tác động tiêu cực đến môi trường. Các đặc điểm bao gồm sử dụng vật liệu bền vững, thiết kế để tiết kiệm năng lượng và nước, tận dụng ánh sáng tự nhiên, và có chất lượng không khí trong nhà tốt.',
+        answer:
+          'Tòa nhà xanh là những công trình được thiết kế, xây dựng và vận hành để giảm thiểu tác động tiêu cực đến môi trường. Các đặc điểm bao gồm sử dụng vật liệu bền vững, thiết kế để tiết kiệm năng lượng và nước, tận dụng ánh sáng tự nhiên, và có chất lượng không khí trong nhà tốt.',
       },
       {
         question: 'Công nghệ Direct Air Capture (DAC) là gì?',
-        answer: 'DAC là một công nghệ thu giữ carbon trực tiếp từ không khí xung quanh, thay vì từ một nguồn phát thải tập trung. Nó sử dụng các bộ lọc hóa học để "hút" CO2 ra khỏi không khí. Đây là một công nghệ đầy hứa hẹn nhưng hiện vẫn còn rất tốn kém và tiêu tốn nhiều năng lượng.',
+        answer:
+          'DAC là một công nghệ thu giữ carbon trực tiếp từ không khí xung quanh, thay vì từ một nguồn phát thải tập trung. Nó sử dụng các bộ lọc hóa học để "hút" CO2 ra khỏi không khí. Đây là một công nghệ đầy hứa hẹn nhưng hiện vẫn còn rất tốn kém và tiêu tốn nhiều năng lượng.',
       },
       {
         question: 'Vai trò của cá nhân trong việc thúc đẩy các giải pháp khí hậu là gì?',
-        answer: 'Ngoài việc thay đổi lối sống cá nhân (giảm tiêu thụ, đi lại bền vững), vai trò quan trọng của cá nhân là tạo ra áp lực xã hội và chính trị. Bằng cách bỏ phiếu, tham gia các phong trào, và yêu cầu các doanh nghiệp và chính phủ hành động, các cá nhân có thể thúc đẩy sự thay đổi ở quy mô lớn hơn.',
+        answer:
+          'Ngoài việc thay đổi lối sống cá nhân (giảm tiêu thụ, đi lại bền vững), vai trò quan trọng của cá nhân là tạo ra áp lực xã hội và chính trị. Bằng cách bỏ phiếu, tham gia các phong trào, và yêu cầu các doanh nghiệp và chính phủ hành động, các cá nhân có thể thúc đẩy sự thay đổi ở quy mô lớn hơn.',
       },
     ],
   },
@@ -511,27 +529,33 @@ export const ClimateLessons: BaseLessonData[] = [
       },
       {
         question: '"Chi phí xã hội của carbon" (Social Cost of Carbon - SCC) là gì?',
-        answer: 'SCC là một ước tính bằng tiền về những thiệt hại kinh tế dài hạn do việc phát thải thêm một tấn carbon dioxide (CO2) vào khí quyển gây ra. Nó được sử dụng để giúp các nhà hoạch định chính sách cân nhắc lợi ích và chi phí của các quy định nhằm giảm phát thải.',
+        answer:
+          'SCC là một ước tính bằng tiền về những thiệt hại kinh tế dài hạn do việc phát thải thêm một tấn carbon dioxide (CO2) vào khí quyển gây ra. Nó được sử dụng để giúp các nhà hoạch định chính sách cân nhắc lợi ích và chi phí của các quy định nhằm giảm phát thải.',
       },
       {
         question: 'Thế nào là một "chuyển đổi công bằng" (Just Transition)?',
-        answer: 'Chuyển đổi công bằng có nghĩa là quá trình chuyển đổi sang một nền kinh tế xanh và ít carbon phải đảm bảo sự công bằng cho tất cả mọi người. Điều này bao gồm việc hỗ trợ người lao động và cộng đồng bị ảnh hưởng bởi sự suy giảm của các ngành công nghiệp nhiên liệu hóa thạch, thông qua đào tạo lại và tạo ra việc làm mới.',
+        answer:
+          'Chuyển đổi công bằng có nghĩa là quá trình chuyển đổi sang một nền kinh tế xanh và ít carbon phải đảm bảo sự công bằng cho tất cả mọi người. Điều này bao gồm việc hỗ trợ người lao động và cộng đồng bị ảnh hưởng bởi sự suy giảm của các ngành công nghiệp nhiên liệu hóa thạch, thông qua đào tạo lại và tạo ra việc làm mới.',
       },
       {
         question: 'Tín chỉ carbon (carbon offset) hoạt động như thế nào?',
-        answer: 'Một tín chỉ carbon đại diện cho việc giảm hoặc loại bỏ một tấn CO2 khỏi khí quyển thông qua một dự án (ví dụ: trồng cây, xây dựng nhà máy điện gió). Các cá nhân hoặc công ty có thể mua các tín chỉ này để bù đắp cho lượng phát thải mà họ không thể cắt giảm trực tiếp.',
+        answer:
+          'Một tín chỉ carbon đại diện cho việc giảm hoặc loại bỏ một tấn CO2 khỏi khí quyển thông qua một dự án (ví dụ: trồng cây, xây dựng nhà máy điện gió). Các cá nhân hoặc công ty có thể mua các tín chỉ này để bù đắp cho lượng phát thải mà họ không thể cắt giảm trực tiếp.',
       },
       {
         question: 'CBAM (Cơ chế điều chỉnh biên giới carbon) của EU là gì?',
-        answer: 'CBAM là một chính sách của Liên minh châu Âu nhằm đánh thuế carbon đối với một số hàng hóa nhập khẩu vào EU (như thép, xi măng). Mục tiêu là để ngăn chặn "rò rỉ carbon" - tình trạng các công ty EU chuyển sản xuất sang các nước có quy định môi trường lỏng lẻo hơn.',
+        answer:
+          'CBAM là một chính sách của Liên minh châu Âu nhằm đánh thuế carbon đối với một số hàng hóa nhập khẩu vào EU (như thép, xi măng). Mục tiêu là để ngăn chặn "rò rỉ carbon" - tình trạng các công ty EU chuyển sản xuất sang các nước có quy định môi trường lỏng lẻo hơn.',
       },
       {
         question: 'Tài chính khí hậu (Climate Finance) là gì?',
-        answer: 'Tài chính khí hậu đề cập đến nguồn tài chính ở quy mô địa phương, quốc gia hoặc xuyên quốc gia - có thể từ các nguồn công, tư hoặc các nguồn thay thế - nhằm hỗ trợ các hành động giảm thiểu và thích ứng với biến đổi khí hậu.',
+        answer:
+          'Tài chính khí hậu đề cập đến nguồn tài chính ở quy mô địa phương, quốc gia hoặc xuyên quốc gia - có thể từ các nguồn công, tư hoặc các nguồn thay thế - nhằm hỗ trợ các hành động giảm thiểu và thích ứng với biến đổi khí hậu.',
       },
       {
         question: 'Tại sao việc định giá carbon lại được coi là một công cụ kinh tế hiệu quả?',
-        answer: 'Bởi vì nó áp dụng nguyên tắc "người gây ô nhiễm phải trả tiền". Bằng cách làm cho việc phát thải trở nên tốn kém hơn, nó tạo ra một động lực kinh tế mạnh mẽ cho các công ty và người tiêu dùng đổi mới, đầu tư vào công nghệ sạch hơn và thay đổi hành vi để giảm lượng khí thải của họ.',
+        answer:
+          'Bởi vì nó áp dụng nguyên tắc "người gây ô nhiễm phải trả tiền". Bằng cách làm cho việc phát thải trở nên tốn kém hơn, nó tạo ra một động lực kinh tế mạnh mẽ cho các công ty và người tiêu dùng đổi mới, đầu tư vào công nghệ sạch hơn và thay đổi hành vi để giảm lượng khí thải của họ.',
       },
     ],
   },

@@ -373,27 +373,33 @@ export const lessons: CrossCulturalLessonType[] = [
       },
       {
         question: 'CQ khác gì so với EQ (Trí tuệ cảm xúc)?',
-        answer: 'EQ là khả năng nhận biết và quản lý cảm xúc của bản thân và người khác. CQ là một nhánh chuyên biệt hơn, tập trung vào khả năng hoạt động hiệu quả trong các bối cảnh đa dạng về văn hóa. Một người có EQ cao có thể vẫn gặp khó khăn nếu họ không có kiến thức và chiến lược để áp dụng sự đồng cảm của mình trong một môi trường văn hóa xa lạ.',
+        answer:
+          'EQ là khả năng nhận biết và quản lý cảm xúc của bản thân và người khác. CQ là một nhánh chuyên biệt hơn, tập trung vào khả năng hoạt động hiệu quả trong các bối cảnh đa dạng về văn hóa. Một người có EQ cao có thể vẫn gặp khó khăn nếu họ không có kiến thức và chiến lược để áp dụng sự đồng cảm của mình trong một môi trường văn hóa xa lạ.',
       },
       {
         question: 'Làm thế nào để rèn luyện CQ Drive (Động lực)?',
-        answer: 'Hãy chủ động tìm kiếm những trải nghiệm đa văn hóa: thử món ăn mới, xem phim nước ngoài không thuyết minh, kết bạn với người nước ngoài, đọc sách về lịch sử các quốc gia khác. Sự tò mò và hứng thú sẽ nảy sinh từ chính những trải nghiệm này.',
+        answer:
+          'Hãy chủ động tìm kiếm những trải nghiệm đa văn hóa: thử món ăn mới, xem phim nước ngoài không thuyết minh, kết bạn với người nước ngoài, đọc sách về lịch sử các quốc gia khác. Sự tò mò và hứng thú sẽ nảy sinh từ chính những trải nghiệm này.',
       },
       {
         question: 'Mô hình văn hóa của Hofstede có còn phù hợp trong thế giới hiện đại không?',
-        answer: 'Mô hình của Hofstede là một công cụ nền tảng và vẫn rất hữu ích để hiểu những xu hướng chung của một nền văn hóa. Tuy nhiên, nó có những hạn chế như dữ liệu cũ và có thể không phản ánh hết sự phức tạp và thay đổi của xã hội hiện đại. Do đó, nên sử dụng nó như một tài liệu tham khảo, kết hợp với các quan sát và mô hình khác.',
+        answer:
+          'Mô hình của Hofstede là một công cụ nền tảng và vẫn rất hữu ích để hiểu những xu hướng chung của một nền văn hóa. Tuy nhiên, nó có những hạn chế như dữ liệu cũ và có thể không phản ánh hết sự phức tạp và thay đổi của xã hội hiện đại. Do đó, nên sử dụng nó như một tài liệu tham khảo, kết hợp với các quan sát và mô hình khác.',
       },
       {
         question: 'Tại sao việc nhận diện thiên kiến vô thức lại quan trọng?',
-        answer: 'Thiên kiến vô thức (unconscious bias) ảnh hưởng đến cách chúng ta ra quyết định và đối xử với người khác một cách tự động mà chúng ta không hề hay biết. Nhận diện chúng giúp chúng ta đưa ra những quyết định công bằng hơn, khách quan hơn và tránh được những hiểu lầm đáng tiếc trong giao tiếp đa văn hóa.',
+        answer:
+          'Thiên kiến vô thức (unconscious bias) ảnh hưởng đến cách chúng ta ra quyết định và đối xử với người khác một cách tự động mà chúng ta không hề hay biết. Nhận diện chúng giúp chúng ta đưa ra những quyết định công bằng hơn, khách quan hơn và tránh được những hiểu lầm đáng tiếc trong giao tiếp đa văn hóa.',
       },
       {
         question: 'Cultural Code-Switching có phải là "giả tạo" hay không?',
-        answer: 'Không. Đó không phải là thay đổi bản chất con người bạn, mà là sự điều chỉnh hành vi một cách có ý thức để giao tiếp hiệu quả hơn trong một bối cảnh cụ thể. Giống như bạn sẽ dùng ngôn ngữ khác khi nói chuyện với một đứa trẻ so với khi nói chuyện với một giáo sư, đó là sự linh hoạt và thông minh trong giao tiếp.',
+        answer:
+          'Không. Đó không phải là thay đổi bản chất con người bạn, mà là sự điều chỉnh hành vi một cách có ý thức để giao tiếp hiệu quả hơn trong một bối cảnh cụ thể. Giống như bạn sẽ dùng ngôn ngữ khác khi nói chuyện với một đứa trẻ so với khi nói chuyện với một giáo sư, đó là sự linh hoạt và thông minh trong giao tiếp.',
       },
       {
         question: 'Làm thế nào để bắt đầu áp dụng CQ vào công việc hàng ngày?',
-        answer: 'Hãy bắt đầu từ việc quan sát. Trong cuộc họp tiếp theo với đồng nghiệp quốc tế, hãy thử để ý xem ai nói nhiều, ai ít nói, cách họ ngắt lời, cách họ đưa ra ý kiến. Đừng phán xét, chỉ quan sát và tự hỏi: "Điều gì trong văn hóa của họ có thể giải thích cho hành vi này?".',
+        answer:
+          'Hãy bắt đầu từ việc quan sát. Trong cuộc họp tiếp theo với đồng nghiệp quốc tế, hãy thử để ý xem ai nói nhiều, ai ít nói, cách họ ngắt lời, cách họ đưa ra ý kiến. Đừng phán xét, chỉ quan sát và tự hỏi: "Điều gì trong văn hóa của họ có thể giải thích cho hành vi này?".',
       },
     ],
   },
@@ -702,27 +708,33 @@ export const lessons: CrossCulturalLessonType[] = [
       },
       {
         question: 'Làm thế nào để điều hành một cuộc họp hiệu quả với nhiều nền văn hóa tham gia?',
-        answer: 'Hãy gửi agenda và tài liệu trước để mọi người có thời gian chuẩn bị. Trong cuộc họp, hãy chủ động mời những người ít nói phát biểu. Sử dụng "round-robin" (mời từng người phát biểu lần lượt) để đảm bảo ai cũng có cơ hội. Tóm tắt lại các quyết định và các bước tiếp theo một cách rõ ràng bằng văn bản sau cuộc họp.',
+        answer:
+          'Hãy gửi agenda và tài liệu trước để mọi người có thời gian chuẩn bị. Trong cuộc họp, hãy chủ động mời những người ít nói phát biểu. Sử dụng "round-robin" (mời từng người phát biểu lần lượt) để đảm bảo ai cũng có cơ hội. Tóm tắt lại các quyết định và các bước tiếp theo một cách rõ ràng bằng văn bản sau cuộc họp.',
       },
       {
         question: 'Tại sao việc hiểu về "power distance" (khoảng cách quyền lực) lại quan trọng?',
-        answer: 'Nó ảnh hưởng đến cách mọi người giao tiếp với cấp trên và cấp dưới. Trong văn hóa có khoảng cách quyền lực cao (như nhiều nước châu Á), nhân viên có thể ngần ngại nói ra ý kiến trái với sếp. Trong văn hóa có khoảng cách quyền lực thấp (như các nước Bắc Âu), việc tranh luận với sếp được coi là bình thường. Hiểu điều này giúp bạn biết cách khuyến khích sự tham gia của đội nhóm.',
+        answer:
+          'Nó ảnh hưởng đến cách mọi người giao tiếp với cấp trên và cấp dưới. Trong văn hóa có khoảng cách quyền lực cao (như nhiều nước châu Á), nhân viên có thể ngần ngại nói ra ý kiến trái với sếp. Trong văn hóa có khoảng cách quyền lực thấp (như các nước Bắc Âu), việc tranh luận với sếp được coi là bình thường. Hiểu điều này giúp bạn biết cách khuyến khích sự tham gia của đội nhóm.',
       },
       {
         question: 'Làm thế nào để viết một email hiệu quả cho đối tác quốc tế?',
-        answer: 'Hãy xem xét văn hóa của người nhận. Với người từ văn hóa ngữ cảnh thấp, hãy đi thẳng vào vấn đề chính sau một lời chào ngắn gọn. Với người từ văn hóa ngữ cảnh cao, hãy dành một vài câu để hỏi thăm, xây dựng mối quan hệ trước khi đề cập đến công việc. Luôn sử dụng ngôn ngữ rõ ràng, đơn giản và tránh các thành ngữ địa phương.',
+        answer:
+          'Hãy xem xét văn hóa của người nhận. Với người từ văn hóa ngữ cảnh thấp, hãy đi thẳng vào vấn đề chính sau một lời chào ngắn gọn. Với người từ văn hóa ngữ cảnh cao, hãy dành một vài câu để hỏi thăm, xây dựng mối quan hệ trước khi đề cập đến công việc. Luôn sử dụng ngôn ngữ rõ ràng, đơn giản và tránh các thành ngữ địa phương.',
       },
       {
         question: 'Sự im lặng trong giao tiếp có ý nghĩa gì?',
-        answer: 'Ý nghĩa của sự im lặng rất khác nhau. Ở phương Tây, nó thường có nghĩa là không có gì để nói hoặc không đồng ý. Ở nhiều nền văn hóa phương Đông, sự im lặng có thể là dấu hiệu của sự tôn trọng, sự lắng nghe chăm chú, hoặc đang suy nghĩ kỹ trước khi trả lời. Đừng vội vàng lấp đầy khoảng trống im lặng.',
+        answer:
+          'Ý nghĩa của sự im lặng rất khác nhau. Ở phương Tây, nó thường có nghĩa là không có gì để nói hoặc không đồng ý. Ở nhiều nền văn hóa phương Đông, sự im lặng có thể là dấu hiệu của sự tôn trọng, sự lắng nghe chăm chú, hoặc đang suy nghĩ kỹ trước khi trả lời. Đừng vội vàng lấp đầy khoảng trống im lặng.',
       },
       {
         question: 'Làm thế nào để xây dựng một "ngôn ngữ chung" cho đội nhóm đa văn hóa?',
-        answer: 'Đội nhóm nên cùng nhau thống nhất về các quy tắc giao tiếp. Ví dụ: "Chúng ta sẽ luôn xác nhận lại các yêu cầu quan trọng bằng email", "Mọi ý kiến đều được hoan nghênh trong các buổi brainstorming", "Khi đưa phản hồi, chúng ta sẽ tập trung vào hành vi, không phải con người".',
+        answer:
+          'Đội nhóm nên cùng nhau thống nhất về các quy tắc giao tiếp. Ví dụ: "Chúng ta sẽ luôn xác nhận lại các yêu cầu quan trọng bằng email", "Mọi ý kiến đều được hoan nghênh trong các buổi brainstorming", "Khi đưa phản hồi, chúng ta sẽ tập trung vào hành vi, không phải con người".',
       },
       {
         question: 'Vai trò của storytelling trong giao tiếp toàn cầu là gì?',
-        answer: 'Kể chuyện là một công cụ mạnh mẽ để kết nối con người vượt qua rào cản văn hóa. Một câu chuyện hay có thể truyền tải các giá trị, xây dựng sự đồng cảm và làm cho thông điệp của bạn trở nên dễ nhớ và có sức ảnh hưởng hơn, bất kể người nghe đến từ đâu.',
+        answer:
+          'Kể chuyện là một công cụ mạnh mẽ để kết nối con người vượt qua rào cản văn hóa. Một câu chuyện hay có thể truyền tải các giá trị, xây dựng sự đồng cảm và làm cho thông điệp của bạn trở nên dễ nhớ và có sức ảnh hưởng hơn, bất kể người nghe đến từ đâu.',
       },
     ],
   },

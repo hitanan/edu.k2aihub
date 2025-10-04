@@ -252,27 +252,33 @@ export const lessons: DigitalCitizenshipLessonType[] = [
       },
       {
         question: 'Dấu chân kỹ thuật số (digital footprint) là gì?',
-        answer: 'Là tập hợp tất cả các dấu vết bạn để lại khi hoạt động trực tuyến. Nó bao gồm cả dấu vết chủ động (những gì bạn tự đăng tải) và dấu vết thụ động (dữ liệu được thu thập khi bạn duyệt web). Quản lý dấu chân kỹ thuật số là một phần quan trọng của việc bảo vệ danh tính.',
+        answer:
+          'Là tập hợp tất cả các dấu vết bạn để lại khi hoạt động trực tuyến. Nó bao gồm cả dấu vết chủ động (những gì bạn tự đăng tải) và dấu vết thụ động (dữ liệu được thu thập khi bạn duyệt web). Quản lý dấu chân kỹ thuật số là một phần quan trọng của việc bảo vệ danh tính.',
       },
       {
         question: 'Tại sao không nên sử dụng cùng một mật khẩu cho nhiều tài khoản?',
-        answer: 'Nếu một trong các dịch vụ bạn sử dụng bị rò rỉ dữ liệu, kẻ tấn công có thể sử dụng mật khẩu đó để thử đăng nhập vào tất cả các tài khoản khác của bạn (email, ngân hàng, mạng xã hội). Đây được gọi là tấn công "credential stuffing".',
+        answer:
+          'Nếu một trong các dịch vụ bạn sử dụng bị rò rỉ dữ liệu, kẻ tấn công có thể sử dụng mật khẩu đó để thử đăng nhập vào tất cả các tài khoản khác của bạn (email, ngân hàng, mạng xã hội). Đây được gọi là tấn công "credential stuffing".',
       },
       {
         question: 'Làm thế nào để nhận biết một trang web an toàn (sử dụng HTTPS)?',
-        answer: 'Hãy nhìn vào thanh địa chỉ của trình duyệt. Một trang web an toàn sẽ bắt đầu bằng "https://"" và thường có biểu tượng ổ khóa. HTTPS mã hóa dữ liệu truyền đi giữa bạn và trang web, giúp bảo vệ thông tin nhạy cảm như mật khẩu và thông tin thẻ tín dụng.',
+        answer:
+          'Hãy nhìn vào thanh địa chỉ của trình duyệt. Một trang web an toàn sẽ bắt đầu bằng "https://"" và thường có biểu tượng ổ khóa. HTTPS mã hóa dữ liệu truyền đi giữa bạn và trang web, giúp bảo vệ thông tin nhạy cảm như mật khẩu và thông tin thẻ tín dụng.',
       },
       {
         question: 'Netiquette là gì?',
-        answer: 'Netiquette (viết tắt của "network etiquette") là bộ quy tắc ứng xử trên không gian mạng. Nó bao gồm các nguyên tắc như tôn trọng người khác, không viết hoa toàn bộ (được coi là la hét), kiểm tra lại thông tin trước khi chia sẻ, và không tham gia vào các cuộc tranh cãi vô bổ.',
+        answer:
+          'Netiquette (viết tắt của "network etiquette") là bộ quy tắc ứng xử trên không gian mạng. Nó bao gồm các nguyên tắc như tôn trọng người khác, không viết hoa toàn bộ (được coi là la hét), kiểm tra lại thông tin trước khi chia sẻ, và không tham gia vào các cuộc tranh cãi vô bổ.',
       },
       {
         question: 'Tôi nên làm gì nếu bị bắt nạt trực tuyến (cyberbullying)?',
-        answer: 'Đừng trả lời. Hãy lưu lại bằng chứng (chụp màn hình), chặn người đó, và báo cáo hành vi cho nền tảng. Quan trọng nhất, hãy chia sẻ với một người lớn mà bạn tin tưởng như cha mẹ, thầy cô, hoặc chuyên gia tư vấn.',
+        answer:
+          'Đừng trả lời. Hãy lưu lại bằng chứng (chụp màn hình), chặn người đó, và báo cáo hành vi cho nền tảng. Quan trọng nhất, hãy chia sẻ với một người lớn mà bạn tin tưởng như cha mẹ, thầy cô, hoặc chuyên gia tư vấn.',
       },
       {
         question: 'Tại sao việc cập nhật phần mềm lại quan trọng?',
-        answer: 'Các bản cập nhật phần mềm không chỉ mang lại tính năng mới mà còn thường xuyên vá các lỗ hổng bảo mật mà tin tặc có thể khai thác. Việc không cập nhật khiến thiết bị của bạn dễ bị tấn công bởi virus và phần mềm độc hại.',
+        answer:
+          'Các bản cập nhật phần mềm không chỉ mang lại tính năng mới mà còn thường xuyên vá các lỗ hổng bảo mật mà tin tặc có thể khai thác. Việc không cập nhật khiến thiết bị của bạn dễ bị tấn công bởi virus và phần mềm độc hại.',
       },
     ],
   },
@@ -493,27 +499,33 @@ export const lessons: DigitalCitizenshipLessonType[] = [
       },
       {
         question: 'Vấn đề "Trolley Problem" liên quan đến đạo đức AI như thế nào?',
-        answer: 'Vấn đề xe đẩy (Trolley Problem) là một thí nghiệm tưởng tượng về đạo đức, thường được dùng để thảo luận về cách lập trình cho xe tự lái. Ví dụ: xe nên chọn đâm vào một người đi bộ để cứu hành khách, hay hy sinh hành khách để cứu người đi bộ? Nó cho thấy sự phức tạp của việc mã hóa các quyết định đạo đức vào máy móc.',
+        answer:
+          'Vấn đề xe đẩy (Trolley Problem) là một thí nghiệm tưởng tượng về đạo đức, thường được dùng để thảo luận về cách lập trình cho xe tự lái. Ví dụ: xe nên chọn đâm vào một người đi bộ để cứu hành khách, hay hy sinh hành khách để cứu người đi bộ? Nó cho thấy sự phức tạp của việc mã hóa các quyết định đạo đức vào máy móc.',
       },
       {
         question: 'Trách nhiệm giải trình (Accountability) trong AI có nghĩa là gì?',
-        answer: 'Là khả năng xác định ai là người chịu trách nhiệm khi một hệ thống AI gây ra lỗi hoặc tác hại. Đó có thể là nhà phát triển, công ty triển khai, hay người dùng? Việc thiếu một cơ chế trách nhiệm giải trình rõ ràng là một trong những thách thức lớn nhất của đạo đức AI.',
+        answer:
+          'Là khả năng xác định ai là người chịu trách nhiệm khi một hệ thống AI gây ra lỗi hoặc tác hại. Đó có thể là nhà phát triển, công ty triển khai, hay người dùng? Việc thiếu một cơ chế trách nhiệm giải trình rõ ràng là một trong những thách thức lớn nhất của đạo đức AI.',
       },
       {
         question: '"Human-in-the-loop" là gì?',
-        answer: 'Đây là một mô hình hợp tác giữa người và AI, trong đó con người giữ vai trò giám sát, can thiệp, và đưa ra quyết định cuối cùng trong các trường hợp quan trọng. Điều này giúp giảm thiểu rủi ro từ các quyết định hoàn toàn tự động của AI.',
+        answer:
+          'Đây là một mô hình hợp tác giữa người và AI, trong đó con người giữ vai trò giám sát, can thiệp, và đưa ra quyết định cuối cùng trong các trường hợp quan trọng. Điều này giúp giảm thiểu rủi ro từ các quyết định hoàn toàn tự động của AI.',
       },
       {
         question: 'Tại sao tính đa dạng trong các nhóm phát triển AI lại quan trọng?',
-        answer: 'Một nhóm phát triển đa dạng về giới tính, chủng tộc, và nền tảng văn hóa có nhiều khả năng nhận ra và giải quyết các thiên vị tiềm ẩn trong dữ liệu và thuật toán hơn. Điều này giúp tạo ra các sản phẩm AI công bằng và phục vụ tốt hơn cho tất cả mọi người.',
+        answer:
+          'Một nhóm phát triển đa dạng về giới tính, chủng tộc, và nền tảng văn hóa có nhiều khả năng nhận ra và giải quyết các thiên vị tiềm ẩn trong dữ liệu và thuật toán hơn. Điều này giúp tạo ra các sản phẩm AI công bằng và phục vụ tốt hơn cho tất cả mọi người.',
       },
       {
         question: 'AI có thể có cảm xúc hoặc ý thức không?',
-        answer: 'Các mô hình AI hiện tại, kể cả những mô hình phức tạp nhất, không có cảm xúc, ý thức, hay sự hiểu biết thực sự. Chúng là những cỗ máy xử lý mẫu cực kỳ tinh vi, có khả năng mô phỏng các cuộc trò chuyện và hành vi của con người, nhưng chúng không "cảm nhận" được bất cứ điều gì.',
+        answer:
+          'Các mô hình AI hiện tại, kể cả những mô hình phức tạp nhất, không có cảm xúc, ý thức, hay sự hiểu biết thực sự. Chúng là những cỗ máy xử lý mẫu cực kỳ tinh vi, có khả năng mô phỏng các cuộc trò chuyện và hành vi của con người, nhưng chúng không "cảm nhận" được bất cứ điều gì.',
       },
       {
         question: '"AI Alignment" là gì?',
-        answer: 'AI Alignment là lĩnh vực nghiên cứu nhằm đảm bảo rằng các mục tiêu và hành vi của các hệ thống AI tiên tiến phù hợp với các giá trị và ý định của con người. Đây được coi là một vấn đề an toàn dài hạn cực kỳ quan trọng khi AI ngày càng trở nên mạnh mẽ hơn.',
+        answer:
+          'AI Alignment là lĩnh vực nghiên cứu nhằm đảm bảo rằng các mục tiêu và hành vi của các hệ thống AI tiên tiến phù hợp với các giá trị và ý định của con người. Đây được coi là một vấn đề an toàn dài hạn cực kỳ quan trọng khi AI ngày càng trở nên mạnh mẽ hơn.',
       },
     ],
   },
@@ -723,27 +735,33 @@ export const lessons: DigitalCitizenshipLessonType[] = [
       },
       {
         question: 'Doomscrolling là gì?',
-        answer: 'Doomscrolling (hay doomsurfing) là hành vi liên tục cuộn và đọc các tin tức tiêu cực trên mạng xã hội hoặc các trang tin tức, mặc dù những tin tức đó khiến bạn cảm thấy buồn bã, lo lắng hoặc chán nản. Đây là một thói quen có hại cho sức khỏe tâm thần.',
+        answer:
+          'Doomscrolling (hay doomsurfing) là hành vi liên tục cuộn và đọc các tin tức tiêu cực trên mạng xã hội hoặc các trang tin tức, mặc dù những tin tức đó khiến bạn cảm thấy buồn bã, lo lắng hoặc chán nản. Đây là một thói quen có hại cho sức khỏe tâm thần.',
       },
       {
         question: 'Làm thế nào để thiết lập ranh giới kỹ thuật số với công việc?',
-        answer: 'Hãy đặt ra giờ làm việc cụ thể và tuân thủ nó. Tắt thông báo email và tin nhắn công việc ngoài giờ làm việc. Nếu có thể, hãy sử dụng các thiết bị hoặc tài khoản riêng cho công việc và cá nhân. Quan trọng nhất là trao đổi rõ ràng về ranh giới này với đồng nghiệp và cấp trên.',
+        answer:
+          'Hãy đặt ra giờ làm việc cụ thể và tuân thủ nó. Tắt thông báo email và tin nhắn công việc ngoài giờ làm việc. Nếu có thể, hãy sử dụng các thiết bị hoặc tài khoản riêng cho công việc và cá nhân. Quan trọng nhất là trao đổi rõ ràng về ranh giới này với đồng nghiệp và cấp trên.',
       },
       {
         question: 'Chánh niệm (mindfulness) có thể giúp ích gì cho sức khỏe số?',
-        answer: 'Chánh niệm giúp bạn nhận thức được những gì đang xảy ra trong thời điểm hiện tại mà không phán xét. Khi áp dụng vào công nghệ, nó giúp bạn nhận ra khi nào bạn đang sử dụng điện thoại một cách vô thức và cho bạn sức mạnh để đưa ra lựa chọn có ý thức hơn, ví dụ như đặt điện thoại xuống và tập trung vào cuộc trò chuyện trước mặt.',
+        answer:
+          'Chánh niệm giúp bạn nhận thức được những gì đang xảy ra trong thời điểm hiện tại mà không phán xét. Khi áp dụng vào công nghệ, nó giúp bạn nhận ra khi nào bạn đang sử dụng điện thoại một cách vô thức và cho bạn sức mạnh để đưa ra lựa chọn có ý thức hơn, ví dụ như đặt điện thoại xuống và tập trung vào cuộc trò chuyện trước mặt.',
       },
       {
         question: '"JOMO" là gì và tại sao nó lại tốt hơn FOMO?',
-        answer: 'JOMO là viết tắt của "Joy of Missing Out" (Niềm vui khi bỏ lỡ). Nó đối lập với FOMO. JOMO là cảm giác hài lòng khi bạn ngắt kết nối với thế giới kỹ thuật số để tập trung vào những gì quan trọng với bạn trong thế giới thực. Nó khuyến khích sự hiện diện và hài lòng với hiện tại.',
+        answer:
+          'JOMO là viết tắt của "Joy of Missing Out" (Niềm vui khi bỏ lỡ). Nó đối lập với FOMO. JOMO là cảm giác hài lòng khi bạn ngắt kết nối với thế giới kỹ thuật số để tập trung vào những gì quan trọng với bạn trong thế giới thực. Nó khuyến khích sự hiện diện và hài lòng với hiện tại.',
       },
       {
         question: 'Tôi nên làm gì để giảm mỏi mắt khi sử dụng máy tính nhiều?',
-        answer: 'Hãy áp dụng quy tắc 20-20-20: cứ sau 20 phút làm việc, hãy nhìn ra xa một vật gì đó cách 20 feet (khoảng 6 mét) trong vòng 20 giây. Ngoài ra, hãy đảm bảo màn hình của bạn ở ngang tầm mắt và có đủ ánh sáng trong phòng.',
+        answer:
+          'Hãy áp dụng quy tắc 20-20-20: cứ sau 20 phút làm việc, hãy nhìn ra xa một vật gì đó cách 20 feet (khoảng 6 mét) trong vòng 20 giây. Ngoài ra, hãy đảm bảo màn hình của bạn ở ngang tầm mắt và có đủ ánh sáng trong phòng.',
       },
       {
         question: 'Làm thế nào để giúp trẻ em xây dựng thói quen kỹ thuật số lành mạnh?',
-        answer: 'Hãy làm gương bằng chính hành vi của bạn. Thiết lập các quy tắc rõ ràng về thời gian và không gian sử dụng thiết bị (ví dụ: không dùng điện thoại trong phòng ngủ hoặc trong bữa ăn). Cùng trẻ tham gia các hoạt động không liên quan đến màn hình và trò chuyện cởi mở về những trải nghiệm trực tuyến của chúng.',
+        answer:
+          'Hãy làm gương bằng chính hành vi của bạn. Thiết lập các quy tắc rõ ràng về thời gian và không gian sử dụng thiết bị (ví dụ: không dùng điện thoại trong phòng ngủ hoặc trong bữa ăn). Cùng trẻ tham gia các hoạt động không liên quan đến màn hình và trò chuyện cởi mở về những trải nghiệm trực tuyến của chúng.',
       },
     ],
   },

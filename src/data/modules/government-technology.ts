@@ -340,44 +340,54 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     faqs: [
       {
         question: 'Thành phố thông minh (Smart City) là gì?',
-        answer: 'Thành phố thông minh là một khu vực đô thị sử dụng các loại cảm biến và phương pháp điện tử khác nhau để thu thập dữ liệu. Thông tin chi tiết thu được từ dữ liệu đó được sử dụng để quản lý tài sản, tài nguyên và dịch vụ một cách hiệu quả; đổi lại, dữ liệu đó được sử dụng để cải thiện hoạt động trên toàn thành phố.'
+        answer:
+          'Thành phố thông minh là một khu vực đô thị sử dụng các loại cảm biến và phương pháp điện tử khác nhau để thu thập dữ liệu. Thông tin chi tiết thu được từ dữ liệu đó được sử dụng để quản lý tài sản, tài nguyên và dịch vụ một cách hiệu quả; đổi lại, dữ liệu đó được sử dụng để cải thiện hoạt động trên toàn thành phố.',
       },
       {
         question: 'IoT (Internet of Things) đóng vai trò gì trong thành phố thông minh?',
-        answer: 'IoT là xương sống của thành phố thông minh. Nó bao gồm một mạng lưới các thiết bị được kết nối (cảm biến, camera, đồng hồ thông minh) thu thập dữ liệu thời gian thực về mọi thứ, từ luồng giao thông, chất lượng không khí đến việc sử dụng năng lượng. Dữ liệu này sau đó được phân tích để tối ưu hóa các dịch vụ của thành phố.'
+        answer:
+          'IoT là xương sống của thành phố thông minh. Nó bao gồm một mạng lưới các thiết bị được kết nối (cảm biến, camera, đồng hồ thông minh) thu thập dữ liệu thời gian thực về mọi thứ, từ luồng giao thông, chất lượng không khí đến việc sử dụng năng lượng. Dữ liệu này sau đó được phân tích để tối ưu hóa các dịch vụ của thành phố.',
       },
       {
         question: 'Lợi ích chính của việc xây dựng thành phố thông minh là gì?',
-        answer: 'Các lợi ích chính bao gồm cải thiện chất lượng cuộc sống cho người dân, tăng cường tính bền vững (giảm tiêu thụ năng lượng, quản lý rác thải tốt hơn), giao thông hiệu quả hơn, an toàn công cộng được nâng cao, và chính quyền hoạt động minh bạch và hiệu quả hơn.'
+        answer:
+          'Các lợi ích chính bao gồm cải thiện chất lượng cuộc sống cho người dân, tăng cường tính bền vững (giảm tiêu thụ năng lượng, quản lý rác thải tốt hơn), giao thông hiệu quả hơn, an toàn công cộng được nâng cao, và chính quyền hoạt động minh bạch và hiệu quả hơn.',
       },
       {
         question: 'Một vài ví dụ cụ thể về ứng dụng thành phố thông minh ở Việt Nam?',
-        answer: 'Ví dụ bao gồm Trung tâm Giám sát, điều hành đô thị thông minh (IOC) ở nhiều tỉnh thành, ứng dụng Hue-S ở Thừa Thiên Huế cho phép người dân tương tác với chính quyền, hệ thống camera giám sát giao thông và an ninh ở Hà Nội và TP.HCM, và các dự án thí điểm về chiếu sáng thông minh, đỗ xe thông minh.'
+        answer:
+          'Ví dụ bao gồm Trung tâm Giám sát, điều hành đô thị thông minh (IOC) ở nhiều tỉnh thành, ứng dụng Hue-S ở Thừa Thiên Huế cho phép người dân tương tác với chính quyền, hệ thống camera giám sát giao thông và an ninh ở Hà Nội và TP.HCM, và các dự án thí điểm về chiếu sáng thông minh, đỗ xe thông minh.',
       },
       {
         question: 'Thách thức lớn nhất khi triển khai thành phố thông minh là gì?',
-        answer: 'Các thách thức chính bao gồm chi phí đầu tư ban đầu cao, vấn đề an ninh mạng và bảo mật dữ liệu, sự cần thiết phải có một khung pháp lý đồng bộ, khả năng tương tác giữa các hệ thống khác nhau, và việc nâng cao nhận thức và kỹ năng số cho cả cán bộ và người dân.'
+        answer:
+          'Các thách thức chính bao gồm chi phí đầu tư ban đầu cao, vấn đề an ninh mạng và bảo mật dữ liệu, sự cần thiết phải có một khung pháp lý đồng bộ, khả năng tương tác giữa các hệ thống khác nhau, và việc nâng cao nhận thức và kỹ năng số cho cả cán bộ và người dân.',
       },
       {
         question: 'Dữ liệu cá nhân của tôi có được bảo vệ trong một thành phố thông minh không?',
-        answer: 'Đây là một mối quan tâm hàng đầu. Các dự án thành phố thông minh phải tuân thủ các quy định nghiêm ngặt về bảo vệ dữ liệu cá nhân, như Luật An ninh mạng của Việt Nam. Dữ liệu thường được ẩn danh hóa và tổng hợp trước khi phân tích để bảo vệ quyền riêng tư của công dân.'
+        answer:
+          'Đây là một mối quan tâm hàng đầu. Các dự án thành phố thông minh phải tuân thủ các quy định nghiêm ngặt về bảo vệ dữ liệu cá nhân, như Luật An ninh mạng của Việt Nam. Dữ liệu thường được ẩn danh hóa và tổng hợp trước khi phân tích để bảo vệ quyền riêng tư của công dân.',
       },
       {
         question: 'Làm thế nào thành phố thông minh có thể giúp giải quyết vấn đề kẹt xe?',
-        answer: 'Bằng cách sử dụng cảm biến và camera, hệ thống có thể phân tích luồng giao thông trong thời gian thực, tự động điều chỉnh tín hiệu đèn giao thông, cung cấp thông tin về các tuyến đường tắc nghẽn cho người dân qua ứng dụng, và tối ưu hóa hoạt động của phương tiện giao thông công cộng.'
+        answer:
+          'Bằng cách sử dụng cảm biến và camera, hệ thống có thể phân tích luồng giao thông trong thời gian thực, tự động điều chỉnh tín hiệu đèn giao thông, cung cấp thông tin về các tuyến đường tắc nghẽn cho người dân qua ứng dụng, và tối ưu hóa hoạt động của phương tiện giao thông công cộng.',
       },
       {
         question: 'Thành phố thông minh có giúp bảo vệ môi trường không?',
-        answer: 'Có, rất nhiều. Các ứng dụng bao gồm hệ thống chiếu sáng công cộng thông minh tự động điều chỉnh độ sáng để tiết kiệm năng lượng, cảm biến giám sát chất lượng không khí và nước, hệ thống quản lý rác thải thông minh tối ưu hóa lộ trình thu gom, và thúc đẩy việc sử dụng năng lượng tái tạo.'
+        answer:
+          'Có, rất nhiều. Các ứng dụng bao gồm hệ thống chiếu sáng công cộng thông minh tự động điều chỉnh độ sáng để tiết kiệm năng lượng, cảm biến giám sát chất lượng không khí và nước, hệ thống quản lý rác thải thông minh tối ưu hóa lộ trình thu gom, và thúc đẩy việc sử dụng năng lượng tái tạo.',
       },
       {
         question: 'Người dân có vai trò gì trong một thành phố thông minh?',
-        answer: 'Người dân vừa là người hưởng lợi, vừa là người đóng góp. Họ sử dụng các dịch vụ thông minh và cung cấp dữ liệu (một cách trực tiếp hoặc gián tiếp). Quan trọng hơn, thông qua các ứng dụng tương tác, người dân có thể báo cáo sự cố, đóng góp ý kiến, và tham gia vào quá trình quản lý đô thị.'
+        answer:
+          'Người dân vừa là người hưởng lợi, vừa là người đóng góp. Họ sử dụng các dịch vụ thông minh và cung cấp dữ liệu (một cách trực tiếp hoặc gián tiếp). Quan trọng hơn, thông qua các ứng dụng tương tác, người dân có thể báo cáo sự cố, đóng góp ý kiến, và tham gia vào quá trình quản lý đô thị.',
       },
       {
         question: 'Trung tâm điều hành đô thị thông minh (IOC) có phải là yếu tố bắt buộc không?',
-        answer: 'IOC được coi là "bộ não" và là một thành phần rất quan trọng của hầu hết các mô hình thành phố thông minh. Nó là nơi tích hợp, phân tích dữ liệu từ các hệ thống khác nhau để cung cấp một cái nhìn tổng thể, giúp các nhà lãnh đạo đưa ra quyết định nhanh chóng và chính xác. Tuy nhiên, một thành phố có thể bắt đầu với các ứng dụng thông minh riêng lẻ trước khi xây dựng một IOC hoàn chỉnh.'
-      }
+        answer:
+          'IOC được coi là "bộ não" và là một thành phần rất quan trọng của hầu hết các mô hình thành phố thông minh. Nó là nơi tích hợp, phân tích dữ liệu từ các hệ thống khác nhau để cung cấp một cái nhìn tổng thể, giúp các nhà lãnh đạo đưa ra quyết định nhanh chóng và chính xác. Tuy nhiên, một thành phố có thể bắt đầu với các ứng dụng thông minh riêng lẻ trước khi xây dựng một IOC hoàn chỉnh.',
+      },
     ],
     exercises: [
       {
@@ -523,44 +533,55 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     faqs: [
       {
         question: 'Công nghệ dân sự (Civic Tech) là gì?',
-        answer: 'Công nghệ dân sự là việc sử dụng công nghệ để trao quyền cho công dân và giúp chính phủ hoạt động hiệu quả hơn. Nó bao gồm các công cụ giúp tăng cường sự tham gia của người dân, cải thiện tính minh bạch và trách nhiệm giải trình của chính phủ, và cung cấp dịch vụ công tốt hơn.'
+        answer:
+          'Công nghệ dân sự là việc sử dụng công nghệ để trao quyền cho công dân và giúp chính phủ hoạt động hiệu quả hơn. Nó bao gồm các công cụ giúp tăng cường sự tham gia của người dân, cải thiện tính minh bạch và trách nhiệm giải trình của chính phủ, và cung cấp dịch vụ công tốt hơn.',
       },
       {
         question: 'Tại sao sự tham gia của công dân lại quan trọng trong quản trị hiện đại?',
-        answer: 'Sự tham gia của công dân giúp các quyết định của chính phủ phản ánh đúng hơn nhu cầu và mong muốn của người dân. Nó cũng làm tăng tính hợp pháp và sự tin tưởng của người dân vào chính quyền, đồng thời thúc đẩy trách nhiệm giải trình và giảm thiểu tiêu cực.'
+        answer:
+          'Sự tham gia của công dân giúp các quyết định của chính phủ phản ánh đúng hơn nhu cầu và mong muốn của người dân. Nó cũng làm tăng tính hợp pháp và sự tin tưởng của người dân vào chính quyền, đồng thời thúc đẩy trách nhiệm giải trình và giảm thiểu tiêu cực.',
       },
       {
         question: 'Một ví dụ về ứng dụng Civic Tech thành công ở Việt Nam là gì?',
-        answer: 'Các ứng dụng "Phản ánh hiện trường" được triển khai ở nhiều tỉnh thành là một ví dụ điển hình. Chúng cho phép người dân dễ dàng báo cáo các vấn đề về cơ sở hạ tầng, trật tự đô thị, vệ sinh môi trường... cho chính quyền và theo dõi quá trình xử lý.'
+        answer:
+          'Các ứng dụng "Phản ánh hiện trường" được triển khai ở nhiều tỉnh thành là một ví dụ điển hình. Chúng cho phép người dân dễ dàng báo cáo các vấn đề về cơ sở hạ tầng, trật tự đô thị, vệ sinh môi trường... cho chính quyền và theo dõi quá trình xử lý.',
       },
       {
         question: 'Làm thế nào để công nghệ có thể tăng cường tính minh bạch của chính phủ?',
-        answer: 'Công nghệ có thể giúp công khai hóa thông tin về ngân sách, chi tiêu công, quy hoạch, và kết quả xử lý các thủ tục hành chính. Các cổng thông tin dữ liệu mở (Open Data portals) cho phép các chuyên gia và người dân truy cập, phân tích dữ liệu của chính phủ, từ đó tăng cường sự giám sát.'
+        answer:
+          'Công nghệ có thể giúp công khai hóa thông tin về ngân sách, chi tiêu công, quy hoạch, và kết quả xử lý các thủ tục hành chính. Các cổng thông tin dữ liệu mở (Open Data portals) cho phép các chuyên gia và người dân truy cập, phân tích dữ liệu của chính phủ, từ đó tăng cường sự giám sát.',
       },
       {
         question: 'Thách thức khi triển khai các giải pháp Civic Tech là gì?',
-        answer: 'Các thách thức bao gồm việc chính quyền có thực sự lắng nghe và phản hồi các ý kiến của người dân hay không, vấn đề bất bình đẳng trong tiếp cận công nghệ (khoảng cách số), và việc đảm bảo rằng các nền tảng này không bị lạm dụng cho các mục đích xấu.'
+        answer:
+          'Các thách thức bao gồm việc chính quyền có thực sự lắng nghe và phản hồi các ý kiến của người dân hay không, vấn đề bất bình đẳng trong tiếp cận công nghệ (khoảng cách số), và việc đảm bảo rằng các nền tảng này không bị lạm dụng cho các mục đích xấu.',
       },
       {
         question: '"Dữ liệu mở" (Open Data) của chính phủ có nghĩa là gì?',
-        answer: 'Dữ liệu mở là dữ liệu do các cơ quan chính phủ thu thập và được cung cấp miễn phí cho công chúng sử dụng, tái sử dụng và phân phối mà không có hạn chế. Việc mở dữ liệu có thể thúc đẩy sự đổi mới, minh bạch và tăng trưởng kinh tế.'
+        answer:
+          'Dữ liệu mở là dữ liệu do các cơ quan chính phủ thu thập và được cung cấp miễn phí cho công chúng sử dụng, tái sử dụng và phân phối mà không có hạn chế. Việc mở dữ liệu có thể thúc đẩy sự đổi mới, minh bạch và tăng trưởng kinh tế.',
       },
       {
         question: 'Làm thế nào để khuyến khích người dân tham gia vào các nền tảng công nghệ dân sự?',
-        answer: 'Để khuyến khích sự tham gia, các nền tảng cần phải dễ sử dụng, thân thiện với thiết bị di động, và quan trọng nhất là người dân phải thấy được rằng ý kiến của họ được lắng nghe và có tác động thực sự. Việc công khai kết quả xử lý các phản ánh là một cách hiệu quả để xây dựng lòng tin.'
+        answer:
+          'Để khuyến khích sự tham gia, các nền tảng cần phải dễ sử dụng, thân thiện với thiết bị di động, và quan trọng nhất là người dân phải thấy được rằng ý kiến của họ được lắng nghe và có tác động thực sự. Việc công khai kết quả xử lý các phản ánh là một cách hiệu quả để xây dựng lòng tin.',
       },
       {
         question: 'Sự khác biệt giữa tương tác (engagement) và tham gia (participation) là gì?',
-        answer: 'Tương tác có thể chỉ đơn giản là "thích" hoặc "chia sẻ" một thông tin từ chính phủ. Tham gia là một mức độ sâu hơn, bao gồm việc đóng góp ý kiến, tham gia vào các cuộc thảo luận, hoặc cùng chung tay giải quyết một vấn đề của cộng đồng. Các công cụ Civic Tech tốt sẽ thúc đẩy sự tham gia thực chất.'
+        answer:
+          'Tương tác có thể chỉ đơn giản là "thích" hoặc "chia sẻ" một thông tin từ chính phủ. Tham gia là một mức độ sâu hơn, bao gồm việc đóng góp ý kiến, tham gia vào các cuộc thảo luận, hoặc cùng chung tay giải quyết một vấn đề của cộng đồng. Các công cụ Civic Tech tốt sẽ thúc đẩy sự tham gia thực chất.',
       },
       {
         question: 'Vai trò của mạng xã hội trong việc tương tác giữa công dân và chính phủ là gì?',
-        answer: 'Mạng xã hội là một kênh quan trọng để chính phủ truyền tải thông tin nhanh chóng và lắng nghe dư luận xã hội. Nhiều cơ quan nhà nước ở Việt Nam sử dụng Zalo và Facebook để tạo các trang chính thức, trả lời câu hỏi và tiếp nhận phản hồi của người dân.'
+        answer:
+          'Mạng xã hội là một kênh quan trọng để chính phủ truyền tải thông tin nhanh chóng và lắng nghe dư luận xã hội. Nhiều cơ quan nhà nước ở Việt Nam sử dụng Zalo và Facebook để tạo các trang chính thức, trả lời câu hỏi và tiếp nhận phản hồi của người dân.',
       },
       {
-        question: 'Liệu công nghệ có thể thay thế hoàn toàn các hình thức tương tác truyền thống như tiếp xúc cử tri không?',
-        answer: 'Không. Công nghệ là một công cụ bổ sung mạnh mẽ, nhưng không thể thay thế hoàn toàn các cuộc gặp gỡ, đối thoại trực tiếp. Việc kết hợp cả hai hình thức trực tuyến và trực tiếp sẽ tạo ra một hệ thống tương tác công dân toàn diện và hiệu quả nhất.'
-      }
+        question:
+          'Liệu công nghệ có thể thay thế hoàn toàn các hình thức tương tác truyền thống như tiếp xúc cử tri không?',
+        answer:
+          'Không. Công nghệ là một công cụ bổ sung mạnh mẽ, nhưng không thể thay thế hoàn toàn các cuộc gặp gỡ, đối thoại trực tiếp. Việc kết hợp cả hai hình thức trực tuyến và trực tiếp sẽ tạo ra một hệ thống tương tác công dân toàn diện và hiệu quả nhất.',
+      },
     ],
     exercises: [
       {
@@ -707,44 +728,54 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     faqs: [
       {
         question: 'Tối ưu hóa cung cấp dịch vụ công có nghĩa là gì?',
-        answer: 'Đó là việc sử dụng công nghệ, cải tiến quy trình và phân tích dữ liệu để làm cho các dịch vụ mà chính phủ cung cấp cho người dân trở nên nhanh hơn, hiệu quả hơn, ít tốn kém hơn và dễ tiếp cận hơn. Mục tiêu cuối cùng là nâng cao sự hài lòng của công dân.'
+        answer:
+          'Đó là việc sử dụng công nghệ, cải tiến quy trình và phân tích dữ liệu để làm cho các dịch vụ mà chính phủ cung cấp cho người dân trở nên nhanh hơn, hiệu quả hơn, ít tốn kém hơn và dễ tiếp cận hơn. Mục tiêu cuối cùng là nâng cao sự hài lòng của công dân.',
       },
       {
         question: 'Mô hình "Một cửa" và "Một cửa liên thông" giúp tối ưu hóa dịch vụ công như thế nào?',
-        answer: 'Các mô hình này giúp tối ưu hóa bằng cách tạo ra một điểm tiếp nhận và trả kết quả duy nhất cho nhiều thủ tục hành chính. Người dân không cần phải đi lại giữa nhiều cơ quan khác nhau, giúp tiết kiệm thời gian, chi phí và giảm sự phức tạp của thủ tục.'
+        answer:
+          'Các mô hình này giúp tối ưu hóa bằng cách tạo ra một điểm tiếp nhận và trả kết quả duy nhất cho nhiều thủ tục hành chính. Người dân không cần phải đi lại giữa nhiều cơ quan khác nhau, giúp tiết kiệm thời gian, chi phí và giảm sự phức tạp của thủ tục.',
       },
       {
         question: 'Đề án 06 đóng góp gì vào việc tối ưu hóa dịch vụ công?',
-        answer: 'Đề án 06 là trọng tâm của việc tối ưu hóa. Bằng cách sử dụng Cơ sở dữ liệu quốc gia về dân cư và định danh điện tử (VNeID), nó giúp loại bỏ việc người dân phải nộp lại các thông tin đã có, tự động hóa việc xác minh, và cho phép thực hiện nhiều dịch vụ công hoàn toàn trực tuyến.'
+        answer:
+          'Đề án 06 là trọng tâm của việc tối ưu hóa. Bằng cách sử dụng Cơ sở dữ liệu quốc gia về dân cư và định danh điện tử (VNeID), nó giúp loại bỏ việc người dân phải nộp lại các thông tin đã có, tự động hóa việc xác minh, và cho phép thực hiện nhiều dịch vụ công hoàn toàn trực tuyến.',
       },
       {
         question: 'Trải nghiệm của công dân (Citizen Experience - CX) là gì và tại sao nó quan trọng?',
-        answer: 'Trải nghiệm của công dân là toàn bộ cảm nhận của một người khi tương tác với các dịch vụ của chính phủ. Nó quan trọng vì một trải nghiệm tốt sẽ làm tăng sự hài lòng, tin tưởng và mức độ hợp tác của người dân với chính quyền. Chính phủ hiện đại ngày càng chú trọng đến CX như một thước đo thành công.'
+        answer:
+          'Trải nghiệm của công dân là toàn bộ cảm nhận của một người khi tương tác với các dịch vụ của chính phủ. Nó quan trọng vì một trải nghiệm tốt sẽ làm tăng sự hài lòng, tin tưởng và mức độ hợp tác của người dân với chính quyền. Chính phủ hiện đại ngày càng chú trọng đến CX như một thước đo thành công.',
       },
       {
         question: 'Làm thế nào để đo lường hiệu quả của việc cung cấp dịch vụ công?',
-        answer: 'Hiệu quả có thể được đo lường qua nhiều chỉ số: thời gian xử lý trung bình cho một thủ tục, chi phí tuân thủ của người dân/doanh nghiệp, tỷ lệ hồ sơ được xử lý đúng hạn, và quan trọng nhất là chỉ số đo lường sự hài lòng của người dân (SIPAS).'
+        answer:
+          'Hiệu quả có thể được đo lường qua nhiều chỉ số: thời gian xử lý trung bình cho một thủ tục, chi phí tuân thủ của người dân/doanh nghiệp, tỷ lệ hồ sơ được xử lý đúng hạn, và quan trọng nhất là chỉ số đo lường sự hài lòng của người dân (SIPAS).',
       },
       {
         question: 'Tự động hóa quy trình bằng robot (RPA) có thể được áp dụng trong dịch vụ công không?',
-        answer: 'Có, RPA rất hữu ích cho các tác vụ lặp đi lặp lại và dựa trên quy tắc trong dịch vụ công, chẳng hạn như nhập dữ liệu, kiểm tra tính hợp lệ của hồ sơ, hoặc gửi thông báo tự động. RPA giúp giải phóng cán bộ khỏi các công việc nhàm chán để tập trung vào các nhiệm vụ phức tạp hơn.'
+        answer:
+          'Có, RPA rất hữu ích cho các tác vụ lặp đi lặp lại và dựa trên quy tắc trong dịch vụ công, chẳng hạn như nhập dữ liệu, kiểm tra tính hợp lệ của hồ sơ, hoặc gửi thông báo tự động. RPA giúp giải phóng cán bộ khỏi các công việc nhàm chán để tập trung vào các nhiệm vụ phức tạp hơn.',
       },
       {
         question: 'Cung cấp dịch vụ "đa kênh" có nghĩa là gì?',
-        answer: 'Đa kênh có nghĩa là cung cấp cùng một dịch vụ công qua nhiều kênh khác nhau để người dân có thể lựa chọn kênh thuận tiện nhất cho họ. Ví dụ, một người có thể nộp hồ sơ trực tuyến qua Cổng dịch vụ công, qua ứng dụng di động, hoặc đến nộp trực tiếp tại bộ phận một cửa.'
+        answer:
+          'Đa kênh có nghĩa là cung cấp cùng một dịch vụ công qua nhiều kênh khác nhau để người dân có thể lựa chọn kênh thuận tiện nhất cho họ. Ví dụ, một người có thể nộp hồ sơ trực tuyến qua Cổng dịch vụ công, qua ứng dụng di động, hoặc đến nộp trực tiếp tại bộ phận một cửa.',
       },
       {
         question: 'Làm thế nào để tối ưu hóa dịch vụ công cho người dân ở vùng sâu, vùng xa?',
-        answer: 'Các giải pháp bao gồm việc phát triển các ứng dụng di động hoạt động tốt với mạng internet yếu, triển khai các điểm hỗ trợ dịch vụ công trực tuyến tại các bưu điện văn hóa xã, và các "tổ công nghệ số cộng đồng" đi đến từng nhà để hướng dẫn người dân.'
+        answer:
+          'Các giải pháp bao gồm việc phát triển các ứng dụng di động hoạt động tốt với mạng internet yếu, triển khai các điểm hỗ trợ dịch vụ công trực tuyến tại các bưu điện văn hóa xã, và các "tổ công nghệ số cộng đồng" đi đến từng nhà để hướng dẫn người dân.',
       },
       {
         question: 'Thách thức lớn nhất khi tối ưu hóa dịch vụ công là gì?',
-        answer: 'Thách thức lớn nhất thường không phải là công nghệ mà là sự thay đổi về văn hóa và quy trình. Việc phá bỏ các "sil-ô" dữ liệu giữa các bộ ngành, thay đổi thói quen làm việc cũ của cán bộ, và đảm bảo tính liên thông, đồng bộ của các hệ thống là những việc khó khăn nhất.'
+        answer:
+          'Thách thức lớn nhất thường không phải là công nghệ mà là sự thay đổi về văn hóa và quy trình. Việc phá bỏ các "sil-ô" dữ liệu giữa các bộ ngành, thay đổi thói quen làm việc cũ của cán bộ, và đảm bảo tính liên thông, đồng bộ của các hệ thống là những việc khó khăn nhất.',
       },
       {
         question: 'Trái phiếu công trình có phải là một hình thức tối ưu hóa dịch vụ công không?',
-        answer: 'Trái phiếu công trình là một công cụ tài chính để huy động vốn cho các dự án cơ sở hạ tầng, không trực tiếp là một hình thức tối ưu hóa dịch vụ. Tuy nhiên, việc sử dụng các công cụ tài chính sáng tạo để xây dựng cơ sở hạ tầng tốt hơn (đường sá, bệnh viện) sẽ là nền tảng để cung cấp các dịch vụ công tốt hơn.'
-      }
+        answer:
+          'Trái phiếu công trình là một công cụ tài chính để huy động vốn cho các dự án cơ sở hạ tầng, không trực tiếp là một hình thức tối ưu hóa dịch vụ. Tuy nhiên, việc sử dụng các công cụ tài chính sáng tạo để xây dựng cơ sở hạ tầng tốt hơn (đường sá, bệnh viện) sẽ là nền tảng để cung cấp các dịch vụ công tốt hơn.',
+      },
     ],
     exercises: [
       {
@@ -892,44 +923,54 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
     faqs: [
       {
         question: 'Chính sách dựa trên bằng chứng (Evidence-Based Policy) là gì?',
-        answer: 'Đó là một phương pháp tiếp cận trong quản lý công, trong đó các quyết định chính sách được đưa ra dựa trên các bằng chứng khoa học và phân tích dữ liệu khách quan, thay vì chỉ dựa trên ý thức hệ, kinh nghiệm cá nhân hay áp lực chính trị.'
+        answer:
+          'Đó là một phương pháp tiếp cận trong quản lý công, trong đó các quyết định chính sách được đưa ra dựa trên các bằng chứng khoa học và phân tích dữ liệu khách quan, thay vì chỉ dựa trên ý thức hệ, kinh nghiệm cá nhân hay áp lực chính trị.',
       },
       {
         question: 'Tại sao phân tích dữ liệu lại quan trọng đối với việc hoạch định chính sách?',
-        answer: 'Phân tích dữ liệu giúp các nhà hoạch định chính sách hiểu rõ hơn về bản chất của một vấn đề, dự báo tác động tiềm tàng của các phương án chính sách khác nhau, theo dõi hiệu quả của chính sách sau khi ban hành, và phân bổ nguồn lực một cách hiệu quả hơn.'
+        answer:
+          'Phân tích dữ liệu giúp các nhà hoạch định chính sách hiểu rõ hơn về bản chất của một vấn đề, dự báo tác động tiềm tàng của các phương án chính sách khác nhau, theo dõi hiệu quả của chính sách sau khi ban hành, và phân bổ nguồn lực một cách hiệu quả hơn.',
       },
       {
         question: 'Mô hình hóa dự báo (predictive modeling) được sử dụng trong chính sách công như thế nào?',
-        answer: 'Mô hình hóa dự báo sử dụng dữ liệu lịch sử và các thuật toán thống kê để dự đoán các xu hướng trong tương lai. Ví dụ, chính phủ có thể sử dụng nó để dự báo nhu cầu về dịch vụ y tế, dự đoán các điểm nóng về tội phạm, hoặc ước tính tác động của một chính sách thuế mới đến doanh thu ngân sách.'
+        answer:
+          'Mô hình hóa dự báo sử dụng dữ liệu lịch sử và các thuật toán thống kê để dự đoán các xu hướng trong tương lai. Ví dụ, chính phủ có thể sử dụng nó để dự báo nhu cầu về dịch vụ y tế, dự đoán các điểm nóng về tội phạm, hoặc ước tính tác động của một chính sách thuế mới đến doanh thu ngân sách.',
       },
       {
         question: 'Một ví dụ về việc áp dụng phân tích dữ liệu trong chính sách công ở Việt Nam?',
-        answer: 'Trong đại dịch COVID-19, việc phân tích dữ liệu về ca nhiễm, lịch trình di chuyển, và tỷ lệ tiêm chủng đã giúp chính phủ đưa ra các quyết định về giãn cách xã hội, phân bổ vắc-xin và các biện pháp phòng chống dịch một cách kịp thời và có mục tiêu hơn.'
+        answer:
+          'Trong đại dịch COVID-19, việc phân tích dữ liệu về ca nhiễm, lịch trình di chuyển, và tỷ lệ tiêm chủng đã giúp chính phủ đưa ra các quyết định về giãn cách xã hội, phân bổ vắc-xin và các biện pháp phòng chống dịch một cách kịp thời và có mục tiêu hơn.',
       },
       {
         question: 'Thách thức lớn nhất khi triển khai chính sách dựa trên dữ liệu là gì?',
-        answer: 'Các thách thức bao gồm: chất lượng và tính sẵn có của dữ liệu, năng lực phân tích dữ liệu của đội ngũ cán bộ, sự thiếu liên thông và chia sẻ dữ liệu giữa các cơ quan, và đôi khi là sự phản kháng đối với việc thay đổi các quy trình ra quyết định truyền thống.'
+        answer:
+          'Các thách thức bao gồm: chất lượng và tính sẵn có của dữ liệu, năng lực phân tích dữ liệu của đội ngũ cán bộ, sự thiếu liên thông và chia sẻ dữ liệu giữa các cơ quan, và đôi khi là sự phản kháng đối với việc thay đổi các quy trình ra quyết định truyền thống.',
       },
       {
         question: 'Làm thế nào để đảm bảo rằng việc sử dụng dữ liệu không vi phạm quyền riêng tư của công dân?',
-        answer: 'Điều này đòi hỏi phải có các quy định pháp lý chặt chẽ về bảo vệ dữ liệu cá nhân. Các kỹ thuật như ẩn danh hóa (anonymization) và mã hóa (encryption) dữ liệu phải được áp dụng. Dữ liệu chỉ nên được thu thập cho các mục đích cụ thể và việc truy cập phải được kiểm soát chặt chẽ.'
+        answer:
+          'Điều này đòi hỏi phải có các quy định pháp lý chặt chẽ về bảo vệ dữ liệu cá nhân. Các kỹ thuật như ẩn danh hóa (anonymization) và mã hóa (encryption) dữ liệu phải được áp dụng. Dữ liệu chỉ nên được thu thập cho các mục đích cụ thể và việc truy cập phải được kiểm soát chặt chẽ.',
       },
       {
         question: 'Sự khác biệt giữa dữ liệu (data), thông tin (information), và tri thức (insight) là gì?',
-        answer: 'Dữ liệu là các con số hoặc sự kiện thô. Thông tin là dữ liệu đã được xử lý và đặt trong một ngữ cảnh (ví dụ: số ca nhiễm COVID-19 theo ngày). Tri thức là sự hiểu biết sâu sắc thu được từ việc phân tích thông tin, giúp trả lời câu hỏi "tại sao" và hỗ trợ ra quyết định (ví dụ: phát hiện ra rằng một sự kiện cụ thể đã gây ra một đợt bùng phát dịch).'
+        answer:
+          'Dữ liệu là các con số hoặc sự kiện thô. Thông tin là dữ liệu đã được xử lý và đặt trong một ngữ cảnh (ví dụ: số ca nhiễm COVID-19 theo ngày). Tri thức là sự hiểu biết sâu sắc thu được từ việc phân tích thông tin, giúp trả lời câu hỏi "tại sao" và hỗ trợ ra quyết định (ví dụ: phát hiện ra rằng một sự kiện cụ thể đã gây ra một đợt bùng phát dịch).',
       },
       {
         question: 'Trực quan hóa dữ liệu (data visualization) có vai trò gì?',
-        answer: 'Trực quan hóa dữ liệu biến các bảng số liệu phức tạp thành các biểu đồ, bản đồ dễ hiểu. Nó giúp các nhà hoạch định chính sách nhanh chóng nắm bắt các xu hướng, các điểm bất thường và các mối quan hệ trong dữ liệu, từ đó hỗ trợ việc ra quyết định nhanh và chính xác hơn.'
+        answer:
+          'Trực quan hóa dữ liệu biến các bảng số liệu phức tạp thành các biểu đồ, bản đồ dễ hiểu. Nó giúp các nhà hoạch định chính sách nhanh chóng nắm bắt các xu hướng, các điểm bất thường và các mối quan hệ trong dữ liệu, từ đó hỗ trợ việc ra quyết định nhanh và chính xác hơn.',
       },
       {
         question: 'Dữ liệu lớn (Big Data) có thể giúp gì cho chính phủ?',
-        answer: 'Dữ liệu lớn từ các nguồn như mạng xã hội, dữ liệu giao dịch, cảm biến IoT... có thể cung cấp những hiểu biết sâu sắc và kịp thời về các vấn đề kinh tế-xã hội mà các cuộc khảo sát truyền thống không thể có được. Ví dụ, phân tích dữ liệu mạng xã hội có thể giúp nắm bắt tâm trạng của công chúng về một chính sách mới.'
+        answer:
+          'Dữ liệu lớn từ các nguồn như mạng xã hội, dữ liệu giao dịch, cảm biến IoT... có thể cung cấp những hiểu biết sâu sắc và kịp thời về các vấn đề kinh tế-xã hội mà các cuộc khảo sát truyền thống không thể có được. Ví dụ, phân tích dữ liệu mạng xã hội có thể giúp nắm bắt tâm trạng của công chúng về một chính sách mới.',
       },
       {
         question: 'Làm thế nào để xây dựng một "văn hóa dữ liệu" trong các cơ quan chính phủ?',
-        answer: 'Xây dựng văn hóa dữ liệu đòi hỏi sự cam kết từ lãnh đạo, đầu tư vào đào tạo và nâng cao năng lực phân tích cho cán bộ, xây dựng các quy trình ra quyết định có sử dụng dữ liệu, và tạo ra các cơ chế để chia sẻ và sử dụng dữ liệu một cách hiệu quả và an toàn trong toàn hệ thống.'
-      }
+        answer:
+          'Xây dựng văn hóa dữ liệu đòi hỏi sự cam kết từ lãnh đạo, đầu tư vào đào tạo và nâng cao năng lực phân tích cho cán bộ, xây dựng các quy trình ra quyết định có sử dụng dữ liệu, và tạo ra các cơ chế để chia sẻ và sử dụng dữ liệu một cách hiệu quả và an toàn trong toàn hệ thống.',
+      },
     ],
     exercises: [
       {

@@ -40,36 +40,44 @@ export const scientificResearchSkillsModuleData: ModuleData = {
         },
         {
           question: 'Giả thuyết (hypothesis) là gì?',
-          answer: 'Giả thuyết là một dự đoán có thể kiểm chứng được về mối quan hệ giữa các biến số. Nó không phải là một câu hỏi, mà là một phát biểu khẳng định mà bạn sẽ cố gắng chứng minh hoặc bác bỏ thông qua nghiên cứu của mình. Ví dụ: "Học sinh ngủ đủ 8 tiếng mỗi đêm có điểm số trung bình cao hơn những học sinh ngủ ít hơn".'
+          answer:
+            'Giả thuyết là một dự đoán có thể kiểm chứng được về mối quan hệ giữa các biến số. Nó không phải là một câu hỏi, mà là một phát biểu khẳng định mà bạn sẽ cố gắng chứng minh hoặc bác bỏ thông qua nghiên cứu của mình. Ví dụ: "Học sinh ngủ đủ 8 tiếng mỗi đêm có điểm số trung bình cao hơn những học sinh ngủ ít hơn".',
         },
         {
           question: 'Sự khác biệt giữa tương quan (correlation) và quan hệ nhân quả (causation) là gì?',
-          answer: 'Tương quan có nghĩa là hai sự việc xảy ra cùng nhau, nhưng không nhất thiết cái này gây ra cái kia (ví dụ: doanh số bán kem và số vụ đuối nước đều tăng vào mùa hè). Quan hệ nhân quả có nghĩa là một sự việc trực tiếp gây ra sự việc kia. Chứng minh quan hệ nhân quả khó hơn nhiều so với chứng minh tương quan.'
+          answer:
+            'Tương quan có nghĩa là hai sự việc xảy ra cùng nhau, nhưng không nhất thiết cái này gây ra cái kia (ví dụ: doanh số bán kem và số vụ đuối nước đều tăng vào mùa hè). Quan hệ nhân quả có nghĩa là một sự việc trực tiếp gây ra sự việc kia. Chứng minh quan hệ nhân quả khó hơn nhiều so với chứng minh tương quan.',
         },
         {
           question: 'Biến số (variable) trong nghiên cứu là gì?',
-          answer: 'Biến số là bất kỳ yếu tố, đặc điểm hoặc điều kiện nào có thể thay đổi hoặc có các giá trị khác nhau. Ví dụ: trong một nghiên cứu về học tập, các biến số có thể là "số giờ học", "điểm số", "phương pháp học", "giới tính".'
+          answer:
+            'Biến số là bất kỳ yếu tố, đặc điểm hoặc điều kiện nào có thể thay đổi hoặc có các giá trị khác nhau. Ví dụ: trong một nghiên cứu về học tập, các biến số có thể là "số giờ học", "điểm số", "phương pháp học", "giới tính".',
         },
         {
           question: 'Mục đích của nhóm đối chứng (control group) trong một thí nghiệm là gì?',
-          answer: 'Nhóm đối chứng là nhóm không nhận được sự can thiệp hoặc yếu tố đang được thử nghiệm. Nó cung cấp một đường cơ sở để so sánh với nhóm thử nghiệm (experimental group), giúp các nhà nghiên cứu xác định xem liệu sự thay đổi quan sát được có thực sự là do sự can thiệp gây ra hay không.'
+          answer:
+            'Nhóm đối chứng là nhóm không nhận được sự can thiệp hoặc yếu tố đang được thử nghiệm. Nó cung cấp một đường cơ sở để so sánh với nhóm thử nghiệm (experimental group), giúp các nhà nghiên cứu xác định xem liệu sự thay đổi quan sát được có thực sự là do sự can thiệp gây ra hay không.',
         },
         {
           question: 'Một nghiên cứu được "bình duyệt" (peer-reviewed) nghĩa là gì?',
-          answer: 'Điều đó có nghĩa là trước khi được xuất bản, bài báo nghiên cứu đã được các chuyên gia khác trong cùng lĩnh vực đánh giá một cách ẩn danh về chất lượng, phương pháp luận và tính hợp lệ của kết quả. Đây là một tiêu chuẩn vàng để đảm bảo chất lượng trong khoa học.'
+          answer:
+            'Điều đó có nghĩa là trước khi được xuất bản, bài báo nghiên cứu đã được các chuyên gia khác trong cùng lĩnh vực đánh giá một cách ẩn danh về chất lượng, phương pháp luận và tính hợp lệ của kết quả. Đây là một tiêu chuẩn vàng để đảm bảo chất lượng trong khoa học.',
         },
         {
           question: 'Nghiên cứu có thể hoàn toàn khách quan không?',
-          answer: 'Các nhà khoa học luôn cố gắng để đạt được sự khách quan, nhưng những định kiến cá nhân vẫn có thể ảnh hưởng đến nghiên cứu. Điều quan trọng là nhận thức được những định kiến tiềm tàng này và áp dụng các phương pháp (như thí nghiệm mù đôi) để giảm thiểu chúng.'
+          answer:
+            'Các nhà khoa học luôn cố gắng để đạt được sự khách quan, nhưng những định kiến cá nhân vẫn có thể ảnh hưởng đến nghiên cứu. Điều quan trọng là nhận thức được những định kiến tiềm tàng này và áp dụng các phương pháp (như thí nghiệm mù đôi) để giảm thiểu chúng.',
         },
         {
           question: 'Tại sao việc lặp lại (replicate) một nghiên cứu lại quan trọng?',
-          answer: 'Việc lặp lại một nghiên cứu bởi các nhà khoa học khác giúp xác minh kết quả và đảm bảo rằng chúng không phải là do ngẫu nhiên hay sai sót. Khi một kết quả có thể được lặp lại nhiều lần, sự tin cậy vào phát hiện đó sẽ tăng lên đáng kể.'
+          answer:
+            'Việc lặp lại một nghiên cứu bởi các nhà khoa học khác giúp xác minh kết quả và đảm bảo rằng chúng không phải là do ngẫu nhiên hay sai sót. Khi một kết quả có thể được lặp lại nhiều lần, sự tin cậy vào phát hiện đó sẽ tăng lên đáng kể.',
         },
         {
           question: 'Sự khác biệt giữa một học thuyết (theory) và một định luật (law) trong khoa học là gì?',
-          answer: 'Một định luật mô tả một hiện tượng quan sát được (ví dụ: Định luật vạn vật hấp dẫn của Newton mô tả lực hút giữa các vật thể). Một học thuyết là một lời giải thích sâu sắc, được chứng minh bằng nhiều bằng chứng, cho một khía cạnh nào đó của thế giới tự nhiên (ví dụ: Thuyết tương đối của Einstein giải thích tại sao lực hấp dẫn tồn tại).'
-        }
+          answer:
+            'Một định luật mô tả một hiện tượng quan sát được (ví dụ: Định luật vạn vật hấp dẫn của Newton mô tả lực hút giữa các vật thể). Một học thuyết là một lời giải thích sâu sắc, được chứng minh bằng nhiều bằng chứng, cho một khía cạnh nào đó của thế giới tự nhiên (ví dụ: Thuyết tương đối của Einstein giải thích tại sao lực hấp dẫn tồn tại).',
+        },
       ],
       quizzes: [
         {
@@ -108,36 +116,44 @@ export const scientificResearchSkillsModuleData: ModuleData = {
         },
         {
           question: 'Tóm tắt (abstract) của một bài báo khoa học là gì?',
-          answer: 'Tóm tắt là một đoạn văn ngắn gọn (thường khoảng 150-250 từ) ở đầu bài báo, cung cấp một cái nhìn tổng quan về mục đích, phương pháp, kết quả chính và kết luận của nghiên cứu. Đọc tóm tắt là cách nhanh nhất để quyết định xem bài báo có phù hợp với bạn hay không.'
+          answer:
+            'Tóm tắt là một đoạn văn ngắn gọn (thường khoảng 150-250 từ) ở đầu bài báo, cung cấp một cái nhìn tổng quan về mục đích, phương pháp, kết quả chính và kết luận của nghiên cứu. Đọc tóm tắt là cách nhanh nhất để quyết định xem bài báo có phù hợp với bạn hay không.',
         },
         {
           question: 'Từ khóa (keywords) quan trọng như thế nào trong việc tìm kiếm?',
-          answer: 'Từ khóa là những thuật ngữ chính mô tả chủ đề của bạn. Sử dụng đúng từ khóa, bao gồm cả các từ đồng nghĩa và thuật ngữ liên quan, sẽ giúp bạn tìm thấy các bài báo phù hợp nhất trong các cơ sở dữ liệu học thuật.'
+          answer:
+            'Từ khóa là những thuật ngữ chính mô tả chủ đề của bạn. Sử dụng đúng từ khóa, bao gồm cả các từ đồng nghĩa và thuật ngữ liên quan, sẽ giúp bạn tìm thấy các bài báo phù hợp nhất trong các cơ sở dữ liệu học thuật.',
         },
         {
           question: 'Phần mềm quản lý trích dẫn như Zotero hay Mendeley để làm gì?',
-          answer: 'Đây là những công cụ giúp bạn thu thập, sắp xếp, ghi chú và tự động tạo danh mục tài liệu tham khảo theo các định dạng chuẩn (APA, MLA, Chicago...). Sử dụng chúng giúp tiết kiệm rất nhiều thời gian và tránh sai sót trong việc trích dẫn.'
+          answer:
+            'Đây là những công cụ giúp bạn thu thập, sắp xếp, ghi chú và tự động tạo danh mục tài liệu tham khảo theo các định dạng chuẩn (APA, MLA, Chicago...). Sử dụng chúng giúp tiết kiệm rất nhiều thời gian và tránh sai sót trong việc trích dẫn.',
         },
         {
           question: 'Thế nào là "tổng hợp" (synthesize) thông tin, thay vì chỉ "tóm tắt" (summarize)?',
-          answer: 'Tóm tắt là trình bày lại ý chính của một nguồn tài liệu. Tổng hợp là một bước cao hơn, bạn kết hợp các ý tưởng từ nhiều nguồn khác nhau để tạo ra một lập luận hoặc một cái nhìn mới, chỉ ra sự tương đồng, khác biệt hoặc các lỗ hổng kiến thức giữa các nghiên cứu.'
+          answer:
+            'Tóm tắt là trình bày lại ý chính của một nguồn tài liệu. Tổng hợp là một bước cao hơn, bạn kết hợp các ý tưởng từ nhiều nguồn khác nhau để tạo ra một lập luận hoặc một cái nhìn mới, chỉ ra sự tương đồng, khác biệt hoặc các lỗ hổng kiến thức giữa các nghiên cứu.',
         },
         {
           question: 'Làm thế nào để đọc một bài báo khoa học hiệu quả?',
-          answer: 'Hãy thử chiến lược sau: 1. Đọc Tiêu đề, Tóm tắt, và Kết luận để nắm ý chính. 2. Xem các Hình ảnh, Biểu đồ và Bảng vì chúng thường chứa các kết quả quan trọng nhất. 3. Đọc phần Giới thiệu để hiểu bối cảnh. 4. Chỉ đọc kỹ phần Phương pháp nếu bạn cần hiểu sâu về cách thí nghiệm được thực hiện.'
+          answer:
+            'Hãy thử chiến lược sau: 1. Đọc Tiêu đề, Tóm tắt, và Kết luận để nắm ý chính. 2. Xem các Hình ảnh, Biểu đồ và Bảng vì chúng thường chứa các kết quả quan trọng nhất. 3. Đọc phần Giới thiệu để hiểu bối cảnh. 4. Chỉ đọc kỹ phần Phương pháp nếu bạn cần hiểu sâu về cách thí nghiệm được thực hiện.',
         },
         {
           question: 'Sự khác biệt giữa danh mục tham khảo (reference list) và thư mục (bibliography) là gì?',
-          answer: 'Một danh mục tham khảo chỉ liệt kê những nguồn mà bạn đã thực sự trích dẫn trong bài viết của mình. Một thư mục có thể bao gồm tất cả các nguồn bạn đã đọc và tham khảo trong quá trình nghiên cứu, ngay cả khi chúng không được trích dẫn trực tiếp.'
+          answer:
+            'Một danh mục tham khảo chỉ liệt kê những nguồn mà bạn đã thực sự trích dẫn trong bài viết của mình. Một thư mục có thể bao gồm tất cả các nguồn bạn đã đọc và tham khảo trong quá trình nghiên cứu, ngay cả khi chúng không được trích dẫn trực tiếp.',
         },
         {
           question: 'Phương pháp "quả cầu tuyết" (snowball method) để tìm tài liệu là gì?',
-          answer: 'Đây là một kỹ thuật hữu ích khi bạn đã có một vài bài báo "hạt nhân" rất liên quan. Bạn xem danh mục tài liệu tham khảo của những bài báo đó để tìm thêm các công trình quan trọng khác. Giống như một quả cầu tuyết lăn và lớn dần lên.'
+          answer:
+            'Đây là một kỹ thuật hữu ích khi bạn đã có một vài bài báo "hạt nhân" rất liên quan. Bạn xem danh mục tài liệu tham khảo của những bài báo đó để tìm thêm các công trình quan trọng khác. Giống như một quả cầu tuyết lăn và lớn dần lên.',
         },
         {
           question: 'Khi nào thì tôi biết mình đã tìm đủ tài liệu?',
-          answer: 'Bạn có thể cảm thấy đã đủ khi bắt đầu thấy các tác giả, các nghiên cứu và các ý tưởng quen thuộc được lặp đi lặp lại trong các bài báo mới mà bạn tìm thấy. Điều này cho thấy bạn đã nắm được phần lớn các công trình quan trọng trong lĩnh vực đó.'
-        }
+          answer:
+            'Bạn có thể cảm thấy đã đủ khi bắt đầu thấy các tác giả, các nghiên cứu và các ý tưởng quen thuộc được lặp đi lặp lại trong các bài báo mới mà bạn tìm thấy. Điều này cho thấy bạn đã nắm được phần lớn các công trình quan trọng trong lĩnh vực đó.',
+        },
       ],
       quizzes: [
         {
@@ -176,36 +192,44 @@ export const scientificResearchSkillsModuleData: ModuleData = {
         },
         {
           question: 'Sự khác biệt giữa quần thể (population) và mẫu (sample) là gì?',
-          answer: 'Quần thể là toàn bộ nhóm mà bạn muốn nghiên cứu và rút ra kết luận (ví dụ: tất cả học sinh THPT ở Việt Nam). Mẫu là một nhóm nhỏ hơn, đại diện được chọn ra từ quần thể đó để thu thập dữ liệu, vì việc nghiên cứu toàn bộ quần thể thường là không khả thi.'
+          answer:
+            'Quần thể là toàn bộ nhóm mà bạn muốn nghiên cứu và rút ra kết luận (ví dụ: tất cả học sinh THPT ở Việt Nam). Mẫu là một nhóm nhỏ hơn, đại diện được chọn ra từ quần thể đó để thu thập dữ liệu, vì việc nghiên cứu toàn bộ quần thể thường là không khả thi.',
         },
         {
           question: '"Chọn mẫu ngẫu nhiên" (random sampling) là gì?',
-          answer: 'Đây là phương pháp chọn mẫu trong đó mọi cá nhân trong quần thể đều có cơ hội được chọn như nhau. Điều này giúp đảm bảo rằng mẫu của bạn không bị sai lệch và các kết quả từ mẫu có thể khái quát hóa cho toàn bộ quần thể.'
+          answer:
+            'Đây là phương pháp chọn mẫu trong đó mọi cá nhân trong quần thể đều có cơ hội được chọn như nhau. Điều này giúp đảm bảo rằng mẫu của bạn không bị sai lệch và các kết quả từ mẫu có thể khái quát hóa cho toàn bộ quần thể.',
         },
         {
           question: 'Dữ liệu định tính (qualitative data) là gì?',
-          answer: 'Là dữ liệu không ở dạng số, thường là văn bản, hình ảnh, hoặc video. Ví dụ: nội dung các cuộc phỏng vấn, ghi chép quan sát, các câu trả lời cho câu hỏi mở. Dữ liệu định tính cung cấp sự sâu sắc và bối cảnh.'
+          answer:
+            'Là dữ liệu không ở dạng số, thường là văn bản, hình ảnh, hoặc video. Ví dụ: nội dung các cuộc phỏng vấn, ghi chép quan sát, các câu trả lời cho câu hỏi mở. Dữ liệu định tính cung cấp sự sâu sắc và bối cảnh.',
         },
         {
           question: 'Dữ liệu định lượng (quantitative data) là gì?',
-          answer: 'Là dữ liệu ở dạng số và có thể đo lường được. Ví dụ: tuổi, chiều cao, điểm số, số lượng sản phẩm bán ra, xếp hạng trên thang điểm từ 1 đến 5. Dữ liệu định lượng cho phép thực hiện các phân tích thống kê.'
+          answer:
+            'Là dữ liệu ở dạng số và có thể đo lường được. Ví dụ: tuổi, chiều cao, điểm số, số lượng sản phẩm bán ra, xếp hạng trên thang điểm từ 1 đến 5. Dữ liệu định lượng cho phép thực hiện các phân tích thống kê.',
         },
         {
           question: 'Mean, median, và mode là gì?',
-          answer: 'Đây là ba thước đo "xu hướng trung tâm" của dữ liệu: Mean (trung bình cộng) là tổng tất cả các giá trị chia cho số lượng giá trị. Median (trung vị) là giá trị nằm ở chính giữa của một tập dữ liệu đã được sắp xếp. Mode (yếu vị) là giá trị xuất hiện thường xuyên nhất.'
+          answer:
+            'Đây là ba thước đo "xu hướng trung tâm" của dữ liệu: Mean (trung bình cộng) là tổng tất cả các giá trị chia cho số lượng giá trị. Median (trung vị) là giá trị nằm ở chính giữa của một tập dữ liệu đã được sắp xếp. Mode (yếu vị) là giá trị xuất hiện thường xuyên nhất.',
         },
         {
           question: 'Tại sao cần phải "làm sạch" dữ liệu?',
-          answer: 'Dữ liệu thô thường chứa lỗi, chẳng hạn như lỗi nhập liệu, giá trị bị thiếu, hoặc các định dạng không nhất quán. "Làm sạch" là quá trình sửa các lỗi này để đảm bảo rằng việc phân tích của bạn sẽ chính xác và đáng tin cậy.'
+          answer:
+            'Dữ liệu thô thường chứa lỗi, chẳng hạn như lỗi nhập liệu, giá trị bị thiếu, hoặc các định dạng không nhất quán. "Làm sạch" là quá trình sửa các lỗi này để đảm bảo rằng việc phân tích của bạn sẽ chính xác và đáng tin cậy.',
         },
         {
           question: 'Phân tích hồi quy (regression analysis) dùng để làm gì?',
-          answer: 'Đây là một kỹ thuật thống kê dùng để kiểm tra và mô hình hóa mối quan hệ giữa các biến số. Ví dụ, bạn có thể dùng phân tích hồi quy để xem liệu "số giờ học" có thể dự đoán được "điểm thi" hay không và mức độ ảnh hưởng là bao nhiêu.'
+          answer:
+            'Đây là một kỹ thuật thống kê dùng để kiểm tra và mô hình hóa mối quan hệ giữa các biến số. Ví dụ, bạn có thể dùng phân tích hồi quy để xem liệu "số giờ học" có thể dự đoán được "điểm thi" hay không và mức độ ảnh hưởng là bao nhiêu.',
         },
         {
           question: 'Sự khác biệt giữa mô tả (description) và suy luận (inference) trong phân tích dữ liệu là gì?',
-          answer: 'Mô tả là việc tóm tắt các đặc điểm của dữ liệu bạn đã thu thập (ví dụ: "Điểm trung bình của lớp là 8.5"). Suy luận là việc sử dụng dữ liệu từ mẫu của bạn để đưa ra kết luận hoặc dự đoán về một quần thể lớn hơn (ví dụ: "Dựa trên mẫu này, chúng tôi ước tính rằng phương pháp học mới giúp tăng điểm số trung bình của tất cả học sinh lên 10%").'
-        }
+          answer:
+            'Mô tả là việc tóm tắt các đặc điểm của dữ liệu bạn đã thu thập (ví dụ: "Điểm trung bình của lớp là 8.5"). Suy luận là việc sử dụng dữ liệu từ mẫu của bạn để đưa ra kết luận hoặc dự đoán về một quần thể lớn hơn (ví dụ: "Dựa trên mẫu này, chúng tôi ước tính rằng phương pháp học mới giúp tăng điểm số trung bình của tất cả học sinh lên 10%").',
+        },
       ],
       quizzes: [
         {

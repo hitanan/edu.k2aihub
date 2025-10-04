@@ -159,28 +159,34 @@ export const lessons: DigitalCitizenshipLesson[] = [
       },
       {
         question: 'Danh tính số (digital identity) là gì?',
-        answer: 'Danh tính số là tập hợp các thông tin và thuộc tính của bạn tồn tại trên không gian mạng. Nó bao gồm tên người dùng, hồ sơ cá nhân, các hoạt động và tương tác của bạn. Quản lý tốt danh tính số là một phần quan trọng của việc trở thành công dân số có trách nhiệm.'
+        answer:
+          'Danh tính số là tập hợp các thông tin và thuộc tính của bạn tồn tại trên không gian mạng. Nó bao gồm tên người dùng, hồ sơ cá nhân, các hoạt động và tương tác của bạn. Quản lý tốt danh tính số là một phần quan trọng của việc trở thành công dân số có trách nhiệm.',
       },
       {
         question: 'Làm thế nào để xây dựng một dấu chân số tích cực?',
-        answer: 'Hãy chia sẻ những thành tựu, kiến thức và nội dung có giá trị. Tham gia các cuộc thảo luận một cách văn minh, tôn trọng. Thể hiện sự chuyên nghiệp trên các nền tảng như LinkedIn. Tránh đăng tải những nội dung tiêu cực, gây tranh cãi hoặc thiếu suy nghĩ.'
+        answer:
+          'Hãy chia sẻ những thành tựu, kiến thức và nội dung có giá trị. Tham gia các cuộc thảo luận một cách văn minh, tôn trọng. Thể hiện sự chuyên nghiệp trên các nền tảng như LinkedIn. Tránh đăng tải những nội dung tiêu cực, gây tranh cãi hoặc thiếu suy nghĩ.',
       },
       {
         question: 'Quyền riêng tư trên mạng có nghĩa là gì?',
-        answer: 'Quyền riêng tư trên mạng là quyền kiểm soát thông tin cá nhân của bạn: ai có thể xem, sử dụng và chia sẻ nó. Điều này bao gồm việc cài đặt các tùy chọn riêng tư trên mạng xã hội, hiểu rõ chính sách bảo mật của các ứng dụng và cẩn trọng với những thông tin bạn chia sẻ.'
+        answer:
+          'Quyền riêng tư trên mạng là quyền kiểm soát thông tin cá nhân của bạn: ai có thể xem, sử dụng và chia sẻ nó. Điều này bao gồm việc cài đặt các tùy chọn riêng tư trên mạng xã hội, hiểu rõ chính sách bảo mật của các ứng dụng và cẩn trọng với những thông tin bạn chia sẻ.',
       },
       {
         question: 'Tại sao nói "trên mạng không có gì là miễn phí"?',
-        answer: 'Nhiều dịch vụ trực tuyến "miễn phí" thực chất kiếm tiền bằng cách thu thập và sử dụng dữ liệu người dùng cho mục đích quảng cáo hoặc các mục đích khác. Khi sử dụng các dịch vụ này, bạn đang "trả" bằng chính thông tin cá nhân của mình.'
+        answer:
+          'Nhiều dịch vụ trực tuyến "miễn phí" thực chất kiếm tiền bằng cách thu thập và sử dụng dữ liệu người dùng cho mục đích quảng cáo hoặc các mục đích khác. Khi sử dụng các dịch vụ này, bạn đang "trả" bằng chính thông tin cá nhân của mình.',
       },
       {
         question: 'Sự khác biệt giữa công dân số và người dùng Internet là gì?',
-        answer: 'Một người dùng Internet đơn thuần chỉ sử dụng mạng để truy cập thông tin hoặc giải trí. Một công dân số là người chủ động tham gia vào các hoạt động xã hội, kinh tế và chính trị trên mạng, đồng thời có ý thức về quyền, nghĩa vụ và trách nhiệm của mình.'
+        answer:
+          'Một người dùng Internet đơn thuần chỉ sử dụng mạng để truy cập thông tin hoặc giải trí. Một công dân số là người chủ động tham gia vào các hoạt động xã hội, kinh tế và chính trị trên mạng, đồng thời có ý thức về quyền, nghĩa vụ và trách nhiệm của mình.',
       },
       {
         question: 'Làm thế nào để báo cáo một nội dung xấu hoặc hành vi không phù hợp?',
-        answer: 'Hầu hết các nền tảng mạng xã hội và trang web đều có chức năng "Báo cáo" (Report). Hãy sử dụng nó để thông báo cho quản trị viên về các nội dung vi phạm tiêu chuẩn cộng đồng như ngôn từ gây thù ghét, bạo lực, hoặc tin giả. Đây là một hành động có trách nhiệm của công dân số.'
-      }
+        answer:
+          'Hầu hết các nền tảng mạng xã hội và trang web đều có chức năng "Báo cáo" (Report). Hãy sử dụng nó để thông báo cho quản trị viên về các nội dung vi phạm tiêu chuẩn cộng đồng như ngôn từ gây thù ghét, bạo lực, hoặc tin giả. Đây là một hành động có trách nhiệm của công dân số.',
+      },
     ],
   },
   {
@@ -346,28 +352,34 @@ export const lessons: DigitalCitizenshipLesson[] = [
       },
       {
         question: 'Ngoài mật khẩu và 2FA, còn cách nào khác để bảo vệ tài khoản không?',
-        answer: 'Có. Hãy cẩn thận khi sử dụng Wi-Fi công cộng, vì chúng thường không an toàn. Sử dụng Mạng riêng ảo (VPN) để mã hóa kết nối của bạn. Thường xuyên cập nhật phần mềm và hệ điều hành để vá các lỗ hổng bảo mật. Đừng nhấp vào các liên kết hoặc tệp đính kèm đáng ngờ.'
+        answer:
+          'Có. Hãy cẩn thận khi sử dụng Wi-Fi công cộng, vì chúng thường không an toàn. Sử dụng Mạng riêng ảo (VPN) để mã hóa kết nối của bạn. Thường xuyên cập nhật phần mềm và hệ điều hành để vá các lỗ hổng bảo mật. Đừng nhấp vào các liên kết hoặc tệp đính kèm đáng ngờ.',
       },
       {
         question: 'Khóa bảo mật vật lý (security key) là gì và nó hoạt động như thế nào?',
-        answer: 'Đó là một thiết bị nhỏ (giống USB) hoạt động như một yếu tố xác thực thứ hai. Thay vì nhập mã, bạn chỉ cần cắm nó vào và chạm vào nó. Đây được coi là hình thức 2FA an toàn nhất hiện nay vì không thể bị lừa đảo phishing từ xa.'
+        answer:
+          'Đó là một thiết bị nhỏ (giống USB) hoạt động như một yếu tố xác thực thứ hai. Thay vì nhập mã, bạn chỉ cần cắm nó vào và chạm vào nó. Đây được coi là hình thức 2FA an toàn nhất hiện nay vì không thể bị lừa đảo phishing từ xa.',
       },
       {
         question: 'Làm thế nào để biết một trang web có an toàn để nhập thông tin thanh toán không?',
-        answer: 'Hãy tìm biểu tượng ổ khóa và chữ "https" ở đầu địa chỉ trang web (ví dụ: https://...). Điều này cho biết kết nối giữa bạn và trang web đã được mã hóa. Tuy nhiên, đây chỉ là một yếu tố, bạn vẫn cần đảm bảo rằng trang web đó là của một đơn vị uy tín.'
+        answer:
+          'Hãy tìm biểu tượng ổ khóa và chữ "https" ở đầu địa chỉ trang web (ví dụ: https://...). Điều này cho biết kết nối giữa bạn và trang web đã được mã hóa. Tuy nhiên, đây chỉ là một yếu tố, bạn vẫn cần đảm bảo rằng trang web đó là của một đơn vị uy tín.',
       },
       {
         question: 'Tấn công "Man-in-the-Middle" (Người đứng giữa) là gì?',
-        answer: 'Đây là một kiểu tấn công mà kẻ gian bí mật xen vào giữa kết nối của bạn và một dịch vụ (ví dụ: ngân hàng). Chúng có thể đọc và thậm chí thay đổi thông tin liên lạc. Sử dụng HTTPS và VPN là những cách hiệu quả để phòng chống loại tấn công này.'
+        answer:
+          'Đây là một kiểu tấn công mà kẻ gian bí mật xen vào giữa kết nối của bạn và một dịch vụ (ví dụ: ngân hàng). Chúng có thể đọc và thậm chí thay đổi thông tin liên lạc. Sử dụng HTTPS và VPN là những cách hiệu quả để phòng chống loại tấn công này.',
       },
       {
         question: 'Tại sao tôi nên xóa bộ nhớ cache và cookie của trình duyệt?',
-        answer: 'Cookie có thể lưu trữ thông tin đăng nhập và theo dõi hoạt động của bạn trên các trang web. Xóa chúng định kỳ giúp bảo vệ quyền riêng tư và có thể giải quyết một số vấn đề về tải trang. Tuy nhiên, nó cũng sẽ đăng xuất bạn khỏi các trang web.'
+        answer:
+          'Cookie có thể lưu trữ thông tin đăng nhập và theo dõi hoạt động của bạn trên các trang web. Xóa chúng định kỳ giúp bảo vệ quyền riêng tư và có thể giải quyết một số vấn đề về tải trang. Tuy nhiên, nó cũng sẽ đăng xuất bạn khỏi các trang web.',
       },
       {
         question: 'Tôi có nên lưu mật khẩu trên trình duyệt (Chrome, Firefox) không?',
-        answer: 'Lưu mật khẩu trên trình duyệt rất tiện lợi nhưng kém an toàn hơn so với việc sử dụng một trình quản lý mật khẩu chuyên dụng. Nếu ai đó có quyền truy cập vào máy tính của bạn khi đã đăng nhập, họ có thể xem tất cả các mật khẩu đã lưu. Trình quản lý mật khẩu cung cấp một lớp bảo vệ bổ sung bằng mật khẩu chủ.'
-      }
+        answer:
+          'Lưu mật khẩu trên trình duyệt rất tiện lợi nhưng kém an toàn hơn so với việc sử dụng một trình quản lý mật khẩu chuyên dụng. Nếu ai đó có quyền truy cập vào máy tính của bạn khi đã đăng nhập, họ có thể xem tất cả các mật khẩu đã lưu. Trình quản lý mật khẩu cung cấp một lớp bảo vệ bổ sung bằng mật khẩu chủ.',
+      },
     ],
   },
   {
@@ -523,28 +535,34 @@ export const lessons: DigitalCitizenshipLesson[] = [
       },
       {
         question: 'Deepfake là gì và làm thế nào để nhận biết nó?',
-        answer: 'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc âm thanh giả mạo cực kỳ chân thực. Để nhận biết, hãy chú ý đến các chi tiết nhỏ như chớp mắt không tự nhiên, chuyển động môi không khớp với âm thanh, hoặc các biến dạng kỳ lạ ở rìa khuôn mặt.'
+        answer:
+          'Deepfake là công nghệ sử dụng AI để tạo ra các video hoặc âm thanh giả mạo cực kỳ chân thực. Để nhận biết, hãy chú ý đến các chi tiết nhỏ như chớp mắt không tự nhiên, chuyển động môi không khớp với âm thanh, hoặc các biến dạng kỳ lạ ở rìa khuôn mặt.',
       },
       {
         question: 'Kiểm tra nguồn tin (source checking) nghĩa là gì?',
-        answer: 'Đó là hành động tìm hiểu xem thông tin đến từ đâu. Nguồn tin có đáng tin cậy không? Tác giả có chuyên môn về lĩnh vực này không? Bài viết có trích dẫn các nguồn khác không? Đặt những câu hỏi này giúp bạn đánh giá độ tin cậy của thông tin.'
+        answer:
+          'Đó là hành động tìm hiểu xem thông tin đến từ đâu. Nguồn tin có đáng tin cậy không? Tác giả có chuyên môn về lĩnh vực này không? Bài viết có trích dẫn các nguồn khác không? Đặt những câu hỏi này giúp bạn đánh giá độ tin cậy của thông tin.',
       },
       {
         question: '"Bong bóng bộ lọc" (Filter Bubble) là gì?',
-        answer: '"Bong bóng bộ lọc" là trạng thái mà các thuật toán trên mạng xã hội chỉ hiển thị cho bạn những nội dung mà chúng nghĩ rằng bạn sẽ thích, dựa trên lịch sử hoạt động của bạn. Điều này có thể khiến bạn bị cô lập khỏi các quan điểm và thông tin trái chiều, làm gia tăng thiên kiến xác nhận.'
+        answer:
+          '"Bong bóng bộ lọc" là trạng thái mà các thuật toán trên mạng xã hội chỉ hiển thị cho bạn những nội dung mà chúng nghĩ rằng bạn sẽ thích, dựa trên lịch sử hoạt động của bạn. Điều này có thể khiến bạn bị cô lập khỏi các quan điểm và thông tin trái chiều, làm gia tăng thiên kiến xác nhận.',
       },
       {
         question: 'Làm thế nào để thoát khỏi "bong bóng bộ lọc"?',
-        answer: 'Hãy chủ động tìm kiếm và theo dõi các nguồn tin có quan điểm khác với bạn. Sử dụng các chế độ duyệt web ẩn danh để tìm kiếm thông tin một cách khách quan hơn. Thường xuyên xóa lịch sử xem và tìm kiếm để "đặt lại" các đề xuất của thuật toán.'
+        answer:
+          'Hãy chủ động tìm kiếm và theo dõi các nguồn tin có quan điểm khác với bạn. Sử dụng các chế độ duyệt web ẩn danh để tìm kiếm thông tin một cách khách quan hơn. Thường xuyên xóa lịch sử xem và tìm kiếm để "đặt lại" các đề xuất của thuật toán.',
       },
       {
         question: 'Clickbait là gì?',
-        answer: 'Clickbait là việc sử dụng các tiêu đề giật gân, gây tò mò hoặc phóng đại quá mức để lôi kéo người dùng nhấp vào một liên kết. Nội dung bên trong thường không đáp ứng được sự kỳ vọng của tiêu đề. Đây là một dấu hiệu của các nguồn tin kém chất lượng.'
+        answer:
+          'Clickbait là việc sử dụng các tiêu đề giật gân, gây tò mò hoặc phóng đại quá mức để lôi kéo người dùng nhấp vào một liên kết. Nội dung bên trong thường không đáp ứng được sự kỳ vọng của tiêu đề. Đây là một dấu hiệu của các nguồn tin kém chất lượng.',
       },
       {
         question: 'Tại sao việc kiểm chứng thông tin trước khi chia sẻ lại quan trọng?',
-        answer: 'Mỗi khi bạn chia sẻ một thông tin, bạn đang dùng uy tín của mình để bảo chứng cho nó. Chia sẻ tin giả không chỉ gây hại cho người khác mà còn làm giảm sự tin cậy của chính bạn. Hành động kiểm chứng trước khi chia sẻ là một biểu hiện của sự tôn trọng đối với cộng đồng và chính bản thân bạn.'
-      }
+        answer:
+          'Mỗi khi bạn chia sẻ một thông tin, bạn đang dùng uy tín của mình để bảo chứng cho nó. Chia sẻ tin giả không chỉ gây hại cho người khác mà còn làm giảm sự tin cậy của chính bạn. Hành động kiểm chứng trước khi chia sẻ là một biểu hiện của sự tôn trọng đối với cộng đồng và chính bản thân bạn.',
+      },
     ],
   },
   {
@@ -698,28 +716,34 @@ export const lessons: DigitalCitizenshipLesson[] = [
       },
       {
         question: 'Spam là gì và làm thế nào để xử lý nó?',
-        answer: 'Spam là các tin nhắn hoặc email không mong muốn, thường mang tính quảng cáo hoặc lừa đảo, được gửi hàng loạt. Đừng bao giờ trả lời hoặc nhấp vào liên kết trong tin nhắn spam. Hãy sử dụng chức năng "Đánh dấu là Spam" (Mark as Spam) của nhà cung cấp email để giúp bộ lọc của họ hoạt động tốt hơn.'
+        answer:
+          'Spam là các tin nhắn hoặc email không mong muốn, thường mang tính quảng cáo hoặc lừa đảo, được gửi hàng loạt. Đừng bao giờ trả lời hoặc nhấp vào liên kết trong tin nhắn spam. Hãy sử dụng chức năng "Đánh dấu là Spam" (Mark as Spam) của nhà cung cấp email để giúp bộ lọc của họ hoạt động tốt hơn.',
       },
       {
         question: 'Sự khác biệt giữa CC và BCC trong email là gì?',
-        answer: 'CC (Carbon Copy) có nghĩa là những người trong danh sách này sẽ nhận được một bản sao của email và mọi người đều thấy địa chỉ của nhau. BCC (Blind Carbon Copy) cũng gửi một bản sao, nhưng không ai trong danh sách người nhận (kể cả trong To và CC) có thể thấy địa chỉ của những người trong danh sách BCC. Hãy sử dụng BCC để bảo vệ quyền riêng tư khi gửi email cho một nhóm lớn người không quen biết nhau.'
+        answer:
+          'CC (Carbon Copy) có nghĩa là những người trong danh sách này sẽ nhận được một bản sao của email và mọi người đều thấy địa chỉ của nhau. BCC (Blind Carbon Copy) cũng gửi một bản sao, nhưng không ai trong danh sách người nhận (kể cả trong To và CC) có thể thấy địa chỉ của những người trong danh sách BCC. Hãy sử dụng BCC để bảo vệ quyền riêng tư khi gửi email cho một nhóm lớn người không quen biết nhau.',
       },
       {
         question: 'Thế nào là một bình luận mang tính xây dựng?',
-        answer: 'Một bình luận mang tính xây dựng tập trung vào ý tưởng, không phải vào cá nhân. Nó chỉ ra những điểm tốt, sau đó đưa ra góp ý để cải thiện một cách lịch sự và cụ thể. Ví dụ: "Bài viết của bạn có nhiều ý tưởng hay. Để rõ ràng hơn, bạn có thể thử thêm một vài ví dụ thực tế ở phần X không?".'
+        answer:
+          'Một bình luận mang tính xây dựng tập trung vào ý tưởng, không phải vào cá nhân. Nó chỉ ra những điểm tốt, sau đó đưa ra góp ý để cải thiện một cách lịch sự và cụ thể. Ví dụ: "Bài viết của bạn có nhiều ý tưởng hay. Để rõ ràng hơn, bạn có thể thử thêm một vài ví dụ thực tế ở phần X không?".',
       },
       {
         question: '"Trolling" trên mạng là gì?',
-        answer: '"Trolling" là hành vi cố tình đăng những bình luận gây kích động, lạc đề hoặc xúc phạm để khơi mào một cuộc tranh cãi và làm phiền người khác cho vui. Cách tốt nhất để đối phó với troll là lờ họ đi.'
+        answer:
+          '"Trolling" là hành vi cố tình đăng những bình luận gây kích động, lạc đề hoặc xúc phạm để khơi mào một cuộc tranh cãi và làm phiền người khác cho vui. Cách tốt nhất để đối phó với troll là lờ họ đi.',
       },
       {
         question: 'Tôi nên làm gì trước khi đăng ảnh của người khác lên mạng?',
-        answer: 'Hãy luôn hỏi xin phép họ trước. Đăng ảnh của ai đó mà không có sự đồng ý của họ là một sự vi phạm quyền riêng tư. Điều này đặc biệt quan trọng đối với hình ảnh của trẻ em.'
+        answer:
+          'Hãy luôn hỏi xin phép họ trước. Đăng ảnh của ai đó mà không có sự đồng ý của họ là một sự vi phạm quyền riêng tư. Điều này đặc biệt quan trọng đối với hình ảnh của trẻ em.',
       },
       {
         question: 'Tại sao việc có một hồ sơ LinkedIn chuyên nghiệp lại quan trọng?',
-        answer: 'LinkedIn là mạng xã hội chuyên nghiệp lớn nhất. Một hồ sơ đầy đủ và chuyên nghiệp hoạt động như một CV trực tuyến của bạn, giúp nhà tuyển dụng tìm thấy bạn, thể hiện kỹ năng và kinh nghiệm của bạn, và giúp bạn xây dựng mạng lưới quan hệ trong ngành.'
-      }
+        answer:
+          'LinkedIn là mạng xã hội chuyên nghiệp lớn nhất. Một hồ sơ đầy đủ và chuyên nghiệp hoạt động như một CV trực tuyến của bạn, giúp nhà tuyển dụng tìm thấy bạn, thể hiện kỹ năng và kinh nghiệm của bạn, và giúp bạn xây dựng mạng lưới quan hệ trong ngành.',
+      },
     ],
   },
 ];

@@ -151,35 +151,44 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       },
       {
         question: 'Lực cản (Drag) trong hàng không là gì và có những loại nào?',
-        answer: 'Lực cản là lực chống lại chuyển động của máy bay trong không khí. Có hai loại chính: lực cản ký sinh (parasitic drag), bao gồm lực cản hình dạng và ma sát da, và lực cản cảm ứng (induced drag), được tạo ra do quá trình tạo ra lực nâng.',
+        answer:
+          'Lực cản là lực chống lại chuyển động của máy bay trong không khí. Có hai loại chính: lực cản ký sinh (parasitic drag), bao gồm lực cản hình dạng và ma sát da, và lực cản cảm ứng (induced drag), được tạo ra do quá trình tạo ra lực nâng.',
       },
       {
         question: 'Tỷ lệ lực nâng trên lực cản (L/D ratio) có ý nghĩa gì?',
-        answer: 'Tỷ lệ L/D là một thước đo hiệu quả khí động học của máy bay. Tỷ lệ càng cao, máy bay càng hiệu quả, có nghĩa là nó có thể bay xa hơn hoặc mang tải nặng hơn với cùng một lượng lực đẩy. Tỷ lệ này thay đổi tùy theo tốc độ và góc tấn.',
+        answer:
+          'Tỷ lệ L/D là một thước đo hiệu quả khí động học của máy bay. Tỷ lệ càng cao, máy bay càng hiệu quả, có nghĩa là nó có thể bay xa hơn hoặc mang tải nặng hơn với cùng một lượng lực đẩy. Tỷ lệ này thay đổi tùy theo tốc độ và góc tấn.',
       },
       {
         question: 'Góc tấn (Angle of Attack - AOA) là gì?',
-        answer: 'Góc tấn là góc giữa đường tham chiếu trên cánh máy bay (dây cung cánh) và hướng của luồng không khí đang tới. Lực nâng tăng theo góc tấn cho đến một điểm tới hạn, gọi là góc tấn tới hạn. Vượt qua góc này sẽ gây ra hiện tượng thất tốc (stall).',
+        answer:
+          'Góc tấn là góc giữa đường tham chiếu trên cánh máy bay (dây cung cánh) và hướng của luồng không khí đang tới. Lực nâng tăng theo góc tấn cho đến một điểm tới hạn, gọi là góc tấn tới hạn. Vượt qua góc này sẽ gây ra hiện tượng thất tốc (stall).',
       },
       {
         question: 'Hiện tượng thất tốc (stall) là gì và tại sao nó nguy hiểm?',
-        answer: 'Thất tốc xảy ra khi luồng không khí không còn bám vào bề mặt trên của cánh, gây ra sự sụt giảm đột ngột của lực nâng. Điều này làm máy bay mất khả năng điều khiển và có thể rơi. Phi công được huấn luyện để nhận biết và phục hồi từ tình trạng thất tốc.',
+        answer:
+          'Thất tốc xảy ra khi luồng không khí không còn bám vào bề mặt trên của cánh, gây ra sự sụt giảm đột ngột của lực nâng. Điều này làm máy bay mất khả năng điều khiển và có thể rơi. Phi công được huấn luyện để nhận biết và phục hồi từ tình trạng thất tốc.',
       },
       {
         question: 'Vật liệu composite được sử dụng trong máy bay hiện đại có ưu điểm gì?',
-        answer: 'Vật liệu composite, như sợi carbon gia cố polymer, có tỷ lệ độ bền trên trọng lượng rất cao, chống ăn mòn tốt và có thể được tạo hình thành các hình dạng khí động học phức tạp. Điều này giúp máy bay nhẹ hơn, tiết kiệm nhiên liệu hơn và có hiệu suất cao hơn.',
+        answer:
+          'Vật liệu composite, như sợi carbon gia cố polymer, có tỷ lệ độ bền trên trọng lượng rất cao, chống ăn mòn tốt và có thể được tạo hình thành các hình dạng khí động học phức tạp. Điều này giúp máy bay nhẹ hơn, tiết kiệm nhiên liệu hơn và có hiệu suất cao hơn.',
       },
       {
         question: 'Động cơ phản lực (jet engine) hoạt động như thế nào?',
-        answer: 'Động cơ phản lực hoạt động theo nguyên tắc của Định luật 3 Newton. Nó hút không khí vào, nén lại, đốt cháy với nhiên liệu để tạo ra một luồng khí nóng tốc độ cao phụt ra phía sau. Lực phản lại của luồng khí này đẩy máy bay về phía trước.',
+        answer:
+          'Động cơ phản lực hoạt động theo nguyên tắc của Định luật 3 Newton. Nó hút không khí vào, nén lại, đốt cháy với nhiên liệu để tạo ra một luồng khí nóng tốc độ cao phụt ra phía sau. Lực phản lại của luồng khí này đẩy máy bay về phía trước.',
       },
       {
         question: 'Sự khác biệt giữa động cơ turbofan và turbojet là gì?',
-        answer: 'Cả hai đều là động cơ phản lực. Động cơ turbojet tạo ra toàn bộ lực đẩy từ luồng khí đi qua lõi động cơ. Động cơ turbofan có một quạt lớn ở phía trước, đẩy một phần lớn không khí đi vòng qua lõi (bypass air). Luồng khí bypass này tạo ra phần lớn lực đẩy, giúp động cơ turbofan hiệu quả và êm hơn, phù hợp với máy bay thương mại.',
+        answer:
+          'Cả hai đều là động cơ phản lực. Động cơ turbojet tạo ra toàn bộ lực đẩy từ luồng khí đi qua lõi động cơ. Động cơ turbofan có một quạt lớn ở phía trước, đẩy một phần lớn không khí đi vòng qua lõi (bypass air). Luồng khí bypass này tạo ra phần lớn lực đẩy, giúp động cơ turbofan hiệu quả và êm hơn, phù hợp với máy bay thương mại.',
       },
       {
-        question: 'Tại sao máy bay cần có các bề mặt điều khiển như cánh liệng (ailerons), bánh lái độ cao (elevators) và bánh lái hướng (rudder)?',
-        answer: 'Các bề mặt này cho phép phi công điều khiển máy bay quay quanh ba trục: cánh liệng điều khiển chuyển động lượn (roll), bánh lái độ cao điều khiển chuyển động chúc/ngóc (pitch), và bánh lái hướng điều khiển chuyển động lệch hướng (yaw).',
+        question:
+          'Tại sao máy bay cần có các bề mặt điều khiển như cánh liệng (ailerons), bánh lái độ cao (elevators) và bánh lái hướng (rudder)?',
+        answer:
+          'Các bề mặt này cho phép phi công điều khiển máy bay quay quanh ba trục: cánh liệng điều khiển chuyển động lượn (roll), bánh lái độ cao điều khiển chuyển động chúc/ngóc (pitch), và bánh lái hướng điều khiển chuyển động lệch hướng (yaw).',
       },
     ],
   },
@@ -319,35 +328,43 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       },
       {
         question: 'Quỹ đạo Trái đất tầm thấp (LEO) là gì và có ưu điểm gì?',
-        answer: 'LEO là các quỹ đạo có độ cao từ 160 đến 2,000 km so với mặt đất. Ưu điểm của vệ tinh LEO là độ trễ tín hiệu rất thấp và chi phí phóng thấp hơn. Các chùm vệ tinh internet như Starlink sử dụng quỹ đạo LEO để cung cấp internet tốc độ cao trên toàn cầu.',
+        answer:
+          'LEO là các quỹ đạo có độ cao từ 160 đến 2,000 km so với mặt đất. Ưu điểm của vệ tinh LEO là độ trễ tín hiệu rất thấp và chi phí phóng thấp hơn. Các chùm vệ tinh internet như Starlink sử dụng quỹ đạo LEO để cung cấp internet tốc độ cao trên toàn cầu.',
       },
       {
         question: 'GPS hoạt động như thế nào?',
-        answer: 'Hệ thống Định vị Toàn cầu (GPS) hoạt động dựa trên một chùm vệ tinh phát tín hiệu thời gian cực kỳ chính xác. Máy thu GPS trên mặt đất nhận tín hiệu từ ít nhất bốn vệ tinh, tính toán khoảng cách đến từng vệ tinh và từ đó xác định vị trí chính xác của nó trong không gian ba chiều.',
+        answer:
+          'Hệ thống Định vị Toàn cầu (GPS) hoạt động dựa trên một chùm vệ tinh phát tín hiệu thời gian cực kỳ chính xác. Máy thu GPS trên mặt đất nhận tín hiệu từ ít nhất bốn vệ tinh, tính toán khoảng cách đến từng vệ tinh và từ đó xác định vị trí chính xác của nó trong không gian ba chiều.',
       },
       {
         question: 'Vệ tinh quan sát Trái đất có những ứng dụng gì?',
-        answer: 'Vệ tinh quan sát Trái đất chụp ảnh bề mặt hành tinh ở các dải quang phổ khác nhau. Dữ liệu này được sử dụng để giám sát biến đổi khí hậu, quản lý nông nghiệp (dự báo năng suất, phát hiện sâu bệnh), quy hoạch đô thị, theo dõi thiên tai (lũ lụt, cháy rừng) và an ninh quốc phòng.',
+        answer:
+          'Vệ tinh quan sát Trái đất chụp ảnh bề mặt hành tinh ở các dải quang phổ khác nhau. Dữ liệu này được sử dụng để giám sát biến đổi khí hậu, quản lý nông nghiệp (dự báo năng suất, phát hiện sâu bệnh), quy hoạch đô thị, theo dõi thiên tai (lũ lụt, cháy rừng) và an ninh quốc phòng.',
       },
       {
         question: 'Sự khác biệt giữa băng tần C, Ku và Ka trong thông tin vệ tinh là gì?',
-        answer: 'Đây là các dải tần số khác nhau được sử dụng cho liên lạc vệ tinh. Băng tần C (4-8 GHz) có độ tin cậy cao, ít bị ảnh hưởng bởi mưa. Băng tần Ku (12-18 GHz) cho phép sử dụng anten nhỏ hơn. Băng tần Ka (26.5-40 GHz) cung cấp băng thông rất lớn, phù hợp cho internet vệ tinh tốc độ cao nhưng dễ bị ảnh hưởng bởi thời tiết xấu.',
+        answer:
+          'Đây là các dải tần số khác nhau được sử dụng cho liên lạc vệ tinh. Băng tần C (4-8 GHz) có độ tin cậy cao, ít bị ảnh hưởng bởi mưa. Băng tần Ku (12-18 GHz) cho phép sử dụng anten nhỏ hơn. Băng tần Ka (26.5-40 GHz) cung cấp băng thông rất lớn, phù hợp cho internet vệ tinh tốc độ cao nhưng dễ bị ảnh hưởng bởi thời tiết xấu.',
       },
       {
         question: 'Làm thế nào để vệ tinh giữ được hướng chính xác trong không gian?',
-        answer: 'Vệ tinh sử dụng Hệ thống Điều khiển Tư thế (Attitude Control System). Hệ thống này bao gồm các cảm biến (như cảm biến sao, cảm biến mặt trời) để xác định hướng và các cơ cấu chấp hành (như bánh đà phản ứng, động cơ đẩy nhỏ) để điều chỉnh và duy trì hướng của vệ tinh một cách chính xác.',
+        answer:
+          'Vệ tinh sử dụng Hệ thống Điều khiển Tư thế (Attitude Control System). Hệ thống này bao gồm các cảm biến (như cảm biến sao, cảm biến mặt trời) để xác định hướng và các cơ cấu chấp hành (như bánh đà phản ứng, động cơ đẩy nhỏ) để điều chỉnh và duy trì hướng của vệ tinh một cách chính xác.',
       },
       {
         question: 'Nguồn năng lượng chính của vệ tinh là gì?',
-        answer: 'Hầu hết các vệ tinh sử dụng các tấm pin mặt trời (solar panels) để chuyển đổi ánh sáng mặt trời thành điện năng. Năng lượng này được sử dụng để vận hành các hệ thống và được lưu trữ trong pin sạc để cung cấp năng lượng khi vệ tinh đi vào vùng bóng tối của Trái đất.',
+        answer:
+          'Hầu hết các vệ tinh sử dụng các tấm pin mặt trời (solar panels) để chuyển đổi ánh sáng mặt trời thành điện năng. Năng lượng này được sử dụng để vận hành các hệ thống và được lưu trữ trong pin sạc để cung cấp năng lượng khi vệ tinh đi vào vùng bóng tối của Trái đất.',
       },
       {
         question: 'Trạm mặt đất (ground station) có vai trò gì?',
-        answer: 'Trạm mặt đất là cầu nối liên lạc giữa vệ tinh và người vận hành. Nó có nhiệm vụ gửi lệnh điều khiển (telecommand) lên vệ tinh, nhận dữ liệu từ vệ tinh (telemetry và payload data), và theo dõi vị trí của vệ tinh trên quỹ đạo.',
+        answer:
+          'Trạm mặt đất là cầu nối liên lạc giữa vệ tinh và người vận hành. Nó có nhiệm vụ gửi lệnh điều khiển (telecommand) lên vệ tinh, nhận dữ liệu từ vệ tinh (telemetry và payload data), và theo dõi vị trí của vệ tinh trên quỹ đạo.',
       },
       {
         question: 'Tại sao vệ tinh không rơi trở lại Trái đất?',
-        answer: 'Vệ tinh thực chất đang "rơi" liên tục về phía Trái đất do lực hấp dẫn. Tuy nhiên, nó cũng có một vận tốc ngang rất lớn. Sự kết hợp giữa chuyển động "rơi" xuống và chuyển động "đi ngang" này tạo thành một đường cong liên tục, chính là quỹ đạo của nó quanh Trái đất.',
+        answer:
+          'Vệ tinh thực chất đang "rơi" liên tục về phía Trái đất do lực hấp dẫn. Tuy nhiên, nó cũng có một vận tốc ngang rất lớn. Sự kết hợp giữa chuyển động "rơi" xuống và chuyển động "đi ngang" này tạo thành một đường cong liên tục, chính là quỹ đạo của nó quanh Trái đất.',
       },
     ],
   },
@@ -479,35 +496,43 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       },
       {
         question: 'Cửa sổ phóng (launch window) là gì?',
-        answer: 'Cửa sổ phóng là một khoảng thời gian cụ thể mà một tên lửa phải được phóng để đạt được quỹ đạo mong muốn. Đối với các nhiệm vụ liên hành tinh, cửa sổ phóng có thể rất hẹp và chỉ xuất hiện vài tuần một lần sau mỗi vài năm, khi các hành tinh ở vị trí phù hợp.',
+        answer:
+          'Cửa sổ phóng là một khoảng thời gian cụ thể mà một tên lửa phải được phóng để đạt được quỹ đạo mong muốn. Đối với các nhiệm vụ liên hành tinh, cửa sổ phóng có thể rất hẹp và chỉ xuất hiện vài tuần một lần sau mỗi vài năm, khi các hành tinh ở vị trí phù hợp.',
       },
       {
         question: 'Phân tích "trade-off" (đánh đổi) trong thiết kế nhiệm vụ không gian là gì?',
-        answer: 'Trong thiết kế nhiệm vụ, các kỹ sư thường phải đối mặt với các quyết định đánh đổi. Ví dụ, thêm nhiều nhiên liệu hơn sẽ tăng khả năng cơ động (delta-v) nhưng cũng làm tăng khối lượng, đòi hỏi tên lửa phóng mạnh hơn và tốn kém hơn. Phân tích đánh đổi là quá trình cân nhắc các lựa chọn này để tìm ra giải pháp tối ưu.',
+        answer:
+          'Trong thiết kế nhiệm vụ, các kỹ sư thường phải đối mặt với các quyết định đánh đổi. Ví dụ, thêm nhiều nhiên liệu hơn sẽ tăng khả năng cơ động (delta-v) nhưng cũng làm tăng khối lượng, đòi hỏi tên lửa phóng mạnh hơn và tốn kém hơn. Phân tích đánh đổi là quá trình cân nhắc các lựa chọn này để tìm ra giải pháp tối ưu.',
       },
       {
         question: 'Các giai đoạn của một nhiệm vụ không gian điển hình là gì?',
-        answer: 'Một nhiệm vụ không gian thường bao gồm các giai đoạn: Concept & Feasibility (Ý tưởng & Khả thi), Design & Development (Thiết kế & Phát triển), Launch & Early Operations (Phóng & Vận hành ban đầu), Operations (Vận hành), và End-of-Life (Kết thúc vòng đời).',
+        answer:
+          'Một nhiệm vụ không gian thường bao gồm các giai đoạn: Concept & Feasibility (Ý tưởng & Khả thi), Design & Development (Thiết kế & Phát triển), Launch & Early Operations (Phóng & Vận hành ban đầu), Operations (Vận hành), và End-of-Life (Kết thúc vòng đời).',
       },
       {
         question: 'Quản lý rủi ro trong dự án không gian được thực hiện như thế nào?',
-        answer: 'Quản lý rủi ro bao gồm việc xác định các rủi ro tiềm ẩn (kỹ thuật, chi phí, lịch trình), phân tích xác suất và tác động của chúng, và phát triển các kế hoạch để giảm thiểu hoặc ứng phó với chúng. Trong ngành không gian, việc có các hệ thống dự phòng (redundancy) là một chiến lược giảm thiểu rủi ro phổ biến.',
+        answer:
+          'Quản lý rủi ro bao gồm việc xác định các rủi ro tiềm ẩn (kỹ thuật, chi phí, lịch trình), phân tích xác suất và tác động của chúng, và phát triển các kế hoạch để giảm thiểu hoặc ứng phó với chúng. Trong ngành không gian, việc có các hệ thống dự phòng (redundancy) là một chiến lược giảm thiểu rủi ro phổ biến.',
       },
       {
         question: 'Hợp tác quốc tế có lợi ích gì cho các chương trình không gian?',
-        answer: 'Hợp tác quốc tế giúp chia sẻ chi phí và rủi ro khổng lồ của các nhiệm vụ không gian, tận dụng thế mạnh công nghệ của các quốc gia khác nhau, thúc đẩy ngoại giao khoa học và cho phép thực hiện các dự án đầy tham vọng mà một quốc gia đơn lẻ không thể tự làm được, như Trạm Vũ trụ Quốc tế (ISS).',
+        answer:
+          'Hợp tác quốc tế giúp chia sẻ chi phí và rủi ro khổng lồ của các nhiệm vụ không gian, tận dụng thế mạnh công nghệ của các quốc gia khác nhau, thúc đẩy ngoại giao khoa học và cho phép thực hiện các dự án đầy tham vọng mà một quốc gia đơn lẻ không thể tự làm được, như Trạm Vũ trụ Quốc tế (ISS).',
       },
       {
         question: 'Làm thế nào để các nhà khoa học quyết định mục tiêu cho một nhiệm vụ khoa học không gian?',
-        answer: 'Quá trình này thường bắt đầu bằng các câu hỏi khoa học lớn (ví dụ: "Có sự sống trên sao Hỏa không?"). Cộng đồng khoa học sẽ đề xuất các khái niệm nhiệm vụ để trả lời những câu hỏi này. Các cơ quan không gian sau đó sẽ đánh giá các đề xuất này dựa trên tính khả thi kỹ thuật, chi phí và tiềm năng khoa học để lựa chọn nhiệm vụ sẽ được tài trợ và phát triển.',
+        answer:
+          'Quá trình này thường bắt đầu bằng các câu hỏi khoa học lớn (ví dụ: "Có sự sống trên sao Hỏa không?"). Cộng đồng khoa học sẽ đề xuất các khái niệm nhiệm vụ để trả lời những câu hỏi này. Các cơ quan không gian sau đó sẽ đánh giá các đề xuất này dựa trên tính khả thi kỹ thuật, chi phí và tiềm năng khoa học để lựa chọn nhiệm vụ sẽ được tài trợ và phát triển.',
       },
       {
         question: 'Tại sao việc thử nghiệm trên mặt đất lại quan trọng đối với tàu vũ trụ?',
-        answer: 'Một khi tàu vũ trụ đã được phóng, việc sửa chữa gần như là không thể. Do đó, mọi thành phần và toàn bộ hệ thống phải được thử nghiệm cực kỳ nghiêm ngặt trên mặt đất trong các điều kiện mô phỏng môi trường không gian (chân không, nhiệt độ khắc nghiệt, rung động) để đảm bảo chúng sẽ hoạt động như mong đợi.',
+        answer:
+          'Một khi tàu vũ trụ đã được phóng, việc sửa chữa gần như là không thể. Do đó, mọi thành phần và toàn bộ hệ thống phải được thử nghiệm cực kỳ nghiêm ngặt trên mặt đất trong các điều kiện mô phỏng môi trường không gian (chân không, nhiệt độ khắc nghiệt, rung động) để đảm bảo chúng sẽ hoạt động như mong đợi.',
       },
       {
         question: 'Kế hoạch kết thúc vòng đời (end-of-life plan) của vệ tinh bao gồm những gì?',
-        answer: 'Để tránh tạo thêm mảnh vỡ không gian, các vệ tinh hiện đại phải có kế hoạch xử lý khi hết nhiệm vụ. Đối với vệ tinh ở quỹ đạo thấp (LEO), kế hoạch thường là sử dụng nhiên liệu cuối cùng để giảm độ cao và tự đốt cháy trong khí quyển. Đối với vệ tinh địa tĩnh, chúng sẽ được đẩy lên một "quỹ đạo nghĩa địa" (graveyard orbit) cao hơn để không gây cản trở.',
+        answer:
+          'Để tránh tạo thêm mảnh vỡ không gian, các vệ tinh hiện đại phải có kế hoạch xử lý khi hết nhiệm vụ. Đối với vệ tinh ở quỹ đạo thấp (LEO), kế hoạch thường là sử dụng nhiên liệu cuối cùng để giảm độ cao và tự đốt cháy trong khí quyển. Đối với vệ tinh địa tĩnh, chúng sẽ được đẩy lên một "quỹ đạo nghĩa địa" (graveyard orbit) cao hơn để không gây cản trở.',
       },
     ],
   },
@@ -646,35 +671,43 @@ export const aerospaceEngineeringLessons: AerospaceEngineeringLesson[] = [
       },
       {
         question: 'Hệ thống Quản lý Chuyến bay (Flight Management System - FMS) làm gì?',
-        answer: 'FMS là một máy tính trung tâm tự động hóa một loạt các nhiệm vụ trong chuyến bay. Nó chứa cơ sở dữ liệu dẫn đường, cho phép phi công lập kế hoạch bay, và có thể tự động điều khiển máy bay bay theo lộ trình đã định, tối ưu hóa hiệu suất và tiết kiệm nhiên liệu.',
+        answer:
+          'FMS là một máy tính trung tâm tự động hóa một loạt các nhiệm vụ trong chuyến bay. Nó chứa cơ sở dữ liệu dẫn đường, cho phép phi công lập kế hoạch bay, và có thể tự động điều khiển máy bay bay theo lộ trình đã định, tối ưu hóa hiệu suất và tiết kiệm nhiên liệu.',
       },
       {
         question: 'Sự khác biệt giữa GPS và INS (Inertial Navigation System) là gì?',
-        answer: 'GPS xác định vị trí bằng cách nhận tín hiệu từ vệ tinh. INS là một hệ thống tự hành, sử dụng con quay hồi chuyển và gia tốc kế để theo dõi sự thay đổi về hướng và vị trí so với một điểm xuất phát đã biết. Máy bay hiện đại thường kết hợp cả hai (GPS/INS) để có được thông tin vị trí vừa chính xác vừa đáng tin cậy, ngay cả khi tín hiệu GPS bị mất tạm thời.',
+        answer:
+          'GPS xác định vị trí bằng cách nhận tín hiệu từ vệ tinh. INS là một hệ thống tự hành, sử dụng con quay hồi chuyển và gia tốc kế để theo dõi sự thay đổi về hướng và vị trí so với một điểm xuất phát đã biết. Máy bay hiện đại thường kết hợp cả hai (GPS/INS) để có được thông tin vị trí vừa chính xác vừa đáng tin cậy, ngay cả khi tín hiệu GPS bị mất tạm thời.',
       },
       {
         question: 'Hệ thống Tăng cường Dựa trên Vệ tinh (SBAS) như WAAS hoạt động như thế nào?',
-        answer: 'SBAS cải thiện độ chính xác và độ tin cậy của GPS. Các trạm mặt đất sẽ theo dõi tín hiệu GPS, tính toán các sai số và gửi thông tin hiệu chỉnh lên một vệ tinh địa tĩnh. Vệ tinh này sau đó sẽ phát tín hiệu hiệu chỉnh xuống cho các máy bay được trang bị bộ thu tương thích, cho phép thực hiện các cuộc hạ cánh chính xác hơn.',
+        answer:
+          'SBAS cải thiện độ chính xác và độ tin cậy của GPS. Các trạm mặt đất sẽ theo dõi tín hiệu GPS, tính toán các sai số và gửi thông tin hiệu chỉnh lên một vệ tinh địa tĩnh. Vệ tinh này sau đó sẽ phát tín hiệu hiệu chỉnh xuống cho các máy bay được trang bị bộ thu tương thích, cho phép thực hiện các cuộc hạ cánh chính xác hơn.',
       },
       {
         question: 'Luật điều khiển (control law) trong hệ thống fly-by-wire là gì?',
-        answer: 'Luật điều khiển là các thuật toán phức tạp trong máy tính điều khiển bay. Chúng diễn giải ý định của phi công (ví dụ: gạt cần lái sang trái) và chuyển thành các lệnh cụ thể cho các bề mặt điều khiển, đồng thời đảm bảo máy bay luôn hoạt động trong một phạm vi an toàn (flight envelope protection).',
+        answer:
+          'Luật điều khiển là các thuật toán phức tạp trong máy tính điều khiển bay. Chúng diễn giải ý định của phi công (ví dụ: gạt cần lái sang trái) và chuyển thành các lệnh cụ thể cho các bề mặt điều khiển, đồng thời đảm bảo máy bay luôn hoạt động trong một phạm vi an toàn (flight envelope protection).',
       },
       {
         question: 'Tại sao tính dư thừa (redundancy) lại cực kỳ quan trọng trong hệ thống điện tử hàng không?',
-        answer: 'Tính dư thừa có nghĩa là có nhiều hệ thống độc lập có thể thực hiện cùng một chức năng quan trọng. Ví dụ, máy bay thường có 3 hoặc 4 máy tính điều khiển bay. Nếu một máy tính hỏng, máy tính khác sẽ ngay lập tức tiếp quản. Điều này đảm bảo rằng một lỗi đơn lẻ không thể gây ra thảm họa.',
+        answer:
+          'Tính dư thừa có nghĩa là có nhiều hệ thống độc lập có thể thực hiện cùng một chức năng quan trọng. Ví dụ, máy bay thường có 3 hoặc 4 máy tính điều khiển bay. Nếu một máy tính hỏng, máy tính khác sẽ ngay lập tức tiếp quản. Điều này đảm bảo rằng một lỗi đơn lẻ không thể gây ra thảm họa.',
       },
       {
         question: 'Hệ thống Tránh va chạm trên không (TCAS) hoạt động như thế nào?',
-        answer: 'TCAS là một hệ thống độc lập trên máy bay, nó liên tục "hỏi" các máy bay khác ở gần về vị trí và độ cao của chúng. Nếu phát hiện nguy cơ va chạm, nó sẽ đưa ra cảnh báo cho phi công và thậm chí có thể tự động đưa ra khuyến nghị hành động tránh va chạm (ví dụ: "Leo lên! Leo lên!").',
+        answer:
+          'TCAS là một hệ thống độc lập trên máy bay, nó liên tục "hỏi" các máy bay khác ở gần về vị trí và độ cao của chúng. Nếu phát hiện nguy cơ va chạm, nó sẽ đưa ra cảnh báo cho phi công và thậm chí có thể tự động đưa ra khuyến nghị hành động tránh va chạm (ví dụ: "Leo lên! Leo lên!").',
       },
       {
         question: 'Màn hình hiển thị trên đầu (Head-Up Display - HUD) cung cấp lợi ích gì?',
-        answer: 'HUD chiếu các thông tin bay quan trọng (tốc độ, độ cao, hướng bay) lên một tấm kính trong suốt ngay trước tầm mắt của phi công. Điều này cho phép phi công theo dõi thông tin mà không cần phải cúi xuống nhìn vào các màn hình trong buồng lái, đặc biệt hữu ích trong các giai đoạn quan trọng như cất cánh và hạ cánh.',
+        answer:
+          'HUD chiếu các thông tin bay quan trọng (tốc độ, độ cao, hướng bay) lên một tấm kính trong suốt ngay trước tầm mắt của phi công. Điều này cho phép phi công theo dõi thông tin mà không cần phải cúi xuống nhìn vào các màn hình trong buồng lái, đặc biệt hữu ích trong các giai đoạn quan trọng như cất cánh và hạ cánh.',
       },
       {
         question: 'DO-178C là tiêu chuẩn gì?',
-        answer: 'DO-178C là một tiêu chuẩn quốc tế cực kỳ nghiêm ngặt về phát triển phần mềm cho các hệ thống hàng không. Nó xác định các quy trình và mục tiêu cần phải tuân thủ để đảm bảo phần mềm trên máy bay có độ an toàn và tin cậy cao nhất. Việc tuân thủ tiêu chuẩn này là bắt buộc để phần mềm được chứng nhận cho sử dụng trong hàng không.',
+        answer:
+          'DO-178C là một tiêu chuẩn quốc tế cực kỳ nghiêm ngặt về phát triển phần mềm cho các hệ thống hàng không. Nó xác định các quy trình và mục tiêu cần phải tuân thủ để đảm bảo phần mềm trên máy bay có độ an toàn và tin cậy cao nhất. Việc tuân thủ tiêu chuẩn này là bắt buộc để phần mềm được chứng nhận cho sử dụng trong hàng không.',
       },
     ],
   },

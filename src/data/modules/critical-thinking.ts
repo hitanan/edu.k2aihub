@@ -253,27 +253,33 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
       },
       {
         question: 'Thiên kiến xác nhận (Confirmation Bias) là gì?',
-        answer: 'Đây là xu hướng tự nhiên của não bộ, chỉ tìm kiếm, diễn giải và ghi nhớ những thông tin xác nhận cho niềm tin sẵn có của mình, trong khi lờ đi những thông tin trái ngược. Đây là một trong những rào cản lớn nhất của tư duy khách quan.',
+        answer:
+          'Đây là xu hướng tự nhiên của não bộ, chỉ tìm kiếm, diễn giải và ghi nhớ những thông tin xác nhận cho niềm tin sẵn có của mình, trong khi lờ đi những thông tin trái ngược. Đây là một trong những rào cản lớn nhất của tư duy khách quan.',
       },
       {
         question: 'Làm thế nào để phân biệt giữa tương quan (correlation) và nhân quả (causation)?',
-        answer: 'Tương quan có nghĩa là hai sự việc xảy ra cùng lúc, nhưng không nhất thiết cái này gây ra cái kia. Nhân quả có nghĩa là một sự việc trực tiếp gây ra sự việc kia. Ví dụ, doanh số bán kem và số vụ đuối nước đều tăng vào mùa hè (tương quan), nhưng không phải ăn kem gây ra đuối nước. Nguyên nhân chung là thời tiết nóng.',
+        answer:
+          'Tương quan có nghĩa là hai sự việc xảy ra cùng lúc, nhưng không nhất thiết cái này gây ra cái kia. Nhân quả có nghĩa là một sự việc trực tiếp gây ra sự việc kia. Ví dụ, doanh số bán kem và số vụ đuối nước đều tăng vào mùa hè (tương quan), nhưng không phải ăn kem gây ra đuối nước. Nguyên nhân chung là thời tiết nóng.',
       },
       {
         question: 'Phương pháp "5 Whys" có thể áp dụng trong tình huống nào?',
-        answer: 'Đây là một kỹ thuật đơn giản nhưng mạnh mẽ để tìm ra nguyên nhân gốc rễ của một vấn đề. Bằng cách hỏi "Tại sao?" lặp đi lặp lại (thường là 5 lần), bạn có thể đi từ triệu chứng bề mặt đến nguyên nhân cốt lõi. Ví dụ: Tại sao dự án bị trễ? -> Tại sao công việc A chưa xong? -> ...',
+        answer:
+          'Đây là một kỹ thuật đơn giản nhưng mạnh mẽ để tìm ra nguyên nhân gốc rễ của một vấn đề. Bằng cách hỏi "Tại sao?" lặp đi lặp lại (thường là 5 lần), bạn có thể đi từ triệu chứng bề mặt đến nguyên nhân cốt lõi. Ví dụ: Tại sao dự án bị trễ? -> Tại sao công việc A chưa xong? -> ...',
       },
       {
         question: 'Tư duy phê phán có làm tôi trở nên tiêu cực hơn không?',
-        answer: 'Hoàn toàn không. Ngược lại, tư duy phê phán giúp bạn xây dựng một cái nhìn thực tế và cân bằng hơn. Nó không phải là tìm lỗi, mà là tìm kiếm sự thật. Nó giúp bạn đánh giá cao những lập luận tốt và nhận ra những lập luận yếu một cách có cơ sở, thay vì chỉ phản ứng theo cảm tính.',
+        answer:
+          'Hoàn toàn không. Ngược lại, tư duy phê phán giúp bạn xây dựng một cái nhìn thực tế và cân bằng hơn. Nó không phải là tìm lỗi, mà là tìm kiếm sự thật. Nó giúp bạn đánh giá cao những lập luận tốt và nhận ra những lập luận yếu một cách có cơ sở, thay vì chỉ phản ứng theo cảm tính.',
       },
       {
         question: 'Làm thế nào để áp dụng tư duy phê phán khi đọc tin tức trên mạng xã hội?',
-        answer: 'Hãy luôn kiểm tra nguồn tin. Tác giả là ai? Trang web có uy tín không? Hãy tìm kiếm các nguồn tin khác để đối chứng thông tin. Hãy cảnh giác với các tiêu đề giật gân và những bài viết chỉ khơi gợi cảm xúc mà không đưa ra bằng chứng cụ thể.',
+        answer:
+          'Hãy luôn kiểm tra nguồn tin. Tác giả là ai? Trang web có uy tín không? Hãy tìm kiếm các nguồn tin khác để đối chứng thông tin. Hãy cảnh giác với các tiêu đề giật gân và những bài viết chỉ khơi gợi cảm xúc mà không đưa ra bằng chứng cụ thể.',
       },
       {
         question: 'Sự khác biệt giữa một giả định (assumption) và một suy luận (inference) là gì?',
-        answer: 'Giả định là một điều được cho là đúng mà không cần bằng chứng, nó là điểm khởi đầu của một lập luận. Suy luận là một kết luận logic được rút ra từ các bằng chứng và lý lẽ đã có. Tư duy phê phán đòi hỏi chúng ta phải nhận biết và kiểm tra các giả định của mình.',
+        answer:
+          'Giả định là một điều được cho là đúng mà không cần bằng chứng, nó là điểm khởi đầu của một lập luận. Suy luận là một kết luận logic được rút ra từ các bằng chứng và lý lẽ đã có. Tư duy phê phán đòi hỏi chúng ta phải nhận biết và kiểm tra các giả định của mình.',
       },
     ],
   },
@@ -457,27 +463,33 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
       },
       {
         question: 'Bước "Define" (Định nghĩa) trong Design Thinking có mục đích gì?',
-        answer: 'Bước Define là nơi bạn tổng hợp những gì đã học được từ giai đoạn Thấu cảm để hình thành một "phát biểu vấn đề" (problem statement) rõ ràng và tập trung. Một phát biểu vấn đề tốt sẽ truyền cảm hứng cho nhóm của bạn và đóng vai trò như một kim chỉ nam cho giai đoạn lên ý tưởng.',
+        answer:
+          'Bước Define là nơi bạn tổng hợp những gì đã học được từ giai đoạn Thấu cảm để hình thành một "phát biểu vấn đề" (problem statement) rõ ràng và tập trung. Một phát biểu vấn đề tốt sẽ truyền cảm hứng cho nhóm của bạn và đóng vai trò như một kim chỉ nam cho giai đoạn lên ý tưởng.',
       },
       {
         question: 'Kỹ thuật SCAMPER là gì?',
-        answer: 'SCAMPER là một phương pháp brainstorming sử dụng một bộ câu hỏi để kích thích sự sáng tạo: Substitute (Thay thế), Combine (Kết hợp), Adapt (Thích ứng), Modify (Sửa đổi), Put to another use (Sử dụng vào việc khác), Eliminate (Loại bỏ), và Reverse (Đảo ngược). Nó giúp bạn nhìn một vấn đề hoặc sản phẩm từ nhiều góc độ khác nhau.',
+        answer:
+          'SCAMPER là một phương pháp brainstorming sử dụng một bộ câu hỏi để kích thích sự sáng tạo: Substitute (Thay thế), Combine (Kết hợp), Adapt (Thích ứng), Modify (Sửa đổi), Put to another use (Sử dụng vào việc khác), Eliminate (Loại bỏ), và Reverse (Đảo ngược). Nó giúp bạn nhìn một vấn đề hoặc sản phẩm từ nhiều góc độ khác nhau.',
       },
       {
         question: 'Tại sao việc "lặp lại" (iteration) lại quan trọng trong Design Thinking?',
-        answer: 'Sáng tạo không phải là một đường thẳng. Quá trình lặp lại cho phép bạn liên tục cải tiến giải pháp của mình dựa trên phản hồi thực tế từ người dùng. Mỗi vòng lặp (thử nghiệm -> nhận phản hồi -> cải tiến) sẽ đưa bạn đến gần hơn với một giải pháp thực sự hiệu quả và đáp ứng đúng nhu cầu.',
+        answer:
+          'Sáng tạo không phải là một đường thẳng. Quá trình lặp lại cho phép bạn liên tục cải tiến giải pháp của mình dựa trên phản hồi thực tế từ người dùng. Mỗi vòng lặp (thử nghiệm -> nhận phản hồi -> cải tiến) sẽ đưa bạn đến gần hơn với một giải pháp thực sự hiệu quả và đáp ứng đúng nhu cầu.',
       },
       {
         question: 'Làm thế nào để xây dựng một nhóm Design Thinking hiệu quả?',
-        answer: 'Một nhóm hiệu quả nên có sự đa dạng về kỹ năng và góc nhìn (ví dụ: một người kỹ thuật, một người kinh doanh, một người thiết kế). Quan trọng nhất là nhóm phải có một không gian an toàn để chia sẻ ý tưởng, chấp nhận rủi ro và học hỏi từ thất bại.',
+        answer:
+          'Một nhóm hiệu quả nên có sự đa dạng về kỹ năng và góc nhìn (ví dụ: một người kỹ thuật, một người kinh doanh, một người thiết kế). Quan trọng nhất là nhóm phải có một không gian an toàn để chia sẻ ý tưởng, chấp nhận rủi ro và học hỏi từ thất bại.',
       },
       {
         question: 'Design Thinking có thể áp dụng để giải quyết các vấn đề xã hội không?',
-        answer: 'Chắc chắn có. Rất nhiều tổ chức phi lợi nhuận và chính phủ đang sử dụng Design Thinking để giải quyết các vấn đề phức tạp như nghèo đói, biến đổi khí hậu, và cải cách giáo dục. Việc lấy con người (những người bị ảnh hưởng bởi vấn đề) làm trung tâm là chìa khóa thành công.',
+        answer:
+          'Chắc chắn có. Rất nhiều tổ chức phi lợi nhuận và chính phủ đang sử dụng Design Thinking để giải quyết các vấn đề phức tạp như nghèo đói, biến đổi khí hậu, và cải cách giáo dục. Việc lấy con người (những người bị ảnh hưởng bởi vấn đề) làm trung tâm là chìa khóa thành công.',
       },
       {
         question: 'Sản phẩm cuối cùng của một dự án Design Thinking là gì?',
-        answer: 'Không nhất thiết phải là một sản phẩm vật lý. Nó có thể là một dịch vụ mới, một quy trình được cải tiến, một chiến lược kinh doanh, hoặc thậm chí là một chính sách mới. Miễn là nó giải quyết được vấn đề đã được xác định của người dùng một cách sáng tạo và hiệu quả.',
+        answer:
+          'Không nhất thiết phải là một sản phẩm vật lý. Nó có thể là một dịch vụ mới, một quy trình được cải tiến, một chiến lược kinh doanh, hoặc thậm chí là một chính sách mới. Miễn là nó giải quyết được vấn đề đã được xác định của người dùng một cách sáng tạo và hiệu quả.',
       },
     ],
   },
@@ -668,27 +680,33 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
       },
       {
         question: 'Vòng lặp cân bằng (Balancing Loop) hoạt động như thế nào?',
-        answer: 'Vòng lặp cân bằng luôn cố gắng đưa hệ thống trở về một trạng thái mục tiêu hoặc ổn định. Ví dụ, khi bạn đói, bạn ăn, và cảm giác đói giảm đi. Bộ điều nhiệt trong máy lạnh cũng là một ví dụ về vòng lặp cân bằng, nó giữ cho nhiệt độ phòng ổn định.',
+        answer:
+          'Vòng lặp cân bằng luôn cố gắng đưa hệ thống trở về một trạng thái mục tiêu hoặc ổn định. Ví dụ, khi bạn đói, bạn ăn, và cảm giác đói giảm đi. Bộ điều nhiệt trong máy lạnh cũng là một ví dụ về vòng lặp cân bằng, nó giữ cho nhiệt độ phòng ổn định.',
       },
       {
         question: '"Sự chậm trễ" (Delays) trong một hệ thống có ý nghĩa gì?',
-        answer: 'Sự chậm trễ rất phổ biến và quan trọng trong các hệ thống. Ví dụ, bạn quyết định học một kỹ năng mới hôm nay, nhưng phải mất hàng tháng hoặc hàng năm mới thấy được kết quả. Việc không nhận ra sự chậm trễ này thường dẫn đến các quyết định sai lầm, ví dụ như từ bỏ quá sớm.',
+        answer:
+          'Sự chậm trễ rất phổ biến và quan trọng trong các hệ thống. Ví dụ, bạn quyết định học một kỹ năng mới hôm nay, nhưng phải mất hàng tháng hoặc hàng năm mới thấy được kết quả. Việc không nhận ra sự chậm trễ này thường dẫn đến các quyết định sai lầm, ví dụ như từ bỏ quá sớm.',
       },
       {
         question: 'Hiện tượng "shifting the burden" (đẩy gánh nặng) là gì?',
-        answer: 'Đây là một cấu trúc hệ thống phổ biến, trong đó người ta sử dụng một giải pháp triệu chứng (ngắn hạn) thay vì một giải pháp cơ bản (dài hạn). Điều này tạo ra một vòng lặp phụ thuộc vào giải pháp triệu chứng, trong khi khả năng giải quyết vấn đề gốc rễ bị suy yếu. Ví dụ: liên tục vay nợ để giải quyết khó khăn tài chính.',
+        answer:
+          'Đây là một cấu trúc hệ thống phổ biến, trong đó người ta sử dụng một giải pháp triệu chứng (ngắn hạn) thay vì một giải pháp cơ bản (dài hạn). Điều này tạo ra một vòng lặp phụ thuộc vào giải pháp triệu chứng, trong khi khả năng giải quyết vấn đề gốc rễ bị suy yếu. Ví dụ: liên tục vay nợ để giải quyết khó khăn tài chính.',
       },
       {
         question: 'Làm thế nào để phát triển khả năng nhìn thấy các "hệ thống"?',
-        answer: 'Hãy bắt đầu bằng cách tập nhìn vào các mối liên kết thay vì các sự kiện riêng lẻ. Khi một vấn đề xảy ra, đừng chỉ hỏi "Ai đã làm điều đó?", hãy hỏi "Điều gì trong hệ thống đã cho phép điều đó xảy ra?". Đọc sách về tư duy hệ thống và thực hành vẽ các biểu đồ nhân quả đơn giản.',
+        answer:
+          'Hãy bắt đầu bằng cách tập nhìn vào các mối liên kết thay vì các sự kiện riêng lẻ. Khi một vấn đề xảy ra, đừng chỉ hỏi "Ai đã làm điều đó?", hãy hỏi "Điều gì trong hệ thống đã cho phép điều đó xảy ra?". Đọc sách về tư duy hệ thống và thực hành vẽ các biểu đồ nhân quả đơn giản.',
       },
       {
         question: 'Tư duy hệ thống có thể giúp gì trong việc lập kế hoạch nghề nghiệp?',
-        answer: 'Nó giúp bạn nhìn sự nghiệp của mình như một hệ thống. Các yếu tố như kỹ năng, mạng lưới quan hệ, sức khỏe tinh thần, và tài chính cá nhân đều liên kết với nhau. Thay vì chỉ tập trung vào việc "tìm một công việc tốt", bạn có thể xây dựng một hệ thống bền vững hỗ trợ sự phát triển lâu dài của mình.',
+        answer:
+          'Nó giúp bạn nhìn sự nghiệp của mình như một hệ thống. Các yếu tố như kỹ năng, mạng lưới quan hệ, sức khỏe tinh thần, và tài chính cá nhân đều liên kết với nhau. Thay vì chỉ tập trung vào việc "tìm một công việc tốt", bạn có thể xây dựng một hệ thống bền vững hỗ trợ sự phát triển lâu dài của mình.',
       },
       {
         question: 'Một ví dụ về "bi kịch của của chung" (Tragedy of the Commons) là gì?',
-        answer: 'Đây là một cấu trúc hệ thống trong đó các cá nhân hành động vì lợi ích riêng của mình, cuối cùng làm cạn kiệt một nguồn tài nguyên chung. Ví dụ, các ngư dân đều cố gắng đánh bắt càng nhiều cá càng tốt, dẫn đến việc nguồn cá trong đại dương bị cạn kiệt, gây hại cho tất cả mọi người trong dài hạn.',
+        answer:
+          'Đây là một cấu trúc hệ thống trong đó các cá nhân hành động vì lợi ích riêng của mình, cuối cùng làm cạn kiệt một nguồn tài nguyên chung. Ví dụ, các ngư dân đều cố gắng đánh bắt càng nhiều cá càng tốt, dẫn đến việc nguồn cá trong đại dương bị cạn kiệt, gây hại cho tất cả mọi người trong dài hạn.',
       },
     ],
   },

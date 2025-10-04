@@ -198,6 +198,7 @@ export const blogTags: BlogTag[] = [
     name: 'Phát Triển Phần Mềm',
     description: 'Quy trình phát triển và bảo trì phần mềm.',
   },
+  { slug: 'github-copilot', name: 'GitHub Copilot', description: 'Trợ lý lập trình AI của GitHub.' },
   { slug: 'hoc-lap-trinh', name: 'Học Lập Trình', description: 'Tài liệu và phương pháp học lập trình.' },
   { slug: 'tri-tue-cam-xuc', name: 'Trí Tuệ Cảm Xúc', description: 'Khả năng hiểu và quản lý cảm xúc.' },
   { slug: 'ky-nang-mem', name: 'Kỹ Năng Mềm', description: 'Các kỹ năng giao tiếp và làm việc nhóm.' },

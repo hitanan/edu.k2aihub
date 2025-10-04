@@ -159,27 +159,33 @@ export const ethicalMarketingPurposeModule: ModuleData = {
         },
         {
           question: 'Mối quan hệ giữa mục đích thương hiệu và văn hóa công ty là gì?',
-          answer: 'Mục đích thương hiệu phải được sống và thở từ bên trong công ty. Một mục đích mạnh mẽ sẽ thu hút và giữ chân nhân tài có cùng chí hướng, định hình văn hóa công ty, và hướng dẫn mọi quyết định từ phát triển sản phẩm đến dịch vụ khách hàng. Nếu không có sự đồng bộ này, mục đích sẽ chỉ là một khẩu hiệu trống rỗng.',
+          answer:
+            'Mục đích thương hiệu phải được sống và thở từ bên trong công ty. Một mục đích mạnh mẽ sẽ thu hút và giữ chân nhân tài có cùng chí hướng, định hình văn hóa công ty, và hướng dẫn mọi quyết định từ phát triển sản phẩm đến dịch vụ khách hàng. Nếu không có sự đồng bộ này, mục đích sẽ chỉ là một khẩu hiệu trống rỗng.',
         },
         {
           question: 'Làm thế nào để truyền thông mục đích thương hiệu một cách hiệu quả mà không khoe khoang?',
-          answer: 'Hãy tập trung vào việc "cho thấy" thay vì "kể lể". Chia sẻ những câu chuyện cụ thể về tác động của bạn, tôn vinh những người hưởng lợi và các đối tác, và thừa nhận cả những thách thức. Sự khiêm tốn và trung thực thường có sức ảnh hưởng lớn hơn là những tuyên bố quá đà.',
+          answer:
+            'Hãy tập trung vào việc "cho thấy" thay vì "kể lể". Chia sẻ những câu chuyện cụ thể về tác động của bạn, tôn vinh những người hưởng lợi và các đối tác, và thừa nhận cả những thách thức. Sự khiêm tốn và trung thực thường có sức ảnh hưởng lớn hơn là những tuyên bố quá đà.',
         },
         {
           question: 'Mục đích thương hiệu có thể thay đổi theo thời gian không?',
-          answer: 'Mục đích cốt lõi của thương hiệu thường khá ổn định, nhưng cách nó được thể hiện và các vấn đề cụ thể mà nó giải quyết có thể phát triển theo sự thay đổi của xã hội và doanh nghiệp. Điều quan trọng là sự phát triển này phải nhất quán với các giá trị cốt lõi ban đầu.',
+          answer:
+            'Mục đích cốt lõi của thương hiệu thường khá ổn định, nhưng cách nó được thể hiện và các vấn đề cụ thể mà nó giải quyết có thể phát triển theo sự thay đổi của xã hội và doanh nghiệp. Điều quan trọng là sự phát triển này phải nhất quán với các giá trị cốt lõi ban đầu.',
         },
         {
           question: 'Làm thế nào để đo lường ROI (Return on Investment) của một chiến lược dựa trên mục đích?',
-          answer: 'ROI của mục đích có thể được đo lường qua nhiều chỉ số: sự gia tăng lòng trung thành của khách hàng (customer loyalty), khả năng thu hút và giữ chân nhân tài, sự sẵn lòng của khách hàng trả giá cao hơn, và sự gia tăng uy tín thương hiệu. Đây là một khoản đầu tư dài hạn vào tài sản vô hình của công ty.',
+          answer:
+            'ROI của mục đích có thể được đo lường qua nhiều chỉ số: sự gia tăng lòng trung thành của khách hàng (customer loyalty), khả năng thu hút và giữ chân nhân tài, sự sẵn lòng của khách hàng trả giá cao hơn, và sự gia tăng uy tín thương hiệu. Đây là một khoản đầu tư dài hạn vào tài sản vô hình của công ty.',
         },
         {
           question: 'Một thương hiệu có thể có nhiều hơn một mục đích không?',
-          answer: 'Một thương hiệu nên có một mục đích cốt lõi, duy nhất làm kim chỉ nam. Tuy nhiên, mục đích này có thể được thể hiện qua nhiều sáng kiến hoặc chương trình khác nhau, giải quyết các khía cạnh khác nhau của cùng một vấn đề lớn. Ví dụ, một thương hiệu có mục đích "bảo vệ hành tinh" có thể có các chương trình về giảm nhựa, tiết kiệm nước và trồng cây.',
+          answer:
+            'Một thương hiệu nên có một mục đích cốt lõi, duy nhất làm kim chỉ nam. Tuy nhiên, mục đích này có thể được thể hiện qua nhiều sáng kiến hoặc chương trình khác nhau, giải quyết các khía cạnh khác nhau của cùng một vấn đề lớn. Ví dụ, một thương hiệu có mục đích "bảo vệ hành tinh" có thể có các chương trình về giảm nhựa, tiết kiệm nước và trồng cây.',
         },
         {
           question: 'Làm thế nào để cân bằng giữa mục đích và áp lực lợi nhuận ngắn hạn?',
-          answer: 'Đây là một thách thức lớn. Chìa khóa là tích hợp mục đích vào chiến lược kinh doanh cốt lõi, để các hoạt động tạo tác động tích cực cũng đồng thời thúc đẩy tăng trưởng. Lãnh đạo công ty cần có tầm nhìn dài hạn và cam kết mạnh mẽ để không hy sinh mục đích vì lợi nhuận trước mắt.',
+          answer:
+            'Đây là một thách thức lớn. Chìa khóa là tích hợp mục đích vào chiến lược kinh doanh cốt lõi, để các hoạt động tạo tác động tích cực cũng đồng thời thúc đẩy tăng trưởng. Lãnh đạo công ty cần có tầm nhìn dài hạn và cam kết mạnh mẽ để không hy sinh mục đích vì lợi nhuận trước mắt.',
         },
       ],
     },
@@ -280,27 +286,33 @@ export const ethicalMarketingPurposeModule: ModuleData = {
         },
         {
           question: 'Quyền riêng tư dữ liệu của khách hàng liên quan gì đến marketing đạo đức?',
-          answer: 'Tôn trọng quyền riêng tư dữ liệu là một trụ cột của marketing đạo đức. Các thương hiệu có đạo đức phải minh bạch về cách họ thu thập, sử dụng và bảo vệ dữ liệu khách hàng. Họ cần có sự cho phép rõ ràng từ người dùng và không sử dụng dữ liệu cho các mục đích mà khách hàng không biết hoặc không đồng ý.',
+          answer:
+            'Tôn trọng quyền riêng tư dữ liệu là một trụ cột của marketing đạo đức. Các thương hiệu có đạo đức phải minh bạch về cách họ thu thập, sử dụng và bảo vệ dữ liệu khách hàng. Họ cần có sự cho phép rõ ràng từ người dùng và không sử dụng dữ liệu cho các mục đích mà khách hàng không biết hoặc không đồng ý.',
         },
         {
           question: 'Marketing gây ảnh hưởng (influencer marketing) có thể phi đạo đức không?',
-          answer: 'Có, nếu nó thiếu minh bạch. Một thực hành marketing gây ảnh hưởng có đạo đức đòi hỏi người ảnh hưởng phải tiết lộ rõ ràng mối quan hệ trả phí của họ với thương hiệu. Việc che giấu mối quan hệ này là một hình thức quảng cáo lừa dối và phi đạo đức.',
+          answer:
+            'Có, nếu nó thiếu minh bạch. Một thực hành marketing gây ảnh hưởng có đạo đức đòi hỏi người ảnh hưởng phải tiết lộ rõ ràng mối quan hệ trả phí của họ với thương hiệu. Việc che giấu mối quan hệ này là một hình thức quảng cáo lừa dối và phi đạo đức.',
         },
         {
           question: 'Làm thế nào để xử lý các đánh giá tiêu cực một cách có đạo đức?',
-          answer: 'Xử lý các đánh giá tiêu cực một cách có đạo đức bao gồm việc không xóa hoặc che giấu chúng. Thay vào đó, hãy phản hồi một cách công khai, minh bạch và mang tính xây dựng. Thừa nhận vấn đề, xin lỗi nếu cần, và giải thích các bước bạn đang thực hiện để khắc phục. Điều này cho thấy sự tôn trọng đối với phản hồi của khách hàng và xây dựng lòng tin.',
+          answer:
+            'Xử lý các đánh giá tiêu cực một cách có đạo đức bao gồm việc không xóa hoặc che giấu chúng. Thay vào đó, hãy phản hồi một cách công khai, minh bạch và mang tính xây dựng. Thừa nhận vấn đề, xin lỗi nếu cần, và giải thích các bước bạn đang thực hiện để khắc phục. Điều này cho thấy sự tôn trọng đối với phản hồi của khách hàng và xây dựng lòng tin.',
         },
         {
           question: 'Sử dụng sự khan hiếm giả tạo (ví dụ: "chỉ còn 2 sản phẩm") có phải là phi đạo đức không?',
-          answer: 'Có, nếu sự khan hiếm đó không có thật. Việc tạo ra áp lực mua hàng giả tạo bằng cách nói dối về số lượng hàng tồn kho hoặc thời gian ưu đãi là một chiến thuật thao túng và phi đạo đức. Marketing đạo đức dựa trên việc cung cấp thông tin trung thực để khách hàng tự đưa ra quyết định.',
+          answer:
+            'Có, nếu sự khan hiếm đó không có thật. Việc tạo ra áp lực mua hàng giả tạo bằng cách nói dối về số lượng hàng tồn kho hoặc thời gian ưu đãi là một chiến thuật thao túng và phi đạo đức. Marketing đạo đức dựa trên việc cung cấp thông tin trung thực để khách hàng tự đưa ra quyết định.',
         },
         {
           question: 'Đạo đức trong việc định giá sản phẩm là gì?',
-          answer: 'Định giá có đạo đức có nghĩa là đặt một mức giá công bằng cho sản phẩm, phản ánh đúng giá trị của nó và không lợi dụng khách hàng. Nó tránh các hành vi như định giá cắt cổ (price gouging) trong thời kỳ khủng hoảng hoặc sử dụng các chiến lược giá phức tạp, khó hiểu để lừa dối người tiêu dùng.',
+          answer:
+            'Định giá có đạo đức có nghĩa là đặt một mức giá công bằng cho sản phẩm, phản ánh đúng giá trị của nó và không lợi dụng khách hàng. Nó tránh các hành vi như định giá cắt cổ (price gouging) trong thời kỳ khủng hoảng hoặc sử dụng các chiến lược giá phức tạp, khó hiểu để lừa dối người tiêu dùng.',
         },
         {
           question: 'Trách nhiệm của một nhà marketing có đạo đức là gì khi quảng cáo cho trẻ em?',
-          answer: 'Khi quảng cáo cho trẻ em, các nhà marketing có trách nhiệm đạo đức cao hơn. Họ phải tránh các nội dung có thể gây hại, không được khai thác sự ngây thơ hoặc thiếu kinh nghiệm của trẻ, và phải phân biệt rõ ràng giữa nội dung giải trí và quảng cáo. Các tuyên bố phải trung thực và không gây hiểu lầm.',
+          answer:
+            'Khi quảng cáo cho trẻ em, các nhà marketing có trách nhiệm đạo đức cao hơn. Họ phải tránh các nội dung có thể gây hại, không được khai thác sự ngây thơ hoặc thiếu kinh nghiệm của trẻ, và phải phân biệt rõ ràng giữa nội dung giải trí và quảng cáo. Các tuyên bố phải trung thực và không gây hiểu lầm.',
         },
       ],
     },
@@ -401,27 +413,33 @@ export const ethicalMarketingPurposeModule: ModuleData = {
         },
         {
           question: 'SROI (Social Return on Investment) là gì?',
-          answer: 'SROI là một phương pháp để đo lường và tính toán giá trị xã hội, môi trường và kinh tế được tạo ra. Nó cố gắng quy đổi các tác động xã hội ra một giá trị tiền tệ, ví dụ: "cứ mỗi 1 đồng đầu tư, chúng tôi tạo ra 5 đồng giá trị xã hội". Đây là một công cụ mạnh mẽ để truyền thông tác động nhưng đòi hỏi phân tích phức tạp.',
+          answer:
+            'SROI là một phương pháp để đo lường và tính toán giá trị xã hội, môi trường và kinh tế được tạo ra. Nó cố gắng quy đổi các tác động xã hội ra một giá trị tiền tệ, ví dụ: "cứ mỗi 1 đồng đầu tư, chúng tôi tạo ra 5 đồng giá trị xã hội". Đây là một công cụ mạnh mẽ để truyền thông tác động nhưng đòi hỏi phân tích phức tạp.',
         },
         {
           question: 'Làm thế nào để tránh việc chỉ tập trung vào các chỉ số dễ đo lường (vanity metrics)?',
-          answer: 'Hãy tập trung vào việc đo lường "kết quả" (outcomes) thay vì chỉ "đầu ra" (outputs). Ví dụ, "số lượng cây đã trồng" là một đầu ra. "Tỷ lệ cây sống sót sau một năm" và "mức độ cải thiện chất lượng không khí" là các kết quả. Luôn tự hỏi: "Sự thay đổi thực sự mà chúng ta muốn thấy là gì?"',
+          answer:
+            'Hãy tập trung vào việc đo lường "kết quả" (outcomes) thay vì chỉ "đầu ra" (outputs). Ví dụ, "số lượng cây đã trồng" là một đầu ra. "Tỷ lệ cây sống sót sau một năm" và "mức độ cải thiện chất lượng không khí" là các kết quả. Luôn tự hỏi: "Sự thay đổi thực sự mà chúng ta muốn thấy là gì?"',
         },
         {
           question: 'Báo cáo tác động xã hội nên được chia sẻ với ai?',
-          answer: 'Báo cáo nên được chia sẻ rộng rãi với tất cả các bên liên quan: khách hàng, nhân viên, nhà đầu tư, cộng đồng địa phương, và công chúng. Việc công khai báo cáo thể hiện sự minh bạch và trách nhiệm giải trình của thương hiệu.',
+          answer:
+            'Báo cáo nên được chia sẻ rộng rãi với tất cả các bên liên quan: khách hàng, nhân viên, nhà đầu tư, cộng đồng địa phương, và công chúng. Việc công khai báo cáo thể hiện sự minh bạch và trách nhiệm giải trình của thương hiệu.',
         },
         {
           question: 'Làm thế nào để thu thập câu chuyện và phản hồi từ người hưởng lợi một cách có đạo đức?',
-          answer: 'Luôn xin phép trước khi chia sẻ câu chuyện hoặc hình ảnh của ai đó. Hãy giải thích rõ ràng mục đích sử dụng và đảm bảo rằng họ cảm thấy thoải mái. Tôn trọng quyền riêng tư và phẩm giá của họ là ưu tiên hàng đầu. Nếu có thể, hãy để họ tự kể câu chuyện của mình bằng chính lời của họ.',
+          answer:
+            'Luôn xin phép trước khi chia sẻ câu chuyện hoặc hình ảnh của ai đó. Hãy giải thích rõ ràng mục đích sử dụng và đảm bảo rằng họ cảm thấy thoải mái. Tôn trọng quyền riêng tư và phẩm giá của họ là ưu tiên hàng đầu. Nếu có thể, hãy để họ tự kể câu chuyện của mình bằng chính lời của họ.',
         },
         {
           question: 'ESG là viết tắt của từ gì và nó liên quan gì đến đo lường tác động?',
-          answer: 'ESG là viết tắt của Environmental (Môi trường), Social (Xã hội), và Governance (Quản trị). Đây là một bộ tiêu chuẩn được các nhà đầu tư sử dụng để đánh giá hoạt động của một công ty. Đo lường tác động xã hội cung cấp dữ liệu quan trọng cho các báo cáo ESG, giúp các nhà đầu tư thấy được hiệu suất bền vững của công ty.',
+          answer:
+            'ESG là viết tắt của Environmental (Môi trường), Social (Xã hội), và Governance (Quản trị). Đây là một bộ tiêu chuẩn được các nhà đầu tư sử dụng để đánh giá hoạt động của một công ty. Đo lường tác động xã hội cung cấp dữ liệu quan trọng cho các báo cáo ESG, giúp các nhà đầu tư thấy được hiệu suất bền vững của công ty.',
         },
         {
           question: 'Làm thế nào để đảm bảo dữ liệu đo lường tác động là đáng tin cậy?',
-          answer: 'Để đảm bảo độ tin cậy, hãy sử dụng cả dữ liệu định tính (phỏng vấn, câu chuyện) và định lượng (con số, thống kê). Hãy minh bạch về phương pháp thu thập dữ liệu của bạn, thừa nhận những hạn chế, và nếu có thể, hãy có một bên thứ ba độc lập xác minh các kết quả của bạn.',
+          answer:
+            'Để đảm bảo độ tin cậy, hãy sử dụng cả dữ liệu định tính (phỏng vấn, câu chuyện) và định lượng (con số, thống kê). Hãy minh bạch về phương pháp thu thập dữ liệu của bạn, thừa nhận những hạn chế, và nếu có thể, hãy có một bên thứ ba độc lập xác minh các kết quả của bạn.',
         },
       ],
     },
@@ -518,27 +536,33 @@ export const ethicalMarketingPurposeModule: ModuleData = {
         },
         {
           question: 'Mô hình "Sản phẩm như một Dịch vụ" (Product as a Service - PaaS) là gì?',
-          answer: 'Đây là một mô hình kinh doanh tuần hoàn, trong đó khách hàng trả tiền để sử dụng một sản phẩm thay vì sở hữu nó. Ví dụ, thay vì bán bóng đèn, một công ty có thể bán "dịch vụ chiếu sáng". Điều này khuyến khích nhà sản xuất tạo ra các sản phẩm bền, dễ sửa chữa và tái chế, vì họ vẫn sở hữu và chịu trách nhiệm về sản phẩm đó.',
+          answer:
+            'Đây là một mô hình kinh doanh tuần hoàn, trong đó khách hàng trả tiền để sử dụng một sản phẩm thay vì sở hữu nó. Ví dụ, thay vì bán bóng đèn, một công ty có thể bán "dịch vụ chiếu sáng". Điều này khuyến khích nhà sản xuất tạo ra các sản phẩm bền, dễ sửa chữa và tái chế, vì họ vẫn sở hữu và chịu trách nhiệm về sản phẩm đó.',
         },
         {
           question: 'Chứng nhận B Corp là gì?',
-          answer: 'B Corp (Benefit Corporation) là một chứng nhận được cấp cho các công ty đáp ứng các tiêu chuẩn cao nhất về hiệu suất xã hội và môi trường, trách nhiệm giải trình công khai và tính minh bạch. Để được chứng nhận, một công ty phải trải qua một cuộc đánh giá nghiêm ngặt về tác động của nó đối với nhân viên, khách hàng, cộng đồng và môi trường.',
+          answer:
+            'B Corp (Benefit Corporation) là một chứng nhận được cấp cho các công ty đáp ứng các tiêu chuẩn cao nhất về hiệu suất xã hội và môi trường, trách nhiệm giải trình công khai và tính minh bạch. Để được chứng nhận, một công ty phải trải qua một cuộc đánh giá nghiêm ngặt về tác động của nó đối với nhân viên, khách hàng, cộng đồng và môi trường.',
         },
         {
           question: 'Làm thế nào để marketing một sản phẩm làm từ vật liệu tái chế?',
-          answer: 'Hãy tập trung vào câu chuyện đằng sau sản phẩm. Giải thích rõ ràng sản phẩm được làm từ gì, quy trình tái chế diễn ra như thế nào, và lợi ích môi trường của việc lựa chọn sản phẩm này (ví dụ: "chiếc áo này đã giúp tái chế 5 chai nhựa"). Sự minh bạch và câu chuyện hấp dẫn là chìa khóa.',
+          answer:
+            'Hãy tập trung vào câu chuyện đằng sau sản phẩm. Giải thích rõ ràng sản phẩm được làm từ gì, quy trình tái chế diễn ra như thế nào, và lợi ích môi trường của việc lựa chọn sản phẩm này (ví dụ: "chiếc áo này đã giúp tái chế 5 chai nhựa"). Sự minh bạch và câu chuyện hấp dẫn là chìa khóa.',
         },
         {
           question: 'Tạo giá trị chung (Creating Shared Value - CSV) là gì?',
-          answer: 'CSV là một khái niệm cho rằng thành công của công ty và phúc lợi xã hội có mối liên hệ với nhau. Thay vì xem các vấn đề xã hội là chi phí, CSV coi chúng là cơ hội để đổi mới và tăng trưởng. Ví dụ, một công ty thực phẩm có thể cải thiện dinh dưỡng trong sản phẩm của mình, điều này vừa tốt cho sức khỏe cộng đồng, vừa mở ra một thị trường mới.',
+          answer:
+            'CSV là một khái niệm cho rằng thành công của công ty và phúc lợi xã hội có mối liên hệ với nhau. Thay vì xem các vấn đề xã hội là chi phí, CSV coi chúng là cơ hội để đổi mới và tăng trưởng. Ví dụ, một công ty thực phẩm có thể cải thiện dinh dưỡng trong sản phẩm của mình, điều này vừa tốt cho sức khỏe cộng đồng, vừa mở ra một thị trường mới.',
         },
         {
           question: 'Doanh nghiệp xã hội (Social Enterprise) khác gì so với một doanh nghiệp có CSR mạnh?',
-          answer: 'Đối với một doanh nghiệp xã hội, sứ mệnh xã hội là lý do tồn tại chính của họ; lợi nhuận là phương tiện để duy trì và mở rộng tác động đó. Đối với một doanh nghiệp truyền thống, mục tiêu chính là lợi nhuận, và CSR là một phần hoạt động của họ để "trả lại" cho xã hội. Ranh giới này đôi khi không rõ ràng, nhưng sự khác biệt cốt lõi nằm ở mục đích ưu tiên.',
+          answer:
+            'Đối với một doanh nghiệp xã hội, sứ mệnh xã hội là lý do tồn tại chính của họ; lợi nhuận là phương tiện để duy trì và mở rộng tác động đó. Đối với một doanh nghiệp truyền thống, mục tiêu chính là lợi nhuận, và CSR là một phần hoạt động của họ để "trả lại" cho xã hội. Ranh giới này đôi khi không rõ ràng, nhưng sự khác biệt cốt lõi nằm ở mục đích ưu tiên.',
         },
         {
           question: 'Làm thế nào để thuyết phục các nhà đầu tư về giá trị của một mô hình kinh doanh bền vững?',
-          answer: 'Hãy trình bày các bằng chứng cho thấy sự bền vững có thể giảm thiểu rủi ro (ví dụ: rủi ro về chuỗi cung ứng, quy định), tạo ra cơ hội thị trường mới, tăng cường lòng trung thành của khách hàng và thu hút nhân tài. Sử dụng các dữ liệu và nghiên cứu điển hình để chứng minh rằng lợi nhuận và mục đích có thể song hành.',
+          answer:
+            'Hãy trình bày các bằng chứng cho thấy sự bền vững có thể giảm thiểu rủi ro (ví dụ: rủi ro về chuỗi cung ứng, quy định), tạo ra cơ hội thị trường mới, tăng cường lòng trung thành của khách hàng và thu hút nhân tài. Sử dụng các dữ liệu và nghiên cứu điển hình để chứng minh rằng lợi nhuận và mục đích có thể song hành.',
         },
       ],
     },
@@ -634,28 +658,35 @@ export const ethicalMarketingPurposeModule: ModuleData = {
             'Hãy tạo ra các cuộc thảo luận có ý nghĩa, lắng nghe và phản hồi các ý kiến của thành viên, chia sẻ những câu chuyện hậu trường về hành trình của thương hiệu, và tôn vinh những đóng góp của thành viên trong cộng đồng. Tránh việc chỉ tập trung vào quảng cáo sản phẩm.',
         },
         {
-          question: 'Nội dung do người dùng tạo (User-Generated Content - UGC) có vai trò gì trong việc xây dựng cộng đồng?',
-          answer: 'UGC là một công cụ cực kỳ mạnh mẽ. Khi khách hàng chia sẻ câu chuyện, hình ảnh hoặc video của riêng họ về sản phẩm, nó tạo ra bằng chứng xã hội (social proof) đích thực và đáng tin cậy hơn nhiều so với quảng cáo của thương hiệu. Khuyến khích và tôn vinh UGC là một cách tuyệt vời để xây dựng cộng đồng và lan tỏa thông điệp.',
+          question:
+            'Nội dung do người dùng tạo (User-Generated Content - UGC) có vai trò gì trong việc xây dựng cộng đồng?',
+          answer:
+            'UGC là một công cụ cực kỳ mạnh mẽ. Khi khách hàng chia sẻ câu chuyện, hình ảnh hoặc video của riêng họ về sản phẩm, nó tạo ra bằng chứng xã hội (social proof) đích thực và đáng tin cậy hơn nhiều so với quảng cáo của thương hiệu. Khuyến khích và tôn vinh UGC là một cách tuyệt vời để xây dựng cộng đồng và lan tỏa thông điệp.',
         },
         {
           question: 'Làm thế nào để xử lý các thành viên tiêu cực hoặc gây rối trong cộng đồng?',
-          answer: 'Cần có một bộ quy tắc cộng đồng rõ ràng và được thực thi một cách công bằng. Đối với các hành vi tiêu cực, hãy cố gắng phản hồi một cách công khai và mang tính xây dựng trước. Tuy nhiên, đối với các hành vi gây rối hoặc vi phạm quy tắc một cách có hệ thống, việc xóa bình luận hoặc loại bỏ thành viên đó khỏi cộng đồng là cần thiết để bảo vệ không gian an toàn cho những người khác.',
+          answer:
+            'Cần có một bộ quy tắc cộng đồng rõ ràng và được thực thi một cách công bằng. Đối với các hành vi tiêu cực, hãy cố gắng phản hồi một cách công khai và mang tính xây dựng trước. Tuy nhiên, đối với các hành vi gây rối hoặc vi phạm quy tắc một cách có hệ thống, việc xóa bình luận hoặc loại bỏ thành viên đó khỏi cộng đồng là cần thiết để bảo vệ không gian an toàn cho những người khác.',
         },
         {
           question: 'Sự khác biệt giữa "khán giả" và "cộng đồng" là gì?',
-          answer: 'Khán giả là những người tiêu thụ nội dung của bạn một cách thụ động. Cộng đồng là khi các thành viên không chỉ kết nối với thương hiệu mà còn kết nối với nhau. Dấu hiệu của một cộng đồng thực sự là khi các thành viên bắt đầu tự trả lời câu hỏi cho nhau mà không cần sự can thiệp của người quản lý.',
+          answer:
+            'Khán giả là những người tiêu thụ nội dung của bạn một cách thụ động. Cộng đồng là khi các thành viên không chỉ kết nối với thương hiệu mà còn kết nối với nhau. Dấu hiệu của một cộng đồng thực sự là khi các thành viên bắt đầu tự trả lời câu hỏi cho nhau mà không cần sự can thiệp của người quản lý.',
         },
         {
           question: 'Làm thế nào để đo lường sức khỏe của một cộng đồng trực tuyến?',
-          answer: 'Các chỉ số có thể bao gồm: tỷ lệ tương tác (lượt thích, bình luận, chia sẻ), số lượng bài đăng do người dùng tạo, tỷ lệ thành viên tích cực, và cảm tính chung (tích cực, tiêu cực, trung tính) của các cuộc thảo luận. Các cuộc khảo sát định kỳ cũng có thể giúp đo lường cảm giác thân thuộc của các thành viên.',
+          answer:
+            'Các chỉ số có thể bao gồm: tỷ lệ tương tác (lượt thích, bình luận, chia sẻ), số lượng bài đăng do người dùng tạo, tỷ lệ thành viên tích cực, và cảm tính chung (tích cực, tiêu cực, trung tính) của các cuộc thảo luận. Các cuộc khảo sát định kỳ cũng có thể giúp đo lường cảm giác thân thuộc của các thành viên.',
         },
         {
           question: 'Thương hiệu có nên tham gia vào các cuộc thảo luận về các vấn đề xã hội nhạy cảm không?',
-          answer: 'Điều này phụ thuộc vào mục đích và giá trị cốt lõi của thương hiệu. Nếu một vấn đề xã hội liên quan trực tiếp đến sứ mệnh của bạn, việc lên tiếng có thể củng cố tính xác thực. Tuy nhiên, nếu không, việc tham gia có thể bị coi là cơ hội. Nếu quyết định tham gia, hãy đảm bảo bạn đã nghiên cứu kỹ, có quan điểm nhất quán và sẵn sàng đối mặt với các ý kiến trái chiều.',
+          answer:
+            'Điều này phụ thuộc vào mục đích và giá trị cốt lõi của thương hiệu. Nếu một vấn đề xã hội liên quan trực tiếp đến sứ mệnh của bạn, việc lên tiếng có thể củng cố tính xác thực. Tuy nhiên, nếu không, việc tham gia có thể bị coi là cơ hội. Nếu quyết định tham gia, hãy đảm bảo bạn đã nghiên cứu kỹ, có quan điểm nhất quán và sẵn sàng đối mặt với các ý kiến trái chiều.',
         },
         {
           question: 'Làm thế nào để duy trì sự tương tác trong cộng đồng về lâu dài?',
-          answer: 'Duy trì sự tương tác đòi hỏi sự nỗ lực liên tục. Hãy thường xuyên giới thiệu nội dung mới mẻ, tạo ra các nghi thức hoặc sự kiện định kỳ (ví dụ: "Thứ Sáu chia sẻ câu chuyện"), đặt câu hỏi mở, và trao quyền cho các thành viên tích cực nhất trở thành người lãnh đạo hoặc người điều hành trong cộng đồng.',
+          answer:
+            'Duy trì sự tương tác đòi hỏi sự nỗ lực liên tục. Hãy thường xuyên giới thiệu nội dung mới mẻ, tạo ra các nghi thức hoặc sự kiện định kỳ (ví dụ: "Thứ Sáu chia sẻ câu chuyện"), đặt câu hỏi mở, và trao quyền cho các thành viên tích cực nhất trở thành người lãnh đạo hoặc người điều hành trong cộng đồng.',
         },
       ],
     },
@@ -757,28 +788,36 @@ export const ethicalMarketingPurposeModule: ModuleData = {
             'Có, có những sắc thái khác biệt. Ví dụ, người miền Bắc có thể coi trọng truyền thống và các quy tắc xã hội hơn, trong khi người miền Nam có thể cởi mở và linh hoạt hơn. Hiểu được những khác biệt này giúp thương hiệu điều chỉnh thông điệp và cách tiếp cận cho phù hợp với từng vùng.',
         },
         {
-          question: 'Hình ảnh người phụ nữ trong quảng cáo ở Việt Nam cần được thể hiện như thế nào để phù hợp văn hóa?',
-          answer: 'Nên tránh các hình ảnh quá gợi cảm hoặc đi ngược lại vai trò truyền thống một cách cực đoan. Tuy nhiên, việc thể hiện hình ảnh người phụ nữ hiện đại, tự chủ, vừa chăm lo gia đình vừa thành công trong sự nghiệp thường nhận được sự đồng cảm lớn. Sự cân bằng giữa giá trị truyền thống và hiện đại là chìa khóa.',
+          question:
+            'Hình ảnh người phụ nữ trong quảng cáo ở Việt Nam cần được thể hiện như thế nào để phù hợp văn hóa?',
+          answer:
+            'Nên tránh các hình ảnh quá gợi cảm hoặc đi ngược lại vai trò truyền thống một cách cực đoan. Tuy nhiên, việc thể hiện hình ảnh người phụ nữ hiện đại, tự chủ, vừa chăm lo gia đình vừa thành công trong sự nghiệp thường nhận được sự đồng cảm lớn. Sự cân bằng giữa giá trị truyền thống và hiện đại là chìa khóa.',
         },
         {
           question: 'Yếu tố hài hước trong marketing ở Việt Nam có hiệu quả không?',
-          answer: 'Hài hước có thể rất hiệu quả nếu được sử dụng đúng cách. Người Việt Nam đánh giá cao sự hài hước thông minh, gần gũi và duyên dáng. Tuy nhiên, cần tránh sự hài hước nhạy cảm, dễ gây tranh cãi hoặc bị cho là thiếu tôn trọng, đặc biệt là khi liên quan đến người lớn tuổi hoặc các giá trị thiêng liêng.',
+          answer:
+            'Hài hước có thể rất hiệu quả nếu được sử dụng đúng cách. Người Việt Nam đánh giá cao sự hài hước thông minh, gần gũi và duyên dáng. Tuy nhiên, cần tránh sự hài hước nhạy cảm, dễ gây tranh cãi hoặc bị cho là thiếu tôn trọng, đặc biệt là khi liên quan đến người lớn tuổi hoặc các giá trị thiêng liêng.',
         },
         {
-          question: 'Làm thế nào để một thương hiệu toàn cầu có thể địa phương hóa chiến dịch marketing có mục đích của mình tại Việt Nam?',
-          answer: 'Thay vì chỉ dịch nguyên bản một chiến dịch toàn cầu, thương hiệu nên tìm cách kết nối mục đích toàn cầu đó với một vấn đề hoặc một giá trị cụ thể tại Việt Nam. Hợp tác với các tổ chức, nghệ sĩ hoặc người có ảnh hưởng tại địa phương là một cách hiệu quả để tạo ra sự cộng hưởng và tính xác thực.',
+          question:
+            'Làm thế nào để một thương hiệu toàn cầu có thể địa phương hóa chiến dịch marketing có mục đích của mình tại Việt Nam?',
+          answer:
+            'Thay vì chỉ dịch nguyên bản một chiến dịch toàn cầu, thương hiệu nên tìm cách kết nối mục đích toàn cầu đó với một vấn đề hoặc một giá trị cụ thể tại Việt Nam. Hợp tác với các tổ chức, nghệ sĩ hoặc người có ảnh hưởng tại địa phương là một cách hiệu quả để tạo ra sự cộng hưởng và tính xác thực.',
         },
         {
           question: 'Tết Nguyên Đán có ý nghĩa như thế nào đối với các chiến dịch marketing có mục đích?',
-          answer: 'Tết là dịp lễ quan trọng nhất, xoay quanh các giá trị về gia đình, sự sum vầy và hy vọng về một năm mới tốt đẹp hơn. Các chiến dịch marketing có mục đích trong dịp Tết thường rất thành công khi khai thác các chủ đề này, ví dụ như các câu chuyện về sự đoàn tụ, lòng biết ơn, hoặc các hoạt động hướng về cộng đồng.',
+          answer:
+            'Tết là dịp lễ quan trọng nhất, xoay quanh các giá trị về gia đình, sự sum vầy và hy vọng về một năm mới tốt đẹp hơn. Các chiến dịch marketing có mục đích trong dịp Tết thường rất thành công khi khai thác các chủ đề này, ví dụ như các câu chuyện về sự đoàn tụ, lòng biết ơn, hoặc các hoạt động hướng về cộng đồng.',
         },
         {
           question: 'Sự ảnh hưởng của Nho giáo còn lại trong văn hóa tiêu dùng Việt Nam hiện đại là gì?',
-          answer: 'Mặc dù đã giảm bớt, ảnh hưởng của Nho giáo vẫn còn thể hiện qua việc coi trọng giáo dục, sự tôn trọng thứ bậc trong gia đình và xã hội, và xu hướng đưa ra các quyết định mua sắm lớn dựa trên sự đồng thuận của gia đình thay vì chỉ cá nhân.',
+          answer:
+            'Mặc dù đã giảm bớt, ảnh hưởng của Nho giáo vẫn còn thể hiện qua việc coi trọng giáo dục, sự tôn trọng thứ bậc trong gia đình và xã hội, và xu hướng đưa ra các quyết định mua sắm lớn dựa trên sự đồng thuận của gia đình thay vì chỉ cá nhân.',
         },
         {
           question: 'Làm thế nào để marketing về các sản phẩm "xa xỉ" một cách phù hợp với văn hóa Việt Nam?',
-          answer: 'Ở Việt Nam, sự giàu có thường được thể hiện một cách kín đáo hơn so với một số nền văn hóa khác. Do đó, marketing cho sản phẩm xa xỉ nên tập trung vào chất lượng, sự tinh xảo, di sản của thương hiệu và giá trị đầu tư, thay vì chỉ phô trương sự giàu có một cách hào nhoáng.',
+          answer:
+            'Ở Việt Nam, sự giàu có thường được thể hiện một cách kín đáo hơn so với một số nền văn hóa khác. Do đó, marketing cho sản phẩm xa xỉ nên tập trung vào chất lượng, sự tinh xảo, di sản của thương hiệu và giá trị đầu tư, thay vì chỉ phô trương sự giàu có một cách hào nhoáng.',
         },
       ],
     },
@@ -875,27 +914,33 @@ export const ethicalMarketingPurposeModule: ModuleData = {
         },
         {
           question: 'Làm thế nào để lựa chọn một hoạt động CSR phù hợp với thương hiệu?',
-          answer: 'Hoạt động CSR hiệu quả nhất là hoạt động có sự liên kết tự nhiên với lĩnh vực kinh doanh cốt lõi của bạn. Ví dụ, một công ty công nghệ có thể tập trung vào giáo dục số, một công ty thực phẩm có thể tập trung vào an ninh lương thực. Sự liên kết này làm cho cam kết của bạn trở nên đáng tin cậy và cho phép bạn tận dụng chuyên môn của mình để tạo ra tác động lớn hơn.',
+          answer:
+            'Hoạt động CSR hiệu quả nhất là hoạt động có sự liên kết tự nhiên với lĩnh vực kinh doanh cốt lõi của bạn. Ví dụ, một công ty công nghệ có thể tập trung vào giáo dục số, một công ty thực phẩm có thể tập trung vào an ninh lương thực. Sự liên kết này làm cho cam kết của bạn trở nên đáng tin cậy và cho phép bạn tận dụng chuyên môn của mình để tạo ra tác động lớn hơn.',
         },
         {
           question: 'Một chiến dịch CSR ngắn hạn có hiệu quả không?',
-          answer: 'Mặc dù các chiến dịch ngắn hạn có thể tạo ra sự chú ý tạm thời, nhưng các cam kết CSR dài hạn, nhất quán thường tạo ra tác động sâu sắc và xây dựng được lòng tin tốt hơn. Thay vì các hoạt động từ thiện một lần, hãy xem xét việc xây dựng một chương trình bền vững có thể phát triển theo thời gian.',
+          answer:
+            'Mặc dù các chiến dịch ngắn hạn có thể tạo ra sự chú ý tạm thời, nhưng các cam kết CSR dài hạn, nhất quán thường tạo ra tác động sâu sắc và xây dựng được lòng tin tốt hơn. Thay vì các hoạt động từ thiện một lần, hãy xem xét việc xây dựng một chương trình bền vững có thể phát triển theo thời gian.',
         },
         {
           question: 'Làm thế nào để truyền thông về các hoạt động CSR mà không bị coi là khoe khoang?',
-          answer: 'Hãy tập trung vào câu chuyện của những người được hưởng lợi, thay vì câu chuyện của công ty bạn. Sử dụng ngôn ngữ khiêm tốn, thừa nhận vai trò của các đối tác, và chia sẻ cả những thách thức bạn gặp phải. Sự chân thành sẽ được đánh giá cao hơn là việc tự quảng bá.',
+          answer:
+            'Hãy tập trung vào câu chuyện của những người được hưởng lợi, thay vì câu chuyện của công ty bạn. Sử dụng ngôn ngữ khiêm tốn, thừa nhận vai trò của các đối tác, và chia sẻ cả những thách thức bạn gặp phải. Sự chân thành sẽ được đánh giá cao hơn là việc tự quảng bá.',
         },
         {
           question: 'Sự khác biệt giữa CSR và từ thiện (philanthropy) là gì?',
-          answer: 'Từ thiện thường là việc quyên góp tiền cho một mục đích tốt đẹp, thường không có sự liên kết trực tiếp với chiến lược kinh doanh. CSR là một cách tiếp cận chiến lược hơn, tích hợp các mối quan tâm về xã hội và môi trường vào hoạt động kinh doanh cốt lõi và tương tác với các bên liên quan.',
+          answer:
+            'Từ thiện thường là việc quyên góp tiền cho một mục đích tốt đẹp, thường không có sự liên kết trực tiếp với chiến lược kinh doanh. CSR là một cách tiếp cận chiến lược hơn, tích hợp các mối quan tâm về xã hội và môi trường vào hoạt động kinh doanh cốt lõi và tương tác với các bên liên quan.',
         },
         {
           question: 'Làm thế nào để đo lường sự thành công của một câu chuyện CSR?',
-          answer: 'Sự thành công có thể được đo lường qua các chỉ số tương tác (lượt xem, chia sẻ, bình luận), sự thay đổi trong nhận thức và tình cảm của công chúng đối với thương hiệu (thông qua khảo sát), và quan trọng nhất là liệu câu chuyện đó có truyền cảm hứng cho hành động cụ thể hay không (ví dụ: số người đăng ký tình nguyện, số tiền quyên góp được).',
+          answer:
+            'Sự thành công có thể được đo lường qua các chỉ số tương tác (lượt xem, chia sẻ, bình luận), sự thay đổi trong nhận thức và tình cảm của công chúng đối với thương hiệu (thông qua khảo sát), và quan trọng nhất là liệu câu chuyện đó có truyền cảm hứng cho hành động cụ thể hay không (ví dụ: số người đăng ký tình nguyện, số tiền quyên góp được).',
         },
         {
           question: 'Làm thế nào để tìm kiếm đối tác phù hợp cho các chương trình CSR?',
-          answer: 'Hãy tìm kiếm các tổ chức phi lợi nhuận hoặc các tổ chức xã hội có uy tín, hoạt động trong lĩnh vực mà bạn quan tâm. Một đối tác tốt sẽ có chuyên môn sâu, mối quan hệ chặt chẽ với cộng đồng địa phương và hệ thống đo lường tác động minh bạch.',
+          answer:
+            'Hãy tìm kiếm các tổ chức phi lợi nhuận hoặc các tổ chức xã hội có uy tín, hoạt động trong lĩnh vực mà bạn quan tâm. Một đối tác tốt sẽ có chuyên môn sâu, mối quan hệ chặt chẽ với cộng đồng địa phương và hệ thống đo lường tác động minh bạch.',
         },
       ],
     },

@@ -110,7 +110,8 @@ export const financialLiteracyLessons: FinancialLiteracyLesson[] = [
           'SMART là viết tắt của Specific (Cụ thể), Measurable (Đo lường được), Achievable (Khả thi), Relevant (Liên quan), và Time-bound (Có thời hạn). Ví dụ về một mục tiêu SMART: "Tiết kiệm 100 triệu đồng để làm khoản trả trước mua nhà (Specific, Measurable) trong vòng 2 năm tới (Time-bound) bằng cách tiết kiệm 4.2 triệu đồng mỗi tháng (Achievable, Relevant)."',
       },
       {
-        question: 'Làm thế nào để đối phó với các khoản chi tiêu không thường xuyên, chẳng hạn như quà sinh nhật hoặc sửa chữa nhà cửa?',
+        question:
+          'Làm thế nào để đối phó với các khoản chi tiêu không thường xuyên, chẳng hạn như quà sinh nhật hoặc sửa chữa nhà cửa?',
         answer:
           'Hãy tạo một hoặc nhiều "quỹ chìm" (sinking funds). Đây là những tài khoản tiết kiệm nhỏ mà bạn đóng góp một khoản tiền nhỏ đều đặn mỗi tháng cho một mục tiêu chi tiêu cụ thể trong tương lai. Bằng cách này, khi chi phí phát sinh, bạn đã có sẵn tiền và không làm ảnh hưởng đến ngân sách hàng tháng.',
       },

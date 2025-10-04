@@ -1,6 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
+// Utility: Strip HTML tags and decode HTML entities
+function sanitizeHtmlToText(html: string): string {
+  // Remove HTML tags
+  let text = html.replace(/<[^>]*>/g, '');
+  // Decode common HTML entities
+  const entities: Record<string, string> = {
+    '&amp;': '&',
+    '&lt;': '<',
+    '&gt;': '>',
+    '&quot;': '"',
+    '&#39;': "'",
+    '&#x26;': '&',
+    '&nbsp;': ' ',
+  };
+  text = text.replace(/&[a-zA-Z#0-9]+;/g, (entity) => entities[entity] || entity);
+  return text;
+}
 import { Heading } from '@/types';
 
 interface TableOfContentsProps {
@@ -59,7 +77,7 @@ const TableOfContents = ({ headings }: TableOfContentsProps) => {
                 }`}
                 style={{ paddingLeft: `${(heading.level - 2) * 1}rem` }}
               >
-                {heading.text}
+                {sanitizeHtmlToText(heading.text)}
               </a>
             </li>
           ))}

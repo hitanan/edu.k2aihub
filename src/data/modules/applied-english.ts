@@ -39,35 +39,43 @@ export const appliedEnglishModuleData: ModuleData = {
         },
         {
           question: 'Một vài cách phổ biến để bắt đầu cuộc trò chuyện với người lạ là gì?',
-          answer: 'Bạn có thể bắt đầu bằng cách bình luận về tình huống chung, ví dụ: "This is a lovely event, isn\'t it?" (Đây là một sự kiện thật dễ chịu, phải không?) hoặc hỏi một câu hỏi mở, chẳng hạn như "What brings you here today?" (Điều gì đưa bạn đến đây hôm nay?). Một lời khen chân thành cũng là một cách hay, ví dụ: "I love your jacket!".',
+          answer:
+            'Bạn có thể bắt đầu bằng cách bình luận về tình huống chung, ví dụ: "This is a lovely event, isn\'t it?" (Đây là một sự kiện thật dễ chịu, phải không?) hoặc hỏi một câu hỏi mở, chẳng hạn như "What brings you here today?" (Điều gì đưa bạn đến đây hôm nay?). Một lời khen chân thành cũng là một cách hay, ví dụ: "I love your jacket!".',
         },
         {
           question: 'Làm thế nào để đưa ra một lời khen mà không bị ngượng ngùng?',
-          answer: 'Hãy cụ thể và chân thành. Thay vì nói "You are great", hãy thử "You did a fantastic job on that presentation. I was really impressed with your data analysis." (Bạn đã làm rất tốt bài thuyết trình đó. Tôi thực sự ấn tượng với phần phân tích dữ liệu của bạn).',
+          answer:
+            'Hãy cụ thể và chân thành. Thay vì nói "You are great", hãy thử "You did a fantastic job on that presentation. I was really impressed with your data analysis." (Bạn đã làm rất tốt bài thuyết trình đó. Tôi thực sự ấn tượng với phần phân tích dữ liệu của bạn).',
         },
         {
           question: 'Sự khác biệt giữa "I\'m sorry" và "Excuse me" là gì?',
-          answer: '"I\'m sorry" được dùng để xin lỗi khi bạn đã làm sai điều gì đó. "Excuse me" được dùng để thu hút sự chú ý của ai đó một cách lịch sự, hoặc khi bạn muốn đi qua chỗ đông người, hoặc khi bạn lỡ ho hay hắt xì.',
+          answer:
+            '"I\'m sorry" được dùng để xin lỗi khi bạn đã làm sai điều gì đó. "Excuse me" được dùng để thu hút sự chú ý của ai đó một cách lịch sự, hoặc khi bạn muốn đi qua chỗ đông người, hoặc khi bạn lỡ ho hay hắt xì.',
         },
         {
           question: 'Làm thế nào để nhờ giúp đỡ trong một cửa hàng?',
-          answer: 'Bạn có thể thu hút sự chú ý của nhân viên bằng cách nói "Excuse me". Sau đó, bạn có thể hỏi: "Could you help me, please?" (Bạn có thể giúp tôi được không?) hoặc "I\'m looking for..." (Tôi đang tìm kiếm...).',
+          answer:
+            'Bạn có thể thu hút sự chú ý của nhân viên bằng cách nói "Excuse me". Sau đó, bạn có thể hỏi: "Could you help me, please?" (Bạn có thể giúp tôi được không?) hoặc "I\'m looking for..." (Tôi đang tìm kiếm...).',
         },
         {
           question: 'Một vài cách lịch sự để ngắt lời ai đó là gì?',
-          answer: 'Nếu thực sự cần thiết, bạn có thể nói: "I\'m so sorry to interrupt, but..." (Tôi rất xin lỗi vì phải ngắt lời, nhưng...) hoặc "May I jump in here for a second?" (Tôi có thể xen vào một chút được không?).',
+          answer:
+            'Nếu thực sự cần thiết, bạn có thể nói: "I\'m so sorry to interrupt, but..." (Tôi rất xin lỗi vì phải ngắt lời, nhưng...) hoặc "May I jump in here for a second?" (Tôi có thể xen vào một chút được không?).',
         },
         {
           question: 'Làm thế nào để kết thúc một cuộc trò chuyện một cách duyên dáng?',
-          answer: 'Bạn có thể nói: "Well, it was lovely talking to you. I should get going now." (Rất vui được nói chuyện với bạn. Bây giờ tôi phải đi rồi) hoặc "I need to run, but let\'s catch up again soon." (Tôi phải đi ngay, nhưng chúng ta hãy sớm gặp lại nhé).',
+          answer:
+            'Bạn có thể nói: "Well, it was lovely talking to you. I should get going now." (Rất vui được nói chuyện với bạn. Bây giờ tôi phải đi rồi) hoặc "I need to run, but let\'s catch up again soon." (Tôi phải đi ngay, nhưng chúng ta hãy sớm gặp lại nhé).',
         },
         {
           question: 'Một vài chủ đề "small talk" (nói chuyện phiếm) phổ biến là gì?',
-          answer: 'Các chủ đề an toàn và phổ biến bao gồm thời tiết ("It\'s a beautiful day, isn\'t it?"), công việc hoặc học tập ("How is work/school going?"), sở thích ("Have you seen any good movies lately?"), hoặc các sự kiện gần đây.',
+          answer:
+            'Các chủ đề an toàn và phổ biến bao gồm thời tiết ("It\'s a beautiful day, isn\'t it?"), công việc hoặc học tập ("How is work/school going?"), sở thích ("Have you seen any good movies lately?"), hoặc các sự kiện gần đây.',
         },
         {
           question: 'Làm thế nào để thể hiện sự đồng ý và không đồng ý một cách lịch sự?',
-          answer: 'Để đồng ý, bạn có thể nói "I completely agree" hoặc "You\'re absolutely right". Để không đồng ý, hãy bắt đầu một cách mềm mỏng: "I see your point, but I have a different perspective." (Tôi hiểu ý bạn, nhưng tôi có một góc nhìn khác) hoặc "I\'m not so sure about that." (Tôi không chắc lắm về điều đó).',
+          answer:
+            'Để đồng ý, bạn có thể nói "I completely agree" hoặc "You\'re absolutely right". Để không đồng ý, hãy bắt đầu một cách mềm mỏng: "I see your point, but I have a different perspective." (Tôi hiểu ý bạn, nhưng tôi có một góc nhìn khác) hoặc "I\'m not so sure about that." (Tôi không chắc lắm về điều đó).',
         },
       ],
       quizzes: [
@@ -115,35 +123,43 @@ export const appliedEnglishModuleData: ModuleData = {
         },
         {
           question: 'Sự khác biệt giữa bài luận mô tả (descriptive) và bài luận nghị luận (argumentative) là gì?',
-          answer: 'Bài luận mô tả nhằm mục đích "vẽ" một bức tranh bằng lời cho người đọc, tập trung vào chi tiết cảm quan. Bài luận nghị luận nhằm mục đích thuyết phục người đọc chấp nhận một quan điểm cụ thể bằng cách đưa ra các luận điểm và bằng chứng.',
+          answer:
+            'Bài luận mô tả nhằm mục đích "vẽ" một bức tranh bằng lời cho người đọc, tập trung vào chi tiết cảm quan. Bài luận nghị luận nhằm mục đích thuyết phục người đọc chấp nhận một quan điểm cụ thể bằng cách đưa ra các luận điểm và bằng chứng.',
         },
         {
           question: 'Làm thế nào để tránh đạo văn (plagiarism)?',
-          answer: 'Luôn luôn trích dẫn nguồn khi bạn sử dụng ý tưởng, dữ liệu hoặc câu chữ của người khác. Hãy diễn giải (paraphrase) ý tưởng bằng lời của chính bạn thay vì sao chép nguyên văn, và vẫn phải ghi nguồn. Sử dụng các công cụ kiểm tra đạo văn trước khi nộp bài.',
+          answer:
+            'Luôn luôn trích dẫn nguồn khi bạn sử dụng ý tưởng, dữ liệu hoặc câu chữ của người khác. Hãy diễn giải (paraphrase) ý tưởng bằng lời của chính bạn thay vì sao chép nguyên văn, và vẫn phải ghi nguồn. Sử dụng các công cụ kiểm tra đạo văn trước khi nộp bài.',
         },
         {
           question: 'Câu chủ đề (topic sentence) là gì?',
-          answer: 'Câu chủ đề là câu quan trọng nhất trong một đoạn văn. Nó thường là câu đầu tiên và nêu lên ý chính của toàn bộ đoạn văn đó. Các câu còn lại trong đoạn sẽ có nhiệm vụ giải thích, làm rõ hoặc đưa ra ví dụ cho câu chủ đề.',
+          answer:
+            'Câu chủ đề là câu quan trọng nhất trong một đoạn văn. Nó thường là câu đầu tiên và nêu lên ý chính của toàn bộ đoạn văn đó. Các câu còn lại trong đoạn sẽ có nhiệm vụ giải thích, làm rõ hoặc đưa ra ví dụ cho câu chủ đề.',
         },
         {
           question: 'Làm thế nào để trích dẫn nguồn đúng cách trong bài luận?',
-          answer: 'Có nhiều phong cách trích dẫn khác nhau (APA, MLA, Chicago...). Hãy hỏi giáo viên của bạn về phong cách được yêu cầu. Về cơ bản, bạn cần có trích dẫn trong bài (in-text citation) ngay sau thông tin bạn sử dụng và một danh sách tài liệu tham khảo (bibliography/references) ở cuối bài.',
+          answer:
+            'Có nhiều phong cách trích dẫn khác nhau (APA, MLA, Chicago...). Hãy hỏi giáo viên của bạn về phong cách được yêu cầu. Về cơ bản, bạn cần có trích dẫn trong bài (in-text citation) ngay sau thông tin bạn sử dụng và một danh sách tài liệu tham khảo (bibliography/references) ở cuối bài.',
         },
         {
           question: 'Một số lỗi ngữ pháp phổ biến cần tránh trong văn viết học thuật là gì?',
-          answer: 'Các lỗi phổ biến bao gồm: lỗi hòa hợp chủ-vị (subject-verb agreement), câu thiếu thành phần (sentence fragments), câu quá dài và rườm rà (run-on sentences), và sử dụng sai dấu câu.',
+          answer:
+            'Các lỗi phổ biến bao gồm: lỗi hòa hợp chủ-vị (subject-verb agreement), câu thiếu thành phần (sentence fragments), câu quá dài và rườm rà (run-on sentences), và sử dụng sai dấu câu.',
         },
         {
           question: 'Làm thế nào để bài viết của tôi súc tích hơn?',
-          answer: 'Tránh các từ và cụm từ không cần thiết. Sử dụng động từ mạnh thay vì các cụm động từ dài. Ví dụ, thay vì viết "make a decision", hãy viết "decide". Đọc lại bài viết của bạn và cắt bỏ bất kỳ từ nào không đóng góp vào ý nghĩa của câu.',
+          answer:
+            'Tránh các từ và cụm từ không cần thiết. Sử dụng động từ mạnh thay vì các cụm động từ dài. Ví dụ, thay vì viết "make a decision", hãy viết "decide". Đọc lại bài viết của bạn và cắt bỏ bất kỳ từ nào không đóng góp vào ý nghĩa của câu.',
         },
         {
           question: 'Mục đích của việc đưa ra phản đề (counter-argument) trong bài luận là gì?',
-          answer: 'Việc đưa ra và sau đó bác bỏ một phản đề cho thấy bạn đã xem xét vấn đề từ nhiều phía. Điều này làm cho luận điểm của bạn trở nên mạnh mẽ và đáng tin cậy hơn, vì bạn đã chủ động giải quyết các ý kiến trái chiều.',
+          answer:
+            'Việc đưa ra và sau đó bác bỏ một phản đề cho thấy bạn đã xem xét vấn đề từ nhiều phía. Điều này làm cho luận điểm của bạn trở nên mạnh mẽ và đáng tin cậy hơn, vì bạn đã chủ động giải quyết các ý kiến trái chiều.',
         },
         {
           question: 'Làm thế nào để tìm ý tưởng cho bài luận của mình?',
-          answer: 'Bạn có thể thử các kỹ thuật như viết tự do (freewriting), lập sơ đồ tư duy (mind mapping), hoặc thảo luận với bạn bè. Đọc các bài viết liên quan đến chủ đề cũng là một cách tuyệt vời để khơi nguồn cảm hứng và hình thành quan điểm riêng.',
+          answer:
+            'Bạn có thể thử các kỹ thuật như viết tự do (freewriting), lập sơ đồ tư duy (mind mapping), hoặc thảo luận với bạn bè. Đọc các bài viết liên quan đến chủ đề cũng là một cách tuyệt vời để khơi nguồn cảm hứng và hình thành quan điểm riêng.',
         },
       ],
       quizzes: [
@@ -188,35 +204,43 @@ export const appliedEnglishModuleData: ModuleData = {
         },
         {
           question: 'Bài thuyết trình của tôi nên dài bao lâu?',
-          answer: 'Điều này phụ thuộc vào yêu cầu. Một quy tắc chung là mỗi slide nên tương ứng với khoảng 1-2 phút nói. Nếu bạn có 15 phút, hãy nhắm đến khoảng 7-10 slide. Luôn dành thời gian cho phần hỏi đáp ở cuối.',
+          answer:
+            'Điều này phụ thuộc vào yêu cầu. Một quy tắc chung là mỗi slide nên tương ứng với khoảng 1-2 phút nói. Nếu bạn có 15 phút, hãy nhắm đến khoảng 7-10 slide. Luôn dành thời gian cho phần hỏi đáp ở cuối.',
         },
         {
           question: 'Thế nào là một slide thuyết trình (visual aid) tốt?',
-          answer: 'Một slide tốt nên đơn giản, trực quan và dễ đọc. Sử dụng ít chữ, nhiều hình ảnh hoặc biểu đồ. Mỗi slide chỉ nên tập trung vào một ý chính. Tránh các màu sắc gây mất tập trung và các font chữ khó đọc.',
+          answer:
+            'Một slide tốt nên đơn giản, trực quan và dễ đọc. Sử dụng ít chữ, nhiều hình ảnh hoặc biểu đồ. Mỗi slide chỉ nên tập trung vào một ý chính. Tránh các màu sắc gây mất tập trung và các font chữ khó đọc.',
         },
         {
           question: 'Làm thế nào để cấu trúc phần mở đầu bài thuyết trình để thu hút khán giả?',
-          answer: 'Hãy bắt đầu bằng một "cái móc" (a hook). Đó có thể là một câu hỏi gây ngạc nhiên, một số liệu thống kê gây sốc, một câu chuyện cá nhân ngắn gọn, hoặc một hình ảnh ấn tượng. Sau đó, giới thiệu ngắn gọn chủ đề và cho khán giả biết họ sẽ học được gì sau bài nói của bạn.',
+          answer:
+            'Hãy bắt đầu bằng một "cái móc" (a hook). Đó có thể là một câu hỏi gây ngạc nhiên, một số liệu thống kê gây sốc, một câu chuyện cá nhân ngắn gọn, hoặc một hình ảnh ấn tượng. Sau đó, giới thiệu ngắn gọn chủ đề và cho khán giả biết họ sẽ học được gì sau bài nói của bạn.',
         },
         {
           question: '"Quy tắc số ba" (Rule of Three) trong nói trước công chúng là gì?',
-          answer: 'Đây là một nguyên tắc cho rằng thông tin được trình bày theo nhóm ba sẽ dễ nhớ và có tác động mạnh mẽ hơn. Ví dụ, bạn có thể cấu trúc bài nói của mình thành ba phần chính, hoặc đưa ra ba luận điểm hỗ trợ cho ý kiến của mình.',
+          answer:
+            'Đây là một nguyên tắc cho rằng thông tin được trình bày theo nhóm ba sẽ dễ nhớ và có tác động mạnh mẽ hơn. Ví dụ, bạn có thể cấu trúc bài nói của mình thành ba phần chính, hoặc đưa ra ba luận điểm hỗ trợ cho ý kiến của mình.',
         },
         {
           question: 'Trong tranh biện, sự khác biệt giữa "rebuttal" và "counter-argument" là gì?',
-          answer: '"Counter-argument" (phản đề) là bạn chủ động đưa ra một quan điểm đối lập với mình. "Rebuttal" (phản bác) là khi bạn trực tiếp đáp lại và chỉ ra điểm yếu trong luận điểm mà đối thủ vừa trình bày.',
+          answer:
+            '"Counter-argument" (phản đề) là bạn chủ động đưa ra một quan điểm đối lập với mình. "Rebuttal" (phản bác) là khi bạn trực tiếp đáp lại và chỉ ra điểm yếu trong luận điểm mà đối thủ vừa trình bày.',
         },
         {
           question: 'Làm thế nào để sử dụng giọng nói hiệu quả (tông giọng, tốc độ, âm lượng)?',
-          answer: 'Hãy thay đổi giọng nói của bạn để giữ sự chú ý. Nói chậm và rõ ràng khi trình bày những điểm quan trọng. Tăng âm lượng và tốc độ để thể hiện sự nhiệt tình. Sử dụng những khoảng lặng ngắn để nhấn mạnh một ý hoặc cho khán giả thời gian suy ngẫm.',
+          answer:
+            'Hãy thay đổi giọng nói của bạn để giữ sự chú ý. Nói chậm và rõ ràng khi trình bày những điểm quan trọng. Tăng âm lượng và tốc độ để thể hiện sự nhiệt tình. Sử dụng những khoảng lặng ngắn để nhấn mạnh một ý hoặc cho khán giả thời gian suy ngẫm.',
         },
         {
           question: 'Tôi nên làm gì nếu quên mất mình định nói gì tiếp theo?',
-          answer: 'Đừng hoảng sợ. Hãy bình tĩnh hít một hơi. Bạn có thể nhìn vào ghi chú của mình. Một cách khác là tương tác với khán giả bằng cách hỏi một câu hỏi, ví dụ: "Does that make sense so far?" (Đến đây mọi người vẫn hiểu chứ ạ?). Điều này cho bạn một vài giây để định thần lại.',
+          answer:
+            'Đừng hoảng sợ. Hãy bình tĩnh hít một hơi. Bạn có thể nhìn vào ghi chú của mình. Một cách khác là tương tác với khán giả bằng cách hỏi một câu hỏi, ví dụ: "Does that make sense so far?" (Đến đây mọi người vẫn hiểu chứ ạ?). Điều này cho bạn một vài giây để định thần lại.',
         },
         {
           question: 'Tại sao phần hỏi đáp (Q&A) lại quan trọng?',
-          answer: 'Phần Q&A cho thấy bạn tự tin vào chủ đề của mình và tôn trọng khán giả. Đây là cơ hội để bạn làm rõ những điểm khán giả chưa hiểu, nhận được phản hồi và tạo ra một cuộc đối thoại hai chiều, thay vì chỉ độc thoại.',
+          answer:
+            'Phần Q&A cho thấy bạn tự tin vào chủ đề của mình và tôn trọng khán giả. Đây là cơ hội để bạn làm rõ những điểm khán giả chưa hiểu, nhận được phản hồi và tạo ra một cuộc đối thoại hai chiều, thay vì chỉ độc thoại.',
         },
       ],
       quizzes: [

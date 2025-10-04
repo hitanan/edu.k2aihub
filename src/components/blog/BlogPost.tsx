@@ -75,7 +75,7 @@ export function BlogPost({ post, relatedPosts, featuredPosts = [], categories = 
                 <div
                   className="blog prose prose-lg prose-invert max-w-none text-gray-300 
                              prose-h1:text-4xl prose-h1:font-bold prose-h1:mt-16 prose-h1:mb-6 prose-h1:text-white
-                             prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-5 prose-h2:text-white prose-h2:border-b prose-h2:border-gray-700/50 prose-h2:pb-2
+                             prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-16 prose-h2:mb-5 prose-h2:text-white prose-h2:border-b prose-h2:border-gray-700/50 prose-h2:pb-2
                              prose-h3:text-2xl prose-h3:font-bold prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-white
                              prose-h4:text-xl prose-h4:font-semibold prose-h4:mt-8 prose-h4:mb-3 prose-h4:text-gray-100
                              prose-h5:text-lg prose-h5:font-semibold prose-h5:mt-6 prose-h5:mb-2 prose-h5:text-gray-200

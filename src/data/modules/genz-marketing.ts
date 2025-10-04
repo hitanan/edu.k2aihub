@@ -172,28 +172,34 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       },
       {
         question: 'Gen Z có thực sự quan tâm đến các vấn đề xã hội, hay đó chỉ là một xu hướng?',
-        answer: 'Nhiều nghiên cứu cho thấy Gen Z thực sự quan tâm đến các vấn đề như môi trường, công bằng xã hội, và sức khỏe tinh thần. Họ mong đợi các thương hiệu không chỉ bán sản phẩm mà còn phải có trách nhiệm và đóng góp tích cực cho xã hội. Đây không chỉ là xu hướng mà là một sự thay đổi trong nhận thức của người tiêu dùng.'
+        answer:
+          'Nhiều nghiên cứu cho thấy Gen Z thực sự quan tâm đến các vấn đề như môi trường, công bằng xã hội, và sức khỏe tinh thần. Họ mong đợi các thương hiệu không chỉ bán sản phẩm mà còn phải có trách nhiệm và đóng góp tích cực cho xã hội. Đây không chỉ là xu hướng mà là một sự thay đổi trong nhận thức của người tiêu dùng.',
       },
       {
         question: 'Làm thế nào để đo lường sự thành công của một chiến dịch marketing cho Gen Z?',
-        answer: 'Ngoài các chỉ số truyền thống như doanh số, hãy chú ý đến các chỉ số tương tác (lượt thích, bình luận, chia sẻ), tỷ lệ tạo nội dung của người dùng (UGC), và phân tích cảm xúc (sentiment analysis) trên mạng xã hội. Sự tương tác và thảo luận tích cực thường là dấu hiệu của một chiến dịch thành công.'
+        answer:
+          'Ngoài các chỉ số truyền thống như doanh số, hãy chú ý đến các chỉ số tương tác (lượt thích, bình luận, chia sẻ), tỷ lệ tạo nội dung của người dùng (UGC), và phân tích cảm xúc (sentiment analysis) trên mạng xã hội. Sự tương tác và thảo luận tích cực thường là dấu hiệu của một chiến dịch thành công.',
       },
       {
         question: 'Sự khác biệt giữa KOC (Key Opinion Consumer) và KOL (Key Opinion Leader) là gì?',
-        answer: 'KOL thường là những người nổi tiếng có tầm ảnh hưởng rộng. KOC là những người tiêu dùng thực tế, có kiến thức chuyên sâu về một lĩnh vực và được cộng đồng tin tưởng vì những đánh giá chân thực. Đối với Gen Z, KOC thường có độ tin cậy cao hơn trong các quyết định mua sắm hàng ngày.'
+        answer:
+          'KOL thường là những người nổi tiếng có tầm ảnh hưởng rộng. KOC là những người tiêu dùng thực tế, có kiến thức chuyên sâu về một lĩnh vực và được cộng đồng tin tưởng vì những đánh giá chân thực. Đối với Gen Z, KOC thường có độ tin cậy cao hơn trong các quyết định mua sắm hàng ngày.',
       },
       {
         question: 'Tại sao nội dung video ngắn lại hiệu quả với Gen Z?',
-        answer: 'Gen Z lớn lên trong một thế giới thông tin nhanh và đa dạng. Nội dung video ngắn trên TikTok hay Instagram Reels phù hợp với khoảng chú ý ngắn của họ, cho phép truyền tải thông điệp một cách nhanh chóng, sáng tạo và dễ lan truyền.'
+        answer:
+          'Gen Z lớn lên trong một thế giới thông tin nhanh và đa dạng. Nội dung video ngắn trên TikTok hay Instagram Reels phù hợp với khoảng chú ý ngắn của họ, cho phép truyền tải thông điệp một cách nhanh chóng, sáng tạo và dễ lan truyền.',
       },
       {
         question: 'Thương hiệu có nên sử dụng "teen code" hay tiếng lóng của Gen Z không?',
-        answer: 'Nên thận trọng. Nếu sử dụng một cách tự nhiên và đúng ngữ cảnh, nó có thể tạo cảm giác gần gũi. Tuy nhiên, nếu sử dụng sai hoặc gượng ép, thương hiệu sẽ bị coi là "giả trân" và phản tác dụng. Cách tốt nhất là để chính những người sáng tạo nội dung Gen Z sử dụng ngôn ngữ của họ một cách tự nhiên.'
+        answer:
+          'Nên thận trọng. Nếu sử dụng một cách tự nhiên và đúng ngữ cảnh, nó có thể tạo cảm giác gần gũi. Tuy nhiên, nếu sử dụng sai hoặc gượng ép, thương hiệu sẽ bị coi là "giả trân" và phản tác dụng. Cách tốt nhất là để chính những người sáng tạo nội dung Gen Z sử dụng ngôn ngữ của họ một cách tự nhiên.',
       },
       {
         question: 'Gen Z có trung thành với thương hiệu không?',
-        answer: 'Có, nhưng lòng trung thành của họ không đến từ thói quen mà đến từ sự kết nối về giá trị. Họ sẽ trung thành với những thương hiệu mà họ cảm thấy chân thực, có trách nhiệm và thực sự lắng nghe họ. Lòng trung thành này có thể mất đi nhanh chóng nếu thương hiệu đánh mất niềm tin.'
-      }
+        answer:
+          'Có, nhưng lòng trung thành của họ không đến từ thói quen mà đến từ sự kết nối về giá trị. Họ sẽ trung thành với những thương hiệu mà họ cảm thấy chân thực, có trách nhiệm và thực sự lắng nghe họ. Lòng trung thành này có thể mất đi nhanh chóng nếu thương hiệu đánh mất niềm tin.',
+      },
     ],
     exercises: [
       {
@@ -397,32 +403,39 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       },
       {
         question: 'Làm thế nào để đảm bảo sự đa dạng trong các chiến dịch không chỉ dừng lại ở hình ảnh?',
-        answer: 'Để tránh "tokenism", sự đa dạng phải được tích hợp vào toàn bộ quá trình: từ khâu nghiên cứu thị trường, đội ngũ sáng tạo, lựa chọn người có ảnh hưởng, đến cách câu chuyện được kể. Thương hiệu cũng cần có những hành động nội bộ, như chính sách nhân sự công bằng và hỗ trợ các cộng đồng thiểu số.'
+        answer:
+          'Để tránh "tokenism", sự đa dạng phải được tích hợp vào toàn bộ quá trình: từ khâu nghiên cứu thị trường, đội ngũ sáng tạo, lựa chọn người có ảnh hưởng, đến cách câu chuyện được kể. Thương hiệu cũng cần có những hành động nội bộ, như chính sách nhân sự công bằng và hỗ trợ các cộng đồng thiểu số.',
       },
       {
         question: 'Tại sao cần phải nhạy cảm với sự khác biệt vùng miền (Bắc-Trung-Nam) trong marketing?',
-        answer: 'Mỗi vùng miền ở Việt Nam có những đặc trưng văn hóa, ngôn ngữ, và thói quen tiêu dùng riêng. Một thông điệp hay hình ảnh có thể được đón nhận ở miền Nam nhưng lại gây hiểu lầm ở miền Bắc. Sự nhạy cảm này cho thấy thương hiệu tôn trọng khách hàng và giúp chiến dịch đạt hiệu quả cao hơn.'
+        answer:
+          'Mỗi vùng miền ở Việt Nam có những đặc trưng văn hóa, ngôn ngữ, và thói quen tiêu dùng riêng. Một thông điệp hay hình ảnh có thể được đón nhận ở miền Nam nhưng lại gây hiểu lầm ở miền Bắc. Sự nhạy cảm này cho thấy thương hiệu tôn trọng khách hàng và giúp chiến dịch đạt hiệu quả cao hơn.',
       },
       {
         question: 'Thương hiệu nên làm gì khi mắc lỗi liên quan đến tính đa dạng và hòa nhập?',
-        answer: 'Khi mắc lỗi, điều quan trọng nhất là phải lắng nghe, thừa nhận sai sót một cách chân thành và xin lỗi. Sau đó, thương hiệu cần thể hiện hành động khắc phục cụ thể và cam kết sẽ làm tốt hơn trong tương lai. Việc cố gắng che giấu hoặc phớt lờ sẽ chỉ làm tình hình tồi tệ hơn.'
+        answer:
+          'Khi mắc lỗi, điều quan trọng nhất là phải lắng nghe, thừa nhận sai sót một cách chân thành và xin lỗi. Sau đó, thương hiệu cần thể hiện hành động khắc phục cụ thể và cam kết sẽ làm tốt hơn trong tương lai. Việc cố gắng che giấu hoặc phớt lờ sẽ chỉ làm tình hình tồi tệ hơn.',
       },
       {
         question: 'Marketing hòa nhập có giúp tăng doanh thu không?',
-        answer: 'Có. Khi một thương hiệu thể hiện sự hòa nhập, họ mở rộng được đối tượng khách hàng tiềm năng, tạo ra sự kết nối cảm xúc sâu sắc hơn và xây dựng được một cộng đồng khách hàng trung thành. Về lâu dài, điều này thường dẫn đến tăng trưởng doanh thu bền vững.'
+        answer:
+          'Có. Khi một thương hiệu thể hiện sự hòa nhập, họ mở rộng được đối tượng khách hàng tiềm năng, tạo ra sự kết nối cảm xúc sâu sắc hơn và xây dựng được một cộng đồng khách hàng trung thành. Về lâu dài, điều này thường dẫn đến tăng trưởng doanh thu bền vững.',
       },
       {
         question: 'Làm thế nào để tìm được các nhà sáng tạo nội dung (creators) đa dạng và phù hợp?',
-        answer: 'Thay vì chỉ tìm kiếm những KOLs lớn, hãy khám phá các cộng đồng ngách (niche communities) trên mạng xã hội. Tìm kiếm các micro-influencers và KOCs là những tiếng nói đích thực trong cộng đồng của họ. Các nền tảng như TikTok và Instagram là nơi tuyệt vời để khám phá những tài năng này.'
+        answer:
+          'Thay vì chỉ tìm kiếm những KOLs lớn, hãy khám phá các cộng đồng ngách (niche communities) trên mạng xã hội. Tìm kiếm các micro-influencers và KOCs là những tiếng nói đích thực trong cộng đồng của họ. Các nền tảng như TikTok và Instagram là nơi tuyệt vời để khám phá những tài năng này.',
       },
       {
         question: 'Ngôn ngữ hòa nhập (inclusive language) là gì và tại sao nó quan trọng?',
-        answer: 'Ngôn ngữ hòa nhập là cách sử dụng từ ngữ để tránh các định kiến, khuôn mẫu và không loại trừ bất kỳ nhóm người nào. Ví dụ, sử dụng các thuật ngữ trung tính về giới, tránh các giả định về cấu trúc gia đình hoặc khả năng của một người. Nó cho thấy sự tôn trọng và giúp mọi người cảm thấy được chào đón.'
+        answer:
+          'Ngôn ngữ hòa nhập là cách sử dụng từ ngữ để tránh các định kiến, khuôn mẫu và không loại trừ bất kỳ nhóm người nào. Ví dụ, sử dụng các thuật ngữ trung tính về giới, tránh các giả định về cấu trúc gia đình hoặc khả năng của một người. Nó cho thấy sự tôn trọng và giúp mọi người cảm thấy được chào đón.',
       },
       {
         question: 'Sự khác biệt giữa bình đẳng (equality) và công bằng (equity) trong marketing là gì?',
-        answer: 'Bình đẳng là cung cấp cho mọi người cùng một nguồn lực. Công bằng là nhận ra rằng mỗi người có những hoàn cảnh khác nhau và cần những nguồn lực khác nhau để đạt được kết quả như nhau. Trong marketing, điều này có nghĩa là điều chỉnh thông điệp và phương pháp tiếp cận để phù hợp với nhu cầu đa dạng của các nhóm khách hàng khác nhau.'
-      }
+        answer:
+          'Bình đẳng là cung cấp cho mọi người cùng một nguồn lực. Công bằng là nhận ra rằng mỗi người có những hoàn cảnh khác nhau và cần những nguồn lực khác nhau để đạt được kết quả như nhau. Trong marketing, điều này có nghĩa là điều chỉnh thông điệp và phương pháp tiếp cận để phù hợp với nhu cầu đa dạng của các nhóm khách hàng khác nhau.',
+      },
     ],
     exercises: [
       {
@@ -596,32 +609,40 @@ export const genZMarketingLessons: GenZMarketingLesson[] = [
       },
       {
         question: 'Làm thế nào để đo lường "Tác động xã hội" (Social Impact) của một chiến dịch?',
-        answer: 'Tác động xã hội có thể được đo lường qua nhiều cách: số tiền quyên góp được, số người được hưởng lợi trực tiếp, sự thay đổi trong nhận thức của công chúng (thông qua khảo sát), mức độ tương tác và thảo luận về vấn đề trên mạng xã hội, và các chỉ số môi trường cụ thể (ví dụ: lượng rác thải nhựa giảm được).'
+        answer:
+          'Tác động xã hội có thể được đo lường qua nhiều cách: số tiền quyên góp được, số người được hưởng lợi trực tiếp, sự thay đổi trong nhận thức của công chúng (thông qua khảo sát), mức độ tương tác và thảo luận về vấn đề trên mạng xã hội, và các chỉ số môi trường cụ thể (ví dụ: lượng rác thải nhựa giảm được).',
       },
       {
         question: 'Gen Z có thể phân biệt được giữa "brand activism" thật sự và "woke-washing" không?',
-        answer: 'Có, Gen Z rất nhạy bén với "woke-washing" - thuật ngữ chỉ việc các thương hiệu lợi dụng các vấn đề xã hội để đánh bóng tên tuổi mà không có hành động thực chất. Họ sẽ nhanh chóng tìm hiểu xem thương hiệu có thực sự đầu tư vào vấn đề đó không, hay chỉ là một chiến dịch quảng cáo bề mặt.'
+        answer:
+          'Có, Gen Z rất nhạy bén với "woke-washing" - thuật ngữ chỉ việc các thương hiệu lợi dụng các vấn đề xã hội để đánh bóng tên tuổi mà không có hành động thực chất. Họ sẽ nhanh chóng tìm hiểu xem thương hiệu có thực sự đầu tư vào vấn đề đó không, hay chỉ là một chiến dịch quảng cáo bề mặt.',
       },
       {
         question: 'Một thương hiệu có nên giữ im lặng về các vấn đề xã hội để tránh rủi ro không?',
-        answer: 'Đối với Gen Z, sự im lặng cũng là một thông điệp. Việc giữ im lặng trước các vấn đề xã hội lớn có thể bị coi là đồng lõa hoặc thiếu quan tâm, dẫn đến mất kết nối với khách hàng trẻ. Rủi ro của việc im lặng đôi khi còn lớn hơn rủi ro của việc lên tiếng.'
+        answer:
+          'Đối với Gen Z, sự im lặng cũng là một thông điệp. Việc giữ im lặng trước các vấn đề xã hội lớn có thể bị coi là đồng lõa hoặc thiếu quan tâm, dẫn đến mất kết nối với khách hàng trẻ. Rủi ro của việc im lặng đôi khi còn lớn hơn rủi ro của việc lên tiếng.',
       },
       {
         question: 'Làm thế nào để nhân viên có thể tham gia vào các hoạt động xã hội của công ty?',
-        answer: 'Công ty có thể tạo ra các chương trình tình nguyện, cho phép nhân viên đề xuất các dự án cộng đồng, thành lập các nhóm nội bộ tập trung vào các vấn đề cụ thể (như môi trường, D&I), và tạo cơ hội để nhân viên chia sẻ câu chuyện và kinh nghiệm của họ. Sự tham gia của nhân viên làm tăng tính chân thực cho các hoạt động của thương hiệu.'
+        answer:
+          'Công ty có thể tạo ra các chương trình tình nguyện, cho phép nhân viên đề xuất các dự án cộng đồng, thành lập các nhóm nội bộ tập trung vào các vấn đề cụ thể (như môi trường, D&I), và tạo cơ hội để nhân viên chia sẻ câu chuyện và kinh nghiệm của họ. Sự tham gia của nhân viên làm tăng tính chân thực cho các hoạt động của thương hiệu.',
       },
       {
-        question: 'Sự khác biệt giữa Trách nhiệm xã hội của doanh nghiệp (CSR) và Chủ nghĩa tích cực thương hiệu (Brand Activism) là gì?',
-        answer: 'CSR truyền thống thường tập trung vào các hoạt động từ thiện hoặc tuân thủ quy định, đôi khi tách biệt với hoạt động kinh doanh cốt lõi. Brand Activism đi xa hơn, chủ động đưa ra lập trường về các vấn đề gây tranh cãi và tích hợp các giá trị đó vào mô hình kinh doanh và chiến lược thương hiệu một cách công khai.'
+        question:
+          'Sự khác biệt giữa Trách nhiệm xã hội của doanh nghiệp (CSR) và Chủ nghĩa tích cực thương hiệu (Brand Activism) là gì?',
+        answer:
+          'CSR truyền thống thường tập trung vào các hoạt động từ thiện hoặc tuân thủ quy định, đôi khi tách biệt với hoạt động kinh doanh cốt lõi. Brand Activism đi xa hơn, chủ động đưa ra lập trường về các vấn đề gây tranh cãi và tích hợp các giá trị đó vào mô hình kinh doanh và chiến lược thương hiệu một cách công khai.',
       },
       {
         question: 'Một ví dụ về "purpose-driven" marketing thất bại ở Việt Nam là gì?',
-        answer: 'Một số chiến dịch có thể thất bại nếu chúng đi ngược lại văn hóa hoặc bị coi là không chân thành. Ví dụ, một thương hiệu quốc tế áp đặt một thông điệp về nữ quyền cực đoan mà không xem xét bối cảnh văn hóa Á Đông có thể gây ra phản ứng tiêu cực. Sự nhạy cảm văn hóa là yếu tố cực kỳ quan trọng.'
+        answer:
+          'Một số chiến dịch có thể thất bại nếu chúng đi ngược lại văn hóa hoặc bị coi là không chân thành. Ví dụ, một thương hiệu quốc tế áp đặt một thông điệp về nữ quyền cực đoan mà không xem xét bối cảnh văn hóa Á Đông có thể gây ra phản ứng tiêu cực. Sự nhạy cảm văn hóa là yếu tố cực kỳ quan trọng.',
       },
       {
         question: 'Làm thế nào để cân bằng giữa mục tiêu kinh doanh và mục tiêu xã hội?',
-        answer: 'Cách tốt nhất là tìm ra điểm giao thoa, nơi mà việc giải quyết một vấn đề xã hội cũng mang lại lợi ích cho kinh doanh. Ví dụ, một công ty thực phẩm đầu tư vào nông nghiệp bền vững không chỉ giúp môi trường mà còn đảm bảo nguồn cung ứng chất lượng cao và tạo ra một câu chuyện thương hiệu hấp dẫn. Đây được gọi là "tạo ra giá trị chung" (creating shared value).'
-      }
+        answer:
+          'Cách tốt nhất là tìm ra điểm giao thoa, nơi mà việc giải quyết một vấn đề xã hội cũng mang lại lợi ích cho kinh doanh. Ví dụ, một công ty thực phẩm đầu tư vào nông nghiệp bền vững không chỉ giúp môi trường mà còn đảm bảo nguồn cung ứng chất lượng cao và tạo ra một câu chuyện thương hiệu hấp dẫn. Đây được gọi là "tạo ra giá trị chung" (creating shared value).',
+      },
     ],
     exercises: [
       {

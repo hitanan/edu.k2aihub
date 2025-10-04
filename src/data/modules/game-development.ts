@@ -63,43 +63,53 @@ export const gameDevLessons: GameDevLesson[] = [
     faqs: [
       {
         question: 'Phát triển game có cần phải biết lập trình không?',
-        answer: 'Không hoàn toàn. Có nhiều vai trò trong ngành game không yêu cầu lập trình sâu như Game Designer, Game Artist, hoặc QA Tester. Tuy nhiên, hiểu biết cơ bản về lập trình là một lợi thế lớn cho hầu hết các vị trí.',
+        answer:
+          'Không hoàn toàn. Có nhiều vai trò trong ngành game không yêu cầu lập trình sâu như Game Designer, Game Artist, hoặc QA Tester. Tuy nhiên, hiểu biết cơ bản về lập trình là một lợi thế lớn cho hầu hết các vị trí.',
       },
       {
         question: 'Game Engine là gì và tại sao nó quan trọng?',
-        answer: 'Game Engine là một bộ công cụ và thư viện phần mềm được thiết kế để xây dựng và phát triển game. Nó cung cấp các chức năng cốt lõi như đồ họa, vật lý, âm thanh, và trí tuệ nhân tạo, giúp các nhà phát triển tiết kiệm thời gian và công sức.',
+        answer:
+          'Game Engine là một bộ công cụ và thư viện phần mềm được thiết kế để xây dựng và phát triển game. Nó cung cấp các chức năng cốt lõi như đồ họa, vật lý, âm thanh, và trí tuệ nhân tạo, giúp các nhà phát triển tiết kiệm thời gian và công sức.',
       },
       {
         question: 'Sự khác biệt chính giữa Unity và Unreal Engine là gì?',
-        answer: 'Unity sử dụng ngôn ngữ C# và nổi tiếng với sự linh hoạt, cộng đồng lớn, phù hợp cho game mobile và game độc lập. Unreal Engine sử dụng C++ và hệ thống Blueprint, nổi bật với khả năng đồ họa đỉnh cao, thường được dùng cho các game AAA.',
+        answer:
+          'Unity sử dụng ngôn ngữ C# và nổi tiếng với sự linh hoạt, cộng đồng lớn, phù hợp cho game mobile và game độc lập. Unreal Engine sử dụng C++ và hệ thống Blueprint, nổi bật với khả năng đồ họa đỉnh cao, thường được dùng cho các game AAA.',
       },
       {
         question: 'Game Design là gì?',
-        answer: 'Game Design là nghệ thuật và khoa học của việc tạo ra các quy tắc và nội dung của một trò chơi. Game Designer quyết định trải nghiệm của người chơi sẽ như thế nào, từ cơ chế gameplay, cốt truyện, đến cách người chơi tương tác với thế giới game.',
+        answer:
+          'Game Design là nghệ thuật và khoa học của việc tạo ra các quy tắc và nội dung của một trò chơi. Game Designer quyết định trải nghiệm của người chơi sẽ như thế nào, từ cơ chế gameplay, cốt truyện, đến cách người chơi tương tác với thế giới game.',
       },
       {
         question: 'Quy trình phát triển một game thường gồm những giai đoạn nào?',
-        answer: 'Một quy trình điển hình bao gồm 3 giai đoạn chính: Tiền sản xuất (lên ý tưởng, thiết kế), Sản xuất (lập trình, vẽ đồ họa, tạo âm thanh), và Hậu sản xuất (kiểm thử, sửa lỗi, marketing, và phát hành).',
+        answer:
+          'Một quy trình điển hình bao gồm 3 giai đoạn chính: Tiền sản xuất (lên ý tưởng, thiết kế), Sản xuất (lập trình, vẽ đồ họa, tạo âm thanh), và Hậu sản xuất (kiểm thử, sửa lỗi, marketing, và phát hành).',
       },
       {
         question: 'Làm thế nào để bắt đầu sự nghiệp trong ngành game tại Việt Nam?',
-        answer: 'Hãy bắt đầu bằng việc tự học một game engine (như Unity), tham gia các cộng đồng game dev, làm các dự án nhỏ để xây dựng portfolio, và ứng tuyển vào các vị trí thực tập sinh hoặc junior tại các công ty game như VNG, Amanotes, Gameloft.',
+        answer:
+          'Hãy bắt đầu bằng việc tự học một game engine (như Unity), tham gia các cộng đồng game dev, làm các dự án nhỏ để xây dựng portfolio, và ứng tuyển vào các vị trí thực tập sinh hoặc junior tại các công ty game như VNG, Amanotes, Gameloft.',
       },
       {
         question: 'Gamification (Game hóa) là gì?',
-        answer: 'Gamification là việc áp dụng các yếu tố và cơ chế của game (như điểm số, huy hiệu, bảng xếp hạng) vào các lĩnh vực không phải game như giáo dục, marketing, hoặc công việc để tăng cường sự tương tác và động lực của người dùng.',
+        answer:
+          'Gamification là việc áp dụng các yếu tố và cơ chế của game (như điểm số, huy hiệu, bảng xếp hạng) vào các lĩnh vực không phải game như giáo dục, marketing, hoặc công việc để tăng cường sự tương tác và động lực của người dùng.',
       },
       {
         question: 'Ngành công nghiệp game có những cơ hội nghề nghiệp nào khác ngoài các vai trò truyền thống?',
-        answer: 'Có rất nhiều cơ hội khác như: Quản lý cộng đồng (Community Manager), Chuyên gia phân tích dữ liệu game (Game Data Analyst), Nhà báo game (Game Journalist), Streamer/Content Creator, và chuyên gia về eSports.',
+        answer:
+          'Có rất nhiều cơ hội khác như: Quản lý cộng đồng (Community Manager), Chuyên gia phân tích dữ liệu game (Game Data Analyst), Nhà báo game (Game Journalist), Streamer/Content Creator, và chuyên gia về eSports.',
       },
       {
         question: 'Để trở thành một Game Artist cần những kỹ năng gì?',
-        answer: 'Một Game Artist cần có kỹ năng về mỹ thuật (vẽ, màu sắc, bố cục), thành thạo các công cụ kỹ thuật số (như Photoshop, Blender, ZBrush), và hiểu biết về phong cách đồ họa của game. Kỹ năng về 2D, 3D, animation, và UI/UX đều rất có giá trị.',
+        answer:
+          'Một Game Artist cần có kỹ năng về mỹ thuật (vẽ, màu sắc, bố cục), thành thạo các công cụ kỹ thuật số (như Photoshop, Blender, ZBrush), và hiểu biết về phong cách đồ họa của game. Kỹ năng về 2D, 3D, animation, và UI/UX đều rất có giá trị.',
       },
       {
         question: 'Tại sao kiểm thử (QA - Quality Assurance) lại quan trọng trong phát triển game?',
-        answer: 'QA đảm bảo rằng game hoạt động đúng như thiết kế, không có lỗi nghiêm trọng, và mang lại trải nghiệm tốt cho người chơi. Một game có nhiều lỗi có thể phá hỏng danh tiếng của nhà phát triển và dẫn đến thất bại về mặt thương mại.',
+        answer:
+          'QA đảm bảo rằng game hoạt động đúng như thiết kế, không có lỗi nghiêm trọng, và mang lại trải nghiệm tốt cho người chơi. Một game có nhiều lỗi có thể phá hỏng danh tiếng của nhà phát triển và dẫn đến thất bại về mặt thương mại.',
       },
     ],
     imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop',

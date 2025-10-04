@@ -91,28 +91,34 @@ export const kitchenChemistryLessons: KitchenChemistryLesson[] = [
       },
       {
         question: 'Phản ứng Maillard có xảy ra trong lò vi sóng không?',
-        answer: 'Thường là không. Lò vi sóng làm nóng thực phẩm bằng cách kích thích các phân tử nước, giữ cho nhiệt độ bề mặt ở khoảng 100°C, quá thấp để phản ứng Maillard diễn ra hiệu quả. Đây là lý do tại sao thực phẩm nấu bằng lò vi sóng thường không có lớp vỏ màu nâu hấp dẫn.'
+        answer:
+          'Thường là không. Lò vi sóng làm nóng thực phẩm bằng cách kích thích các phân tử nước, giữ cho nhiệt độ bề mặt ở khoảng 100°C, quá thấp để phản ứng Maillard diễn ra hiệu quả. Đây là lý do tại sao thực phẩm nấu bằng lò vi sóng thường không có lớp vỏ màu nâu hấp dẫn.',
       },
       {
         question: 'Những thực phẩm nào là ví dụ điển hình của phản ứng Maillard?',
-        answer: 'Rất nhiều! Vỏ bánh mì nướng, bề mặt cháy xém của miếng bít tết, khoai tây chiên vàng giòn, hành tây phi thơm, màu nâu của cà phê và sô cô la đều là kết quả của phản ứng Maillard.'
+        answer:
+          'Rất nhiều! Vỏ bánh mì nướng, bề mặt cháy xém của miếng bít tết, khoai tây chiên vàng giòn, hành tây phi thơm, màu nâu của cà phê và sô cô la đều là kết quả của phản ứng Maillard.',
       },
       {
         question: 'Phản ứng Maillard có hại cho sức khỏe không?',
-        answer: 'Đây là một vấn đề phức tạp. Phản ứng Maillard tạo ra hương vị tuyệt vời, nhưng ở nhiệt độ rất cao, nó cũng có thể tạo ra một lượng nhỏ các hợp chất có khả năng gây hại như acrylamide, đặc biệt là trong thực phẩm giàu carbohydrate. Tuy nhiên, với một chế độ ăn uống cân bằng, lợi ích về hương vị thường được coi là lớn hơn nguy cơ tiềm ẩn.'
+        answer:
+          'Đây là một vấn đề phức tạp. Phản ứng Maillard tạo ra hương vị tuyệt vời, nhưng ở nhiệt độ rất cao, nó cũng có thể tạo ra một lượng nhỏ các hợp chất có khả năng gây hại như acrylamide, đặc biệt là trong thực phẩm giàu carbohydrate. Tuy nhiên, với một chế độ ăn uống cân bằng, lợi ích về hương vị thường được coi là lớn hơn nguy cơ tiềm ẩn.',
       },
       {
         question: 'Vai trò của độ pH trong phản ứng Maillard là gì?',
-        answer: 'Phản ứng Maillard diễn ra nhanh hơn trong môi trường kiềm (pH cao). Đây là lý do tại sao một số công thức làm bánh quy có thêm một chút baking soda (một chất kiềm) để giúp bánh có màu nâu vàng đẹp mắt và nhanh hơn.'
+        answer:
+          'Phản ứng Maillard diễn ra nhanh hơn trong môi trường kiềm (pH cao). Đây là lý do tại sao một số công thức làm bánh quy có thêm một chút baking soda (một chất kiềm) để giúp bánh có màu nâu vàng đẹp mắt và nhanh hơn.',
       },
       {
         question: 'Có thể có phản ứng Maillard mà không cần nhiệt độ cao không?',
-        answer: 'Có, nhưng rất chậm. Phản ứng Maillard có thể xảy ra ở nhiệt độ phòng trong thời gian dài. Đây là một trong những lý do khiến các loại thực phẩm lưu trữ lâu ngày như sữa đặc có thể dần chuyển sang màu nâu và thay đổi hương vị.'
+        answer:
+          'Có, nhưng rất chậm. Phản ứng Maillard có thể xảy ra ở nhiệt độ phòng trong thời gian dài. Đây là một trong những lý do khiến các loại thực phẩm lưu trữ lâu ngày như sữa đặc có thể dần chuyển sang màu nâu và thay đổi hương vị.',
       },
       {
         question: 'Tại sao hành tây khi xào lại có vị ngọt và thơm?',
-        answer: 'Khi xào hành tây, nhiệt độ cao không chỉ gây ra phản ứng Maillard (tạo ra màu nâu và hương vị phức tạp) mà còn phá vỡ các phân tử đường phức tạp trong hành tây thành các phân tử đường đơn giản hơn, làm cho chúng có vị ngọt hơn.'
-      }
+        answer:
+          'Khi xào hành tây, nhiệt độ cao không chỉ gây ra phản ứng Maillard (tạo ra màu nâu và hương vị phức tạp) mà còn phá vỡ các phân tử đường phức tạp trong hành tây thành các phân tử đường đơn giản hơn, làm cho chúng có vị ngọt hơn.',
+      },
     ],
     realWorldApplications: ['Nướng bánh mì', 'Rang cà phê', 'Áp chảo thịt'],
   },
@@ -148,44 +154,54 @@ export const kitchenChemistryLessons: KitchenChemistryLesson[] = [
     faqs: [
       {
         question: 'Nhũ tương là gì?',
-        answer: 'Nhũ tương là một hỗn hợp gồm hai chất lỏng thường không hòa tan vào nhau, như dầu và nước, trong đó một chất lỏng được phân tán thành các giọt nhỏ li ti trong chất lỏng kia. Sữa, sốt mayonnaise và sốt salad là những ví dụ về nhũ tương trong thực phẩm.'
+        answer:
+          'Nhũ tương là một hỗn hợp gồm hai chất lỏng thường không hòa tan vào nhau, như dầu và nước, trong đó một chất lỏng được phân tán thành các giọt nhỏ li ti trong chất lỏng kia. Sữa, sốt mayonnaise và sốt salad là những ví dụ về nhũ tương trong thực phẩm.',
       },
       {
         question: 'Chất nhũ hóa là gì và nó hoạt động như thế nào?',
-        answer: 'Chất nhũ hóa là một phân tử đặc biệt có hai đầu: một đầu "ưa nước" (hòa tan trong nước) và một đầu "ưa dầu" (hòa tan trong dầu). Nó hoạt động như một cầu nối, bao bọc các giọt dầu nhỏ và giúp chúng phân tán đều trong nước mà không bị tách lớp.'
+        answer:
+          'Chất nhũ hóa là một phân tử đặc biệt có hai đầu: một đầu "ưa nước" (hòa tan trong nước) và một đầu "ưa dầu" (hòa tan trong dầu). Nó hoạt động như một cầu nối, bao bọc các giọt dầu nhỏ và giúp chúng phân tán đều trong nước mà không bị tách lớp.',
       },
       {
         question: 'Lecithin trong lòng đỏ trứng hoạt động như một chất nhũ hóa như thế nào?',
-        answer: 'Lecithin là một chất nhũ hóa tự nhiên mạnh mẽ có trong lòng đỏ trứng. Phân tử lecithin có một đầu phosphate ưa nước và một đầu axit béo ưa dầu. Khi làm mayonnaise, đầu ưa dầu của lecithin bám vào các giọt dầu, trong khi đầu ưa nước hướng ra ngoài, tương tác với nước (từ lòng đỏ và giấm/chanh), tạo ra một hỗn hợp ổn định.'
+        answer:
+          'Lecithin là một chất nhũ hóa tự nhiên mạnh mẽ có trong lòng đỏ trứng. Phân tử lecithin có một đầu phosphate ưa nước và một đầu axit béo ưa dầu. Khi làm mayonnaise, đầu ưa dầu của lecithin bám vào các giọt dầu, trong khi đầu ưa nước hướng ra ngoài, tương tác với nước (từ lòng đỏ và giấm/chanh), tạo ra một hỗn hợp ổn định.',
       },
       {
         question: 'Tại sao sốt mayonnaise của tôi bị tách lớp (bị vữa)?',
-        answer: 'Mayonnaise bị tách lớp thường do thêm dầu vào quá nhanh. Khi đó, các chất nhũ hóa trong lòng đỏ trứng không có đủ thời gian để bao bọc các giọt dầu, khiến chúng kết tụ lại với nhau và tách ra khỏi phần nước.'
+        answer:
+          'Mayonnaise bị tách lớp thường do thêm dầu vào quá nhanh. Khi đó, các chất nhũ hóa trong lòng đỏ trứng không có đủ thời gian để bao bọc các giọt dầu, khiến chúng kết tụ lại với nhau và tách ra khỏi phần nước.',
       },
       {
         question: 'Làm thế nào để "cứu" một mẻ mayonnaise bị hỏng?',
-        answer: 'Bạn có thể thử "cứu" nó. Lấy một lòng đỏ trứng mới vào một bát sạch, sau đó từ từ nhỏ từng giọt hỗn hợp mayonnaise hỏng vào và đánh đều. Lòng đỏ trứng mới sẽ cung cấp thêm chất nhũ hóa để ổn định lại hỗn hợp.'
+        answer:
+          'Bạn có thể thử "cứu" nó. Lấy một lòng đỏ trứng mới vào một bát sạch, sau đó từ từ nhỏ từng giọt hỗn hợp mayonnaise hỏng vào và đánh đều. Lòng đỏ trứng mới sẽ cung cấp thêm chất nhũ hóa để ổn định lại hỗn hợp.',
       },
       {
         question: 'Ngoài mayonnaise, có những loại nhũ tương thực phẩm phổ biến nào khác?',
-        answer: 'Rất nhiều! Sữa là một nhũ tương của chất béo trong nước. Bơ là một nhũ tương của nước trong chất béo. Các loại sốt salad (vinaigrette), kem, và sô cô la cũng là những ví dụ về nhũ tương.'
+        answer:
+          'Rất nhiều! Sữa là một nhũ tương của chất béo trong nước. Bơ là một nhũ tương của nước trong chất béo. Các loại sốt salad (vinaigrette), kem, và sô cô la cũng là những ví dụ về nhũ tương.',
       },
       {
         question: 'Sự khác biệt giữa nhũ tương tạm thời và nhũ tương vĩnh viễn là gì?',
-        answer: 'Nhũ tương tạm thời, như sốt dầu giấm đơn giản (dầu và giấm), sẽ nhanh chóng tách lớp sau khi bạn ngừng lắc. Nhũ tương vĩnh viễn, như mayonnaise, có chứa một chất nhũ hóa mạnh giúp nó giữ được sự ổn định trong một thời gian dài.'
+        answer:
+          'Nhũ tương tạm thời, như sốt dầu giấm đơn giản (dầu và giấm), sẽ nhanh chóng tách lớp sau khi bạn ngừng lắc. Nhũ tương vĩnh viễn, như mayonnaise, có chứa một chất nhũ hóa mạnh giúp nó giữ được sự ổn định trong một thời gian dài.',
       },
       {
         question: 'Có thể làm mayonnaise mà không cần trứng không?',
-        answer: 'Có, bạn có thể làm mayonnaise thuần chay. Thay vì lòng đỏ trứng, bạn có thể sử dụng các chất nhũ hóa khác như aquafaba (nước luộc đậu gà), protein đậu nành, hoặc các loại gôm thực vật.'
+        answer:
+          'Có, bạn có thể làm mayonnaise thuần chay. Thay vì lòng đỏ trứng, bạn có thể sử dụng các chất nhũ hóa khác như aquafaba (nước luộc đậu gà), protein đậu nành, hoặc các loại gôm thực vật.',
       },
       {
         question: 'Vai trò của mù tạt trong công thức làm mayonnaise là gì?',
-        answer: 'Mù tạt đóng hai vai trò. Thứ nhất, nó thêm hương vị. Thứ hai, hạt mù tạt chứa một lượng nhỏ chất nhũ hóa tự nhiên và có thể giúp ổn định nhũ tương, làm cho quá trình làm mayonnaise dễ dàng hơn một chút.'
+        answer:
+          'Mù tạt đóng hai vai trò. Thứ nhất, nó thêm hương vị. Thứ hai, hạt mù tạt chứa một lượng nhỏ chất nhũ hóa tự nhiên và có thể giúp ổn định nhũ tương, làm cho quá trình làm mayonnaise dễ dàng hơn một chút.',
       },
       {
         question: 'Tại sao phải thêm dầu từ từ khi làm nhũ tương?',
-        answer: 'Việc thêm dầu từ từ cho phép lực cắt từ việc đánh (bằng phới hoặc máy) phá vỡ dầu thành các giọt nhỏ. Điều này tạo ra diện tích bề mặt lớn hơn cho các chất nhũ hóa bám vào và bao bọc các giọt dầu, ngăn chúng kết tụ lại với nhau.'
-      }
+        answer:
+          'Việc thêm dầu từ từ cho phép lực cắt từ việc đánh (bằng phới hoặc máy) phá vỡ dầu thành các giọt nhỏ. Điều này tạo ra diện tích bề mặt lớn hơn cho các chất nhũ hóa bám vào và bao bọc các giọt dầu, ngăn chúng kết tụ lại với nhau.',
+      },
     ],
     realWorldApplications: ['Sản xuất sốt salad', 'Làm kem', 'Dược phẩm'],
   },

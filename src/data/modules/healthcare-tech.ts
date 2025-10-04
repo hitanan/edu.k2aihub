@@ -327,35 +327,43 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     faqs: [
       {
         question: 'Dữ liệu lớn (Big Data) trong y tế là gì?',
-        answer: 'Dữ liệu lớn trong y tế bao gồm tất cả các dữ liệu liên quan đến sức khỏe bệnh nhân, từ hồ sơ bệnh án điện tử, kết quả xét nghiệm, hình ảnh y khoa (X-quang, MRI), dữ liệu từ thiết bị đeo, cho đến dữ liệu gen. Khối lượng dữ liệu này quá lớn và phức tạp để có thể xử lý bằng các phương pháp truyền thống.',
+        answer:
+          'Dữ liệu lớn trong y tế bao gồm tất cả các dữ liệu liên quan đến sức khỏe bệnh nhân, từ hồ sơ bệnh án điện tử, kết quả xét nghiệm, hình ảnh y khoa (X-quang, MRI), dữ liệu từ thiết bị đeo, cho đến dữ liệu gen. Khối lượng dữ liệu này quá lớn và phức tạp để có thể xử lý bằng các phương pháp truyền thống.',
       },
       {
         question: 'Làm thế nào AI có thể giúp phân tích dữ liệu y tế?',
-        answer: 'AI, đặc biệt là Machine Learning, có thể phát hiện các mẫu và mối tương quan trong dữ liệu lớn mà con người khó có thể nhận ra. Ví dụ, AI có thể phân tích hình ảnh y tế để phát hiện sớm các dấu hiệu ung thư, hoặc dự đoán nguy cơ mắc bệnh tim dựa trên lịch sử sức khỏe của bệnh nhân.',
+        answer:
+          'AI, đặc biệt là Machine Learning, có thể phát hiện các mẫu và mối tương quan trong dữ liệu lớn mà con người khó có thể nhận ra. Ví dụ, AI có thể phân tích hình ảnh y tế để phát hiện sớm các dấu hiệu ung thư, hoặc dự đoán nguy cơ mắc bệnh tim dựa trên lịch sử sức khỏe của bệnh nhân.',
       },
       {
         question: 'Tại sao việc quản trị dữ liệu lại quan trọng trong y tế?',
-        answer: 'Quản trị dữ liệu đảm bảo rằng dữ liệu y tế là chính xác, nhất quán, an toàn và có thể truy cập được. Nếu không có quản trị tốt, các phân tích sẽ dựa trên dữ liệu sai lệch, dẫn đến các quyết định lâm sàng không chính xác và gây nguy hiểm cho bệnh nhân.',
+        answer:
+          'Quản trị dữ liệu đảm bảo rằng dữ liệu y tế là chính xác, nhất quán, an toàn và có thể truy cập được. Nếu không có quản trị tốt, các phân tích sẽ dựa trên dữ liệu sai lệch, dẫn đến các quyết định lâm sàng không chính xác và gây nguy hiểm cho bệnh nhân.',
       },
       {
         question: 'Phân tích dự đoán (predictive analytics) được sử dụng trong y tế như thế nào?',
-        answer: 'Phân tích dự đoán sử dụng dữ liệu lịch sử để dự báo các sự kiện trong tương lai. Trong y tế, nó có thể được dùng để dự đoán bệnh nhân nào có nguy cơ tái nhập viện cao, dự báo sự bùng phát của một dịch bệnh trong cộng đồng, hoặc xác định bệnh nhân nào sẽ phản ứng tốt với một loại thuốc cụ thể.',
+        answer:
+          'Phân tích dự đoán sử dụng dữ liệu lịch sử để dự báo các sự kiện trong tương lai. Trong y tế, nó có thể được dùng để dự đoán bệnh nhân nào có nguy cơ tái nhập viện cao, dự báo sự bùng phát của một dịch bệnh trong cộng đồng, hoặc xác định bệnh nhân nào sẽ phản ứng tốt với một loại thuốc cụ thể.',
       },
       {
         question: 'Thách thức lớn nhất trong việc chia sẻ dữ liệu y tế giữa các bệnh viện là gì?',
-        answer: 'Thách thức lớn nhất là tính không tương thích của các hệ thống. Mỗi bệnh viện có thể sử dụng một hệ thống bệnh án điện tử khác nhau với các định dạng dữ liệu khác nhau. Việc thiếu một tiêu chuẩn chung gây khó khăn cho việc trao đổi và tổng hợp dữ liệu một cách liền mạch.',
+        answer:
+          'Thách thức lớn nhất là tính không tương thích của các hệ thống. Mỗi bệnh viện có thể sử dụng một hệ thống bệnh án điện tử khác nhau với các định dạng dữ liệu khác nhau. Việc thiếu một tiêu chuẩn chung gây khó khăn cho việc trao đổi và tổng hợp dữ liệu một cách liền mạch.',
       },
       {
         question: 'Dữ liệu y tế có thể được sử dụng để cải thiện sức khỏe cộng đồng như thế nào?',
-        answer: 'Bằng cách phân tích dữ liệu sức khỏe ẩn danh từ một lượng lớn dân số, các cơ quan y tế công cộng có thể xác định các xu hướng bệnh tật, phân bổ nguồn lực hiệu quả hơn, đánh giá tác động của các chiến dịch tiêm chủng, và phát hiện sớm các ổ dịch tiềm tàng.',
+        answer:
+          'Bằng cách phân tích dữ liệu sức khỏe ẩn danh từ một lượng lớn dân số, các cơ quan y tế công cộng có thể xác định các xu hướng bệnh tật, phân bổ nguồn lực hiệu quả hơn, đánh giá tác động của các chiến dịch tiêm chủng, và phát hiện sớm các ổ dịch tiềm tàng.',
       },
       {
         question: 'Bệnh án điện tử (EMR) là gì và lợi ích của nó là gì?',
-        answer: 'Bệnh án điện tử (Electronic Medical Record) là phiên bản số của bệnh án giấy. Lợi ích của nó bao gồm việc truy cập thông tin bệnh nhân nhanh chóng, giảm sai sót y khoa do chữ viết tay, hỗ trợ ra quyết định lâm sàng, và tạo điều kiện cho việc phân tích dữ liệu trên quy mô lớn.',
+        answer:
+          'Bệnh án điện tử (Electronic Medical Record) là phiên bản số của bệnh án giấy. Lợi ích của nó bao gồm việc truy cập thông tin bệnh nhân nhanh chóng, giảm sai sót y khoa do chữ viết tay, hỗ trợ ra quyết định lâm sàng, và tạo điều kiện cho việc phân tích dữ liệu trên quy mô lớn.',
       },
       {
         question: 'Làm thế nào để trở thành một nhà phân tích dữ liệu trong lĩnh vực y tế?',
-        answer: 'Bạn cần có một nền tảng vững chắc về thống kê, khoa học máy tính và kỹ năng lập trình (như Python hoặc R). Ngoài ra, việc có kiến thức về các thuật ngữ y khoa, quy trình lâm sàng và các quy định về dữ liệu y tế (như HIPAA) là cực kỳ quan trọng.',
+        answer:
+          'Bạn cần có một nền tảng vững chắc về thống kê, khoa học máy tính và kỹ năng lập trình (như Python hoặc R). Ngoài ra, việc có kiến thức về các thuật ngữ y khoa, quy trình lâm sàng và các quy định về dữ liệu y tế (như HIPAA) là cực kỳ quan trọng.',
       },
     ],
   },
@@ -469,37 +477,45 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     faqs: [
       {
         question: 'IoT trong y tế (IoMT) là gì?',
-        answer: 'IoMT (Internet of Medical Things) là một hệ sinh thái gồm các thiết bị y tế, cảm biến, và ứng dụng phần mềm được kết nối với nhau qua internet. Mục tiêu của IoMT là thu thập, phân tích và chia sẻ dữ liệu sức khỏe để cải thiện việc chẩn đoán, điều trị và theo dõi bệnh nhân.'
+        answer:
+          'IoMT (Internet of Medical Things) là một hệ sinh thái gồm các thiết bị y tế, cảm biến, và ứng dụng phần mềm được kết nối với nhau qua internet. Mục tiêu của IoMT là thu thập, phân tích và chia sẻ dữ liệu sức khỏe để cải thiện việc chẩn đoán, điều trị và theo dõi bệnh nhân.',
       },
       {
         question: 'Một ví dụ về thiết bị đeo (wearable) trong y tế là gì?',
-        answer: 'Đồng hồ thông minh có khả năng đo điện tâm đồ (ECG) là một ví dụ điển hình. Nó có thể theo dõi nhịp tim bất thường và cảnh báo người dùng về nguy cơ rung tâm nhĩ, một tình trạng có thể dẫn đến đột quỵ. Dữ liệu này có thể được chia sẻ với bác sĩ để chẩn đoán chính xác hơn.'
+        answer:
+          'Đồng hồ thông minh có khả năng đo điện tâm đồ (ECG) là một ví dụ điển hình. Nó có thể theo dõi nhịp tim bất thường và cảnh báo người dùng về nguy cơ rung tâm nhĩ, một tình trạng có thể dẫn đến đột quỵ. Dữ liệu này có thể được chia sẻ với bác sĩ để chẩn đoán chính xác hơn.',
       },
       {
         question: 'Làm thế nào IoT giúp quản lý bệnh viện thông minh?',
-        answer: 'IoT giúp tự động hóa nhiều quy trình. Ví dụ, giường bệnh thông minh có thể tự động phát hiện khi bệnh nhân rời khỏi giường và gửi cảnh báo để tránh té ngã. Cảm biến trên các thiết bị y tế có thể theo dõi vị trí của chúng, giúp nhân viên y tế nhanh chóng tìm thấy khi cần.'
+        answer:
+          'IoT giúp tự động hóa nhiều quy trình. Ví dụ, giường bệnh thông minh có thể tự động phát hiện khi bệnh nhân rời khỏi giường và gửi cảnh báo để tránh té ngã. Cảm biến trên các thiết bị y tế có thể theo dõi vị trí của chúng, giúp nhân viên y tế nhanh chóng tìm thấy khi cần.',
       },
       {
         question: 'Bảo mật là một thách thức lớn như thế nào đối với các thiết bị IoMT?',
-        answer: 'Bảo mật là một thách thức cực kỳ lớn. Vì các thiết bị này thu thập dữ liệu sức khỏe nhạy cảm và thường được kết nối với mạng, chúng có thể trở thành mục tiêu của tin tặc. Một cuộc tấn công có thể làm rò rỉ thông tin cá nhân hoặc thậm chí làm thay đổi hoạt động của thiết bị, gây nguy hiểm trực tiếp đến bệnh nhân.'
+        answer:
+          'Bảo mật là một thách thức cực kỳ lớn. Vì các thiết bị này thu thập dữ liệu sức khỏe nhạy cảm và thường được kết nối với mạng, chúng có thể trở thành mục tiêu của tin tặc. Một cuộc tấn công có thể làm rò rỉ thông tin cá nhân hoặc thậm chí làm thay đổi hoạt động của thiết bị, gây nguy hiểm trực tiếp đến bệnh nhân.',
       },
       {
         question: 'ISO 13485 là tiêu chuẩn gì?',
-        answer: 'ISO 13485 là một tiêu chuẩn quốc tế quy định các yêu cầu đối với hệ thống quản lý chất lượng dành cho các nhà sản xuất thiết bị y tế. Việc tuân thủ tiêu chuẩn này đảm bảo rằng sản phẩm được thiết kế, sản xuất và kiểm soát một cách nhất quán để đáp ứng các yêu cầu an toàn và hiệu quả.'
+        answer:
+          'ISO 13485 là một tiêu chuẩn quốc tế quy định các yêu cầu đối với hệ thống quản lý chất lượng dành cho các nhà sản xuất thiết bị y tế. Việc tuân thủ tiêu chuẩn này đảm bảo rằng sản phẩm được thiết kế, sản xuất và kiểm soát một cách nhất quán để đáp ứng các yêu cầu an toàn và hiệu quả.',
       },
       {
         question: 'Theo dõi bệnh nhân từ xa (RPM) hoạt động như thế nào?',
-        answer: 'RPM (Remote Patient Monitoring) sử dụng các thiết bị IoMT để thu thập các chỉ số sinh tồn của bệnh nhân (như huyết áp, đường huyết, nồng độ oxy) ngay tại nhà của họ. Dữ liệu này được truyền đến cho các nhà cung cấp dịch vụ y tế, cho phép họ theo dõi tình trạng bệnh nhân mãn tính và can thiệp sớm nếu có dấu hiệu bất thường.'
+        answer:
+          'RPM (Remote Patient Monitoring) sử dụng các thiết bị IoMT để thu thập các chỉ số sinh tồn của bệnh nhân (như huyết áp, đường huyết, nồng độ oxy) ngay tại nhà của họ. Dữ liệu này được truyền đến cho các nhà cung cấp dịch vụ y tế, cho phép họ theo dõi tình trạng bệnh nhân mãn tính và can thiệp sớm nếu có dấu hiệu bất thường.',
       },
       {
         question: 'Sự khác biệt giữa FDA và CE Mark là gì?',
-        answer: 'FDA (Food and Drug Administration) là cơ quan quản lý của Hoa Kỳ, chịu trách nhiệm phê duyệt các thiết bị y tế được bán tại Mỹ. CE Mark là một chứng nhận cho thấy sản phẩm tuân thủ các tiêu chuẩn về sức khỏe, an toàn và bảo vệ môi trường của Liên minh Châu Âu (EU). Một thiết bị cần có CE Mark để được bán trong khu vực EU.'
+        answer:
+          'FDA (Food and Drug Administration) là cơ quan quản lý của Hoa Kỳ, chịu trách nhiệm phê duyệt các thiết bị y tế được bán tại Mỹ. CE Mark là một chứng nhận cho thấy sản phẩm tuân thủ các tiêu chuẩn về sức khỏe, an toàn và bảo vệ môi trường của Liên minh Châu Âu (EU). Một thiết bị cần có CE Mark để được bán trong khu vực EU.',
       },
       {
         question: 'Làm thế nào IoT có thể giúp trong việc bảo trì dự đoán thiết bị y tế?',
-        answer: 'Các cảm biến được gắn trên thiết bị y tế (như máy MRI, máy X-quang) có thể liên tục theo dõi hiệu suất hoạt động của chúng. Bằng cách phân tích dữ liệu này, hệ thống có thể dự đoán khi nào một bộ phận có khả năng bị hỏng và lên lịch bảo trì trước khi sự cố xảy ra, giúp giảm thời gian chết của thiết bị và tiết kiệm chi phí.'
-      }
-    ]
+        answer:
+          'Các cảm biến được gắn trên thiết bị y tế (như máy MRI, máy X-quang) có thể liên tục theo dõi hiệu suất hoạt động của chúng. Bằng cách phân tích dữ liệu này, hệ thống có thể dự đoán khi nào một bộ phận có khả năng bị hỏng và lên lịch bảo trì trước khi sự cố xảy ra, giúp giảm thời gian chết của thiết bị và tiết kiệm chi phí.',
+      },
+    ],
   },
   {
     id: 'healthtech-entrepreneurship',
@@ -606,37 +622,45 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     faqs: [
       {
         question: 'HealthTech là gì?',
-        answer: 'HealthTech (Công nghệ Y tế) là việc áp dụng công nghệ thông tin, phần mềm, và các thiết bị kỹ thuật số để cải thiện việc cung cấp, thanh toán và/hoặc tiêu thụ các dịch vụ chăm sóc sức khỏe.'
+        answer:
+          'HealthTech (Công nghệ Y tế) là việc áp dụng công nghệ thông tin, phần mềm, và các thiết bị kỹ thuật số để cải thiện việc cung cấp, thanh toán và/hoặc tiêu thụ các dịch vụ chăm sóc sức khỏe.',
       },
       {
         question: 'Tại sao việc tuân thủ quy định lại đặc biệt quan trọng trong HealthTech?',
-        answer: 'Vì HealthTech tác động trực tiếp đến sức khỏe và tính mạng con người, nó phải tuân thủ các quy định nghiêm ngặt để đảm bảo an toàn, hiệu quả và bảo mật. Việc không tuân thủ có thể dẫn đến hậu quả pháp lý nghiêm trọng và làm mất lòng tin của người dùng.'
+        answer:
+          'Vì HealthTech tác động trực tiếp đến sức khỏe và tính mạng con người, nó phải tuân thủ các quy định nghiêm ngặt để đảm bảo an toàn, hiệu quả và bảo mật. Việc không tuân thủ có thể dẫn đến hậu quả pháp lý nghiêm trọng và làm mất lòng tin của người dùng.',
       },
       {
         question: 'Mô hình kinh doanh phổ biến trong HealthTech là gì?',
-        answer: 'Có nhiều mô hình, bao gồm: B2C (bán trực tiếp cho người tiêu dùng, ví dụ: ứng dụng sức khỏe), B2B (bán cho các tổ chức y tế, ví dụ: phần mềm quản lý bệnh viện), và B2B2C (hợp tác với doanh nghiệp để cung cấp dịch vụ cho nhân viên của họ).'
+        answer:
+          'Có nhiều mô hình, bao gồm: B2C (bán trực tiếp cho người tiêu dùng, ví dụ: ứng dụng sức khỏe), B2B (bán cho các tổ chức y tế, ví dụ: phần mềm quản lý bệnh viện), và B2B2C (hợp tác với doanh nghiệp để cung cấp dịch vụ cho nhân viên của họ).',
       },
       {
         question: 'Làm thế nào một startup HealthTech có thể xây dựng lòng tin với bác sĩ và bệnh nhân?',
-        answer: 'Xây dựng lòng tin đòi hỏi sự minh bạch, cung cấp các giải pháp dựa trên bằng chứng khoa học, hợp tác với các chuyên gia y tế uy tín, có chính sách bảo mật dữ liệu rõ ràng và cung cấp dịch vụ hỗ trợ khách hàng xuất sắc.'
+        answer:
+          'Xây dựng lòng tin đòi hỏi sự minh bạch, cung cấp các giải pháp dựa trên bằng chứng khoa học, hợp tác với các chuyên gia y tế uy tín, có chính sách bảo mật dữ liệu rõ ràng và cung cấp dịch vụ hỗ trợ khách hàng xuất sắc.',
       },
       {
         question: 'Nhà đầu tư mạo hiểm tìm kiếm điều gì ở một startup HealthTech?',
-        answer: 'Nhà đầu tư thường tìm kiếm một đội ngũ sáng lập mạnh mẽ, một giải pháp giải quyết một vấn đề lớn và có khả-năng-mở-rộng, một mô hình kinh doanh rõ ràng, và bằng chứng ban đầu về sự chấp nhận của thị trường (traction).'
+        answer:
+          'Nhà đầu tư thường tìm kiếm một đội ngũ sáng lập mạnh mẽ, một giải pháp giải quyết một vấn đề lớn và có khả-năng-mở-rộng, một mô hình kinh doanh rõ ràng, và bằng chứng ban đầu về sự chấp nhận của thị trường (traction).',
       },
       {
         question: 'Sự khác biệt giữa "wellness" app và "medical" app là gì?',
-        answer: 'Ứng dụng "wellness" (chăm sóc sức khỏe) thường tập trung vào lối sống và phòng ngừa (ví dụ: ứng dụng thiền, theo dõi thể dục). Ứng dụng "medical" (y tế) thường liên quan đến chẩn đoán, điều trị hoặc quản lý một tình huống bệnh cụ thể và thường phải tuân thủ các quy định y tế nghiêm ngặt hơn.'
+        answer:
+          'Ứng dụng "wellness" (chăm sóc sức khỏe) thường tập trung vào lối sống và phòng ngừa (ví dụ: ứng dụng thiền, theo dõi thể dục). Ứng dụng "medical" (y tế) thường liên quan đến chẩn đoán, điều trị hoặc quản lý một tình huống bệnh cụ thể và thường phải tuân thủ các quy định y tế nghiêm ngặt hơn.',
       },
       {
         question: 'Thị trường ngách (niche market) trong HealthTech là gì?',
-        answer: 'Đó là một phân khúc thị trường cụ thể, ví dụ như công nghệ hỗ trợ sức khỏe tâm thần cho người cao tuổi, nền tảng quản lý bệnh tiểu đường cho trẻ em, hoặc giải pháp y tế từ xa cho các chuyên khoa hiếm. Tập trung vào thị trường ngách có thể giúp startup cạnh tranh hiệu quả hơn.'
+        answer:
+          'Đó là một phân khúc thị trường cụ thể, ví dụ như công nghệ hỗ trợ sức khỏe tâm thần cho người cao tuổi, nền tảng quản lý bệnh tiểu đường cho trẻ em, hoặc giải pháp y tế từ xa cho các chuyên khoa hiếm. Tập trung vào thị trường ngách có thể giúp startup cạnh tranh hiệu quả hơn.',
       },
       {
         question: 'Làm thế nào để một startup HealthTech có thể mở rộng quy mô ra thị trường quốc tế?',
-        answer: 'Việc mở rộng ra quốc tế đòi hỏi phải nghiên cứu kỹ lưỡng và tuân thủ các quy định y tế của từng quốc gia, điều chỉnh sản phẩm cho phù hợp với văn hóa địa phương, và xây dựng quan hệ đối tác với các hệ thống y tế tại đó.'
-      }
-    ]
+        answer:
+          'Việc mở rộng ra quốc tế đòi hỏi phải nghiên cứu kỹ lưỡng và tuân thủ các quy định y tế của từng quốc gia, điều chỉnh sản phẩm cho phù hợp với văn hóa địa phương, và xây dựng quan hệ đối tác với các hệ thống y tế tại đó.',
+      },
+    ],
   },
   {
     id: 'mental-health-technology',
@@ -746,36 +770,45 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
     faqs: [
       {
         question: 'Sức khỏe tâm thần kỹ thuật số (Digital Mental Health) là gì?',
-        answer: 'Đây là lĩnh vực sử dụng công nghệ kỹ thuật số (như ứng dụng di động, nền tảng web, AI, VR) để cung cấp các dịch vụ và hỗ trợ liên quan đến sức khỏe tâm thần. Mục tiêu là làm cho việc chăm sóc sức khỏe tâm thần dễ tiếp cận, giá cả phải chăng và ít bị kỳ thị hơn.'
+        answer:
+          'Đây là lĩnh vực sử dụng công nghệ kỹ thuật số (như ứng dụng di động, nền tảng web, AI, VR) để cung cấp các dịch vụ và hỗ trợ liên quan đến sức khỏe tâm thần. Mục tiêu là làm cho việc chăm sóc sức khỏe tâm thần dễ tiếp cận, giá cả phải chăng và ít bị kỳ thị hơn.',
       },
       {
         question: 'Một ứng dụng sức khỏe tâm thần có thể thay thế một nhà trị liệu không?',
-        answer: 'Không. Các ứng dụng này là công cụ hỗ trợ tuyệt vời, giúp người dùng thực hành các kỹ năng, theo dõi tâm trạng và học hỏi kiến thức. Tuy nhiên, chúng không thể thay thế mối quan-hệ-trị-liệu và sự thấu cảm sâu sắc mà một chuyên gia sức khỏe tâm thần được đào tạo có thể cung cấp.'
+        answer:
+          'Không. Các ứng dụng này là công cụ hỗ trợ tuyệt vời, giúp người dùng thực hành các kỹ năng, theo dõi tâm trạng và học hỏi kiến thức. Tuy nhiên, chúng không thể thay thế mối quan-hệ-trị-liệu và sự thấu cảm sâu sắc mà một chuyên gia sức khỏe tâm thần được đào tạo có thể cung cấp.',
       },
       {
-        question: 'Liệu pháp Nhận thức Hành vi (CBT) là gì và nó được áp dụng trong các ứng dụng kỹ thuật số như thế nào?',
-        answer: 'CBT là một liệu pháp tâm lý dựa trên bằng chứng, giúp mọi người xác định và thay đổi các kiểu suy nghĩ và hành vi tiêu cực. Trong các ứng dụng, CBT thường được cung cấp dưới dạng các bài học có cấu trúc, bài tập viết nhật ký, và các hoạt động tương tác để người dùng có thể tự thực hành.'
+        question:
+          'Liệu pháp Nhận thức Hành vi (CBT) là gì và nó được áp dụng trong các ứng dụng kỹ thuật số như thế nào?',
+        answer:
+          'CBT là một liệu pháp tâm lý dựa trên bằng chứng, giúp mọi người xác định và thay đổi các kiểu suy nghĩ và hành vi tiêu cực. Trong các ứng dụng, CBT thường được cung cấp dưới dạng các bài học có cấu trúc, bài tập viết nhật ký, và các hoạt động tương tác để người dùng có thể tự thực hành.',
       },
       {
         question: 'Tại sao sự nhạy cảm văn hóa lại quan trọng khi thiết kế ứng dụng sức khỏe tâm thần cho Việt Nam?',
-        answer: 'Bởi vì cách thể hiện cảm xúc, quan niệm về sức khỏe tâm thần, và các mối quan-hệ-gia-đình ở Việt Nam có những đặc thù riêng. Một ứng dụng được thiết kế cho văn hóa phương Tây có thể không hiệu quả hoặc thậm chí gây phản tác dụng. Ví dụ, việc nhấn mạnh đến "cộng đồng" và "gia đình" có thể quan trọng hơn là chỉ tập trung vào "cá nhân".'
+        answer:
+          'Bởi vì cách thể hiện cảm xúc, quan niệm về sức khỏe tâm thần, và các mối quan-hệ-gia-đình ở Việt Nam có những đặc thù riêng. Một ứng dụng được thiết kế cho văn hóa phương Tây có thể không hiệu quả hoặc thậm chí gây phản tác dụng. Ví dụ, việc nhấn mạnh đến "cộng đồng" và "gia đình" có thể quan trọng hơn là chỉ tập trung vào "cá nhân".',
       },
       {
         question: 'Làm thế nào để biết một ứng dụng sức khỏe tâm thần là đáng tin cậy?',
-        answer: 'Hãy tìm kiếm các ứng dụng được phát triển dựa trên các nguyên tắc khoa học (evidence-based), có sự tham vấn của các chuyên gia sức khỏe tâm thần, có chính sách bảo mật rõ ràng, và có các đánh giá tích cực từ người dùng khác. Tránh các ứng dụng đưa ra những lời hứa hẹn chữa khỏi bệnh một cách thần kỳ.'
+        answer:
+          'Hãy tìm kiếm các ứng dụng được phát triển dựa trên các nguyên tắc khoa học (evidence-based), có sự tham vấn của các chuyên gia sức khỏe tâm thần, có chính sách bảo mật rõ ràng, và có các đánh giá tích cực từ người dùng khác. Tránh các ứng dụng đưa ra những lời hứa hẹn chữa khỏi bệnh một cách thần kỳ.',
       },
       {
         question: 'AI được sử dụng trong công nghệ sức khỏe tâm thần như thế nào?',
-        answer: 'AI có thể được sử dụng để cung cấp các chatbot trị liệu cơ bản, phân tích giọng nói hoặc văn bản để phát hiện các dấu hiệu trầm cảm, cá nhân hóa nội dung can thiệp cho người dùng, và dự đoán các giai đoạn khủng hoảng tiềm ẩn.'
+        answer:
+          'AI có thể được sử dụng để cung cấp các chatbot trị liệu cơ bản, phân tích giọng nói hoặc văn bản để phát hiện các dấu hiệu trầm cảm, cá nhân hóa nội dung can thiệp cho người dùng, và dự đoán các giai đoạn khủng hoảng tiềm ẩn.',
       },
       {
         question: 'Sự kỳ thị (stigma) ảnh hưởng đến việc sử dụng công nghệ sức khỏe tâm thần như thế nào?',
-        answer: 'Sự kỳ thị khiến nhiều người ngần ngại tìm kiếm sự giúp đỡ, ngay cả khi đó là một ứng dụng ẩn danh. Do đó, các ứng dụng cần được thiết kế với ngôn ngữ thân thiện, không mang tính phán xét, và tập trung vào việc xây dựng kỹ năng và sự tự nhận thức hơn là "chẩn đoán bệnh".'
+        answer:
+          'Sự kỳ thị khiến nhiều người ngần ngại tìm kiếm sự giúp đỡ, ngay cả khi đó là một ứng dụng ẩn danh. Do đó, các ứng dụng cần được thiết kế với ngôn ngữ thân thiện, không mang tính phán xét, và tập trung vào việc xây dựng kỹ năng và sự tự nhận thức hơn là "chẩn đoán bệnh".',
       },
       {
         question: 'Gamification (trò chơi hóa) có thể giúp ích gì trong các ứng dụng sức khỏe tâm thần?',
-        answer: 'Gamification, như việc đặt ra các mục tiêu hàng ngày, trao phần thưởng ảo, và theo dõi tiến trình, có thể giúp tăng cường động lực và sự gắn bó của người dùng. Nó biến việc chăm sóc sức khỏe tâm thần thành một hành trình thú vị và ít đáng sợ hơn.'
-      }
-    ]
+        answer:
+          'Gamification, như việc đặt ra các mục tiêu hàng ngày, trao phần thưởng ảo, và theo dõi tiến trình, có thể giúp tăng cường động lực và sự gắn bó của người dùng. Nó biến việc chăm sóc sức khỏe tâm thần thành một hành trình thú vị và ít đáng sợ hơn.',
+      },
+    ],
   },
 ];

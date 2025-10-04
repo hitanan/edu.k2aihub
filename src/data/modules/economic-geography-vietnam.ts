@@ -39,36 +39,44 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Vùng kinh tế trọng điểm Bắc Bộ có vai trò như thế nào?',
-          answer: 'Vùng kinh tế trọng điểm Bắc Bộ (bao gồm Hà Nội, Hải Phòng, Quảng Ninh, Hải Dương, Hưng Yên, Bắc Ninh, Vĩnh Phúc) là hạt nhân tăng trưởng, thúc đẩy sự phát triển của toàn vùng Đồng bằng sông Hồng và cả khu vực phía Bắc, đóng vai trò là trung tâm giao thương quốc tế.'
+          answer:
+            'Vùng kinh tế trọng điểm Bắc Bộ (bao gồm Hà Nội, Hải Phòng, Quảng Ninh, Hải Dương, Hưng Yên, Bắc Ninh, Vĩnh Phúc) là hạt nhân tăng trưởng, thúc đẩy sự phát triển của toàn vùng Đồng bằng sông Hồng và cả khu vực phía Bắc, đóng vai trò là trung tâm giao thương quốc tế.',
         },
         {
           question: 'Nông nghiệp của vùng có những đặc điểm nổi bật nào?',
-          answer: 'Đây là vựa lúa lớn thứ hai của cả nước sau Đồng bằng sông Cửu Long. Nền nông nghiệp thâm canh cao, áp dụng nhiều tiến bộ khoa học kỹ thuật. Ngoài lúa, vùng còn phát triển mạnh vụ đông với các cây ưa lạnh như khoai tây, ngô đông, rau củ, đem lại hiệu quả kinh tế cao.'
+          answer:
+            'Đây là vựa lúa lớn thứ hai của cả nước sau Đồng bằng sông Cửu Long. Nền nông nghiệp thâm canh cao, áp dụng nhiều tiến bộ khoa học kỹ thuật. Ngoài lúa, vùng còn phát triển mạnh vụ đông với các cây ưa lạnh như khoai tây, ngô đông, rau củ, đem lại hiệu quả kinh tế cao.',
         },
         {
           question: 'Ngành dịch vụ của vùng phát triển dựa trên những lợi thế nào?',
-          answer: 'Ngành dịch vụ phát triển mạnh mẽ dựa trên lợi thế là thủ đô Hà Nội - trung tâm chính trị, văn hóa, giáo dục lớn nhất nước, và cảng Hải Phòng - cửa ngõ xuất nhập khẩu quan trọng của miền Bắc. Các ngành như tài chính, ngân hàng, viễn thông, du lịch đều rất phát triển.'
+          answer:
+            'Ngành dịch vụ phát triển mạnh mẽ dựa trên lợi thế là thủ đô Hà Nội - trung tâm chính trị, văn hóa, giáo dục lớn nhất nước, và cảng Hải Phòng - cửa ngõ xuất nhập khẩu quan trọng của miền Bắc. Các ngành như tài chính, ngân hàng, viễn thông, du lịch đều rất phát triển.',
         },
         {
           question: 'Vấn đề môi trường cấp bách nhất của vùng là gì?',
-          answer: 'Do mật độ dân số cao và tập trung nhiều khu công nghiệp, các vấn đề môi trường như ô nhiễm không khí ở các đô thị lớn, ô nhiễm nguồn nước mặt từ các sông chính (sông Nhuệ, sông Đáy), và xử lý rác thải sinh hoạt, công nghiệp là những thách thức lớn.'
+          answer:
+            'Do mật độ dân số cao và tập trung nhiều khu công nghiệp, các vấn đề môi trường như ô nhiễm không khí ở các đô thị lớn, ô nhiễm nguồn nước mặt từ các sông chính (sông Nhuệ, sông Đáy), và xử lý rác thải sinh hoạt, công nghiệp là những thách thức lớn.',
         },
         {
           question: 'Tại sao vùng lại có trình độ phát triển dân trí cao?',
-          answer: 'Vùng có lịch sử văn hóa lâu đời, là nơi tập trung hệ thống các trường đại học, viện nghiên cứu hàng đầu cả nước. Đây là cái nôi của nền văn minh lúa nước và có truyền thống hiếu học, tạo nên một mặt bằng dân trí cao so với các vùng khác.'
+          answer:
+            'Vùng có lịch sử văn hóa lâu đời, là nơi tập trung hệ thống các trường đại học, viện nghiên cứu hàng đầu cả nước. Đây là cái nôi của nền văn minh lúa nước và có truyền thống hiếu học, tạo nên một mặt bằng dân trí cao so với các vùng khác.',
         },
         {
           question: 'Định hướng phát triển công nghiệp của vùng trong tương lai là gì?',
-          answer: 'Vùng tập trung vào việc phát triển các ngành công nghiệp công nghệ cao, có giá trị gia tăng lớn và thân thiện với môi trường. Ưu tiên thu hút đầu tư vào các lĩnh vực như điện tử, công nghệ thông tin, sản xuất phần mềm, và công nghiệp phụ trợ.'
+          answer:
+            'Vùng tập trung vào việc phát triển các ngành công nghiệp công nghệ cao, có giá trị gia tăng lớn và thân thiện với môi trường. Ưu tiên thu hút đầu tư vào các lĩnh vực như điện tử, công nghệ thông tin, sản xuất phần mềm, và công nghiệp phụ trợ.',
         },
         {
           question: 'Hệ thống đê điều có vai trò như thế nào đối với vùng?',
-          answer: 'Hệ thống đê điều ven sông Hồng và các sông lớn khác có vai trò cực kỳ quan trọng trong việc phòng chống lũ lụt, bảo vệ các khu dân cư và vùng sản xuất nông nghiệp. Tuy nhiên, nó cũng làm cho vùng không được bồi đắp phù sa tự nhiên hàng năm.'
+          answer:
+            'Hệ thống đê điều ven sông Hồng và các sông lớn khác có vai trò cực kỳ quan trọng trong việc phòng chống lũ lụt, bảo vệ các khu dân cư và vùng sản xuất nông nghiệp. Tuy nhiên, nó cũng làm cho vùng không được bồi đắp phù sa tự nhiên hàng năm.',
         },
         {
           question: 'Các làng nghề truyền thống có ý nghĩa gì đối với kinh tế vùng?',
-          answer: 'Các làng nghề truyền thống (gốm Bát Tràng, lụa Vạn Phúc, đồ gỗ Đồng Kỵ...) không chỉ tạo ra nhiều việc làm, tăng thu nhập cho người dân mà còn là một tài nguyên du lịch nhân văn độc đáo, thu hút khách du lịch trong và ngoài nước, góp phần bảo tồn giá trị văn hóa.'
-        }
+          answer:
+            'Các làng nghề truyền thống (gốm Bát Tràng, lụa Vạn Phúc, đồ gỗ Đồng Kỵ...) không chỉ tạo ra nhiều việc làm, tăng thu nhập cho người dân mà còn là một tài nguyên du lịch nhân văn độc đáo, thu hút khách du lịch trong và ngoài nước, góp phần bảo tồn giá trị văn hóa.',
+        },
       ],
       quizzes: [
         {
@@ -112,36 +120,44 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Vùng Đông Nam Bộ có những khó khăn gì trong quá trình phát triển?',
-          answer: 'Vùng đối mặt với nhiều thách thức như: cơ sở hạ tầng quá tải (đặc biệt là giao thông), vấn đề ô nhiễm môi trường do công nghiệp và đô thị hóa, nguy cơ thiếu nước vào mùa khô, và sự chênh lệch giàu nghèo ngày càng tăng.'
+          answer:
+            'Vùng đối mặt với nhiều thách thức như: cơ sở hạ tầng quá tải (đặc biệt là giao thông), vấn đề ô nhiễm môi trường do công nghiệp và đô thị hóa, nguy cơ thiếu nước vào mùa khô, và sự chênh lệch giàu nghèo ngày càng tăng.',
         },
         {
           question: 'Vai trò của hệ thống cảng biển ở Đông Nam Bộ là gì?',
-          answer: 'Hệ thống cảng biển, đặc biệt là cụm cảng Sài Gòn và Cái Mép - Thị Vải, là cửa ngõ giao thương quốc tế lớn nhất Việt Nam. Đây là đầu mối xuất nhập khẩu hàng hóa cho cả vùng và các vùng lân cận, đóng vai trò then chốt trong chuỗi cung ứng toàn cầu.'
+          answer:
+            'Hệ thống cảng biển, đặc biệt là cụm cảng Sài Gòn và Cái Mép - Thị Vải, là cửa ngõ giao thương quốc tế lớn nhất Việt Nam. Đây là đầu mối xuất nhập khẩu hàng hóa cho cả vùng và các vùng lân cận, đóng vai trò then chốt trong chuỗi cung ứng toàn cầu.',
         },
         {
           question: 'Nông nghiệp của vùng có gì khác biệt so với các vùng khác?',
-          answer: 'Nông nghiệp của Đông Nam Bộ phát triển theo hướng sản xuất hàng hóa quy mô lớn, chuyên canh các cây công nghiệp có giá trị cao như cao su, cà phê, điều, hồ tiêu. Vùng cũng áp dụng nhiều công nghệ cao vào sản xuất nông nghiệp.'
+          answer:
+            'Nông nghiệp của Đông Nam Bộ phát triển theo hướng sản xuất hàng hóa quy mô lớn, chuyên canh các cây công nghiệp có giá trị cao như cao su, cà phê, điều, hồ tiêu. Vùng cũng áp dụng nhiều công nghệ cao vào sản xuất nông nghiệp.',
         },
         {
           question: 'Tại sao vùng này lại thu hút mạnh mẽ nguồn lao động nhập cư?',
-          answer: 'Do là vùng kinh tế năng động nhất, tập trung nhiều khu công nghiệp, khu chế xuất, Đông Nam Bộ tạo ra nhu cầu việc làm rất lớn. Mức thu nhập và cơ hội phát triển cao hơn đã thu hút một lượng lớn lao động từ khắp các tỉnh thành trong cả nước.'
+          answer:
+            'Do là vùng kinh tế năng động nhất, tập trung nhiều khu công nghiệp, khu chế xuất, Đông Nam Bộ tạo ra nhu cầu việc làm rất lớn. Mức thu nhập và cơ hội phát triển cao hơn đã thu hút một lượng lớn lao động từ khắp các tỉnh thành trong cả nước.',
         },
         {
           question: 'Tài nguyên rừng của vùng có đặc điểm gì?',
-          answer: 'Tài nguyên rừng không còn nhiều, chủ yếu là các khu rừng phòng hộ ven biển như Cần Giờ (được UNESCO công nhận là khu dự trữ sinh quyển thế giới) và các vườn quốc gia như Cát Tiên, Lò Gò - Xa Mát, có vai trò quan trọng trong việc bảo vệ đa dạng sinh học và cân bằng môi trường.'
+          answer:
+            'Tài nguyên rừng không còn nhiều, chủ yếu là các khu rừng phòng hộ ven biển như Cần Giờ (được UNESCO công nhận là khu dự trữ sinh quyển thế giới) và các vườn quốc gia như Cát Tiên, Lò Gò - Xa Mát, có vai trò quan trọng trong việc bảo vệ đa dạng sinh học và cân bằng môi trường.',
         },
         {
           question: 'Định hướng phát triển của vùng trong tương lai là gì?',
-          answer: 'Vùng đang chuyển đổi mô hình tăng trưởng theo chiều sâu, ưu tiên phát triển các ngành dịch vụ cao cấp (tài chính, logistics), công nghiệp công nghệ cao, và nông nghiệp công nghệ cao. Đồng thời, tập trung giải quyết các vấn đề về hạ tầng, môi trường và liên kết vùng.'
+          answer:
+            'Vùng đang chuyển đổi mô hình tăng trưởng theo chiều sâu, ưu tiên phát triển các ngành dịch vụ cao cấp (tài chính, logistics), công nghiệp công nghệ cao, và nông nghiệp công nghệ cao. Đồng thời, tập trung giải quyết các vấn đề về hạ tầng, môi trường và liên kết vùng.',
         },
         {
           question: 'Vùng tứ giác kinh tế trọng điểm phía Nam gồm những tỉnh/thành nào?',
-          answer: 'Vùng kinh tế trọng điểm phía Nam bao gồm TP. Hồ Chí Minh, Bình Dương, Đồng Nai, và Bà Rịa - Vũng Tàu. Đây là khu vực năng động nhất, đóng góp phần lớn vào GDP và ngân sách của cả nước.'
+          answer:
+            'Vùng kinh tế trọng điểm phía Nam bao gồm TP. Hồ Chí Minh, Bình Dương, Đồng Nai, và Bà Rịa - Vũng Tàu. Đây là khu vực năng động nhất, đóng góp phần lớn vào GDP và ngân sách của cả nước.',
         },
         {
           question: 'Ngoài dầu khí, vùng còn có tiềm năng khoáng sản nào khác?',
-          answer: 'Ngoài dầu khí là quan trọng nhất, vùng còn có một số khoáng sản khác như sét và cao lanh dùng cho sản xuất vật liệu xây dựng, và cát thủy tinh ở ven biển, là nguyên liệu cho ngành công nghiệp thủy tinh, pha lê.'
-        }
+          answer:
+            'Ngoài dầu khí là quan trọng nhất, vùng còn có một số khoáng sản khác như sét và cao lanh dùng cho sản xuất vật liệu xây dựng, và cát thủy tinh ở ven biển, là nguyên liệu cho ngành công nghiệp thủy tinh, pha lê.',
+        },
       ],
       quizzes: [
         {
@@ -181,36 +197,44 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Tài nguyên du lịch nhân văn của Việt Nam bao gồm những gì?',
-          answer: 'Bao gồm các di tích lịch sử - văn hóa (Cố đô Huế, Thánh địa Mỹ Sơn), các di sản thế giới được UNESCO công nhận, các lễ hội truyền thống, làng nghề, và nền ẩm thực phong phú, đa dạng. Đây là yếu tố tạo nên sự khác biệt và sức hấp dẫn riêng cho du lịch Việt Nam.'
+          answer:
+            'Bao gồm các di tích lịch sử - văn hóa (Cố đô Huế, Thánh địa Mỹ Sơn), các di sản thế giới được UNESCO công nhận, các lễ hội truyền thống, làng nghề, và nền ẩm thực phong phú, đa dạng. Đây là yếu tố tạo nên sự khác biệt và sức hấp dẫn riêng cho du lịch Việt Nam.',
         },
         {
           question: 'Du lịch cộng đồng (Community-based tourism) là gì?',
-          answer: 'Là loại hình du lịch do cộng đồng dân cư địa phương tổ chức, quản lý và hưởng lợi. Du khách sẽ được trải nghiệm cuộc sống, văn hóa bản địa một cách chân thực (ví dụ: ở homestay, tham gia làm nông). Loại hình này giúp tạo sinh kế bền vững cho người dân và bảo tồn văn hóa.'
+          answer:
+            'Là loại hình du lịch do cộng đồng dân cư địa phương tổ chức, quản lý và hưởng lợi. Du khách sẽ được trải nghiệm cuộc sống, văn hóa bản địa một cách chân thực (ví dụ: ở homestay, tham gia làm nông). Loại hình này giúp tạo sinh kế bền vững cho người dân và bảo tồn văn hóa.',
         },
         {
           question: 'Thách thức lớn nhất đối với ngành du lịch Việt Nam là gì?',
-          answer: 'Những thách thức chính bao gồm: tính mùa vụ cao, chất lượng dịch vụ chưa đồng đều, sản phẩm du lịch chưa thực sự đa dạng và độc đáo, vấn đề ô nhiễm môi trường tại các điểm du lịch nổi tiếng, và hạ tầng giao thông kết nối còn hạn chế.'
+          answer:
+            'Những thách thức chính bao gồm: tính mùa vụ cao, chất lượng dịch vụ chưa đồng đều, sản phẩm du lịch chưa thực sự đa dạng và độc đáo, vấn đề ô nhiễm môi trường tại các điểm du lịch nổi tiếng, và hạ tầng giao thông kết nối còn hạn chế.',
         },
         {
           question: '"Du lịch MICE" là gì?',
-          answer: 'MICE là viết tắt của Meetings (Hội họp), Incentives (Khen thưởng), Conferences (Hội nghị), và Exhibitions (Triển lãm). Đây là loại hình du lịch kết hợp công việc, thu hút đối tượng khách hàng có chi tiêu cao và lưu trú dài ngày, là một phân khúc rất tiềm năng.'
+          answer:
+            'MICE là viết tắt của Meetings (Hội họp), Incentives (Khen thưởng), Conferences (Hội nghị), và Exhibitions (Triển lãm). Đây là loại hình du lịch kết hợp công việc, thu hút đối tượng khách hàng có chi tiêu cao và lưu trú dài ngày, là một phân khúc rất tiềm năng.',
         },
         {
           question: 'Sản phẩm du lịch đặc trưng của vùng miền núi phía Bắc là gì?',
-          answer: 'Vùng này có thế mạnh về du lịch sinh thái và du lịch văn hóa, khám phá. Các sản phẩm nổi bật bao gồm trekking, ngắm ruộng bậc thang (Mù Cang Chải, Sa Pa), khám phá văn hóa các dân tộc thiểu số, và du lịch mạo hiểm trên các cung đường đèo hùng vĩ.'
+          answer:
+            'Vùng này có thế mạnh về du lịch sinh thái và du lịch văn hóa, khám phá. Các sản phẩm nổi bật bao gồm trekking, ngắm ruộng bậc thang (Mù Cang Chải, Sa Pa), khám phá văn hóa các dân tộc thiểu số, và du lịch mạo hiểm trên các cung đường đèo hùng vĩ.',
         },
         {
           question: 'Vai trò của công nghệ số trong ngành du lịch hiện nay?',
-          answer: 'Công nghệ số đóng vai trò then chốt, từ việc marketing điểm đến trên mạng xã hội, đặt phòng và vé trực tuyến, ứng dụng hướng dẫn viên ảo, cho đến việc quản lý điểm đến thông minh và phân tích dữ liệu lớn để hiểu rõ hơn về hành vi của du khách.'
+          answer:
+            'Công nghệ số đóng vai trò then chốt, từ việc marketing điểm đến trên mạng xã hội, đặt phòng và vé trực tuyến, ứng dụng hướng dẫn viên ảo, cho đến việc quản lý điểm đến thông minh và phân tích dữ liệu lớn để hiểu rõ hơn về hành vi của du khách.',
         },
         {
           question: 'Tại sao ẩm thực là một yếu tố quan trọng của du lịch Việt Nam?',
-          answer: 'Ẩm thực Việt Nam được biết đến trên toàn thế giới với sự đa dạng, tinh tế và tốt cho sức khỏe. Nhiều du khách quốc tế đến Việt Nam không chỉ để tham quan mà còn để thưởng thức các món ăn đặc trưng như Phở, Bánh mì, Nem rán. Ẩm thực là một "đại sứ" văn hóa hiệu quả.'
+          answer:
+            'Ẩm thực Việt Nam được biết đến trên toàn thế giới với sự đa dạng, tinh tế và tốt cho sức khỏe. Nhiều du khách quốc tế đến Việt Nam không chỉ để tham quan mà còn để thưởng thức các món ăn đặc trưng như Phở, Bánh mì, Nem rán. Ẩm thực là một "đại sứ" văn hóa hiệu quả.',
         },
         {
           question: 'Chính sách thị thực (visa) ảnh hưởng đến du lịch như thế nào?',
-          answer: 'Chính sách thị thực thông thoáng, miễn visa cho nhiều quốc gia là một yếu tố cạnh tranh quan trọng để thu hút khách du lịch quốc tế. Việc đơn giản hóa thủ tục cấp visa hoặc kéo dài thời gian miễn thị thực có thể tạo ra một cú hích lớn cho ngành du lịch.'
-        }
+          answer:
+            'Chính sách thị thực thông thoáng, miễn visa cho nhiều quốc gia là một yếu tố cạnh tranh quan trọng để thu hút khách du lịch quốc tế. Việc đơn giản hóa thủ tục cấp visa hoặc kéo dài thời gian miễn thị thực có thể tạo ra một cú hích lớn cho ngành du lịch.',
+        },
       ],
       quizzes: [
         {
@@ -263,12 +287,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch sinh thái?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 3,
           explanation:
             'Sa Pa - Mù Cang Chải nổi tiếng với các tour trekking, ngắm ruộng bậc thang, và khám phá văn hóa các dân tộc thiểu số, là những hoạt động đặc trưng của du lịch sinh thái.',
@@ -287,18 +306,14 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được coi là trung tâm du lịch lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh là trung tâm du lịch lớn nhất Việt Nam, với nhiều điểm tham quan nổi tiếng, dịch vụ du lịch phát triển và là cửa ngõ quốc tế chính của Việt Nam.',
         },
         {
-          question: 'Đâu không phải là một trong những chính sách thị thực nhằm thu hút khách du lịch quốc tế đến Việt Nam?',
+          question:
+            'Đâu không phải là một trong những chính sách thị thực nhằm thu hút khách du lịch quốc tế đến Việt Nam?',
           options: [
             'Miễn thị thực cho công dân một số nước.',
             'Đơn giản hóa thủ tục cấp visa.',
@@ -335,12 +350,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -359,12 +369,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -383,12 +388,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -419,12 +419,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -443,12 +438,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -467,12 +457,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -503,12 +488,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -527,12 +507,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -551,12 +526,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -587,12 +557,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -611,12 +576,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -635,12 +595,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -671,12 +626,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -695,12 +645,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -719,12 +664,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -755,12 +695,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -779,12 +714,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -803,12 +733,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -839,12 +764,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -863,12 +783,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -887,12 +802,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -923,12 +833,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -947,12 +852,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -971,12 +871,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',
@@ -1007,12 +902,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Cảng biển nào là cửa ngõ giao thương quốc tế lớn nhất Việt Nam hiện nay?',
-          options: [
-            'Cảng Hải Phòng',
-            'Cảng Sài Gòn',
-            'Cảng Đà Nẵng',
-            'Cảng Nha Trang',
-          ],
+          options: ['Cảng Hải Phòng', 'Cảng Sài Gòn', 'Cảng Đà Nẵng', 'Cảng Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'Cảng Sài Gòn là cảng biển lớn nhất Việt Nam, đóng vai trò quan trọng trong việc xuất nhập khẩu hàng hóa và là trung tâm giao thương quốc tế của miền Nam Việt Nam.',
@@ -1031,12 +921,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Thành phố nào được mệnh danh là "Hòn ngọc Viễn Đông"?',
-          options: [
-            'Hà Nội',
-            'TP. Hồ Chí Minh',
-            'Đà Nẵng',
-            'Nha Trang',
-          ],
+          options: ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Nha Trang'],
           correctAnswerIndex: 1,
           explanation:
             'TP. Hồ Chí Minh được mệnh danh là "Hòn ngọc Viễn Đông" không chỉ vì vẻ đẹp hiện đại, năng động mà còn vì vị trí địa lý thuận lợi, là trung tâm kinh tế, văn hóa, giáo dục lớn nhất miền Nam Việt Nam.',
@@ -1055,12 +940,7 @@ export const economicGeographyVietnamModuleData: ModuleData = {
         },
         {
           question: 'Điểm du lịch nào sau đây nổi tiếng với loại hình du lịch văn hóa?',
-          options: [
-            'Vịnh Hạ Long',
-            'Phố cổ Hội An',
-            'Đồng bằng sông Cửu Long',
-            'Sa Pa - Mù Cang Chải',
-          ],
+          options: ['Vịnh Hạ Long', 'Phố cổ Hội An', 'Đồng bằng sông Cửu Long', 'Sa Pa - Mù Cang Chải'],
           correctAnswerIndex: 1,
           explanation:
             'Phố cổ Hội An nổi tiếng với kiến trúc cổ kính, các lễ hội truyền thống, và ẩm thực đặc sắc, là những yếu tố thu hút khách du lịch đến với loại hình du lịch văn hóa.',

@@ -38,37 +38,45 @@ export const modernVietnameseHistoryModuleData: ModuleData = {
             'Pháp chia Việt Nam thành 3 kỳ (Bắc Kỳ, Trung Kỳ, Nam Kỳ) với các chế độ cai trị khác nhau, đồng thời chia rẽ các dân tộc, tôn giáo, giai cấp nhằm làm suy yếu sức mạnh đoàn kết của dân tộc Việt Nam, từ đó dễ dàng cai trị hơn.',
         },
         {
-            question: 'Phong trào Cần Vương là gì?',
-            answer: 'Là phong trào yêu nước chống Pháp theo ý thức hệ phong kiến, do vua Hàm Nghi và Tôn Thất Thuyết khởi xướng sau sự kiện kinh thành Huế thất thủ năm 1885. Phong trào kêu gọi các văn thân, sĩ phu và nhân dân đứng lên giúp vua cứu nước.'
+          question: 'Phong trào Cần Vương là gì?',
+          answer:
+            'Là phong trào yêu nước chống Pháp theo ý thức hệ phong kiến, do vua Hàm Nghi và Tôn Thất Thuyết khởi xướng sau sự kiện kinh thành Huế thất thủ năm 1885. Phong trào kêu gọi các văn thân, sĩ phu và nhân dân đứng lên giúp vua cứu nước.',
         },
         {
-            question: 'Cuộc khai thác thuộc địa lần thứ nhất của Pháp đã tác động đến xã hội Việt Nam như thế nào?',
-            answer: 'Nó làm xã hội Việt Nam có sự phân hóa sâu sắc. Bên cạnh các giai cấp cũ (địa chủ, nông dân), các giai cấp và tầng lớp mới ra đời như công nhân, tư sản và tiểu tư sản, tạo ra những mâu thuẫn xã hội mới.'
+          question: 'Cuộc khai thác thuộc địa lần thứ nhất của Pháp đã tác động đến xã hội Việt Nam như thế nào?',
+          answer:
+            'Nó làm xã hội Việt Nam có sự phân hóa sâu sắc. Bên cạnh các giai cấp cũ (địa chủ, nông dân), các giai cấp và tầng lớp mới ra đời như công nhân, tư sản và tiểu tư sản, tạo ra những mâu thuẫn xã hội mới.',
         },
         {
-            question: 'Phan Bội Châu và Phan Châu Trinh có chủ trương cứu nước khác nhau như thế nào?',
-            answer: 'Phan Bội Châu chủ trương dùng bạo động vũ trang để giành độc lập, dựa vào sự giúp đỡ của nước ngoài (Nhật Bản). Ngược lại, Phan Châu Trinh chủ trương cải cách, nâng cao dân trí, dân quyền, dựa vào Pháp để chống lại triều đình phong kiến hủ bại, rồi đi đến độc lập.'
+          question: 'Phan Bội Châu và Phan Châu Trinh có chủ trương cứu nước khác nhau như thế nào?',
+          answer:
+            'Phan Bội Châu chủ trương dùng bạo động vũ trang để giành độc lập, dựa vào sự giúp đỡ của nước ngoài (Nhật Bản). Ngược lại, Phan Châu Trinh chủ trương cải cách, nâng cao dân trí, dân quyền, dựa vào Pháp để chống lại triều đình phong kiến hủ bại, rồi đi đến độc lập.',
         },
         {
-            question: 'Đô thị Việt Nam đầu thế kỷ 20 có gì thay đổi?',
-            answer: 'Các đô thị như Hà Nội, Sài Gòn, Hải Phòng được mở rộng và xây dựng theo lối kiến trúc phương Tây. Nhiều công trình, cơ sở hạ tầng mới xuất hiện, nhưng đồng thời cũng nảy sinh các vấn đề xã hội phức tạp.'
+          question: 'Đô thị Việt Nam đầu thế kỷ 20 có gì thay đổi?',
+          answer:
+            'Các đô thị như Hà Nội, Sài Gòn, Hải Phòng được mở rộng và xây dựng theo lối kiến trúc phương Tây. Nhiều công trình, cơ sở hạ tầng mới xuất hiện, nhưng đồng thời cũng nảy sinh các vấn đề xã hội phức tạp.',
         },
         {
-            question: 'Vai trò của Nguyễn Ái Quốc trong giai đoạn này là gì?',
-            answer: 'Trong khi các phong trào trong nước gặp bế tắc, Nguyễn Ái Quốc đã ra đi tìm đường cứu nước mới. Người đã tiếp cận với chủ nghĩa Mác-Lênin và tìm ra con đường cứu nước theo cách mạng vô sản, chuẩn bị cho sự ra đời của Đảng Cộng sản Việt Nam.'
+          question: 'Vai trò của Nguyễn Ái Quốc trong giai đoạn này là gì?',
+          answer:
+            'Trong khi các phong trào trong nước gặp bế tắc, Nguyễn Ái Quốc đã ra đi tìm đường cứu nước mới. Người đã tiếp cận với chủ nghĩa Mác-Lênin và tìm ra con đường cứu nước theo cách mạng vô sản, chuẩn bị cho sự ra đời của Đảng Cộng sản Việt Nam.',
         },
         {
-            question: 'Khởi nghĩa Yên Thế có điểm gì khác biệt so với phong trào Cần Vương?',
-            answer: 'Khởi nghĩa Yên Thế là một cuộc khởi nghĩa nông dân tự phát, mang tính chất tự vệ, bảo vệ cuộc sống. Trong khi đó, phong trào Cần Vương là phong trào của các văn thân, sĩ phu yêu nước hưởng ứng chiếu của vua, có mục tiêu rõ ràng là "phù vua, kháng Pháp".'
+          question: 'Khởi nghĩa Yên Thế có điểm gì khác biệt so với phong trào Cần Vương?',
+          answer:
+            'Khởi nghĩa Yên Thế là một cuộc khởi nghĩa nông dân tự phát, mang tính chất tự vệ, bảo vệ cuộc sống. Trong khi đó, phong trào Cần Vương là phong trào của các văn thân, sĩ phu yêu nước hưởng ứng chiếu của vua, có mục tiêu rõ ràng là "phù vua, kháng Pháp".',
         },
         {
-            question: 'Chính sách văn hóa, giáo dục của Pháp có mục đích gì?',
-            answer: 'Bên cạnh việc mở một số trường học để đào tạo tay sai, chính sách này còn nhằm mục đích thực hiện "nô dịch hóa" về văn hóa, truyền bá lối sống thực dụng, làm xói mòn các giá trị truyền thống của dân tộc.'
+          question: 'Chính sách văn hóa, giáo dục của Pháp có mục đích gì?',
+          answer:
+            'Bên cạnh việc mở một số trường học để đào tạo tay sai, chính sách này còn nhằm mục đích thực hiện "nô dịch hóa" về văn hóa, truyền bá lối sống thực dụng, làm xói mòn các giá trị truyền thống của dân tộc.',
         },
         {
-            question: 'Tầng lớp tư sản dân tộc Việt Nam ra đời như thế nào?',
-            answer: 'Tầng lớp tư sản dân tộc ra đời từ các nhà thầu khoán, chủ xí nghiệp, xưởng thủ công, chủ hãng buôn... trong cuộc khai thác thuộc địa của Pháp. Họ có tinh thần dân tộc nhưng thế lực kinh tế yếu, nên có thái độ cải lương, không kiên quyết.'
-        }
+          question: 'Tầng lớp tư sản dân tộc Việt Nam ra đời như thế nào?',
+          answer:
+            'Tầng lớp tư sản dân tộc ra đời từ các nhà thầu khoán, chủ xí nghiệp, xưởng thủ công, chủ hãng buôn... trong cuộc khai thác thuộc địa của Pháp. Họ có tinh thần dân tộc nhưng thế lực kinh tế yếu, nên có thái độ cải lương, không kiên quyết.',
+        },
       ],
       quizzes: [
         {
@@ -106,37 +114,45 @@ export const modernVietnameseHistoryModuleData: ModuleData = {
             'Ý nghĩa quan trọng nhất là đã đập tan xiềng xích nô lệ của Pháp - Nhật, lật đổ chế độ phong kiến, lập nên nước Việt Nam Dân chủ Cộng hòa, đưa nhân dân từ thân phận nô lệ trở thành người làm chủ đất nước. Nó mở ra một kỷ nguyên mới: kỷ nguyên độc lập, tự do.',
         },
         {
-            question: 'Mặt trận Việt Minh có vai trò như thế nào trong Cách mạng Tháng Tám?',
-            answer: 'Mặt trận Việt Minh (Việt Nam Độc lập Đồng minh Hội) được thành lập năm 1941, có vai trò tập hợp, đoàn kết mọi tầng lớp nhân dân yêu nước, không phân biệt giai cấp, tôn giáo, dân tộc, tạo thành một lực lượng chính trị hùng hậu cho cuộc Tổng khởi nghĩa.'
+          question: 'Mặt trận Việt Minh có vai trò như thế nào trong Cách mạng Tháng Tám?',
+          answer:
+            'Mặt trận Việt Minh (Việt Nam Độc lập Đồng minh Hội) được thành lập năm 1941, có vai trò tập hợp, đoàn kết mọi tầng lớp nhân dân yêu nước, không phân biệt giai cấp, tôn giáo, dân tộc, tạo thành một lực lượng chính trị hùng hậu cho cuộc Tổng khởi nghĩa.',
         },
         {
-            question: 'Cuộc Tổng khởi nghĩa đã diễn ra như thế nào?',
-            answer: 'Cuộc Tổng khởi nghĩa diễn ra nhanh chóng trong khoảng 15 ngày (từ 14/8 đến 28/8/1945), bắt đầu từ các vùng nông thôn, sau đó lan về các đô thị. Hà Nội, Huế, Sài Gòn là ba đô thị giành được chính quyền cuối cùng, có ý nghĩa quyết định.'
+          question: 'Cuộc Tổng khởi nghĩa đã diễn ra như thế nào?',
+          answer:
+            'Cuộc Tổng khởi nghĩa diễn ra nhanh chóng trong khoảng 15 ngày (từ 14/8 đến 28/8/1945), bắt đầu từ các vùng nông thôn, sau đó lan về các đô thị. Hà Nội, Huế, Sài Gòn là ba đô thị giành được chính quyền cuối cùng, có ý nghĩa quyết định.',
         },
         {
-            question: 'Tuyên ngôn Độc lập có những giá trị cốt lõi nào?',
-            answer: 'Tuyên ngôn Độc lập không chỉ khẳng định quyền tự do, độc lập của dân tộc Việt Nam mà còn trích dẫn Tuyên ngôn Độc lập của Mỹ và Tuyên ngôn Nhân quyền và Dân quyền của Pháp, đề cao quyền con người, quyền bình đẳng của các dân tộc trên thế giới.'
+          question: 'Tuyên ngôn Độc lập có những giá trị cốt lõi nào?',
+          answer:
+            'Tuyên ngôn Độc lập không chỉ khẳng định quyền tự do, độc lập của dân tộc Việt Nam mà còn trích dẫn Tuyên ngôn Độc lập của Mỹ và Tuyên ngôn Nhân quyền và Dân quyền của Pháp, đề cao quyền con người, quyền bình đẳng của các dân tộc trên thế giới.',
         },
         {
-            question: 'Những khó khăn của nước Việt Nam Dân chủ Cộng hòa sau khi thành lập là gì?',
-            answer: 'Nước Việt Nam non trẻ phải đối mặt với vô vàn khó khăn, được ví như "ngàn cân treo sợi tóc": giặc ngoại xâm (quân Tưởng, quân Anh, quân Pháp), giặc đói (nạn đói năm 1945 làm hơn 2 triệu người chết), và giặc dốt (hơn 90% dân số mù chữ).'
+          question: 'Những khó khăn của nước Việt Nam Dân chủ Cộng hòa sau khi thành lập là gì?',
+          answer:
+            'Nước Việt Nam non trẻ phải đối mặt với vô vàn khó khăn, được ví như "ngàn cân treo sợi tóc": giặc ngoại xâm (quân Tưởng, quân Anh, quân Pháp), giặc đói (nạn đói năm 1945 làm hơn 2 triệu người chết), và giặc dốt (hơn 90% dân số mù chữ).',
         },
         {
-            question: 'Tại sao nói Cách mạng Tháng Tám mang tính nhân dân sâu sắc?',
-            answer: 'Vì đây là cuộc cách mạng của toàn dân, do nhân dân và vì nhân dân. Lực lượng tham gia là đông đảo quần chúng từ công nhân, nông dân, tiểu tư sản đến cả tư sản dân tộc và một bộ phận địa chủ yêu nước, dưới sự lãnh đạo của Đảng.'
+          question: 'Tại sao nói Cách mạng Tháng Tám mang tính nhân dân sâu sắc?',
+          answer:
+            'Vì đây là cuộc cách mạng của toàn dân, do nhân dân và vì nhân dân. Lực lượng tham gia là đông đảo quần chúng từ công nhân, nông dân, tiểu tư sản đến cả tư sản dân tộc và một bộ phận địa chủ yêu nước, dưới sự lãnh đạo của Đảng.',
         },
         {
-            question: 'Bài học kinh nghiệm lớn nhất rút ra từ Cách mạng Tháng Tám là gì?',
-            answer: 'Bài học lớn nhất là về việc xây dựng lực lượng chính trị của quần chúng, kết hợp với lực lượng vũ trang; và bài học về việc nhận định, chớp lấy thời cơ, dám đưa ra quyết định táo bạo để khởi nghĩa giành chính quyền.'
+          question: 'Bài học kinh nghiệm lớn nhất rút ra từ Cách mạng Tháng Tám là gì?',
+          answer:
+            'Bài học lớn nhất là về việc xây dựng lực lượng chính trị của quần chúng, kết hợp với lực lượng vũ trang; và bài học về việc nhận định, chớp lấy thời cơ, dám đưa ra quyết định táo bạo để khởi nghĩa giành chính quyền.',
         },
         {
-            question: 'Chính quyền cách mạng đã giải quyết nạn đói như thế nào?',
-            answer: 'Chính quyền đã phát động phong trào "Nhường cơm sẻ áo", "Hũ gạo cứu đói" và tổ chức "Ngày đồng tâm". Về lâu dài, chính phủ kêu gọi "Tăng gia sản xuất! Tăng gia sản xuất ngay! Tăng gia sản xuất nữa!", coi đây là mặt trận chính.'
+          question: 'Chính quyền cách mạng đã giải quyết nạn đói như thế nào?',
+          answer:
+            'Chính quyền đã phát động phong trào "Nhường cơm sẻ áo", "Hũ gạo cứu đói" và tổ chức "Ngày đồng tâm". Về lâu dài, chính phủ kêu gọi "Tăng gia sản xuất! Tăng gia sản xuất ngay! Tăng gia sản xuất nữa!", coi đây là mặt trận chính.',
         },
         {
-            question: 'Phong trào "Bình dân học vụ" có mục đích gì?',
-            answer: 'Đây là phong trào xóa nạn mù chữ (diệt giặc dốt) do Chủ tịch Hồ Chí Minh phát động. Phong trào đã huy động mọi người biết chữ dạy cho người chưa biết chữ, góp phần nhanh chóng nâng cao mặt bằng dân trí cho toàn xã hội.'
-        }
+          question: 'Phong trào "Bình dân học vụ" có mục đích gì?',
+          answer:
+            'Đây là phong trào xóa nạn mù chữ (diệt giặc dốt) do Chủ tịch Hồ Chí Minh phát động. Phong trào đã huy động mọi người biết chữ dạy cho người chưa biết chữ, góp phần nhanh chóng nâng cao mặt bằng dân trí cho toàn xã hội.',
+        },
       ],
       quizzes: [
         {
@@ -182,37 +198,46 @@ export const modernVietnameseHistoryModuleData: ModuleData = {
             'Cốt lõi là chuyển từ kinh tế kế hoạch hóa tập trung sang nền kinh tế hàng hóa nhiều thành phần, vận hành theo cơ chế thị trường, có sự quản lý của Nhà nước, theo định hướng xã hội chủ nghĩa. Chấp nhận sự tồn tại của nhiều hình thức sở hữu và thành phần kinh tế (nhà nước, tập thể, tư nhân, có vốn đầu tư nước ngoài...).',
         },
         {
-            question: 'Chính sách "mở cửa" và hội nhập quốc tế có ý nghĩa gì?',
-            answer: 'Chính sách này đã giúp Việt Nam phá vỡ thế bị bao vây, cấm vận, bình thường hóa quan hệ với các nước lớn như Trung Quốc, Mỹ và gia nhập các tổ chức khu vực và quốc tế như ASEAN, WTO. Điều này đã thu hút vốn đầu tư nước ngoài (FDI), mở rộng thị trường và tiếp thu khoa học công nghệ tiên tiến.'
+          question: 'Chính sách "mở cửa" và hội nhập quốc tế có ý nghĩa gì?',
+          answer:
+            'Chính sách này đã giúp Việt Nam phá vỡ thế bị bao vây, cấm vận, bình thường hóa quan hệ với các nước lớn như Trung Quốc, Mỹ và gia nhập các tổ chức khu vực và quốc tế như ASEAN, WTO. Điều này đã thu hút vốn đầu tư nước ngoài (FDI), mở rộng thị trường và tiếp thu khoa học công nghệ tiên tiến.',
         },
         {
-            question: 'Thành tựu nổi bật nhất của công cuộc Đổi Mới là gì?',
-            answer: 'Thành tựu nổi bật nhất là đưa đất nước ra khỏi khủng hoảng, tăng trưởng kinh tế nhanh và bền vững, đời sống vật chất và tinh thần của nhân dân được cải thiện rõ rệt. Việt Nam từ một nước nhận viện trợ đã trở thành một nước xuất khẩu (đặc biệt là nông sản như gạo, cà phê).'
+          question: 'Thành tựu nổi bật nhất của công cuộc Đổi Mới là gì?',
+          answer:
+            'Thành tựu nổi bật nhất là đưa đất nước ra khỏi khủng hoảng, tăng trưởng kinh tế nhanh và bền vững, đời sống vật chất và tinh thần của nhân dân được cải thiện rõ rệt. Việt Nam từ một nước nhận viện trợ đã trở thành một nước xuất khẩu (đặc biệt là nông sản như gạo, cà phê).',
         },
         {
-            question: 'Bên cạnh thành tựu, công cuộc Đổi Mới còn đối mặt với những thách thức nào?',
-            answer: 'Những thách thức chính bao gồm: nguy cơ tụt hậu xa hơn về kinh tế, chệch hướng xã hội chủ nghĩa, nạn tham nhũng, lãng phí, sự phân hóa giàu nghèo ngày càng tăng, và các vấn đề về môi trường.'
+          question: 'Bên cạnh thành tựu, công cuộc Đổi Mới còn đối mặt với những thách thức nào?',
+          answer:
+            'Những thách thức chính bao gồm: nguy cơ tụt hậu xa hơn về kinh tế, chệch hướng xã hội chủ nghĩa, nạn tham nhũng, lãng phí, sự phân hóa giàu nghèo ngày càng tăng, và các vấn đề về môi trường.',
         },
         {
-            question: 'Kinh tế thị trường định hướng xã hội chủ nghĩa có gì khác so với kinh tế thị trường tư bản chủ nghĩa?',
-            answer: 'Điểm khác biệt cơ bản là mục tiêu phát triển. Kinh tế thị trường định hướng XHCN ở Việt Nam nhằm mục tiêu "dân giàu, nước mạnh, dân chủ, công bằng, văn minh", gắn tăng trưởng kinh tế với tiến bộ và công bằng xã hội, dưới sự lãnh đạo của Đảng Cộng sản và sự quản lý của Nhà nước pháp quyền XHCN.'
+          question:
+            'Kinh tế thị trường định hướng xã hội chủ nghĩa có gì khác so với kinh tế thị trường tư bản chủ nghĩa?',
+          answer:
+            'Điểm khác biệt cơ bản là mục tiêu phát triển. Kinh tế thị trường định hướng XHCN ở Việt Nam nhằm mục tiêu "dân giàu, nước mạnh, dân chủ, công bằng, văn minh", gắn tăng trưởng kinh tế với tiến bộ và công bằng xã hội, dưới sự lãnh đạo của Đảng Cộng sản và sự quản lý của Nhà nước pháp quyền XHCN.',
         },
         {
-            question: 'Vai trò của kinh tế nhà nước trong thời kỳ Đổi Mới là gì?',
-            answer: 'Kinh tế nhà nước được xác định giữ vai trò chủ đạo, là công cụ vật chất quan trọng để Nhà nước định hướng và điều tiết nền kinh tế, ổn định kinh tế vĩ mô và thực hiện các chính sách xã hội.'
+          question: 'Vai trò của kinh tế nhà nước trong thời kỳ Đổi Mới là gì?',
+          answer:
+            'Kinh tế nhà nước được xác định giữ vai trò chủ đạo, là công cụ vật chất quan trọng để Nhà nước định hướng và điều tiết nền kinh tế, ổn định kinh tế vĩ mô và thực hiện các chính sách xã hội.',
         },
         {
-            question: 'Việt Nam gia nhập Tổ chức Thương mại Thế giới (WTO) có tác động như thế nào?',
-            answer: 'Việc gia nhập WTO năm 2007 là một cột mốc quan trọng, khẳng định sự hội nhập sâu rộng của Việt Nam vào nền kinh tế toàn cầu. Nó mang lại nhiều cơ hội về thị trường, đầu tư nhưng cũng đặt ra những thách thức cạnh tranh gay gắt hơn cho các doanh nghiệp trong nước.'
+          question: 'Việt Nam gia nhập Tổ chức Thương mại Thế giới (WTO) có tác động như thế nào?',
+          answer:
+            'Việc gia nhập WTO năm 2007 là một cột mốc quan trọng, khẳng định sự hội nhập sâu rộng của Việt Nam vào nền kinh tế toàn cầu. Nó mang lại nhiều cơ hội về thị trường, đầu tư nhưng cũng đặt ra những thách thức cạnh tranh gay gắt hơn cho các doanh nghiệp trong nước.',
         },
         {
-            question: 'Đổi mới hệ thống chính trị được thực hiện như thế nào?',
-            answer: 'Đổi mới hệ thống chính trị được tiến hành đồng bộ với đổi mới kinh tế, tập trung vào việc xây dựng Nhà nước pháp quyền xã hội chủ nghĩa, cải cách hành chính, phát huy dân chủ và tăng cường vai trò lãnh đạo của Đảng.'
+          question: 'Đổi mới hệ thống chính trị được thực hiện như thế nào?',
+          answer:
+            'Đổi mới hệ thống chính trị được tiến hành đồng bộ với đổi mới kinh tế, tập trung vào việc xây dựng Nhà nước pháp quyền xã hội chủ nghĩa, cải cách hành chính, phát huy dân chủ và tăng cường vai trò lãnh đạo của Đảng.',
         },
         {
-            question: 'Tác động của Đổi Mới đến văn hóa, xã hội Việt Nam là gì?',
-            answer: 'Đổi Mới tạo điều kiện cho sự giao lưu, tiếp biến văn hóa, làm đời sống tinh thần phong phú hơn. Tuy nhiên, nó cũng đặt ra thách thức trong việc giữ gìn bản sắc văn hóa dân tộc trước sự xâm nhập của các sản phẩm văn hóa ngoại lai.'
-        }
+          question: 'Tác động của Đổi Mới đến văn hóa, xã hội Việt Nam là gì?',
+          answer:
+            'Đổi Mới tạo điều kiện cho sự giao lưu, tiếp biến văn hóa, làm đời sống tinh thần phong phú hơn. Tuy nhiên, nó cũng đặt ra thách thức trong việc giữ gìn bản sắc văn hóa dân tộc trước sự xâm nhập của các sản phẩm văn hóa ngoại lai.',
+        },
       ],
       quizzes: [
         {
