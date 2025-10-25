@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     'phương pháp học tập',
     'công nghệ AI giáo dục',
     'nền tảng học tập thông minh',
-    'giáo dục Việt Nam',
     'học tập cá nhân hóa',
     'đổi mới giáo dục',
   ]),

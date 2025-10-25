@@ -193,7 +193,7 @@ const Footer: React.FC = () => {
               <p className="text-sm text-gray-400 flex items-center justify-center md:justify-start space-x-2">
                 <span>© {currentYear} K2AI - Phát triển với</span>
                 <Heart className="w-4 h-4 text-red-500 animate-pulse" />
-                <span>cho giáo dục Việt Nam</span>
+                <span>cho giáo dục</span>
               </p>
             </div>
 

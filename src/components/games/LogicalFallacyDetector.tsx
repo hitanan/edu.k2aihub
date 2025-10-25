@@ -110,7 +110,7 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = () => {
       id: 'education-reform',
       title: 'Cải Cách Giáo Dục',
       situation: 'Thảo luận về việc có nên đưa AI vào giảng dạy ở trường phổ thông.',
-      context: 'Hội nghị giáo dục Việt Nam',
+      context: 'Hội nghị giáo dục',
       difficulty: 'Trung bình',
       arguments: [
         {

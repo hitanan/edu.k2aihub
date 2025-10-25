@@ -18,7 +18,6 @@ export async function generateMetadata() {
       'xu hướng giáo dục',
       'K2AiHub blog',
       'học tập thông minh',
-      'giáo dục Việt Nam',
     ]),
     openGraph: {
       title: 'Blog K2AiHub - Kiến thức & Tin tức Giáo dục',
