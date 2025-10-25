@@ -927,4 +927,4 @@ Week 12: Launch execution và initial promotion
 
 ---
 
-_Bài viết này là part của K2AiHub's comprehensive guide series về digital entrepreneurship và content creation cho thị trường Việt Nam. Để biết thêm resources về AI-powered business strategies, visit [K2AiHub.com](https://k2aihub.com)._
+_Bài viết này là part của K2AiHub's comprehensive guide series về digital entrepreneurship và content creation cho thị trường Việt Nam. Để biết thêm resources về AI-powered business strategies, visit [edu.k2aihub.com](https://edu.k2aihub.com)._

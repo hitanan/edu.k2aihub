@@ -29,14 +29,14 @@ export default function CityPage() {
     name: '34 Tỉnh Thành Việt Nam - Khám phá Địa lý với Bản đồ Tương tác',
     description:
       'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác thông minh. Tìm hiểu địa lý, văn hóa, lịch sử các vùng miền với công nghệ AI.',
-    url: 'https://k2aihub.com/city',
+    url: 'https://edu.k2aihub.com/city',
     inLanguage: 'vi-VN',
     publisher: {
       '@type': 'Organization',
       name: 'K2AiHub',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://k2aihub.com/logo.png',
+        url: 'https://edu.k2aihub.com/logo.png',
       },
     },
     mainEntity: {
@@ -47,7 +47,7 @@ export default function CityPage() {
         item: {
           '@type': 'City',
           name: city.name,
-          url: `https://k2aihub.com/city/${city.slug}`,
+          url: `https://edu.k2aihub.com/city/${city.slug}`,
         },
       })),
     },

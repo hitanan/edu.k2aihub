@@ -4,12 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
-import {
-  createTitle,
-  createDescription,
-  createKeywords,
-  createOrganizationStructuredData,
-} from '@/utils/seo';
+import { createTitle, createDescription, createKeywords, createOrganizationStructuredData } from '@/utils/seo';
 import { getAbsoluteAssetUrl } from '@/utils/assets';
 
 const geistSans = Geist({
@@ -23,9 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: createTitle(
-    'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-  ),
+  title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
   description: createDescription(
     'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
   ),
@@ -47,18 +40,16 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://k2aihub.com'),
+  metadataBase: new URL('https://edu.k2aihub.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: createTitle(
-      'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-    ),
+    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
       'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
     ),
-    url: 'https://k2aihub.com',
+    url: 'https://edu.k2aihub.com',
     siteName: 'K2AiHub',
     locale: 'vi_VN',
     type: 'website',
@@ -66,9 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: createTitle(
-      'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-    ),
+    title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
       'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
     ),
@@ -94,7 +83,7 @@ export default function RootLayout({
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#3b82f6" />
-        <link rel="canonical" href="https://k2aihub.com" />
+        <link rel="canonical" href="https://edu.k2aihub.com" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
@@ -102,9 +91,7 @@ export default function RootLayout({
       >
         {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics
-            measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
-          />
+          <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
 
         <Header />

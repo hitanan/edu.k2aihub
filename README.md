@@ -95,7 +95,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## 🌐 Live Demo
 
-**K2AI**: [https://k2aihub.com](https://k2aihub.com)
+**K2AI**: [https://edu.k2aihub.com](https://edu.k2aihub.com)
 
 ## 📝 Development
 

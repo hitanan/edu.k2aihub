@@ -48,13 +48,13 @@ export default async function PaginatedBlogPage({ params }: Props) {
     '@type': 'Blog',
     name: 'K2AiHub Blog',
     description: `Trang ${currentPage} của blog K2AiHub`,
-    url: `https://k2aihub.com/blog/page/${currentPage}`,
+    url: `https://edu.k2aihub.com/blog/page/${currentPage}`,
     publisher: {
       '@type': 'Organization',
       name: 'K2AiHub',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://k2aihub.com/logo.png',
+        url: 'https://edu.k2aihub.com/logo.png',
       },
     },
   };

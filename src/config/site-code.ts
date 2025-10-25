@@ -1,3 +1,3 @@
 export const siteCode = {
-  url: 'https://k2aihub.com',
+  url: 'https://edu.k2aihub.com',
 };

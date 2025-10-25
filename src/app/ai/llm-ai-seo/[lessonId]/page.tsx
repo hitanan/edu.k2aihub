@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: createTitle(lesson.title),
       description: createDescription(lesson.description),
       type: 'article',
-      url: `https://k2aihub.com/ai/llm-ai-seo/${lessonId}`,
+      url: `https://edu.k2aihub.com/ai/llm-ai-seo/${lessonId}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: createDescription(lesson.description),
     },
     alternates: {
-      canonical: `https://k2aihub.com/ai/llm-ai-seo/${lessonId}`,
+      canonical: `https://edu.k2aihub.com/ai/llm-ai-seo/${lessonId}`,
     },
   };
 }

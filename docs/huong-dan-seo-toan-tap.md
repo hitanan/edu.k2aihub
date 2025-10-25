@@ -203,7 +203,7 @@ Bad: /page.php?id=123&category=seo
     "name": "K2AiHub SEO Team"
   },
   "datePublished": "2025-01-20",
-  "image": "https://k2aihub.com/seo-tips-2025.jpg"
+  "image": "https://edu.k2aihub.com/seo-tips-2025.jpg"
 }
 ```
 
@@ -273,7 +273,7 @@ HTTP → HTTPS migration
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://k2aihub.com/seo-guide/</loc>
+    <loc>https://edu.k2aihub.com/seo-guide/</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -293,7 +293,7 @@ Disallow: /wp-admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://k2aihub.com/sitemap.xml
+Sitemap: https://edu.k2aihub.com/sitemap.xml
 ```
 
 #### Advanced Technical SEO:

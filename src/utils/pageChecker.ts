@@ -19,8 +19,7 @@ interface PageCheckResult {
  */
 function checkPageExists(urlPath: string): PageCheckResult {
   // Remove base URL and clean up path
-  const cleanPath =
-    urlPath.replace('https://k2aihub.com', '').replace(/\/$/, '') || '/';
+  const cleanPath = urlPath.replace('https://edu.k2aihub.com', '').replace(/\/$/, '') || '/';
 
   // Define possible file locations for this path
   const possiblePaths = [
@@ -32,7 +31,7 @@ function checkPageExists(urlPath: string): PageCheckResult {
     // Dynamic page with [slug] or [lessonId]
     `src/app${cleanPath.replace(/\/[^\/]+$/, '/[slug]/page.tsx')}`,
     `src/app${cleanPath.replace(/\/[^\/]+$/, '/[lessonId]/page.tsx')}`,
-    `src/app${cleanPath.replace(/\/[^\/]+$/, '/[id]/page.tsx')}`
+    `src/app${cleanPath.replace(/\/[^\/]+$/, '/[id]/page.tsx')}`,
   ];
 
   const projectRoot = process.cwd();
@@ -44,7 +43,7 @@ function checkPageExists(urlPath: string): PageCheckResult {
         url: urlPath,
         status: 'exists',
         details: `Found at ${filePath}`,
-        filePath: fullPath
+        filePath: fullPath,
       };
     }
   }
@@ -67,22 +66,19 @@ function checkPageExists(urlPath: string): PageCheckResult {
       if (fs.existsSync(dataFullPath)) {
         try {
           const dataContent = fs.readFileSync(dataFullPath, 'utf-8');
-          if (
-            dataContent.includes(`id: '${lessonId}'`) ||
-            dataContent.includes(`"${lessonId}"`)
-          ) {
+          if (dataContent.includes(`id: '${lessonId}'`) || dataContent.includes(`"${lessonId}"`)) {
             return {
               url: urlPath,
               status: 'exists',
               details: `Dynamic lesson page found, lesson ID exists in ${dataFilePath}`,
-              filePath: fullPath
+              filePath: fullPath,
             };
           } else {
             return {
               url: urlPath,
               status: 'missing',
               details: `Dynamic page exists but lesson ID '${lessonId}' not found in ${dataFilePath}`,
-              filePath: fullPath
+              filePath: fullPath,
             };
           }
         } catch (error) {
@@ -90,7 +86,7 @@ function checkPageExists(urlPath: string): PageCheckResult {
             url: urlPath,
             status: 'error',
             details: `Error reading data file ${dataFilePath}: ${error}`,
-            filePath: fullPath
+            filePath: fullPath,
           };
         }
       }
@@ -109,22 +105,19 @@ function checkPageExists(urlPath: string): PageCheckResult {
       if (fs.existsSync(citiesDataPath)) {
         try {
           const citiesContent = fs.readFileSync(citiesDataPath, 'utf-8');
-          if (
-            citiesContent.includes(`slug: '${citySlug}'`) ||
-            citiesContent.includes(`"${citySlug}"`)
-          ) {
+          if (citiesContent.includes(`slug: '${citySlug}'`) || citiesContent.includes(`"${citySlug}"`)) {
             return {
               url: urlPath,
               status: 'exists',
               details: `City page found, slug exists in cities data`,
-              filePath: fullPath
+              filePath: fullPath,
             };
           } else {
             return {
               url: urlPath,
               status: 'missing',
               details: `City page exists but slug '${citySlug}' not found in cities data`,
-              filePath: fullPath
+              filePath: fullPath,
             };
           }
         } catch (error) {
@@ -132,7 +125,7 @@ function checkPageExists(urlPath: string): PageCheckResult {
             url: urlPath,
             status: 'error',
             details: `Error reading cities data: ${error}`,
-            filePath: fullPath
+            filePath: fullPath,
           };
         }
       }
@@ -142,7 +135,7 @@ function checkPageExists(urlPath: string): PageCheckResult {
   return {
     url: urlPath,
     status: 'missing',
-    details: `No page file found. Checked: ${possiblePaths.join(', ')}`
+    details: `No page file found. Checked: ${possiblePaths.join(', ')}`,
   };
 }
 

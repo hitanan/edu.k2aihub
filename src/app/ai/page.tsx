@@ -51,14 +51,14 @@ export default function AIModulePage() {
     name: 'AI Của Tôi - Trung Tâm Học Tập AI Toàn Diện',
     description:
       'Khám phá toàn bộ các bài học, trò chơi và công cụ AI tại K2AiHub. Từ ChatGPT, Midjourney đến lập trình AI và marketing, tất cả ở một nơi.',
-    url: 'https://k2aihub.com/ai',
+    url: 'https://edu.k2aihub.com/ai',
     inLanguage: 'vi-VN',
     publisher: {
       '@type': 'Organization',
       name: 'K2AiHub',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://k2aihub.com/logo.png',
+        url: 'https://edu.k2aihub.com/logo.png',
       },
     },
     mainEntity: {
@@ -71,7 +71,7 @@ export default function AIModulePage() {
             '@type': 'Course',
             name: lesson.title,
             description: lesson.description,
-            url: `https://k2aihub.com${'path' in lesson ? lesson.path : `/learning/${lesson.id}`}`,
+            url: `https://edu.k2aihub.com${'path' in lesson ? lesson.path : `/learning/${lesson.id}`}`,
           },
         })),
         ...aiGames.map((game, index) => ({
@@ -81,7 +81,7 @@ export default function AIModulePage() {
             '@type': 'Game',
             name: game.title,
             description: game.description,
-            url: `https://k2aihub.com/games/${game.id}`,
+            url: `https://edu.k2aihub.com/games/${game.id}`,
           },
         })),
       ],

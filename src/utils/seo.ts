@@ -68,7 +68,7 @@ function createVideoObjectData(title: string, description: string, videoUrl: str
     publisher: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: 'https://k2aihub.com',
+      url: 'https://edu.k2aihub.com',
     },
     inLanguage: 'vi-VN',
     regionsAllowed: ['VN', 'US', 'SG', 'MY', 'TH', 'PH', 'ID', 'KH', 'LA'],
@@ -127,7 +127,7 @@ export function createCourseStructuredData({
     provider: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: 'https://k2aihub.com',
+      url: 'https://edu.k2aihub.com',
     },
     hasCourseInstance: [
       {
@@ -193,8 +193,8 @@ export const defaultOpenGraph = {
 export function createModuleMetadata(title: string, description: string, keywords: string[] = [], moduleSlug?: string) {
   const socialMeta = SocialSeoPresets.module(title, description, keywords);
   const canonicalUrl = moduleSlug
-    ? `https://k2aihub.com/learning/${moduleSlug}/`
-    : `https://k2aihub.com/${moduleSlug}/`;
+    ? `https://edu.k2aihub.com/learning/${moduleSlug}/`
+    : `https://edu.k2aihub.com/${moduleSlug}/`;
 
   return {
     ...socialMeta,
@@ -238,7 +238,7 @@ export function createGameMetadata(gameId: string) {
   return {
     ...socialMeta,
     alternates: {
-      canonical: `https://k2aihub.com/games/${gameId}/`,
+      canonical: `https://edu.k2aihub.com/games/${gameId}/`,
     },
     robots: {
       index: true,
@@ -270,7 +270,7 @@ export function createLessonMetadata(
   return {
     ...socialMeta,
     alternates: {
-      canonical: `https://k2aihub.com/learning/${moduleType}/${lessonId}/`,
+      canonical: `https://edu.k2aihub.com/learning/${moduleType}/${lessonId}/`,
     },
     robots: {
       index: true,
@@ -302,7 +302,7 @@ export function createArticleMetadata(
     ...socialMeta,
     authors: [{ name: author }],
     alternates: {
-      canonical: `https://k2aihub.com/blog/`,
+      canonical: `https://edu.k2aihub.com/blog/`,
     },
     robots: {
       index: true,
@@ -327,9 +327,9 @@ export function createOrganizationStructuredData() {
     '@type': 'Organization',
     name: SITE_NAME,
     description: 'Học tập thông minh - Công nghệ AI dẫn lối về địa lý Việt Nam và hướng dẫn AI thực tế',
-    url: 'https://k2aihub.com',
-    logo: 'https://k2aihub.com/logo.png',
-    sameAs: ['https://k2aihub.com'],
+    url: 'https://edu.k2aihub.com',
+    logo: 'https://edu.k2aihub.com/logo.png',
+    sameAs: ['https://edu.k2aihub.com'],
     areaServed: 'VN',
     inLanguage: 'vi',
   };
@@ -443,7 +443,7 @@ export function createGameStructuredData(gameId: string) {
     applicationSubCategory: 'EducationalGame',
     description: game.description,
     operatingSystem: 'Web',
-    url: `https://k2aihub.com/games/${game.id}`,
+    url: `https://edu.k2aihub.com/games/${game.id}`,
     inLanguage: 'vi',
     genre: game.category?.join(', '),
     offers: {
@@ -510,25 +510,25 @@ export function createBreadcrumbStructuredData(city: City) {
         '@type': 'ListItem',
         position: 1,
         name: 'Trang chủ',
-        item: 'https://k2aihub.com',
+        item: 'https://edu.k2aihub.com',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Địa lý Việt Nam',
-        item: 'https://k2aihub.com/#geography',
+        item: 'https://edu.k2aihub.com/#geography',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: city.region,
-        item: `https://k2aihub.com/#${city.region.toLowerCase().replace(/\s+/g, '-')}`,
+        item: `https://edu.k2aihub.com/#${city.region.toLowerCase().replace(/\s+/g, '-')}`,
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: city.name,
-        item: `https://k2aihub.com/city/${city.slug}`,
+        item: `https://edu.k2aihub.com/city/${city.slug}`,
       },
     ],
   };

@@ -10,9 +10,7 @@
  */
 export function getAssetPath(assetPath: string): string {
   // Ensure the asset path starts with a slash
-  const normalizedPath = assetPath.startsWith('/')
-    ? assetPath
-    : `/${assetPath}`;
+  const normalizedPath = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
 
   // In development, always use the asset path as-is
   if (process.env.NODE_ENV === 'development') {
@@ -24,7 +22,7 @@ export function getAssetPath(assetPath: string): string {
     // Client-side: Use the current origin and path to determine base path
     const { origin, pathname } = window.location;
 
-    // Custom domain case (e.g., k2aihub.com, example.com)
+    // Custom domain case (e.g., edu.k2aihub.com, example.com)
     if (!origin.includes('github.io')) {
       return normalizedPath;
     }
@@ -130,11 +128,9 @@ export function getAbsoluteAssetUrl(assetPath: string): string {
   }
 
   // Server-side: construct URL based on environment
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://k2aihub.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://edu.k2aihub.com';
   const basePath = getBasePath();
-  const normalizedPath = assetPath.startsWith('/')
-    ? assetPath
-    : `/${assetPath}`;
+  const normalizedPath = assetPath.startsWith('/') ? assetPath : `/${assetPath}`;
 
   return `${baseUrl}${basePath}${normalizedPath}`;
 }

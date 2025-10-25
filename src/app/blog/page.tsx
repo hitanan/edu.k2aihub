@@ -54,20 +54,20 @@ export default async function BlogPage() {
     '@type': 'Blog',
     name: 'K2AiHub Blog',
     description: 'Blog về giáo dục, công nghệ và phân tích chuyên sâu',
-    url: 'https://k2aihub.com/blog',
+    url: 'https://edu.k2aihub.com/blog',
     publisher: {
       '@type': 'Organization',
       name: 'K2AiHub',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://k2aihub.com/logo.png',
+        url: 'https://edu.k2aihub.com/logo.png',
       },
     },
     blogPost: paginatedPosts.map((post) => ({
       '@type': 'BlogPosting',
       mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://k2aihub.com/blog/${post.slug}`,
+        '@id': `https://edu.k2aihub.com/blog/${post.slug}`,
       },
       headline: post.title,
       description: post.description,
@@ -81,7 +81,7 @@ export default async function BlogPage() {
         name: 'K2AiHub',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://k2aihub.com/logo.png',
+          url: 'https://edu.k2aihub.com/logo.png',
         },
       },
     })),

@@ -8,7 +8,7 @@ import { regions } from '@/data/regions';
 import { citiesData } from '@/data/cities';
 import { City, Region, BlogCategory, BlogTag } from '@/types';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://k2aihub.com';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://edu.k2aihub.com';
 
 export function generateSitemapEntries(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -187,9 +187,9 @@ export function generateRSSMetadata() {
       'Cập nhật mới nhất từ K2AI - 50+ module giáo dục toàn diện: Địa lý Việt Nam, AI, Digital Marketing, Financial Literacy, Green Technology, Game Development, AI Art, Cybersecurity, Biotechnology, AI & Machine Learning, Quantum Computing, Blockchain Technology, Climate Science, Data Science, Space Exploration, Programming & Robotics, STEM, Aerospace Engineering, Biomedical Engineering, Food Technology, Nanotechnology, Electric Vehicle Tech, Mental Health Tech, Digital Government, Environmental Data Science, Advanced AI, Content Creator, Vietnamese Culture, Cross-border E-commerce, và nhiều module chuyên sâu khác',
     link: baseUrl,
     language: 'vi-VN',
-    managingEditor: 'info@k2aihub.com',
-    webMaster: 'admin@k2aihub.com',
+    managingEditor: 'k2aihub@gmail.com',
+    webMaster: 'k2aihub@gmail.com',
     lastBuildDate: new Date().toUTCString(),
-    generator: 'K2AiHub Next.js',
+    generator: 'K2AiHub',
   };
 }

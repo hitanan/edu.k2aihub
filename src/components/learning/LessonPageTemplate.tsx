@@ -111,7 +111,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
   const previousLesson = currentIndex > 0 ? config.lessons[currentIndex - 1] : null;
   const nextLesson = currentIndex < config.lessons.length - 1 ? config.lessons[currentIndex + 1] : null;
 
-  const lessonUrl = `https://k2aihub.com${config.modulePath}/${lesson.id}`;
+  const lessonUrl = `https://edu.k2aihub.com${config.modulePath}/${lesson.id}`;
   const lessonStructured = createLessonStructuredData({
     title: lesson.title,
     description: lesson.description,

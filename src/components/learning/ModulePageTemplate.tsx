@@ -51,7 +51,7 @@ export default function ModulePageTemplate({
     relatedModules,
   } = moduleData;
 
-  const moduleUrl = `https://k2aihub.com/learning/${id}`;
+  const moduleUrl = `https://edu.k2aihub.com/learning/${id}`;
   const courseStructuredData = createCourseStructuredData({
     moduleData,
     lessons,

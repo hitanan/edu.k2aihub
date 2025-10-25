@@ -135,7 +135,7 @@ export default async function Page({ params }: CityPageProps) {
     const educationalData = createEducationalContentStructuredData(
       `${city.name} - ${city.region}`,
       enhancedDescription,
-      `https://k2aihub.com/city/${city.slug}`,
+      `https://edu.k2aihub.com/city/${city.slug}`,
     );
     const faqData = createFAQStructuredData(city);
     const breadcrumbData = createBreadcrumbStructuredData(city);

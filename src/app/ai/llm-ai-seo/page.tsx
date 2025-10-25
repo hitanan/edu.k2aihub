@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       'Học cách tối ưu nội dung và website cho Large Language Models và AI-powered search engines như ChatGPT, Google AI Overviews, và Perplexity.',
     ),
     type: 'article',
-    url: 'https://k2aihub.com/ai/llm-ai-seo',
+    url: 'https://edu.k2aihub.com/ai/llm-ai-seo',
   },
   twitter: {
     card: 'summary_large_image',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     ),
   },
   alternates: {
-    canonical: 'https://k2aihub.com/ai/llm-ai-seo',
+    canonical: 'https://edu.k2aihub.com/ai/llm-ai-seo',
   },
 };
 

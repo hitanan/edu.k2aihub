@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'K2AiHub',
-  url: 'https://k2aihub.com',
-  ogImage: 'https://k2aihub.com/og.jpg',
+  url: 'https://edu.k2aihub.com',
+  ogImage: 'https://edu.k2aihub.com/og.jpg',
   description:
     'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối. Khám phá các khóa học về AI, lập trình, STEM và nhiều hơn nữa.',
   links: {

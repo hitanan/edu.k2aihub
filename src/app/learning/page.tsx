@@ -76,14 +76,14 @@ export default function LearningPage() {
     '@type': 'CollectionPage',
     name: `Tất Cả Khóa Học - ${moduleCount} Modules Chuyên Sâu`,
     description: `Khám phá ${moduleCount} khóa học chuyên sâu từ Vietnamese business, AI technology, đến programming và science. Tất cả miễn phí và được thiết kế cho thị trường Việt Nam.`,
-    url: 'https://k2aihub.com/learning',
+    url: 'https://edu.k2aihub.com/learning',
     inLanguage: 'vi-VN',
     publisher: {
       '@type': 'Organization',
       name: 'K2AiHub',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://k2aihub.com/logo.png',
+        url: 'https://edu.k2aihub.com/logo.png',
       },
     },
     mainEntity: {
@@ -95,7 +95,7 @@ export default function LearningPage() {
           '@type': 'Course',
           name: module.title,
           description: module.description,
-          url: `https://k2aihub.com/learning/${module.id}`,
+          url: `https://edu.k2aihub.com/learning/${module.id}`,
           provider: {
             '@type': 'Organization',
             name: 'K2AiHub',
