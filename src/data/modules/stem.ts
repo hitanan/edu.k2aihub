@@ -135,7 +135,7 @@ export const stemLessons: StemLesson[] = [
       {
         question: 'Làm thế nào để phụ huynh có thể khuyến khích con học STEM tại nhà?',
         answer:
-          'Phụ huynh có thể khuyến khích sự tò mò của trẻ, cùng trẻ thực hiện các thí nghiệm khoa học đơn giản, chơi các trò chơi xây dựng (LEGO), hoặc tham gia các câu lạc bộ, trại hè STEM. Quan trọng là tạo ra một môi trường khuyến khích đặt câu hỏi và không sợ sai.',
+          'Phụ huynh có thể khuyến khích sự tò mò của trẻ, cùng trẻ thực hiện các thí nghiệm khoa học đơn giản, chơi các Interactive Practice xây dựng (LEGO), hoặc tham gia các câu lạc bộ, trại hè STEM. Quan trọng là tạo ra một môi trường khuyến khích đặt câu hỏi và không sợ sai.',
       },
       {
         question: 'Tư duy tính toán (Computational Thinking) là gì?',

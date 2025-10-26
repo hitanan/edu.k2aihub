@@ -100,7 +100,7 @@ export default async function CategoryPage({ params }: Props) {
       'Công Nghệ': '💻',
       'Phân Tích': '📊',
       'Nghiên Cứu': '🔬',
-      'Trò Chơi': '🎮',
+      'Interactive Practice': '🎮',
       'Xu Hướng': '📈',
       K2AiHub: '🎯',
       'Triển Khai': '🚀',

@@ -79,7 +79,7 @@ export default function PrivacyPage() {
                   <h3 className="text-lg font-semibold text-blue-400 mb-2">Local Storage chứa:</h3>
                   <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
                     <li>✅ Tiến độ hoàn thành bài học</li>
-                    <li>✅ Điểm số trò chơi giáo dục</li>
+                    <li>✅ Điểm số Interactive Practice</li>
                     <li>✅ Cài đặt giao diện cá nhân</li>
                     <li>✅ Lịch sử học tập gần đây</li>
                   </ul>
@@ -117,7 +117,7 @@ export default function PrivacyPage() {
               </div>
               <div className="flex items-start">
                 <span className="text-green-400 mr-3">✅</span>
-                <span>Theo dõi thành tích và điểm số trò chơi giáo dục</span>
+                <span>Theo dõi thành tích và điểm số Interactive Practice</span>
               </div>
               <div className="flex items-start">
                 <span className="text-green-400 mr-3">✅</span>

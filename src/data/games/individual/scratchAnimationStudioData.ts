@@ -77,7 +77,7 @@ export const scratchAnimationStudioGameData: ScratchAnimationStudioGameData = {
         {
           id: 'ball1',
           name: 'Ball',
-          image: '/games/sprites/ball.svg',
+          image: '/practice/sprites/ball.svg',
           costumes: ['ball-red', 'ball-blue', 'ball-green'],
           position: { x: 0, y: 0 },
           properties: {
@@ -168,7 +168,7 @@ export const scratchAnimationStudioGameData: ScratchAnimationStudioGameData = {
         {
           id: 'cat1',
           name: 'Cat',
-          image: '/games/sprites/cat.svg',
+          image: '/practice/sprites/cat.svg',
           costumes: ['cat-a', 'cat-b'],
           position: { x: 0, y: 0 },
           properties: {
@@ -372,11 +372,11 @@ export const scratchAnimationStudioGameData: ScratchAnimationStudioGameData = {
     blockSpacing: 5,
     canvasSize: { width: 800, height: 600 },
     spriteLibrary: [
-      '/games/sprites/cat.svg',
-      '/games/sprites/ball.svg',
-      '/games/sprites/fish.svg',
-      '/games/sprites/butterfly.svg',
-      '/games/sprites/robot.svg',
+      '/practice/sprites/cat.svg',
+      '/practice/sprites/ball.svg',
+      '/practice/sprites/fish.svg',
+      '/practice/sprites/butterfly.svg',
+      '/practice/sprites/robot.svg',
     ],
   },
 };

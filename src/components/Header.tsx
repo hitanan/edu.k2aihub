@@ -55,8 +55,8 @@ const Header: React.FC = () => {
     { name: 'Trang Chủ', href: '/', icon: <Home className="w-4 h-4" /> },
     { name: 'AI Của Tôi', href: '/ai', icon: <Brain className="w-4 h-4" /> },
     {
-      name: 'Trò Chơi Giáo Dục',
-      href: '/games',
+      name: 'Interactive Practice',
+      href: '/practice',
       icon: <span className="w-4 h-4 text-center">🎮</span>,
     },
     {

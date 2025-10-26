@@ -1461,7 +1461,7 @@ void loop() {
         },
       },
       {
-        name: 'Trò chơi đuổi bắt',
+        name: 'Interactive Practice đuổi bắt',
         difficulty: 'Trung bình',
         estimatedTime: '25 phút',
         sprites: [

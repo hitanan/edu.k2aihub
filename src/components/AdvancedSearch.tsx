@@ -171,7 +171,7 @@ export default function AdvancedSearch({
               title: game.title,
               description: game.description,
               type: 'game',
-              url: `/games/${game.id}`,
+              url: `/practice/${game.id}`,
               category: Array.isArray(game.category) ? game.category.join(', ') : game.category,
               score,
             });

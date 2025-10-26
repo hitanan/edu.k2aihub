@@ -7,7 +7,7 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
   title: 'Học tập Sáng tạo với Minecraft Education',
   subtitle: 'Xây dựng, Lập trình và Khám phá trong thế giới khối vuông',
   description:
-    'Minecraft Education không chỉ là một trò chơi, đó là một nền tảng học tập mạnh mẽ. Khóa học này sẽ hướng dẫn bạn cách tận dụng các công cụ độc đáo của Minecraft Education để học về lập trình, hóa học, giải quyết vấn đề và cộng tác. Hãy sẵn sàng để xây dựng kiến thức của bạn, từng khối một.',
+    'Minecraft Education không chỉ là một Interactive Practice, đó là một nền tảng học tập mạnh mẽ. Khóa học này sẽ hướng dẫn bạn cách tận dụng các công cụ độc đáo của Minecraft Education để học về lập trình, hóa học, giải quyết vấn đề và cộng tác. Hãy sẵn sàng để xây dựng kiến thức của bạn, từng khối một.',
   level: 'Cơ bản',
   duration: '6-8 giờ',
   category: 'Creative Technology',
@@ -281,7 +281,7 @@ export const minecraftEduModule: ModuleData<MinecraftEduLesson> = {
         {
           question: 'Tính năng hóa học có giúp tôi học tốt môn Hóa ở trường không?',
           answer:
-            'Có, nó giúp bạn hình dung và ghi nhớ các khái niệm trừu tượng như cấu tạo nguyên tử và công thức phân tử một cách dễ dàng hơn. Nó biến việc học hóa học thành một trò chơi khám phá.',
+            'Có, nó giúp bạn hình dung và ghi nhớ các khái niệm trừu tượng như cấu tạo nguyên tử và công thức phân tử một cách dễ dàng hơn. Nó biến việc học hóa học thành một Interactive Practice khám phá.',
         },
         {
           question: 'Ngoài bóng bay và bom băng, còn có thể tạo ra gì khác?',

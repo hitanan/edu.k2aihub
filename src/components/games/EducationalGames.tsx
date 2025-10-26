@@ -87,7 +87,7 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
   const handlePlay = () => {
     if (game.isInternal) {
       if (typeof window !== 'undefined') {
-        router.push(`/games/${game.id}`);
+        router.push(`/practice/${game.id}`);
       }
     } else if (game.gameUrl) {
       window.open(game.gameUrl, '_blank', 'noopener,noreferrer');
@@ -162,7 +162,7 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
       if (onPlay) {
         onPlay();
       } else if (typeof window !== 'undefined') {
-        router.push(`/games/${game.id}`);
+        router.push(`/practice/${game.id}`);
       }
     } else if (game.gameUrl) {
       // Open external game
@@ -237,7 +237,7 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
           className="w-full bg-white/10 hover:bg-white/20 text-white rounded-lg py-2 px-4 transition-colors duration-200 flex items-center justify-center font-medium cursor-pointer"
         >
           <Play className="w-4 h-4 mr-2" />
-          {game.isInternal ? 'Chơi ngay' : 'Mở trò chơi'}
+          {game.isInternal ? 'Practice' : 'Mở Interactive Practice'}
         </button>
       </div>
     </div>
@@ -282,11 +282,11 @@ export function EducationalGamesShowcase({
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-2xl font-bold text-white flex items-center">
           <Trophy className="w-6 h-6 mr-3 text-yellow-400" />
-          {moduleType ? 'Trò chơi học tập' : 'Trò chơi đề xuất'}
+          {moduleType ? 'Interactive Practice học tập' : 'Interactive Practice'}
         </h3>
         {!moduleType && (
           <Link
-            href="/games"
+            href="/practice"
             className="text-emerald-400 hover:text-emerald-300 font-medium transition-colors duration-200 flex items-center"
           >
             Xem tất cả
@@ -304,10 +304,10 @@ export function EducationalGamesShowcase({
       {moduleType && (
         <div className="mt-6 text-center">
           <Link
-            href="/games"
+            href="/practice"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-medium"
           >
-            Xem tất cả trò chơi
+            Xem tất cả Interactive Practice
             <Play className="w-5 h-5 ml-2" />
           </Link>
         </div>

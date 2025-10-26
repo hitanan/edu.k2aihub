@@ -18,7 +18,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/feedback`, priority: 0.5, changeFrequency: 'monthly' },
     { url: `${baseUrl}/learning`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/games`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${baseUrl}/practice`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/blog`, priority: 0.9, changeFrequency: 'daily' },
   ];
 
@@ -40,7 +40,7 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
   );
 
   const gamePages: MetadataRoute.Sitemap = EDUCATIONAL_GAMES_DATA.map((game) => ({
-    url: `${baseUrl}/games/${game.id}`,
+    url: `${baseUrl}/practice/${game.id}`,
     priority: 0.7,
     changeFrequency: 'monthly',
     lastModified,

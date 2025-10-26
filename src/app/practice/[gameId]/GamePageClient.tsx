@@ -88,7 +88,7 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <PageTracker path={`/games/${game.id}`} title={game.title} moduleType="learning" />
+  <PageTracker path={`/practice/${game.id}`} title={game.title} moduleType="learning" />
 
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -105,7 +105,7 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`bg-gradient-to-r ${game.color} rounded-3xl p-1 mb-8`}>
           <div className="bg-slate-900/90 rounded-3xl p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
               <div>
                 <div className="flex items-center space-x-4 mb-4">
                   <span className="text-6xl">{game.icon}</span>
@@ -163,7 +163,7 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
                   ) : (
                     <>
                       <Play className="w-5 h-5 mr-3" />
-                      {game.isInternal ? 'Chơi ngay' : 'Mở trò chơi'}
+                      {game.isInternal ? 'Practice' : 'Mở Interactive Practice'}
                       {!game.isInternal && <ExternalLink className="w-4 h-4 ml-2" />}
                     </>
                   )}
@@ -296,7 +296,7 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
             </div>
             <div className="mt-6 text-center">
               <p className="text-gray-400 text-sm">
-                💡 Hoàn thành các bài học này để hiểu sâu hơn về chủ đề trong trò chơi
+                💡 Hoàn thành các bài học này để hiểu sâu hơn về chủ đề trong Interactive Practice
               </p>
             </div>
           </div>
@@ -304,12 +304,12 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
 
         {/* Related Games */}
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">Trò chơi liên quan</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">Interactive Practice liên quan</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* This would show related games - implement based on category or moduleType */}
             <div className="text-center text-gray-400">
               <div className="text-4xl mb-2">🎮</div>
-              <p>Thêm trò chơi sẽ được cập nhật sớm!</p>
+              <p>Thêm Interactive Practice sẽ được cập nhật sớm!</p>
             </div>
           </div>
         </div>

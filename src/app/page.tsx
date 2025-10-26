@@ -11,7 +11,7 @@ import CtaButton from '@/components/ui/CtaButton';
 
 export const metadata: Metadata = createModuleMetadata(
   'K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối',
-  'Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 90+ modules học tập chất lượng cao với trò chơi giáo dục và AI thực tế.',
+  'Nền tảng giáo dục tương tác miễn phí với AI, giúp bạn nắm vững kiến thức từ cơ bản đến nâng cao. 90+ modules học tập chất lượng cao với Interactive Practice và AI thực tế.',
   [
     'nền tảng học tập',
     'giáo dục AI',
@@ -23,7 +23,7 @@ export const metadata: Metadata = createModuleMetadata(
     'cybersecurity',
     'biotechnology',
     'STEM',
-    'trò chơi giáo dục',
+    'Interactive Practice',
     '3D learning',
   ],
 );

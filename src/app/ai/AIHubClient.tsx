@@ -66,7 +66,7 @@ const AIHubClient: React.FC<AIHubClientProps> = ({ lessons, games }) => {
           </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white">AI Của Tôi</h1>
           <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
-            Khám phá, học hỏi và ứng dụng Trí tuệ Nhân tạo vào mọi lĩnh vực. Tất cả bài học, công cụ và trò chơi AI đều
+            Khám phá, học hỏi và ứng dụng Trí tuệ Nhân tạo vào mọi lĩnh vực. Tất cả bài học, công cụ và Interactive Practice AI đều
             ở đây.
           </p>
           <div className="mt-8 flex justify-center gap-4">
@@ -142,13 +142,13 @@ const AIHubClient: React.FC<AIHubClientProps> = ({ lessons, games }) => {
         <section id="ai-games">
           <div className="flex items-center justify-center mb-8">
             <Gamepad2 className="w-8 h-8 mr-3 text-purple-500" />
-            <h2 className="text-3xl font-bold text-center">Trò Chơi AI</h2>
+            <h2 className="text-3xl font-bold text-center">Interactive Practice AI</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {games.map((game) => (
               <Link
                 key={game.id}
-                href={`/games/${game.id}`}
+                href={`/practice/${game.id}`}
                 className="group block bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:-translate-y-1 transition-transform"
               >
                 <div className="flex items-center mb-4">
@@ -159,7 +159,7 @@ const AIHubClient: React.FC<AIHubClientProps> = ({ lessons, games }) => {
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{game.description}</p>
                 <div className="flex items-center text-purple-600 dark:text-purple-400 font-semibold">
-                  Chơi ngay
+                  Practice
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </Link>

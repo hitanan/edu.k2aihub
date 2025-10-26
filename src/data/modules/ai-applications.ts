@@ -540,7 +540,7 @@ export const AIApplicationLessons: AIApplicationLessonData[] = [
     realWorldApplications: [
       'Tạo nội dung cho blog, trang web và mạng xã hội',
       'Sản xuất video quảng cáo và nội dung tiếp thị',
-      'Sáng tác nhạc cho video, trò chơi và ứng dụng',
+      'Sáng tác nhạc cho video, Interactive Practice và ứng dụng',
       'Thiết kế đồ họa cho thương hiệu và chiến dịch tiếp thị',
       'Cung cấp dịch vụ tư vấn và đào tạo về nội dung AI',
     ],

@@ -514,9 +514,9 @@ export function SupplyChainOptimizationChallengeGame({ onComplete, timeLeft, onR
 
       {gameState === 'completed' && (
         <div className="bg-white p-4 rounded-md shadow-md">
-          <h2 className="text-lg font-semibold mb-2">Kết thúc trò chơi</h2>
+          <h2 className="text-lg font-semibold mb-2">Kết thúc Interactive Practice</h2>
           <div className="text-sm text-gray-700 mb-4">
-            Cảm ơn bạn đã tham gia trò chơi! Dưới đây là kết quả của bạn:
+            Cảm ơn bạn đã tham gia Interactive Practice! Dưới đây là kết quả của bạn:
           </div>
           <div className="grid grid-cols-2 gap-4 text-sm text-gray-700">
             <div>

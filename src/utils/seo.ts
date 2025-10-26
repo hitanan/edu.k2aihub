@@ -229,8 +229,45 @@ export function createGameMetadata(gameId: string) {
 
   // Extract metadata from game data
   const title = gameData.title;
-  const description = gameData.description;
-  const keywords = gameData.skills;
+  const keywords = gameData.skills || [];
+
+  // If the stored description is short, synthesize a richer description to improve snippets
+  const synthesizeLongDescription = (g: {
+    title?: string;
+    category?: string[] | string;
+    difficulty?: string;
+    estimatedTime?: string;
+    skills?: string[];
+    description?: string;
+  }) => {
+    const parts: string[] = [];
+    const titlePart = g.title || 'Interactive practice';
+    const categoryPart = Array.isArray(g.category) ? g.category.join(', ') : g.category || 'hands-on learning';
+    parts.push(`${titlePart} — an interactive practice focused on ${categoryPart}.`);
+    if (g.difficulty) {
+      parts.push(`Difficulty: ${g.difficulty}.`);
+    }
+    if (g.estimatedTime) {
+      parts.push(`Estimated time: ${g.estimatedTime}.`);
+    }
+    if (g.skills && g.skills.length > 0) {
+      const skillsExcerpt = g.skills.slice(0, 6).join(', ');
+      parts.push(`Practice and build skills: ${skillsExcerpt}.`);
+    }
+    // Add learning outcomes and audience hints
+    parts.push(
+      `Designed for learners to practice core concepts, apply knowledge, and measure progress. Suitable for students and self-learners seeking hands-on experience.`,
+    );
+    parts.push(`Available on K2AiHub with related lessons and resources for deeper study.`);
+
+    // Join into a single paragraph and ensure a reasonable length
+    return parts.join(' ');
+  };
+
+  const description =
+    gameData.description && gameData.description.trim().length > 120
+      ? gameData.description
+      : synthesizeLongDescription(gameData);
 
   // Create social media metadata
   const socialMeta = SocialSeoPresets.game(title, description, keywords);
@@ -238,7 +275,8 @@ export function createGameMetadata(gameId: string) {
   return {
     ...socialMeta,
     alternates: {
-      canonical: `https://edu.k2aihub.com/games/${gameId}/`,
+      // Use the new, shorter SEO-friendly path: /practice/
+      canonical: `https://edu.k2aihub.com/practice/${gameId}/`,
     },
     robots: {
       index: true,
@@ -443,7 +481,7 @@ export function createGameStructuredData(gameId: string) {
     applicationSubCategory: 'EducationalGame',
     description: game.description,
     operatingSystem: 'Web',
-    url: `https://edu.k2aihub.com/games/${game.id}`,
+    url: `https://edu.k2aihub.com/practice/${game.id}`,
     inLanguage: 'vi',
     genre: game.category?.join(', '),
     offers: {

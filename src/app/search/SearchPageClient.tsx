@@ -184,7 +184,7 @@ export default function SearchPageClient({
               title: game.title,
               description: game.description,
               type: 'game',
-              url: `/games/${game.id}`,
+              url: `/practice/${game.id}`,
               category: Array.isArray(game.category) ? game.category.join(', ') : game.category,
               score,
               difficulty: game.difficulty,
@@ -321,7 +321,7 @@ export default function SearchPageClient({
       case 'lesson':
         return 'Bài học';
       case 'game':
-        return 'Trò chơi';
+        return 'Interactive Practice';
       case 'blog':
         return 'Blog';
       default:
@@ -337,7 +337,7 @@ export default function SearchPageClient({
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Tìm Kiếm K2AiHub</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Khám phá hàng ngàn khóa học, bài học, trò chơi giáo dục và nội dung blog chất lượng cao
+              Khám phá hàng ngàn khóa học, bài học, Interactive Practice và nội dung blog chất lượng cao
             </p>
           </div>
 
@@ -349,7 +349,7 @@ export default function SearchPageClient({
                 type="text"
                 value={query}
                 onChange={handleSearchChange}
-                placeholder="Tìm kiếm khóa học, bài học, trò chơi..."
+                placeholder="Tìm kiếm khóa học, bài học, Interactive Practice..."
                 className="w-full pl-12 pr-4 py-4 text-lg border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
                 autoFocus
               />

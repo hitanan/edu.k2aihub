@@ -616,7 +616,7 @@ export default function TrafficManagementSimulator3D() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-blue-400 mb-3">🎯 Mục Tiêu Trò Chơi</h3>
+                <h3 className="text-2xl font-bold text-blue-400 mb-3">🎯 Mục Tiêu Interactive Practice</h3>
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>

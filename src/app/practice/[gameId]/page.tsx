@@ -24,23 +24,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!game) {
     return {
-      title: createTitle('Không tìm thấy trò chơi'),
-      description: createDescription('Trò chơi bạn tìm kiếm không tồn tại.'),
+      title: createTitle('Không tìm thấy Interactive Practice'),
+      description: createDescription('Interactive Practice bạn tìm kiếm không tồn tại.'),
     };
   }
 
   return {
-    title: createTitle(`${game.title} - Trò Chơi Giáo Dục`),
+    title: createTitle(`${game.title} - Interactive Practice`),
     description: createDescription(game.description),
-    keywords: [game.title, ...(game.skills || []), 'trò chơi giáo dục', 'K2AI'],
+    keywords: [game.title, ...(game.skills || []), 'Interactive Practice', 'K2AI'],
     alternates: {
-      canonical: `/games/${game.id}`,
+      canonical: `/practice/${game.id}`,
     },
     openGraph: {
       locale: 'vi_VN',
       siteName: 'K2AiHub - Nền tảng học tập thông minh',
 
-      title: createTitle(`${game.title} - Trò Chơi Giáo Dục`),
+      title: createTitle(`${game.title} - Interactive Practice`),
       description: game.description,
       type: 'website',
     },

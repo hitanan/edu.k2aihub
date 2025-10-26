@@ -146,15 +146,15 @@ export default function EducationalGamesMain() {
   if (isLoading || !isLoaded) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-        <PageTracker path="/games" title="Trò Chơi Giáo Dục" moduleType="learning" />
+        <PageTracker path="/practice" title="Interactive Practice" moduleType="learning" />
 
         {/* Hero Section */}
         <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Trò Chơi Giáo Dục</h1>
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Interactive Practice</h1>
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa
+                Khám phá <strong className="text-purple-300">{totalGames} Interactive Practice học tập</strong> thú vị từ quiz địa
                 lý, thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
               </p>
 
@@ -211,7 +211,7 @@ export default function EducationalGamesMain() {
         <div className="text-center py-8">
           <div className="inline-flex items-center text-gray-400">
             <div className="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full animate-spin mr-3"></div>
-            Đang tải trò chơi...
+            Đang tải Interactive Practice...
           </div>
         </div>
       </div>
@@ -220,15 +220,15 @@ export default function EducationalGamesMain() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <PageTracker path="/games" title="Trò Chơi Giáo Dục" moduleType="learning" />
+      <PageTracker path="/practice" title="Interactive Practice" moduleType="learning" />
 
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-purple-600/20 to-pink-600/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Trò Chơi Giáo Dục</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">🎮 Interactive Practice</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Khám phá <strong className="text-purple-300">{totalGames} trò chơi học tập</strong> thú vị từ quiz địa lý,
+              Khám phá <strong className="text-purple-300">{totalGames} Interactive Practice học tập</strong> thú vị từ quiz địa lý,
               thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game!
             </p>
 
@@ -259,7 +259,7 @@ export default function EducationalGamesMain() {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Tìm kiếm trò chơi..."
+                placeholder="Tìm kiếm Interactive Practice..."
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20"
@@ -305,7 +305,7 @@ export default function EducationalGamesMain() {
               </select>
             </div>
 
-            <div className="ml-auto text-white">Tìm thấy {filteredGames.length} trò chơi</div>
+            <div className="ml-auto text-white">Tìm thấy {filteredGames.length} Interactive Practice</div>
           </div>
         </div>
 
@@ -319,7 +319,7 @@ export default function EducationalGamesMain() {
         {filteredGames.length === 0 && (
           <div className="text-center py-16">
             <div className="text-6xl mb-4">🎮</div>
-            <h3 className="text-2xl font-bold text-white mb-2">Không tìm thấy trò chơi</h3>
+            <h3 className="text-2xl font-bold text-white mb-2">Không tìm thấy Interactive Practice</h3>
             <p className="text-gray-400">Hãy thử thay đổi bộ lọc hoặc từ khóa tìm kiếm</p>
           </div>
         )}
@@ -343,7 +343,7 @@ export default function EducationalGamesMain() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-white mb-4">Danh mục phổ biến</h2>
-          <p className="text-gray-300">Khám phá các loại trò chơi học tập khác nhau</p>
+          <p className="text-gray-300">Khám phá các loại Interactive Practice học tập khác nhau</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -359,7 +359,7 @@ export default function EducationalGamesMain() {
             >
               <div className="text-3xl mb-3">{category.label.split(' ')[0]}</div>
               <h3 className="text-lg font-semibold mb-2">{category.label.split(' ').slice(1).join(' ')}</h3>
-              <p className="text-sm opacity-80">{category.count} trò chơi</p>
+              <p className="text-sm opacity-80">{category.count} Interactive Practice</p>
             </button>
           ))}
         </div>

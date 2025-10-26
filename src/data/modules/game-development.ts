@@ -25,7 +25,7 @@ export const gameDevLessons: GameDevLesson[] = [
     id: 'introduction-to-game-development',
     title: 'Bài 1: Giới thiệu về Phát triển Game',
     description:
-      'Khám phá thế giới phát triển game, từ lịch sử, các thể loại chính, đến quy trình tạo ra một trò chơi hoàn chỉnh.',
+      'Khám phá thế giới phát triển game, từ lịch sử, các thể loại chính, đến quy trình tạo ra một Interactive Practice hoàn chỉnh.',
     videoUrl: 'https://www.youtube.com/watch?v=example1',
     duration: '1 giờ 30 phút',
     difficulty: 'Beginner',
@@ -79,7 +79,7 @@ export const gameDevLessons: GameDevLesson[] = [
       {
         question: 'Game Design là gì?',
         answer:
-          'Game Design là nghệ thuật và khoa học của việc tạo ra các quy tắc và nội dung của một trò chơi. Game Designer quyết định trải nghiệm của người chơi sẽ như thế nào, từ cơ chế gameplay, cốt truyện, đến cách người chơi tương tác với thế giới game.',
+          'Game Design là nghệ thuật và khoa học của việc tạo ra các quy tắc và nội dung của một Interactive Practice. Game Designer quyết định trải nghiệm của người chơi sẽ như thế nào, từ cơ chế gameplay, cốt truyện, đến cách người chơi tương tác với thế giới game.',
       },
       {
         question: 'Quy trình phát triển một game thường gồm những giai đoạn nào?',

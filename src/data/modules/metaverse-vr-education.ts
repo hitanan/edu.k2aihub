@@ -72,7 +72,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
       ],
       prerequisites: [
         'Kiến thức cơ bản về internet và công nghệ',
-        'Hiểu biết về mạng xã hội và trò chơi',
+        'Hiểu biết về mạng xã hội và Interactive Practice',
         'Không cần kinh nghiệm VR trước đó',
       ],
       faqs: [
@@ -165,7 +165,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
         {
           question: 'Gamification trong giáo dục VR là gì?',
           answer:
-            'Là việc áp dụng các yếu tố của trò chơi (như điểm số, phần thưởng, thử thách) vào trải nghiệm học tập để tăng cường sự hứng thú, động lực và khả năng ghi nhớ kiến thức của người học.',
+            'Là việc áp dụng các yếu tố của Interactive Practice (như điểm số, phần thưởng, thử thách) vào trải nghiệm học tập để tăng cường sự hứng thú, động lực và khả năng ghi nhớ kiến thức của người học.',
         },
         {
           question: 'A-Frame là gì?',
@@ -333,7 +333,7 @@ export const metaverseVREducationModule: ModuleData<MetaverseVRLesson> = {
         {
           question: 'VRChat và Rec Room khác nhau như thế nào?',
           answer:
-            'VRChat tập trung mạnh vào việc cho phép người dùng tự tạo và tùy chỉnh thế giới cũng như avatar, thu hút một cộng đồng sáng tạo đa dạng. Rec Room lại tập trung nhiều hơn vào các trò chơi và hoạt động có sẵn mà người dùng có thể tham gia cùng nhau.',
+            'VRChat tập trung mạnh vào việc cho phép người dùng tự tạo và tùy chỉnh thế giới cũng như avatar, thu hút một cộng đồng sáng tạo đa dạng. Rec Room lại tập trung nhiều hơn vào các Interactive Practice và hoạt động có sẵn mà người dùng có thể tham gia cùng nhau.',
         },
         {
           question: 'Động lực xã hội trong không gian ảo có gì khác biệt?',

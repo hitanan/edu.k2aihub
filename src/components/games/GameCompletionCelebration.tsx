@@ -50,10 +50,10 @@ export default function GameCompletionCelebration({
 
   const isGameComplete = level && totalLevels && level >= totalLevels;
   const congratulationMessage = isGameComplete 
-    ? "🎉 Chúc mừng bạn đã hoàn thành toàn bộ trò chơi!"
+    ? "🎉 Chúc mừng bạn đã hoàn thành toàn bộ Interactive Practice!"
     : level && totalLevels 
     ? `🎯 Hoàn thành Level ${level}/${totalLevels}!`
-    : "🎉 Chúc mừng bạn đã hoàn thành trò chơi!";
+    : "🎉 Chúc mừng bạn đã hoàn thành Interactive Practice!";
 
   const getScoreRating = (score: number) => {
     if (score >= 100) return { text: "Xuất sắc!", color: "text-yellow-400", emoji: "🏆" };
@@ -206,7 +206,7 @@ export default function GameCompletionCelebration({
           <div className="mt-6 p-4 bg-blue-900/30 rounded-xl border border-blue-500/30">
             <p className="text-blue-200 text-sm">
               {isGameComplete 
-                ? "🌟 Bạn đã thể hiện kỹ năng xuất sắc! Hãy thử thách bản thân với các trò chơi khác để tiếp tục phát triển."
+                ? "🌟 Bạn đã thể hiện kỹ năng xuất sắc! Hãy thử thách bản thân với các Interactive Practice khác để tiếp tục phát triển."
                 : "💡 Việc hoàn thành từng cấp độ giúp bạn củng cố kiến thức và phát triển tư duy logic. Tiếp tục nỗ lực nhé!"
               }
             </p>

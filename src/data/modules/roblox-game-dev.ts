@@ -58,7 +58,7 @@ export const robloxLessons: RobloxLessonType[] = [
       company: 'T-Dev Studio',
       imageUrl: 'https://i.pravatar.cc/150?u=nguyen-minh-tri',
       quote:
-        'Roblox không chỉ là một trò chơi, đó là một vũ trụ nơi bạn có thể xây dựng bất cứ điều gì bạn tưởng tượng. Bắt đầu từ những khối vuông đơn giản, bạn có thể tạo ra cả một thế giới và chia sẻ nó với hàng triệu người.',
+        'Roblox không chỉ là một Interactive Practice, đó là một vũ trụ nơi bạn có thể xây dựng bất cứ điều gì bạn tưởng tượng. Bắt đầu từ những khối vuông đơn giản, bạn có thể tạo ra cả một thế giới và chia sẻ nó với hàng triệu người.',
     },
     quizzes: [
       {
@@ -85,7 +85,7 @@ export const robloxLessons: RobloxLessonType[] = [
       {
         question: 'Tôi có cần biết lập trình để sử dụng Roblox Studio không?',
         answer:
-          'Không cần thiết cho việc xây dựng cơ bản! Bạn có thể tạo ra nhiều thứ thú vị chỉ bằng cách sử dụng các công cụ xây dựng và các mô hình có sẵn trong Toolbox. Tuy nhiên, để tạo ra các trò chơi có tương tác phức tạp, bạn sẽ cần học lập trình Lua.',
+          'Không cần thiết cho việc xây dựng cơ bản! Bạn có thể tạo ra nhiều thứ thú vị chỉ bằng cách sử dụng các công cụ xây dựng và các mô hình có sẵn trong Toolbox. Tuy nhiên, để tạo ra các Interactive Practice có tương tác phức tạp, bạn sẽ cần học lập trình Lua.',
       },
       {
         question: 'Part là gì và tại sao nó quan trọng?',
@@ -209,7 +209,7 @@ export const robloxLessons: RobloxLessonType[] = [
       {
         question: 'Tại sao tôi nên học Lua?',
         answer:
-          'Nếu bạn muốn tạo ra các trò chơi tương tác trên Roblox, Lua là ngôn ngữ bắt buộc phải học. Nó cho phép bạn điều khiển mọi thứ, từ việc làm cho một cánh cửa tự mở, tạo ra vũ khí, đến việc xây dựng các hệ thống phức tạp như bảng xếp hạng hay cửa hàng trong game.',
+          'Nếu bạn muốn tạo ra các Interactive Practice tương tác trên Roblox, Lua là ngôn ngữ bắt buộc phải học. Nó cho phép bạn điều khiển mọi thứ, từ việc làm cho một cánh cửa tự mở, tạo ra vũ khí, đến việc xây dựng các hệ thống phức tạp như bảng xếp hạng hay cửa hàng trong game.',
       },
       {
         question: 'Script và LocalScript khác nhau như thế nào?',
@@ -396,7 +396,7 @@ export const robloxGameDevModuleData: ModuleData = {
   title: 'Phát triển Game với Roblox',
   subtitle: 'Từ ý tưởng đến thế giới 3D tương tác',
   description:
-    'Khóa học này sẽ dẫn dắt bạn qua toàn bộ quá trình tạo ra một trò chơi trên nền tảng Roblox. Bạn sẽ học cách sử dụng Roblox Studio, một công cụ mạnh mẽ để xây dựng thế giới 3D, và làm quen với Lua, ngôn ngữ lập trình giúp bạn thổi hồn vào các vật thể và tạo ra những trải nghiệm tương tác độc đáo. Đây là bước khởi đầu hoàn hảo cho những ai đam mê sáng tạo và muốn trở thành một nhà phát triển game.',
+    'Khóa học này sẽ dẫn dắt bạn qua toàn bộ quá trình tạo ra một Interactive Practice trên nền tảng Roblox. Bạn sẽ học cách sử dụng Roblox Studio, một công cụ mạnh mẽ để xây dựng thế giới 3D, và làm quen với Lua, ngôn ngữ lập trình giúp bạn thổi hồn vào các vật thể và tạo ra những trải nghiệm tương tác độc đáo. Đây là bước khởi đầu hoàn hảo cho những ai đam mê sáng tạo và muốn trở thành một nhà phát triển game.',
   level: 'Cơ bản',
   duration: '8-10 giờ',
   category: 'Creative Technology',
@@ -427,7 +427,7 @@ export const robloxGameDevModuleData: ModuleData = {
     'Người sáng tạo nội dung game',
   ],
   industryApplications: [
-    'Giải trí và Trò chơi điện tử',
+    'Giải trí và Interactive Practice điện tử',
     'Giáo dục (tạo ra các bài học tương tác)',
     'Mô phỏng và Huấn luyện',
     'Marketing và Sự kiện ảo',

@@ -184,7 +184,7 @@ export const SocialSeoPresets = {
       type: 'website',
       imageKeywords: ['game', 'interactive', ...keywords.slice(0, 2)],
       imageTheme: 'technology',
-      tags: ['game giáo dục', 'trò chơi học tập', 'K2AiHub', ...keywords],
+      tags: ['game giáo dục', 'Interactive Practice học tập', 'K2AiHub', ...keywords],
       category: 'Games',
     }),
 

@@ -2,23 +2,19 @@ instructions# Interactive Information Platform for Vietnamese Education
 
 # K2AiHub - Interactive Educational Platform for Vietnamese Learners
 
-The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring three comprehensive modules: **Vietnam Geography**, **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
+The project called "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a modern, professional Next.js educational platform featuring two comprehensive modules: **AI Của Tôi** (Practical AI Guide), and **STEM Education** (Science, Technology, Engineering, Arts & Mathematics).
 
-K2AI - "Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a Next.js 15 educational platform with **60+ comprehensive learning modules** spanning from geography and AI to biotechnology and quantum computing, plus **100+ interactive educational games** with 3D simulations.
+K2AI - "Nền tảng học tập thông minh, Công nghệ AI dẫn lối" is a Next.js 15 educational platform with **60+ comprehensive learning modules** spanning from basic and AI to biotechnology and quantum computing, plus **100+ interactive educational games** with 3D simulations.
 
 ## 🌏 CRITICAL LANGUAGE REQUIREMENTS
 
-## 🎯 Core Architecture Understanding
-
-**ALL content, metadata, titles, and user-facing text MUST be in Vietnamese language.**
-
 ### Platform Scale & Structure
 
-- **60+ Learning Modules**: From basic geography to advanced biotechnology, all using standardized template system- **Application Title**: ALWAYS use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (NEVER translate to English)
+- **60+ Learning Modules**: From basic ai to advanced biotechnology, all using standardized template system- **Application Title**: ALWAYS use "K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối" (NEVER translate to English)
 
 - **100+ Educational Games**: Including 19+ 3D games with A\* pathfinding, physics simulations, and cross-curricular connections - **Module Names**:
 
-- **Static Site Generation**: 650+ pre-built pages for GitHub Pages deployment with <3s load times - "Địa Lý Việt Nam" (Vietnam Geography)
+- **Static Site Generation**: 650+ pre-built pages for GitHub Pages deployment with <3s load times
 
 - **Template-Driven**: All modules use `ModulePageTemplate.tsx` and `LessonPageTemplate.tsx` for consistency - "AI Của Tôi" (My AI Guide)
 
@@ -175,7 +171,7 @@ const jsonLd: WithContext<Product> = {
 
 - **Framework**: Next.js 15 with App Router, **Use alternative approaches for:**- **Language**: TypeScript for complete type safety
 
-- Core modules (Geography `/city/`, AI Guide `/ai/`) - already established
+- Core modules (AI Guide `/ai/`) - already established
 - **Styling**: Tailwind CSS v4 with modern design system
 
 - Simple informational pages without lesson structure - **Performance**: Static generation, memoization, lazy loading

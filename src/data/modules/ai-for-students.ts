@@ -438,7 +438,7 @@ export const AIForStudentsLessons: BaseLessonData[] = [
           'Nhiều công cụ cho phép bạn sử dụng miễn phí với một số giới hạn (ví dụ: số lượng hình ảnh có thể tạo mỗi ngày). Các gói trả phí sẽ cho bạn nhiều lượt sử dụng hơn, tốc độ nhanh hơn và các tính năng cao cấp.',
       },
       {
-        question: 'AI có thể giúp tôi thiết kế một trò chơi đơn giản không?',
+        question: 'AI có thể giúp tôi thiết kế một Interactive Practice đơn giản không?',
         answer:
           'Có. Bạn có thể sử dụng AI để lên ý tưởng cho nhân vật, cốt truyện, và các cấp độ chơi. Các công cụ như ChatGPT có thể giúp bạn viết mã cho các cơ chế đơn giản trong các nền tảng như Scratch hoặc Roblox, ngay cả khi bạn không phải là một lập trình viên chuyên nghiệp.',
       },

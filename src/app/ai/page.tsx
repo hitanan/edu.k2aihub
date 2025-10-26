@@ -9,14 +9,14 @@ import AIHubClient from './AIHubClient';
 
 export const metadata: Metadata = createModuleMetadata(
   'AI Của Tôi - Trung Tâm Học Tập AI Toàn Diện',
-  'Khám phá toàn bộ các bài học, trò chơi và công cụ AI tại K2AiHub. Từ ChatGPT, Midjourney đến lập trình AI và marketing, tất cả ở một nơi.',
+  'Khám phá toàn bộ các bài học, Interactive Practice và công cụ AI tại K2AiHub. Từ ChatGPT, Midjourney đến lập trình AI và marketing, tất cả ở một nơi.',
   [
     'AI',
     'trí tuệ nhân tạo',
     'học AI',
     'công cụ AI',
     'bài học AI',
-    'trò chơi AI',
+    'Interactive Practice AI',
     'ChatGPT',
     'Midjourney',
     'GitHub Copilot',
@@ -50,7 +50,7 @@ export default function AIModulePage() {
     '@type': 'CollectionPage',
     name: 'AI Của Tôi - Trung Tâm Học Tập AI Toàn Diện',
     description:
-      'Khám phá toàn bộ các bài học, trò chơi và công cụ AI tại K2AiHub. Từ ChatGPT, Midjourney đến lập trình AI và marketing, tất cả ở một nơi.',
+      'Khám phá toàn bộ các bài học, Interactive Practice và công cụ AI tại K2AiHub. Từ ChatGPT, Midjourney đến lập trình AI và marketing, tất cả ở một nơi.',
     url: 'https://edu.k2aihub.com/ai',
     inLanguage: 'vi-VN',
     publisher: {
@@ -81,7 +81,7 @@ export default function AIModulePage() {
             '@type': 'Game',
             name: game.title,
             description: game.description,
-            url: `https://edu.k2aihub.com/games/${game.id}`,
+            url: `https://edu.k2aihub.com/practice/${game.id}`,
           },
         })),
       ],

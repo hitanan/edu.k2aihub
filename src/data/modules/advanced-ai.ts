@@ -642,7 +642,7 @@ export const advancedAILessons: BaseLessonData[] = [
       {
         question: 'OpenAI Gym là gì?',
         answer:
-          'OpenAI Gym là một bộ công cụ (toolkit) cung cấp một loạt các môi trường mô phỏng tiêu chuẩn (từ các bài toán kinh điển như cân bằng con lắc đến các trò chơi Atari). Nó cung cấp một giao diện chung để phát triển và so sánh các thuật toán RL, đã trở thành một tiêu chuẩn trong nghiên cứu RL.',
+          'OpenAI Gym là một bộ công cụ (toolkit) cung cấp một loạt các môi trường mô phỏng tiêu chuẩn (từ các bài toán kinh điển như cân bằng con lắc đến các Interactive Practice Atari). Nó cung cấp một giao diện chung để phát triển và so sánh các thuật toán RL, đã trở thành một tiêu chuẩn trong nghiên cứu RL.',
       },
       {
         question: 'Học tăng cường có thể được áp dụng ở đâu ngoài game và robot?',

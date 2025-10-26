@@ -544,13 +544,13 @@ export const liveCommerceLessons: LiveCommerceLesson[] = [
         question: 'Gamification trong live commerce có nghĩa là gì?',
         options: [
           'Chỉ chơi game trong lúc livestream',
-          'Biến việc mua sắm thành một trò chơi có thưởng',
+          'Biến việc mua sắm thành một Interactive Practice có thưởng',
           'Bán các sản phẩm game',
           'Tất cả các đáp án trên',
         ],
         correctAnswerIndex: 1,
         explanation:
-          'Gamification là việc áp dụng các yếu tố của trò chơi (như điểm thưởng, thử thách, bảng xếp hạng) vào hoạt động mua sắm để tăng sự tương tác và hứng thú của khách hàng.',
+          'Gamification là việc áp dụng các yếu tố của Interactive Practice (như điểm thưởng, thử thách, bảng xếp hạng) vào hoạt động mua sắm để tăng sự tương tác và hứng thú của khách hàng.',
       },
     ],
   },

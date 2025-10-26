@@ -108,7 +108,7 @@ export const vietnameseCultureLessons: VietnameseCultureLesson[] = [
       {
         question: 'Mục tiêu chính của dự án "Ký ức người lính" là gì?',
         options: [
-          'Xây dựng một trò chơi điện tử về chiến tranh',
+          'Xây dựng một Interactive Practice điện tử về chiến tranh',
           'Sản xuất một bộ phim điện ảnh',
           'Ghi lại và lưu trữ các câu chuyện của cựu chiến binh',
           'Phân tích dữ liệu về sức khỏe cựu chiến binh',

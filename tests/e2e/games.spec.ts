@@ -8,26 +8,26 @@ interface GameTestResult {
   error?: string;
 }
 
-test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
+test.describe('practice Link Testing - Kiểm tra liên kết Interactive Practice', () => {
   const gameTestResults: GameTestResult[] = [];
 
-  test('should test all game links from /games/ page', async ({ page }) => {
-    // Navigate to games page
-    await page.goto('/games/');
-    
-    console.log('🎮 Starting Games Link Testing...');
+  test('should test all game links from /practice/ page', async ({ page }) => {
+    // Navigate to practice page
+    await page.goto('/practice/');
+
+    console.log('🎮 Starting practice Link Testing...');
 
     // Wait for page to load completely
     await page.waitForLoadState('networkidle');
-    
-    // Wait for games to load by checking for "Chơi ngay" buttons
-    await page.waitForSelector('button:has-text("Chơi ngay")', {
-      timeout: 30000
+
+    // Wait for practice to load by checking for "Practice" buttons
+    await page.waitForSelector('button:has-text("Practice")', {
+      timeout: 30000,
     });
-    
-    // Get all "Chơi ngay" buttons and their associated game information
-    const gameButtons = await page.locator('button:has-text("Chơi ngay")').all();
-    console.log(`Found ${gameButtons.length} "Chơi ngay" buttons to test`);
+
+    // Get all "Practice" buttons and their associated game information
+    const gameButtons = await page.locator('button:has-text("Practice")').all();
+    console.log(`Found ${gameButtons.length} "Practice" buttons to test`);
 
     for (let i = 0; i < gameButtons.length; i++) {
       try {
@@ -35,22 +35,22 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
         const gameCard = gameButtons[i].locator('..').locator('..');
         const gameTitle = await gameCard.locator('h3, h2, .font-bold').first().textContent();
         const gameName = gameTitle?.trim() || `Game ${i + 1}`;
-        
+
         console.log(`Testing game: ${gameName}`);
 
         // Store current URL to compare
         const beforeUrl = page.url();
-        
-        // Click the "Chơi ngay" button
+
+        // Click the "Practice" button
         await gameButtons[i].click();
-        
+
         // Wait for navigation or page change
         await page.waitForTimeout(2000);
         await page.waitForLoadState('networkidle');
-        
+
         const afterUrl = page.url();
         const gameId = afterUrl.split('/').pop() || `game-${i}`;
-        
+
         if (beforeUrl === afterUrl) {
           // No navigation happened, might be a modal or same page
           gameTestResults.push({
@@ -102,9 +102,12 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
           }
           // Quick check for interactive elements
           else {
-            const hasInteractiveElements = await page.locator('button, input, canvas, svg, select, [role="button"]').count();
-            
-            if (hasInteractiveElements > 2) { // More than basic navigation
+            const hasInteractiveElements = await page
+              .locator('button, input, canvas, svg, select, [role="button"]')
+              .count();
+
+            if (hasInteractiveElements > 2) {
+              // More than basic navigation
               gameTestResults.push({
                 gameId,
                 gameName,
@@ -124,16 +127,15 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
             }
           }
         }
-        
-        // Go back to games page for next test
-        await page.goto('/games/');
+
+        // Go back to practice page for next test
+        await page.goto('/practice/');
         await page.waitForLoadState('networkidle');
-        
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
         const gameId = `game-${i}`;
         const gameName = `Game ${i + 1}`;
-        
+
         gameTestResults.push({
           gameId,
           gameName,
@@ -142,13 +144,13 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
           error: `Button click error: ${errorMessage}`,
         });
         console.log(`❌ ${gameName}: Button click failed - ${errorMessage}`);
-        
-        // Try to go back to games page
+
+        // Try to go back to practice page
         try {
-          await page.goto('/games/');
+          await page.goto('/practice/');
           await page.waitForLoadState('networkidle');
         } catch (e) {
-          console.log(`Failed to return to games page: ${e}`);
+          console.log(`Failed to return to practice page: ${e}`);
         }
       }
 
@@ -194,7 +196,7 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
   });
 
   test('should verify games page loads and has navigation', async ({ page }) => {
-    await page.goto('/games/');
+    await page.goto('/practice/');
 
     // Basic functionality check - page loads
     await expect(page).not.toHaveURL(/.*404/);
@@ -207,9 +209,9 @@ test.describe('Games Link Testing - Kiểm tra liên kết trò chơi', () => {
 
   test('should test specific critical game links', async ({ page }) => {
     const criticalGames = [
-      '/games/traffic-management-simulator',
-      '/games/currency-exchange-puzzle',
-      '/games/arduino-circuit-builder',
+      '/practice/traffic-management-simulator',
+      '/practice/currency-exchange-puzzle',
+      '/practice/arduino-circuit-builder',
     ];
 
     for (const gameUrl of criticalGames) {

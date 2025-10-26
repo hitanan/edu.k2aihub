@@ -4,12 +4,12 @@ import EducationalGamesMain from './EducationalGamesMain';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: createTitle('Trò Chơi Giáo Dục - Học Tập Qua Chơi'),
+    title: createTitle('Interactive Practice - Học Tập Qua Chơi'),
     description: createDescription(
-      'Khám phá bộ sưu tập trò chơi giáo dục đa dạng từ quiz địa lý, thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
+      'Khám phá bộ sưu tập Interactive Practice đa dạng từ quiz địa lý, thử thách AI, puzzle lập trình đến mô phỏng khoa học. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
     ),
     keywords: [
-      'trò chơi giáo dục',
+      'Interactive Practice',
       'game học tập',
       'quiz',
       'puzzle',
@@ -21,8 +21,8 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       locale: 'vi_VN',
       siteName: 'K2AiHub - Nền tảng học tập thông minh',
-      title: 'Trò Chơi Giáo Dục - Học Tập Qua Chơi | K2AiHub',
-      description: 'Khám phá bộ sưu tập trò chơi giáo dục đa dạng. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
+      title: 'Interactive Practice - Học Tập Qua Chơi | K2AiHub',
+      description: 'Khám phá bộ sưu tập Interactive Practice đa dạng. Học tập hiệu quả qua trải nghiệm chơi game thú vị.',
       type: 'website',
     },
     twitter: {

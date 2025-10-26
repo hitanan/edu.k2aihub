@@ -372,7 +372,7 @@ export const criticalThinkingLessons: CriticalThinkingLessonType[] = [
         id: 'game-design-studio-3d',
         name: 'Game Design Studio 3D',
         description:
-          'Trực tiếp áp dụng quy trình sáng tạo để thiết kế và xây dựng một trò chơi, từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh.',
+          'Trực tiếp áp dụng quy trình sáng tạo để thiết kế và xây dựng một Interactive Practice, từ ý tưởng ban đầu đến sản phẩm hoàn chỉnh.',
       },
     ],
     caseStudies: [

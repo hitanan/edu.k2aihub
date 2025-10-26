@@ -415,9 +415,9 @@ export const environmentalScienceClimateLessons: EnvironmentalScienceLesson[] = 
           'Hãy luôn dựa vào các nguồn thông tin khoa học đáng tin cậy, như các báo cáo từ IPCC (Ủy ban Liên chính phủ về Biến đổi Khí hậu), NASA, hoặc các tạp chí khoa học uy tín. Khi chia sẻ thông tin, hãy trích dẫn nguồn rõ ràng. Thay vì tranh cãi, hãy tập trung vào việc trình bày các bằng chứng một cách bình tĩnh và xây dựng sự đồng thuận dựa trên sự thật.',
       },
       {
-        question: 'Trò chơi hóa (Gamification) có thể được sử dụng trong giáo dục môi trường như thế nào?',
+        question: 'Interactive Practice hóa (Gamification) có thể được sử dụng trong giáo dục môi trường như thế nào?',
         answer:
-          'Trò chơi hóa có thể làm cho việc học về môi trường trở nên thú vị và hấp dẫn hơn. Ví dụ, các ứng dụng di động có thể trao thưởng cho người dùng khi họ thực hiện các hành động xanh (như phân loại rác, tiết kiệm điện) hoặc tạo ra các trò chơi mô phỏng giúp người chơi hiểu được hậu quả của các quyết định môi trường.',
+          'Interactive Practice hóa có thể làm cho việc học về môi trường trở nên thú vị và hấp dẫn hơn. Ví dụ, các ứng dụng di động có thể trao thưởng cho người dùng khi họ thực hiện các hành động xanh (như phân loại rác, tiết kiệm điện) hoặc tạo ra các Interactive Practice mô phỏng giúp người chơi hiểu được hậu quả của các quyết định môi trường.',
       },
       {
         question: 'Thế nào là "dấu chân carbon" (carbon footprint)?',

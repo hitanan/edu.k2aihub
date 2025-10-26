@@ -223,7 +223,7 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = () => {
 
   const endGame = () => {
     setGameStarted(false);
-    setFeedback(`🎯 Trò chơi kết thúc! Điểm số cuối cùng: ${score}`);
+    setFeedback(`🎯 Interactive Practice kết thúc! Điểm số cuối cùng: ${score}`);
   };
 
   const getHint = () => {
@@ -286,7 +286,7 @@ const LogicalFallacyDetector: React.FC<LogicalFallacyDetectorProps> = () => {
             onClick={startGame}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-3 px-8 rounded-lg transition-all transform hover:scale-105"
           >
-            🚀 Bắt đầu trò chơi
+            🚀 Bắt đầu Interactive Practice
           </button>
         </div>
       </div>

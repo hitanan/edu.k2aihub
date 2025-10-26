@@ -512,7 +512,7 @@ export const governmentTechnologyLessons: GovernmentTechnologyLesson[] = [
       {
         question: '"Công nghệ dân sự" (Civic Tech) nhằm mục đích chính là gì?',
         options: [
-          'Phát triển trò chơi điện tử về chính trị',
+          'Phát triển Interactive Practice điện tử về chính trị',
           'Sử dụng công nghệ để tăng cường mối quan hệ giữa người dân và chính phủ',
           'Bán các sản phẩm công nghệ cho chính phủ',
           'Tấn công vào các hệ thống của chính phủ',

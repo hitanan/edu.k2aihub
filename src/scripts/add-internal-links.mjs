@@ -29,7 +29,7 @@ async function createLinkDictionary() {
   // From games
   EDUCATIONAL_GAMES_DATA.forEach((game) => {
     if (game.title && game.id) {
-      dictionary[game.title.toLowerCase()] = { url: `/games/${game.id}`, original: game.title };
+      dictionary[game.title.toLowerCase()] = { url: `/practice/${game.id}`, original: game.title };
     }
   });
 

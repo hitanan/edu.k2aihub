@@ -126,6 +126,8 @@ export interface EducationalGame {
   isNew?: boolean;
   gameFeatures?: string[];
   educationalObjectives?: string[];
+  faqs?: Array<{ question: string; answer: string }>;
+  learningObjectives?: string[];
   relatedLessons: Array<{
     moduleId: string;
     lessonId: string;

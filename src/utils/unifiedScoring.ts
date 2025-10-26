@@ -158,8 +158,8 @@ function checkGlobalAchievements(gameId: string, gameScore: number, learningPoin
       if (completedGames.length >= 5) {
         newAchievements.push({
           id: 'game_master',
-          title: 'Bậc thầy trò chơi',
-          description: 'Hoàn thành 5 trò chơi giáo dục khác nhau',
+          title: 'Bậc thầy Interactive Practice',
+          description: 'Hoàn thành 5 Interactive Practice giáo dục khác nhau',
           icon: '🎮',
           points: 100,
           unlockedAt: new Date().toISOString(),
@@ -191,7 +191,7 @@ function checkGlobalAchievements(gameId: string, gameScore: number, learningPoin
       newAchievements.push({
         id: 'high_achiever',
         title: 'Thành tựu cao',
-        description: 'Đạt điểm số 500+ trong một trò chơi',
+        description: 'Đạt điểm số 500+ trong một Interactive Practice',
         icon: '🏆',
         points: 50,
         unlockedAt: new Date().toISOString(),

@@ -698,7 +698,7 @@ export const aiLearningApps: BaseLessonData[] = [
     title: 'Duolingo',
     name: 'Duolingo',
     description:
-      'Nền tảng học ngoại ngữ được hỗ trợ bởi AI với các bài học được cá nhân hóa, nhận dạng giọng nói và trò chơi hóa. Ứng dụng học ngôn ngữ phổ biến nhất thế giới.',
+      'Nền tảng học ngoại ngữ được hỗ trợ bởi AI với các bài học được cá nhân hóa, nhận dạng giọng nói và Interactive Practice hóa. Ứng dụng học ngôn ngữ phổ biến nhất thế giới.',
     duration: 'Tự khám phá',
     difficulty: 'Mọi cấp độ',
     objectives: ['Bắt đầu học một ngôn ngữ mới hoặc duy trì kỹ năng ngôn ngữ với các bài học vui nhộn hàng ngày.'],
@@ -709,7 +709,7 @@ export const aiLearningApps: BaseLessonData[] = [
     features: [
       'Cá nhân hóa bài học bằng AI',
       'Công nghệ nhận dạng giọng nói',
-      'Trải nghiệm học tập được trò chơi hóa',
+      'Trải nghiệm học tập được Interactive Practice hóa',
       'Các câu chuyện và podcast',
       'Chế độ học ngoại tuyến',
       'Theo dõi tiến độ',
@@ -815,13 +815,13 @@ export const aiLearningApps: BaseLessonData[] = [
         question: 'Phương pháp học tập chính của Duolingo là gì?',
         options: [
           'Xem video bài giảng dài',
-          'Học qua các trò chơi và bài tập ngắn',
+          'Học qua các Interactive Practice và bài tập ngắn',
           'Đọc sách giáo khoa',
           'Nói chuyện với người bản xứ',
         ],
         correctAnswerIndex: 1,
         explanation:
-          'Duolingo nổi tiếng với phương pháp "trò chơi hóa" (gamification), biến việc học thành các bài tập ngắn, vui nhộn và có tính gây nghiện để người dùng duy trì thói quen.',
+          'Duolingo nổi tiếng với phương pháp "Interactive Practice hóa" (gamification), biến việc học thành các bài tập ngắn, vui nhộn và có tính gây nghiện để người dùng duy trì thói quen.',
       },
       {
         question: 'Duolingo có khóa học Tiếng Việt cho người nước ngoài không?',

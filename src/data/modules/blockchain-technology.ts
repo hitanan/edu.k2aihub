@@ -651,7 +651,7 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         question: 'Metaverse là gì?',
         options: [
-          'Một trò chơi điện tử mới',
+          'Một Interactive Practice điện tử mới',
           'Một mạng lưới các thế giới ảo 3D tập trung vào kết nối xã hội',
           'Một loại tiền điện tử',
           'Một nền tảng mạng xã hội',
@@ -673,7 +673,7 @@ export const blockchainLessons: BlockchainLesson[] = [
           'ERC-721 là tiêu chuẩn cho các NFT hoàn toàn độc nhất, mỗi token là một hợp đồng riêng. ERC-1155 là một tiêu chuẩn đa token, cho phép một hợp đồng duy nhất quản lý nhiều loại token khác nhau, cả fungible (có thể thay thế) và non-fungible (không thể thay thế). Điều này hiệu quả hơn cho các game có nhiều vật phẩm.',
       },
       {
-        question: 'Metaverse có phải chỉ là một trò chơi không?',
+        question: 'Metaverse có phải chỉ là một Interactive Practice không?',
         answer:
           'Không. Mặc dù game là một phần quan trọng, metaverse là một khái niệm rộng lớn hơn về một Internet 3D, nơi công việc, giao tiếp xã hội, giải trí, và thương mại đều có thể diễn ra. Nó được xem là một không gian ảo liên tục và tương tác.',
       },
@@ -690,7 +690,7 @@ export const blockchainLessons: BlockchainLesson[] = [
       {
         question: 'GameFi là gì?',
         answer:
-          'GameFi là sự kết hợp giữa Game (trò chơi) và Finance (tài chính). Đây là các trò chơi blockchain kết hợp các yếu tố DeFi và thường sử dụng NFT cho các vật phẩm trong game. Mô hình "Play-to-Earn" (Chơi để kiếm tiền) là một đặc điểm nổi bật của GameFi, cho phép người chơi kiếm được tài sản có giá trị thực.',
+          'GameFi là sự kết hợp giữa Game (Interactive Practice) và Finance (tài chính). Đây là các Interactive Practice blockchain kết hợp các yếu tố DeFi và thường sử dụng NFT cho các vật phẩm trong game. Mô hình "Play-to-Earn" (Chơi để kiếm tiền) là một đặc điểm nổi bật của GameFi, cho phép người chơi kiếm được tài sản có giá trị thực.',
       },
       {
         question: 'Tiền bản quyền (royalties) hoạt động như thế nào với NFT?',

@@ -805,7 +805,7 @@ export const healthcareTechLessons: HealthcareTechLesson[] = [
           'Sự kỳ thị khiến nhiều người ngần ngại tìm kiếm sự giúp đỡ, ngay cả khi đó là một ứng dụng ẩn danh. Do đó, các ứng dụng cần được thiết kế với ngôn ngữ thân thiện, không mang tính phán xét, và tập trung vào việc xây dựng kỹ năng và sự tự nhận thức hơn là "chẩn đoán bệnh".',
       },
       {
-        question: 'Gamification (trò chơi hóa) có thể giúp ích gì trong các ứng dụng sức khỏe tâm thần?',
+        question: 'Gamification (Interactive Practice hóa) có thể giúp ích gì trong các ứng dụng sức khỏe tâm thần?',
         answer:
           'Gamification, như việc đặt ra các mục tiêu hàng ngày, trao phần thưởng ảo, và theo dõi tiến trình, có thể giúp tăng cường động lực và sự gắn bó của người dùng. Nó biến việc chăm sóc sức khỏe tâm thần thành một hành trình thú vị và ít đáng sợ hơn.',
       },

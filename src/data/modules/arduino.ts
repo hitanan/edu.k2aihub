@@ -452,8 +452,8 @@ void loop() {
     relatedGames: [
       {
         gameId: 'color-memory-game',
-        title: 'Trò Chơi Nhớ Màu',
-        connection: 'Áp dụng kiến thức về LED và RGB để tạo ra một trò chơi trí tuệ về ghi nhớ màu sắc.',
+        title: 'Interactive Practice Nhớ Màu',
+        connection: 'Áp dụng kiến thức về LED và RGB để tạo ra một Interactive Practice trí tuệ về ghi nhớ màu sắc.',
         difficulty: 'Trung bình',
       },
       {
@@ -464,7 +464,7 @@ void loop() {
       },
       {
         gameId: 'rhythm-game',
-        title: 'Trò Chơi Âm Nhạc',
+        title: 'Interactive Practice Âm Nhạc',
         connection: 'Sử dụng đèn LED để tạo hiệu ứng ánh sáng đồng bộ với nhịp điệu âm nhạc.',
         difficulty: 'Nâng cao',
       },
@@ -690,13 +690,15 @@ void loop() {
       {
         gameId: 'simon-says',
         title: 'Simon Says',
-        connection: 'Kết hợp tín hiệu đầu vào từ nút nhấn và đầu ra là đèn LED để tạo ra một trò chơi tương tác.',
+        connection:
+          'Kết hợp tín hiệu đầu vào từ nút nhấn và đầu ra là đèn LED để tạo ra một Interactive Practice tương tác.',
         difficulty: 'Trung bình',
       },
       {
         gameId: 'puzzle-solver',
         title: 'Giải Đố Logic',
-        connection: 'Sử dụng các tín hiệu đầu vào analog và digital để điều khiển logic của trò chơi giải đố.',
+        connection:
+          'Sử dụng các tín hiệu đầu vào analog và digital để điều khiển logic của Interactive Practice giải đố.',
         difficulty: 'Nâng cao',
       },
     ],
@@ -705,7 +707,7 @@ void loop() {
       content: [
         'Các sản phẩm gia dụng của các thương hiệu Việt như quạt điện, nồi cơm điện... đều sử dụng các nút nhấn và núm vặn làm giao diện điều khiển chính, dựa trên các nguyên lý tương tự.',
         'Trong các đồ án tốt nghiệp của sinh viên kỹ thuật tại Việt Nam, việc tạo ra một giao diện điều khiển từ các nút nhấn và biến trở là một kỹ năng cơ bản và bắt buộc.',
-        'Các mô hình học cụ STEM cho trẻ em thường bao gồm các bộ kit cho phép các em tạo ra các sản phẩm tương tác đơn giản như đàn piano mini, hộp trò chơi phản xạ...',
+        'Các mô hình học cụ STEM cho trẻ em thường bao gồm các bộ kit cho phép các em tạo ra các sản phẩm tương tác đơn giản như đàn piano mini, hộp Interactive Practice phản xạ...',
       ],
     },
     careerConnect: {
@@ -984,13 +986,15 @@ void loop() {
       {
         gameId: 'simon-says',
         title: 'Simon Says',
-        connection: 'Kết hợp tín hiệu đầu vào từ nút nhấn và đầu ra là đèn LED để tạo ra một trò chơi tương tác.',
+        connection:
+          'Kết hợp tín hiệu đầu vào từ nút nhấn và đầu ra là đèn LED để tạo ra một Interactive Practice tương tác.',
         difficulty: 'Trung bình',
       },
       {
         gameId: 'puzzle-solver',
         title: 'Giải Đố Logic',
-        connection: 'Sử dụng các tín hiệu đầu vào analog và digital để điều khiển logic của trò chơi giải đố.',
+        connection:
+          'Sử dụng các tín hiệu đầu vào analog và digital để điều khiển logic của Interactive Practice giải đố.',
         difficulty: 'Nâng cao',
       },
     ],

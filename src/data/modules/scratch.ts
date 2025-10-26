@@ -236,7 +236,7 @@ export const scratchLessons: BaseLessonData[] = [
     id: 'game-development-basics',
     title: 'Xây Dựng Game Đầu Tiên',
     description:
-      'Từ ý tưởng đến một trò chơi hoàn chỉnh! Học cách tạo ra các game kinh điển như Pong, Flappy Bird hay Maze. Bạn sẽ được học về điều khiển nhân vật, xử lý va chạm, tính điểm và tạo ra các cấp độ thử thách.',
+      'Từ ý tưởng đến một Interactive Practice hoàn chỉnh! Học cách tạo ra các game kinh điển như Pong, Flappy Bird hay Maze. Bạn sẽ được học về điều khiển nhân vật, xử lý va chạm, tính điểm và tạo ra các cấp độ thử thách.',
     difficulty: 'Trung bình',
     duration: '90 phút',
     videoUrl: 'https://www.youtube.com/watch?v=DdgjVdF7p4I', // Hướng dẫn làm game Flappy Bird
@@ -259,9 +259,9 @@ export const scratchLessons: BaseLessonData[] = [
           'Tạo nhân vật "Bát" có thể di chuyển sang trái/phải theo chuột.',
           'Tạo nhân vật "Táo" liên tục rơi từ vị trí ngẫu nhiên ở phía trên.',
           'Lập trình để khi "Táo" chạm vào "Bát", điểm số tăng lên và quả táo biến mất, sau đó xuất hiện lại từ đầu.',
-          'Nếu "Táo" rơi xuống đất, trò chơi kết thúc.',
+          'Nếu "Táo" rơi xuống đất, Interactive Practice kết thúc.',
         ],
-        expectedResults: 'Một trò chơi hoàn chỉnh với điều khiển, tính điểm và điều kiện thắng/thua.',
+        expectedResults: 'Một Interactive Practice hoàn chỉnh với điều khiển, tính điểm và điều kiện thắng/thua.',
       },
     ],
     realWorldApplications: [
@@ -283,7 +283,7 @@ export const scratchLessons: BaseLessonData[] = [
       company: '.GEARS',
       imageUrl: '/placeholder-attraction.svg',
       quote:
-        'Một trò chơi không cần phức tạp để trở nên hấp dẫn. Sự đơn giản và một cơ chế chơi gây nghiện là chìa khóa. Scratch là nơi tuyệt vời để thử nghiệm những ý tưởng đó.',
+        'Một Interactive Practice không cần phức tạp để trở nên hấp dẫn. Sự đơn giản và một cơ chế chơi gây nghiện là chìa khóa. Scratch là nơi tuyệt vời để thử nghiệm những ý tưởng đó.',
     },
     quizzes: [
       {
@@ -338,7 +338,7 @@ export const scratchLessons: BaseLessonData[] = [
       {
         question: 'Làm thế nào để tạo một màn hình "Game Over"?',
         answer:
-          'Bạn có thể tạo một phông nền mới có chữ "Game Over". Khi điều kiện thua xảy ra (ví dụ: mạng sống = 0), bạn "chuyển phông nền thành Game Over" và dùng khối "dừng lại tất cả" để kết thúc trò chơi.',
+          'Bạn có thể tạo một phông nền mới có chữ "Game Over". Khi điều kiện thua xảy ra (ví dụ: mạng sống = 0), bạn "chuyển phông nền thành Game Over" và dùng khối "dừng lại tất cả" để kết thúc Interactive Practice.',
       },
       {
         question: 'Khối tùy chỉnh (My Blocks) có tác dụng gì?',
@@ -385,7 +385,7 @@ export const scratchModuleData: ModuleData = {
     { name: 'Giáo dục', description: 'Công cụ dạy và học lập trình phổ biến nhất cho trẻ em trên toàn thế giới.' },
     {
       name: 'Giải trí',
-      description: 'Tạo ra các trò chơi đơn giản, các bộ phim hoạt hình ngắn để giải trí và học tập.',
+      description: 'Tạo ra các Interactive Practice đơn giản, các bộ phim hoạt hình ngắn để giải trí và học tập.',
     },
     {
       name: 'Nghệ thuật tương tác',
