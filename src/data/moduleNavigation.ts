@@ -104,23 +104,6 @@ import { stemModuleData } from '@/data/modules/stem';
 export const moduleNavigation: (ModuleNavigation | ModuleData)[] = [
   // Core Modules (outside /learning/ folder)
   {
-    id: K2Module.City,
-    title: 'Địa Lý Việt Nam',
-    description:
-      'Khám phá 34 tỉnh thành Việt Nam qua bản đồ tương tác, tìm hiểu văn hóa, lịch sử và địa lý của từng vùng miền',
-    category: 'foundation',
-    icon: '🗺️',
-    color: 'from-emerald-500 to-teal-500',
-    totalDuration: 'Không giới hạn',
-    difficulty: 'Tất cả mức độ',
-    href: '/city',
-    features: ['Interactive Map', 'Province Search', 'Historical Data', 'Cultural Information'],
-    tags: ['geography', 'vietnam', 'interactive', 'culture'],
-    prerequisites: [],
-    lessons: [],
-    coreModule: true,
-  },
-  {
     id: K2Module.AI,
     title: 'AI Của Tôi',
     subtitle: 'Hướng dẫn AI thực hành',

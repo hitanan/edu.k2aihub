@@ -16,7 +16,6 @@ export const metadata: Metadata = createModuleMetadata(
     'nền tảng học tập',
     'giáo dục AI',
     'học trực tuyến',
-    'địa lý Việt Nam',
     'AI thực tế',
     'lập trình',
     'miễn phí',
@@ -40,11 +39,6 @@ export default function HomePage() {
     logo: 'https://edu.k2aihub.com/favicon.ico',
     foundingDate: '2025',
     hasCourse: [
-      {
-        '@type': 'Course',
-        name: 'Địa Lý Việt Nam',
-        description: 'Interactive Vietnam geography with 34 provinces',
-      },
       {
         '@type': 'Course',
         name: 'AI Của Tôi',
@@ -84,7 +78,7 @@ export default function HomePage() {
       title: 'Địa Lý Việt Nam',
       subtitle: 'Khám phá quê hương',
       description: 'Bản đồ tương tác 34 tỉnh thành với thông tin văn hóa và kinh tế',
-      href: '/city',
+      href: 'https://k2aihub.com/city',
       color: 'from-green-500 to-emerald-500',
       icon: '🌏',
       difficulty: 'Dễ học',
@@ -112,7 +106,7 @@ export default function HomePage() {
       subtitle: 'Chuẩn bị tương lai',
       description:
         'Lộ trình học phù hợp với học sinh trung học, tập trung vào kỹ năng cơ bản và định hướng nghề nghiệp',
-      modules: ['🧠 Tư duy phê phán', '🗣️ Giao tiếp', '🌏 Địa Lý VN', '🔬 STEM', '🎨 Scratch'],
+      modules: ['🧠 Tư duy phê phán', '🗣️ Giao tiếp', '🔬 STEM', '🎨 Scratch'],
       color: 'from-green-400 to-blue-400',
       icon: '📚',
       href: '/learning?category=essential',
@@ -408,7 +402,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <CtaButton
-                href="/city"
+                href="https://k2aihub.com/city"
                 text="🌏 KHÁM PHÁ VIỆT NAM"
                 className="bg-gradient-to-r from-emerald-500 to-cyan-500"
               />

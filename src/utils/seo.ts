@@ -3,7 +3,7 @@
  * Centralizes SEO-related functionality for consistency across the application
  */
 
-import { City, TouristAttraction, ModuleData } from '@/types';
+import { ModuleData } from '@/types';
 import { SocialSeoPresets } from './socialSeo';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { BaseLessonData } from '@/types/lesson-base';
@@ -453,138 +453,6 @@ export function createGameStructuredData(gameId: string) {
       availability: 'https://schema.org/InStock',
     },
     keywords: (game.skills || []).join(', '),
-  };
-}
-
-/**
- * Creates structured data for FAQ sections
- */
-export function createFAQStructuredData(city: City) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `Dân số của ${city.name} là bao nhiêu?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Dân số của ${city.name} là ${city.population} người, xếp hạng trong top các tỉnh thành Việt Nam.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `Diện tích của ${city.name} là bao nhiêu?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Diện tích của ${city.name} là ${city.area}, thuộc vùng ${city.region}.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `${city.name} có những địa điểm du lịch nào nổi tiếng?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text:
-            city.touristAttractions && city.touristAttractions.length > 0
-              ? `${city.name} có các địa điểm du lịch nổi tiếng như: ${city.touristAttractions
-                  .slice(0, 3)
-                  .map((a: TouristAttraction) => a.name)
-                  .join(', ')}.`
-              : `${city.name} có nhiều danh lam thắng cảnh đẹp và các di tích lịch sử văn hóa quan trọng.`,
-        },
-      },
-    ],
-  };
-}
-
-/**
- * Creates breadcrumb structured data
- */
-export function createBreadcrumbStructuredData(city: City) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Trang chủ',
-        item: 'https://edu.k2aihub.com',
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Địa lý Việt Nam',
-        item: 'https://edu.k2aihub.com/#geography',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: city.region,
-        item: `https://edu.k2aihub.com/#${city.region.toLowerCase().replace(/\s+/g, '-')}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: city.name,
-        item: `https://edu.k2aihub.com/city/${city.slug}`,
-      },
-    ],
-  };
-}
-
-/**
- * Creates place structured data with enhanced geographic information
- */
-export function createPlaceStructuredData(city: City) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Place',
-    name: city.name,
-    description: city.description,
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: city.coordinates.y,
-      longitude: city.coordinates.x,
-    },
-    containedInPlace: {
-      '@type': 'Country',
-      name: 'Việt Nam',
-    },
-    additionalProperty: [
-      {
-        '@type': 'PropertyValue',
-        name: 'Dân số',
-        value: city.population,
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Diện tích',
-        value: city.area,
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Vùng miền',
-        value: city.region,
-      },
-      {
-        '@type': 'PropertyValue',
-        name: 'Mã tỉnh',
-        value: city.code,
-      },
-    ],
-    touristAttraction:
-      city.touristAttractions?.map((attraction: TouristAttraction) => ({
-        '@type': 'TouristAttraction',
-        name: attraction.name,
-        description: attraction.description,
-        image: attraction.imageUrl,
-        containedInPlace: {
-          '@type': 'Place',
-          name: city.name,
-        },
-      })) || [],
   };
 }
 

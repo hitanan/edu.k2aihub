@@ -20,17 +20,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
   description: createDescription(
-    'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
+    'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với 90+ modules học tập chất lượng cao: AI thực tế cho cuộc sống và công việc, lập trình, STEM, và nhiều lĩnh vực khác.',
   ),
   keywords: createKeywords([
-    'Vietnam geography',
     'AI guide',
     'educational platform',
     'interactive learning',
     'K2AI',
     'vietnamese education',
     'practical AI',
-    'interactive map',
+    'programming',
+    'STEM',
   ]),
   authors: [{ name: 'K2AI Team' }],
   creator: 'K2AI',
@@ -47,21 +47,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
-      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với 90+ modules học tập chất lượng cao: AI thực tế cho cuộc sống và công việc, lập trình, STEM, và nhiều lĩnh vực khác.',
     ),
     url: 'https://edu.k2aihub.com',
     siteName: 'K2AiHub',
     locale: 'vi_VN',
     type: 'website',
-    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
   },
   twitter: {
     card: 'summary_large_image',
     title: createTitle('K2AI - Nền tảng học tập thông minh, Công nghệ AI dẫn lối'),
     description: createDescription(
-      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với hai module chính: Bản đồ 34 tỉnh thành Việt Nam tương tác và Hướng dẫn AI thực tế cho cuộc sống và công việc.',
+      'K2AiHub là Nền tảng công nghệ AI dẫn lối hiện đại với 90+ modules học tập chất lượng cao: AI thực tế cho cuộc sống và công việc, lập trình, STEM, và nhiều lĩnh vực khác.',
     ),
-    images: [getAbsoluteAssetUrl('/ban-do-viet-nam-34-tinh.jpg')],
   },
 };
 

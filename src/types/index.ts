@@ -15,33 +15,6 @@ export interface BlogTag {
   description: string;
 }
 
-export interface TouristAttraction {
-  name: string;
-  description: string;
-  imageUrl: string;
-  location?: string;
-  url?: string;
-}
-
-export interface City {
-  id: number;
-  code: string;
-  name: string;
-  slug: string;
-  oldNames: string[];
-  region: string;
-  coordinates: {
-    x: number;
-    y: number;
-  };
-  color: string;
-  population: string;
-  area: string;
-  description: string;
-  fullPageContent?: string;
-  touristAttractions?: TouristAttraction[];
-}
-
 export interface ModuleData<T extends BaseLessonData = BaseLessonData> {
   id: string;
   title: string;
@@ -194,12 +167,6 @@ export interface LessonNavigation {
   duration: string;
   difficulty: string;
   completed?: boolean;
-}
-
-export interface Region {
-  name: string;
-  slug: string;
-  description: string;
 }
 
 export interface Contributor {

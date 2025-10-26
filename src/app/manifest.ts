@@ -8,8 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'K2AI - Học tập thông minh, Công nghệ AI dẫn lối Việt Nam',
     short_name: 'K2AI',
-    description:
-      'Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và hướng dẫn AI thực tế',
+    description: 'Khám phá 34 đơn vị hành chính cấp tỉnh của Việt Nam với bản đồ tương tác và hướng dẫn AI thực tế',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
@@ -32,39 +31,38 @@ export default function manifest(): MetadataRoute.Manifest {
       'robotics',
       'bán dẫn',
       'IoT',
-      'Địa Lý Việt Nam',
       'Scratch',
       'lập trình',
       'khoa học máy tính',
-      'giáo dục STEM'
+      'giáo dục STEM',
     ],
     icons: [
       {
         src: '/icon-192x192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'maskable'
+        purpose: 'maskable',
       },
       {
         src: '/icon-512x512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'maskable'
-      }
+        purpose: 'maskable',
+      },
     ],
     screenshots: [
       {
         src: '/screenshot-wide.png',
         sizes: '1280x720',
         type: 'image/png',
-        form_factor: 'wide'
+        form_factor: 'wide',
       },
       {
         src: '/screenshot-narrow.png',
         sizes: '750x1334',
         type: 'image/png',
-        form_factor: 'narrow'
-      }
-    ]
+        form_factor: 'narrow',
+      },
+    ],
   };
 }

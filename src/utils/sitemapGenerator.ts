@@ -4,9 +4,7 @@ import { createCategorySlug, createTagSlug } from '@/utils/slug';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
 import { BaseLessonData } from '@/types/lesson-base';
 import { getAllModules } from '@/data/module.registry';
-import { regions } from '@/data/regions';
-import { citiesData } from '@/data/cities';
-import { City, Region, BlogCategory, BlogTag } from '@/types';
+import { BlogCategory, BlogTag } from '@/types';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://edu.k2aihub.com';
 
@@ -17,8 +15,6 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
 
   const corePages: MetadataRoute.Sitemap = [
     { url: baseUrl, priority: 1.0, changeFrequency: 'daily' },
-    { url: `${baseUrl}/city`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${baseUrl}/region`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/ai`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${baseUrl}/feedback`, priority: 0.5, changeFrequency: 'monthly' },
     { url: `${baseUrl}/learning`, priority: 0.9, changeFrequency: 'weekly' },
@@ -63,20 +59,6 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     lastModified,
     changeFrequency: 'weekly',
     priority: 0.7,
-  }));
-
-  const regionPages: MetadataRoute.Sitemap = regions.map((region: Region) => ({
-    url: `${baseUrl}/region/${region.slug}`,
-    lastModified,
-    changeFrequency: 'monthly',
-    priority: 0.7,
-  }));
-
-  const cityPages: MetadataRoute.Sitemap = citiesData.map((city: City) => ({
-    url: `${baseUrl}/city/${city.slug}`,
-    lastModified,
-    changeFrequency: 'weekly',
-    priority: ['ha-noi', 'ho-chi-minh', 'da-nang', 'hai-phong', 'can-tho', 'hue'].includes(city.slug) ? 0.9 : 0.8,
   }));
 
   const blogPosts = getAllBlogPostsSync();
@@ -133,8 +115,6 @@ export function generateSitemapEntries(): MetadataRoute.Sitemap {
     ...lessonPages,
     ...gamePages,
     ...aiCategoryPages,
-    ...regionPages,
-    ...cityPages,
     ...blogPages,
     ...blogCategoryPages,
     ...blogTagPages,
