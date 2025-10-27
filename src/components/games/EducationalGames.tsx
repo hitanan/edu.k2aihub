@@ -5,6 +5,7 @@ import { Play, Trophy, Target, Brain, Zap, Star } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { EducationalGame, EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
+import { truncateText } from '@/utils/textFormatting';
 
 // Custom hook for game management
 export function useEducationalGames() {
@@ -120,7 +121,7 @@ export function CompactGameCard({ game }: { game: EducationalGame }) {
           className="w-full bg-white/10 hover:bg-white/20 text-white rounded text-xs py-1.5 px-2 transition-colors duration-200 flex items-center justify-center font-medium cursor-pointer"
         >
           <Play className="w-3 h-3 mr-1" />
-          Chơi
+          Practice
         </button>
       </div>
     </div>
@@ -183,7 +184,12 @@ export function GameCard({ game, onPlay }: { game: EducationalGame; onPlay?: () 
         </div>
 
         <h3 className="text-lg font-bold text-white mb-2">{game.title}</h3>
-        <p className="text-gray-300 text-sm mb-3 leading-relaxed">{game.description}</p>
+        <p
+          className="text-gray-300 text-sm mb-3 leading-relaxed"
+          title={typeof game.description === 'string' ? game.description.replace(/\s+/g, ' ').trim() : ''}
+        >
+          {truncateText(game.description, 220)}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-3">
           <span className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(game.difficulty)}`}>

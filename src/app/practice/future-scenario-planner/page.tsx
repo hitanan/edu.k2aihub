@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import FutureScenarioPlanner from '@/components/games/FutureScenarioPlanner';
+import FutureScenarioPlanner from '@/components/practice/FutureScenarioPlanner';
 
 export const metadata: Metadata = createGameMetadata('future-scenario-planner');
 

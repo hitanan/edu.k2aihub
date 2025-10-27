@@ -308,7 +308,7 @@ export function ProgressDashboard() {
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6">
       <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
         <Trophy className="w-6 h-6 mr-3 text-yellow-400" />
-        Thống kê học tập
+        Learning Progress Overview
       </h3>
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">

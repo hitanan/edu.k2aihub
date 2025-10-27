@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import ArduinoCircuitBuilderGame from '@/components/games/individual/ArduinoCircuitBuilderGame';
+import ArduinoCircuitBuilderGame from '@/components/practice/individual/ArduinoCircuitBuilderGame';
 
 export const metadata: Metadata = createGameMetadata('arduino-circuit-builder');
 

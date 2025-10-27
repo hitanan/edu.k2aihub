@@ -1,6 +1,6 @@
 import { EducationalGame } from '@/types';
-import { NEW_GAMES_DATA } from './games/newGames';
-import { NEW_STORY_GAMES_DATA } from './games/newStoryGames';
+import { NEW_GAMES_DATA } from './practice/newGames';
+import { NEW_STORY_GAMES_DATA } from './practice/newStoryGames';
 
 export type { EducationalGame };
 
@@ -1767,7 +1767,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       {
         question: 'Tôi không giỏi toán ở trường, có thể chơi game không?',
         answer:
-          'Absolutely! Game khác với school math: không focus computational speed (calculator allowed cho arithmetic!), mà train creative problem-solving. Many "bad at math" students discover they love puzzles because game teach thinking strategies, not memorization. Start Beginner level, build confidence gradually!',
+          'Absolutely! Practice khác với school math: không focus computational speed (calculator allowed cho arithmetic!), mà train creative problem-solving. Many "bad at math" students discover they love puzzles because game teach thinking strategies, not memorization. Start Beginner level, build confidence gradually!',
       },
       {
         question: 'Math puzzles có giúp tốt hơn ở math tests không?',

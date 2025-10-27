@@ -4,7 +4,7 @@ import StructuredData from '@/components/StructuredData';
 import ClientOnly from '@/components/ClientOnly';
 import { LastVisitCard, LearningRecommendations, PageTracker } from '@/components/gamification/VisitTracker';
 import { ProgressDashboard } from '@/components/gamification/LearningProgress';
-import { EducationalGamesShowcase } from '@/components/games/EducationalGames';
+import { EducationalGamesShowcase } from '@/components/practice/EducationalGames';
 import { createModuleMetadata } from '@/utils/seo';
 import { moduleStats } from '@/utils/moduleStats';
 import CtaButton from '@/components/ui/CtaButton';

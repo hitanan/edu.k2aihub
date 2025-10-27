@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import OceanConservation3D from '@/components/games/OceanConservation3D';
+import OceanConservation3D from '@/components/practice/OceanConservation3D';
 import { createGameMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createGameMetadata('ocean-conservation-3d');

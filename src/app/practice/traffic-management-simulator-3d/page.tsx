@@ -1,4 +1,4 @@
-import TrafficManagementSimulator3D from '@/components/games/TrafficManagementSimulator3D';
+import TrafficManagementSimulator3D from '@/components/practice/TrafficManagementSimulator3D';
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
 

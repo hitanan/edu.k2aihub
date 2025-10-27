@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import VirtualPhysicsLab3D from '@/components/games/VirtualPhysicsLab3D';
+import VirtualPhysicsLab3D from '@/components/practice/VirtualPhysicsLab3D';
 
 export default function VirtualPhysicsLabPage() {
   return (

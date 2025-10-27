@@ -1,4 +1,4 @@
-import { ExternalGamePlatform } from '@/data/games/gameDataExternalPlatforms';
+import { ExternalGamePlatform } from '@/data/practice/gameDataExternalPlatforms';
 import { ExternalLink, Star } from 'lucide-react';
 
 // External Game Card Component

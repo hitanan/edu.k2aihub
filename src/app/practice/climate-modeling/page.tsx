@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import ClimateModelingGameComponent from '@/components/games/ClimateModelingGame';
+import ClimateModelingGameComponent from '@/components/practice/ClimateModelingGame';
 import { climateModelingGame } from '@/data/climateModelingGame';
 import Link from 'next/link';
 import { ArrowLeft, BookOpen, Lightbulb } from 'lucide-react';

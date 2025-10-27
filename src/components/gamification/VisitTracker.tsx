@@ -291,7 +291,7 @@ export function LearningRecommendations() {
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 mb-6">
       <h3 className="text-xl font-bold text-white mb-4 flex items-center">
         <BookOpen className="w-6 h-6 mr-3 text-purple-400" />
-        Gợi ý học tập
+        Learning Recommendations
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

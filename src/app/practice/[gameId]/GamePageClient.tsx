@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Clock, Play, ExternalLink, CheckCircle, Trophy, Target } from 'lucide-react';
+import { ArrowLeft, Clock, Play, ExternalLink, CheckCircle, Trophy, Target, HelpCircle, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 import { EducationalGame } from '@/data/educationalGames';
-import { useEducationalGames } from '@/components/games/EducationalGames';
-import { MiniGamePlayer } from '@/components/games/MiniGamePlayer';
+import { useEducationalGames } from '@/components/practice/EducationalGames';
+import { MiniGamePlayer } from '@/components/practice/MiniGamePlayer';
 import { PageTracker } from '@/components/gamification/VisitTracker';
 import { useLearningProgress } from '@/components/gamification/LearningProgress';
+import { splitIntoParagraphs } from '@/utils/textFormatting';
 
 interface GamePageClientProps {
   game: EducationalGame;
@@ -17,9 +18,22 @@ interface GamePageClientProps {
 export default function GamePageClient({ game, SpecificGameComponent }: GamePageClientProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [expandedFAQs, setExpandedFAQs] = useState<Set<number>>(new Set());
   const { completedGames, markGameCompleted } = useEducationalGames();
   const { completLesson } = useLearningProgress();
   const isCompleted = completedGames.includes(game.id);
+
+  const toggleFAQ = (index: number) => {
+    setExpandedFAQs(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
@@ -131,7 +145,12 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
                   </div>
                 </div>
 
-                <p className="text-gray-300 text-lg mb-6">{game.description}</p>
+                {/* Description with paragraph formatting */}
+                <div className="text-gray-300 text-lg mb-6 space-y-4">
+                  {splitIntoParagraphs(game.description, 3).map((paragraph, idx) => (
+                    <p key={idx} className="leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {game.skills?.map((skill, index) => (
@@ -262,6 +281,81 @@ export default function GamePageClient({ game, SpecificGameComponent }: GamePage
             </div>
           </div>
         </div>
+
+        {/* Learning Objectives */}
+        {game.learningObjectives && game.learningObjectives.length > 0 && (
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <BookOpen className="w-6 h-6 mr-3 text-green-400" />
+              Mục tiêu học tập chi tiết
+            </h2>
+            <div className="space-y-4">
+              {game.learningObjectives.map((objective, index) => (
+                <div key={index} className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-300 font-bold">
+                        {index + 1}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-gray-300 space-y-3">
+                        {splitIntoParagraphs(objective, 2).map((paragraph, pIdx) => (
+                          <p key={pIdx} className="leading-relaxed">{paragraph}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* FAQs */}
+        {game.faqs && game.faqs.length > 0 && (
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+              <HelpCircle className="w-6 h-6 mr-3 text-yellow-400" />
+              Câu hỏi thường gặp (FAQs)
+            </h2>
+            <div className="space-y-4">
+              {game.faqs.map((faq, index) => (
+                <div key={index} className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-xl overflow-hidden">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+                  >
+                    <div className="flex items-start space-x-4 flex-1">
+                      <div className="flex-shrink-0">
+                        <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-300 font-bold">
+                          Q{index + 1}
+                        </div>
+                      </div>
+                      <h3 className="text-white font-semibold text-lg pr-4">{faq.question}</h3>
+                    </div>
+                    <div className="flex-shrink-0">
+                      {expandedFAQs.has(index) ? (
+                        <ChevronUp className="w-5 h-5 text-yellow-400" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-yellow-400" />
+                      )}
+                    </div>
+                  </button>
+                  {expandedFAQs.has(index) && (
+                    <div className="px-6 pb-6 pl-[72px]">
+                      <div className="text-gray-300 space-y-3 border-l-2 border-yellow-500/30 pl-6">
+                        {splitIntoParagraphs(faq.answer, 2).map((paragraph, pIdx) => (
+                          <p key={pIdx} className="leading-relaxed">{paragraph}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Related Lessons */}
         {game.relatedLessons && game.relatedLessons.length > 0 && (

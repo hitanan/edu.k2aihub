@@ -343,7 +343,7 @@ export const robloxLessons: RobloxLessonType[] = [
           '"Save to Roblox" chỉ đơn giản là lưu phiên bản game của bạn lên đám mây để bạn có thể tiếp tục làm việc trên các máy tính khác. "Publish to Roblox" sẽ cập nhật phiên bản game mà người chơi sẽ thấy và chơi.',
       },
       {
-        question: 'Làm thế nào để game của tôi nổi bật giữa hàng triệu game khác?',
+        question: 'Làm thế nào để game của tôi nổi bật giữa hàng triệu Practice khác?',
         answer:
           'Một icon và thumbnail hấp dẫn là rất quan trọng để thu hút sự chú ý ban đầu. Ngoài ra, một ý tưởng game độc đáo, gameplay cuốn hút và việc cập nhật thường xuyên là chìa khóa để giữ chân người chơi.',
       },

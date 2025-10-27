@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import MedicalDeviceDesigner3D from '@/components/games/MedicalDeviceDesigner3D';
+import MedicalDeviceDesigner3D from '@/components/practice/MedicalDeviceDesigner3D';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = createGameMetadata('medical-device-designer-3d');

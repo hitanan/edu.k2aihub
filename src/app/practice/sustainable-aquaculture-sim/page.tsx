@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import SustainableAquacultureSim from '@/components/games/SustainableAquacultureSim';
+import SustainableAquacultureSim from '@/components/practice/SustainableAquacultureSim';
 
 export const metadata: Metadata = createGameMetadata('sustainable-aquaculture-sim');
 

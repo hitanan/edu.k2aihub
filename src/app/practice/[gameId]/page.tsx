@@ -53,8 +53,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-import EthicalAISimulatorGame from '@/components/games/story/EthicalAISimulatorGame';
-import DataDetectiveGame from '@/components/games/story/DataDetectiveGame';
+import EthicalAISimulatorGame from '@/components/practice/story/EthicalAISimulatorGame';
+import DataDetectiveGame from '@/components/practice/story/DataDetectiveGame';
 
 const gameComponents: { [key: string]: React.ComponentType<{ onComplete: (score: number) => void }> } = {
   'ethical-ai-simulator': EthicalAISimulatorGame,

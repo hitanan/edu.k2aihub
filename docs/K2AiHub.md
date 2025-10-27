@@ -1,12 +1,12 @@
 ---
-title: "K2AiHub - Interactive Information Platform Documentation"
-description: "_The comprehensive source of truth for K2AiHub development and features_"
-date: "2025-08-27"
-author: "K2AiHub Development Team"
-category: "Tài Liệu"
-tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+title: 'K2AiHub - Interactive Information Platform Documentation'
+description: '_The comprehensive source of truth for K2AiHub development and features_'
+date: '2025-08-27'
+author: 'K2AiHub Development Team'
+category: 'Tài Liệu'
+tags: ['K2AiHub', 'trò chơi giáo dục', 'học tập', 'trí tuệ nhân tạo', '3D']
 featured: true
-readingTime: "20 phút đọc"
+readingTime: '20 phút đọc'
 ---
 
 # K2AiHub - Interactive Information Platform Documentation
@@ -48,7 +48,6 @@ An advanced interactive educational tool covering Vietnam's administrative restr
 #### Core Features Implemented:
 
 - ✅ **Interactive SVG Map Component** (`src/components/VietnamMap.tsx`)
-
   - **Advanced DOM parsing approach** with proper SVG manipulation
   - **Path reordering system** to prevent province overlap issues
   - **Real-time visual feedback** with yellow hover and yellow-brown selection
@@ -57,14 +56,12 @@ An advanced interactive educational tool covering Vietnam's administrative restr
   - **Performance-optimized** with React.memo and proper cleanup
 
 - ✅ **Smart Search System** (`src/components/Search.tsx`)
-
   - Support for current and former province names (e.g., "Quang Nam" → "Đà Nẵng")
   - Real-time filtering with auto-close functionality
   - Vietnamese text normalization and matching
   - O(1) city lookup performance using Map data structure
 
 - ✅ **SEO-Optimized City Pages** (`src/app/city/[slug]/page.tsx`)
-
   - Dynamic routing with static generation
   - Individual metadata for each city
   - JSON-LD structured data for search engines
@@ -72,7 +69,6 @@ An advanced interactive educational tool covering Vietnam's administrative restr
   - Canonical URLs and robots configuration
 
 - ✅ **Comprehensive City Database** (`src/data/cities.ts`)
-
   - Complete information for all 34 provincial units
   - Population, area, economic statistics
   - Historical merger information
@@ -80,7 +76,6 @@ An advanced interactive educational tool covering Vietnam's administrative restr
   - Geographic coordinates for map positioning
 
 - ✅ **Share Functionality**
-
   - Native sharing API integration
   - Social media sharing (Facebook, Twitter, Zalo, LinkedIn, WhatsApp, Telegram)
   - Copy-to-clipboard fallback
@@ -108,7 +103,6 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
 #### AI Categories Implemented:
 
 1. **💼 Office & Work** (`/ai/office-work`)
-
    - ChatGPT for professional email writing
    - Excel automation with AI and VBA
    - AI-powered presentation creation
@@ -116,7 +110,6 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
    - Detailed prompts and step-by-step tutorials
 
 2. **🎨 Creative & Design** (`/ai/creative-design`)
-
    - Midjourney mastery for image generation
    - Canva AI Magic Studio workflows
    - AI content writing and copywriting
@@ -124,7 +117,6 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
    - Creative prompt engineering
 
 3. **📚 Education & Learning** (`/ai/education-learning`)
-
    - AI tutoring and personalized assistance
    - Research methodologies with AI tools
    - Language learning acceleration
@@ -132,7 +124,6 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
    - Academic writing enhancement
 
 4. **📈 Business & Marketing** (`/ai/business-marketing`)
-
    - Marketing automation strategies
    - Data analysis with AI platforms
    - Chatbot development for customer service
@@ -140,7 +131,6 @@ A comprehensive guide system for using AI tools effectively across 6 major life 
    - Content marketing at scale
 
 5. **🌱 Daily Life** (`/ai/daily-life`)
-
    - Personal productivity enhancement
    - Health and fitness optimization
    - Financial planning and management
@@ -169,7 +159,6 @@ A comprehensive digital marketing education platform covering modern marketing s
 #### Core Features Implemented:
 
 - ✅ **Complete Digital Marketing Curriculum** (`/learning/digital-marketing`)
-
   - 8 comprehensive lessons covering all aspects of digital marketing
   - Fundamentals, content marketing, SEO, social media, paid advertising
   - Email marketing, analytics & ROI, creator economy strategies
@@ -189,7 +178,6 @@ Advanced personal finance education with modern FinTech integration and investme
 #### Core Features Implemented:
 
 - ✅ **Personal Finance Mastery** (`/learning/financial-literacy`)
-
   - Budgeting and expense management tools
   - Investment portfolio building and optimization
   - Cryptocurrency and digital asset education
@@ -209,7 +197,6 @@ Environmental technology education focusing on renewable energy and sustainable 
 #### Core Features Implemented:
 
 - ✅ **Renewable Energy Systems** (`/learning/green-technology`)
-
   - Solar, wind, and hydroelectric power systems
   - Energy storage and battery technology
   - Smart grid and energy management
@@ -228,7 +215,6 @@ Comprehensive game development education from concept to publishing.
 #### Core Features Implemented:
 
 - ✅ **Game Development Pipeline** (`/learning/game-development`)
-
   - Unity and Unreal Engine mastery
   - 2D and 3D game design principles
   - Character animation and storytelling
@@ -248,7 +234,6 @@ Master AI-powered creative tools for professional content generation.
 #### Core Features Implemented:
 
 - ✅ **AI Image Generation** (`/learning/ai-art`)
-
   - Midjourney, DALL-E, and Stable Diffusion mastery
   - Advanced prompt engineering techniques
   - Style transfer and artistic workflow integration
@@ -267,7 +252,6 @@ Advanced cybersecurity education with hands-on penetration testing and defense s
 #### Core Features Implemented:
 
 - ✅ **Penetration Testing** (`/learning/cybersecurity`)
-
   - Ethical hacking methodologies and tools
   - Vulnerability assessment and exploitation
   - Network security testing and analysis
@@ -286,7 +270,6 @@ Cutting-edge biotechnology education covering genetic engineering and medical ap
 #### Core Features Implemented:
 
 - ✅ **Genetic Engineering** (`/learning/biotechnology`)
-
   - CRISPR technology and gene editing
   - Synthetic biology and biodesign
   - Personalized medicine and genomics
@@ -460,14 +443,12 @@ src/
 ### SEO Excellence:
 
 - ✅ **Dynamic Metadata Generation** (`src/utils/seo.ts`)
-
   - `createTitle()`: Automatic K2AiHub branding
   - `createDescription()`: SEO-optimized descriptions
   - `createKeywords()`: Intelligent keyword generation
   - Consistent metadata across all pages
 
 - ✅ **Structured Data Implementation**
-
   - Organization schema for K2AiHub
   - Educational content schemas
   - FAQ structured data with rich snippets
@@ -483,14 +464,12 @@ src/
 ### Performance Optimizations:
 
 - ✅ **Advanced Caching Strategy**
-
   - React.memo for component optimization
   - useMemo for expensive calculations
   - Lazy loading with Suspense boundaries
   - Static generation for all content
 
 - ✅ **Bundle Optimization**
-
   - Code splitting by routes and components
   - Dynamic imports for large components
   - Image optimization with Next.js Image
@@ -505,14 +484,12 @@ src/
 ### Global Features:
 
 - ✅ **Universal Share System** (`src/components/ShareButton.tsx`)
-
   - Native sharing API integration
   - 6 social media platforms support
   - Copy-to-clipboard fallback
   - Custom share metadata per page
 
 - ✅ **Standalone Feedback System** (`/feedback`)
-
   - Form validation with error handling
   - Email integration (mailto:)
   - Accessible from all modules
@@ -527,23 +504,20 @@ src/
 ### Educational Games System:
 
 - ✅ **19 Interactive Mini-Games** (`/games`)
-
   - **Cross-Curricular Integration**: Each game connected to multiple educational modules
   - **Comprehensive Lesson Links**: All games enhanced with `relatedLessons` connecting to Python, Arduino, Robotics, AI, STEM modules
   - **Progressive Difficulty**: Games designed with increasing complexity and educational depth
   - **Performance Tracking**: LocalStorage-based progress saving and achievement systems
 
-- ✅ **Featured Game: 3D Robot Navigation** (`/games/robot-navigation-3d`)
-
-  - **Advanced Pathfinding**: Complete A* algorithm implementation with visualization
+- ✅ **Featured Game: 3D Robot Navigation** (`/practice/robot-navigation-3d`)
+  - **Advanced Pathfinding**: Complete A\* algorithm implementation with visualization
   - **3D Visualization**: CSS-based 3D rendering with perspective transforms
   - **Educational Value**: Teaches pathfinding algorithms, spatial reasoning, and computational thinking
   - **Technical Excellence**: 60fps performance target with mobile optimization
-  - **Algorithm Comparison**: Support for A*, Dijkstra, and BFS algorithms with real-time comparison
+  - **Algorithm Comparison**: Support for A\*, Dijkstra, and BFS algorithms with real-time comparison
   - **Progressive Levels**: 3 challenging levels with increasing 3D complexity and moving obstacles
 
 - ✅ **Game Categories & Educational Connections**
-  
   - **Programming Games**: Scratch Animation, Python Logic, Algorithm challenges
   - **STEM Games**: Physics simulations, Math puzzles, Engineering challenges
   - **Technology Games**: IoT sensors, Arduino programming, Robotics navigation
@@ -551,7 +525,6 @@ src/
   - **Logic Games**: Problem-solving, Pattern recognition, Strategic thinking
 
 - ✅ **Technical Implementation**
-
   - **Modern Web Technologies**: React 19, TypeScript, CSS 3D transforms
   - **Performance Optimization**: Memoization, lazy loading, efficient rendering
   - **Cross-Platform**: Responsive design with touch and keyboard controls
@@ -573,9 +546,7 @@ export function createTitle(title: string): string {
 }
 
 export function createDescription(description: string): string {
-  return description.length > 160
-    ? description.substring(0, 157) + '...'
-    : description;
+  return description.length > 160 ? description.substring(0, 157) + '...' : description;
 }
 ```
 
@@ -644,14 +615,12 @@ The project is optimized for GitHub Pages deployment with:
 ### Testing Procedures:
 
 1. **Vietnam Geography Module**:
-
    - Interactive map functionality
    - Search with former province names
    - City page navigation and sharing
    - Mobile touch interactions
 
 2. **AI Guide Module**:
-
    - Category navigation and content
    - Share button functionality
    - Mobile reading experience
@@ -765,7 +734,7 @@ This document serves as the single source of truth for K2AiHub development. All 
 ### Current Version: 3.1.0
 
 - ✅ **19 Educational Games System**: Complete interactive gaming platform with comprehensive lesson connections
-- ✅ **3D Robot Navigation Game**: Advanced A* pathfinding algorithm with 3D visualization and progressive difficulty
+- ✅ **3D Robot Navigation Game**: Advanced A\* pathfinding algorithm with 3D visualization and progressive difficulty
 - ✅ **Cross-Curricular Integration**: All games enhanced with detailed relatedLessons linking to Python, Arduino, Robotics, AI, STEM modules
 - ✅ **Game Progress Tracking**: LocalStorage-based achievements, scoring, and educational progress monitoring
 - ✅ **Modern Game Engine**: React-based game framework with 60fps performance and mobile optimization

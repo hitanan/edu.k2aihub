@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import DigitalCitizenDilemma from '@/components/games/DigitalCitizenDilemma';
+import DigitalCitizenDilemma from '@/components/practice/DigitalCitizenDilemma';
 
 export const metadata: Metadata = createGameMetadata('digital-citizen-dilemma');
 

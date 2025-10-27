@@ -1,12 +1,12 @@
 ---
-title: "K2AI 3D Games Research & Development Plan"
-description: "_Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_"
-date: "2025-08-27"
-author: "K2AiHub Development Team"
-category: "Nghiên Cứu"
-tags: ["K2AiHub", "trò chơi giáo dục", "học tập", "trí tuệ nhân tạo", "3D"]
+title: 'K2AI 3D Games Research & Development Plan'
+description: '_Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_'
+date: '2025-08-27'
+author: 'K2AiHub Development Team'
+category: 'Nghiên Cứu'
+tags: ['K2AiHub', 'trò chơi giáo dục', 'học tập', 'trí tuệ nhân tạo', '3D']
 featured: true
-readingTime: "25 phút đọc"
+readingTime: '25 phút đọc'
 ---
 
 # K2AI 3D Games Research & Development Plan
@@ -41,11 +41,11 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ### ⭐ **TIER 1: High 3D Potential & Unique Market Position (Ưu tiên cao)**
 
-#### ✅ **COMPLETED: 🧪 [Virtual Chemistry Lab 3D](/games/virtual-chemistry-lab-3d)** - *Successfully Implemented August 2025*
+#### ✅ **COMPLETED: 🧪 [Virtual Chemistry Lab 3D](/practice/virtual-chemistry-lab-3d)** - _Successfully Implemented August 2025_
 
-- **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/games/virtual-chemistry-lab-3d/`
+- **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/practice/virtual-chemistry-lab-3d/`
 - **Original State**: 2D molecular structure visualization game
-- **3D Enhancement Achieved**: 
+- **3D Enhancement Achieved**:
   - **Interactive 3D Molecular Building**: Users can place atoms (H, C, O, N, Cl, Na) in 3D space
   - **Real-time Bond Creation**: Visual 3D cylindrical bonds connecting atoms
   - **Molecular Validation System**: Smart detection when molecules like H2O, Cl2, CH4, CO2, NH3 are completed
@@ -77,6 +77,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
   - **Vietnamese Market Fit**: Addresses local chemistry education needs
 
 **Key Success Metrics Achieved**:
+
 - ✅ **3D Rendering**: Smooth 60fps performance on desktop and mobile
 - ✅ **Educational Logic**: Smart molecular completion detection for 11 different molecules
 - ✅ **User Engagement**: Intuitive drag-and-drop 3D interactions with keyboard shortcuts
@@ -85,6 +86,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 - ✅ **Content Depth**: Covers basic to advanced high school chemistry molecules
 
 **Lessons Learned for Future 3D Games**:
+
 1. **Start with Clear Educational Objectives**: Define specific learning outcomes first
 2. **Focus on Intuitive Interactions**: 3D games need simple, clear user interfaces
 3. **Performance is Critical**: Mobile optimization must be built-in, not added later
@@ -95,11 +97,11 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ---
 
-#### ✅ **COMPLETED: 🏗️ [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d)** - *Successfully Implemented August 2025*
+#### ✅ **COMPLETED: 🏗️ [Arduino Circuit Builder 3D](/practice/arduino-circuit-builder-3d)** - _Successfully Implemented August 2025_
 
-- **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/games/arduino-circuit-builder-3d/`
+- **Implementation Status**: ✅ **LIVE & FUNCTIONAL** - Available at `/practice/arduino-circuit-builder-3d/`
 - **Original State**: 2D circuit simulation concept
-- **3D Enhancement Achieved**: 
+- **3D Enhancement Achieved**:
   - **Interactive 3D Workbench**: Realistic breadboard environment with 3D component placement
   - **Storyline Integration**: NeoCircuity futuristic city setting with infrastructure problems to solve
   - **Progressive Levels**: 8 structured levels from street lights to complex IoT systems
@@ -121,7 +123,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
   - **Hands-on Electronics**: Physical circuit building skills in virtual environment
   - **Programming Integration**: C++ Arduino code with immediate visual feedback
   - **Progressive Skill Building**: From basic LEDs to complex sensor networks
-- **Storyline Success**: 
+- **Storyline Success**:
   - **NeoCircuity Setting**: Engaging futuristic city with relatable technology problems
   - **Character Development**: Young electronics engineer saving the city
   - **Mission Structure**: Clear objectives with immediate impact visualization
@@ -131,6 +133,7 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
   - **Vietnamese [STEM Education](/learning/stem)**: Addresses critical gap in hands-on technical training
 
 **Key Success Metrics Achieved**:
+
 - ✅ **3D Circuit Building**: Realistic component placement and wiring visualization
 - ✅ **Educational Progression**: 8 structured levels with increasing complexity
 - ✅ **Storyline Engagement**: NeoCircuity narrative framework with mission-driven learning
@@ -139,9 +142,9 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ---
 
-#### ✅ **COMPLETED: 🚀 Space Exploration Game 3D** - *Enhanced August 2025*
+#### ✅ **COMPLETED: 🚀 Space Exploration Game 3D** - _Enhanced August 2025_
 
-- **Implementation Status**: ✅ **ENHANCED & OPTIMIZED** - Available at `/games/space-exploration-3d/`
+- **Implementation Status**: ✅ **ENHANCED & OPTIMIZED** - Available at `/practice/space-exploration-3d/`
 - **Current Improvements**:
   - **Enhanced Lighting System**: Increased ambient and directional lighting for better visibility
   - **Improved Planet Rendering**: Higher emissive intensity and enhanced visual effects
@@ -151,12 +154,12 @@ _Cập nhật dựa trên Game Inventory hiện tại - 58+ Educational Games_
 
 ---
 
-#### ✅ **COMPLETED: 🤖 Robot Navigation 3D** - *Enhanced August 2025*
+#### ✅ **COMPLETED: 🤖 Robot Navigation 3D** - _Enhanced August 2025_
 
-- **Implementation Status**: ✅ **ENHANCED WITH FULLSCREEN** - Available at `/games/robot-navigation-3d/`
+- **Implementation Status**: ✅ **ENHANCED WITH FULLSCREEN** - Available at `/practice/robot-navigation-3d/`
 - **Current Improvements**:
   - **Fullscreen Support Added**: Desktop fullscreen button with header navigation hiding
-  - **3D Pathfinding Algorithms**: A*, Dijkstra, and BFS with real-time visualization
+  - **3D Pathfinding Algorithms**: A\*, Dijkstra, and BFS with real-time visualization
   - **Advanced 3D Environments**: Multi-level challenges with vertical navigation
   - **Mobile Optimization**: Touch-friendly controls and performance optimization
 
@@ -168,7 +171,8 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 #### **TIER 1: Immediate High-Impact 3D Opportunities**
 
-#### 1. **🧬 Neural Network Builder 3D** - *Next Priority*
+#### 1. **🧬 Neural Network Builder 3D** - _Next Priority_
+
 - **Current State**: 2D neural network visualization game
 - **3D Enhancement Potential**: ⭐⭐⭐⭐⭐ **EXCEPTIONAL**
 - **Market Niche**: ✅ AI/ML education with immersive neural architecture visualization
@@ -178,6 +182,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **HIGHEST NEXT**
 
 #### 2. **🏭 Factory Automation Simulator 3D**
+
 - **Current State**: 2D factory layout game
 - **3D Enhancement**: Interactive 3D factory floor with robotic systems and conveyor belts
 - **Market Niche**: ✅ Industry 4.0 education and automation training
@@ -186,7 +191,8 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Technical Feasibility**: ⭐⭐⭐⭐ - Complex but builds on Arduino Circuit Builder architecture
 - **Development Priority**: 🔥 **HIGH**
 
-#### 3. **🚁 [Drone Crop Monitoring 3D](/games/drone-crop-monitoring-3d)**
+#### 3. **🚁 [Drone Crop Monitoring 3D](/practice/drone-crop-monitoring-3d)**
+
 - **Current State**: 2D agricultural monitoring interface
 - **3D Enhancement**: 3D terrain with drone flight simulation and crop analysis
 - **Market Niche**: ✅ Agricultural technology and precision farming education
@@ -196,6 +202,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **HIGH**
 
 #### 4. **🧪 Biotech Lab Simulation 3D**
+
 - **Current State**: 2D laboratory interface game
 - **3D Enhancement**: Immersive 3D laboratory with realistic equipment and procedures
 - **Market Niche**: ✅ Biotechnology education with hands-on virtual lab experience
@@ -206,7 +213,8 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 #### **TIER 2: Strong 3D Enhancement Potential**
 
-#### 5. **🌊 [Aquaculture IoT Manager 3D](/games/aquaculture-iot-manager-3d)**
+#### 5. **🌊 [Aquaculture IoT Manager 3D](/practice/aquaculture-iot-manager-3d)**
+
 - **Current State**: 2D aquaculture management interface
 - **3D Enhancement**: 3D underwater environment with fish behavior and monitoring systems
 - **Market Niche**: ✅ Sustainable aquaculture and marine technology
@@ -214,6 +222,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **MEDIUM**
 
 #### 6. **🚦 Traffic Management Simulator 3D**
+
 - **Current State**: 2D traffic flow optimization
 - **3D Enhancement**: 3D city intersection with realistic traffic flow and smart signals
 - **Market Niche**: ✅ Smart city technology and urban planning
@@ -221,6 +230,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **MEDIUM**
 
 #### 7. **🏥 Medical Device Designer 3D**
+
 - **Current State**: 2D medical device interface
 - **3D Enhancement**: 3D human anatomy with medical device interaction and placement
 - **Market Niche**: ✅ Biomedical engineering and medical technology
@@ -229,6 +239,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **MEDIUM**
 
 #### 8. **⚡ EV Charging Network 3D**
+
 - **Current State**: 2D network optimization game
 - **3D Enhancement**: 3D city environment with electric vehicle routing and charging infrastructure
 - **Market Niche**: ✅ Sustainable transportation and smart grid technology
@@ -238,6 +249,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 #### **TIER 3: Specialized 3D Opportunities**
 
 #### 9. **🔬 Nano Lab Explorer 3D**
+
 - **Current State**: 2D nanotechnology interface
 - **3D Enhancement**: Microscopic 3D world with molecular manipulation and nanoscale engineering
 - **Market Niche**: ✅ Nanotechnology education and materials science
@@ -246,6 +258,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **LONG-TERM**
 
 #### 10. **🎮 Game Dev Studio 3D**
+
 - **Current State**: 2D game development interface
 - **3D Enhancement**: 3D game development environment with asset creation and level design
 - **Market Niche**: ✅ Game development education and creative technology
@@ -255,7 +268,8 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 #### **UNIQUE VIETNAMESE MARKET OPPORTUNITIES**
 
-#### 11. **🏛️ [Vietnamese Heritage Explorer 3D](/games/vietnamese-heritage-explorer-3d)**
+#### 11. **🏛️ [Vietnamese Heritage Explorer 3D](/practice/vietnamese-heritage-explorer-3d)**
+
 - **Current State**: 2D cultural heritage interface
 - **3D Enhancement**: Immersive 3D historical sites and cultural landmarks
 - **Market Niche**: ✅ **UNIQUE** Vietnamese cultural education with international appeal
@@ -265,6 +279,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 - **Development Priority**: 🔥 **HIGH** - Unique market position
 
 #### 12. **💱 Currency Exchange Puzzle 3D**
+
 - **Current State**: 2D financial puzzle game
 - **3D Enhancement**: 3D global market environment with currency flow visualization
 - **Market Niche**: ✅ Financial literacy and global economics education
@@ -370,7 +385,7 @@ After analyzing the current 58+ educational games in the K2AI platform, here are
 
 **Priority Games** (1-2 games):
 
-1. **[Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d)** (8 tuần)
+1. **[Arduino Circuit Builder 3D](/practice/arduino-circuit-builder-3d)** (8 tuần)
    - **Why First**: Unique market position, high educational value, achievable scope
    - **MVP Features**: 3D breadboard, basic components (LED, resistors, Arduino)
    - **Success Metrics**: 1000+ users, 70%+ completion rate
@@ -774,7 +789,7 @@ src/
 - [ ] **User Survey**: Survey 200+ Vietnamese students about 3D learning preferences
 - [ ] **Teacher Interviews**: Interview 20+ STEM teachers about classroom integration needs
 - [ ] **Competitor Analysis**: Deep analysis of international 3D education tools
-- [ ] **MVP Feature Definition**: Finalize [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) feature scope
+- [ ] **MVP Feature Definition**: Finalize [Arduino Circuit Builder 3D](/practice/arduino-circuit-builder-3d) feature scope
 - [ ] **Pricing Strategy**: Research willingness-to-pay for 3D educational tools
 
 #### **Business Planning**:
@@ -787,7 +802,7 @@ src/
 
 ### **Success Criteria for Phase 1**:
 
-- [ ] **Technical MVP**: [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) demo running at 60fps on mobile
+- [ ] **Technical MVP**: [Arduino Circuit Builder 3D](/practice/arduino-circuit-builder-3d) demo running at 60fps on mobile
 - [ ] **Market Validation**: 80%+ positive feedback from target users
 - [ ] **Performance Target**: <5s load time on 4G network
 - [ ] **Educational Effectiveness**: 40%+ better learning outcomes vs 2D version
@@ -831,7 +846,7 @@ src/
 
 #### **Q1 2025 Targets**:
 
-- **Development**: [Arduino Circuit Builder 3D](/games/arduino-circuit-builder-3d) MVP completed
+- **Development**: [Arduino Circuit Builder 3D](/practice/arduino-circuit-builder-3d) MVP completed
 - **Users**: 1,000+ beta testers
 - **Performance**: 60fps on iPhone 12, Samsung Galaxy S21
 - **Engagement**: 70%+ task completion rate

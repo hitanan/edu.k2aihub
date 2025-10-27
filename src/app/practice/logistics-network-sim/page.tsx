@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import LogisticsNetworkSim from '@/components/games/LogisticsNetworkSim';
+import LogisticsNetworkSim from '@/components/practice/LogisticsNetworkSim';
 
 export const metadata: Metadata = createGameMetadata('logistics-network-sim');
 

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import InvestmentSimulatorGame from '@/components/games/individual/InvestmentSimulatorGame';
+import InvestmentSimulatorGame from '@/components/practice/individual/InvestmentSimulatorGame';
 
 export const metadata: Metadata = createGameMetadata('investment-simulator');
 

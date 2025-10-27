@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import SoftSkillsScenario from '@/components/games/SoftSkillsScenario';
+import SoftSkillsScenario from '@/components/practice/SoftSkillsScenario';
 
 export const metadata: Metadata = createGameMetadata('soft-skills-scenario');
 

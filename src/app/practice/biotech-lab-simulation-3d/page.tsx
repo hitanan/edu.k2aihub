@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import BiotechLabSimulation3D from '@/components/games/individual/BiotechLabSimulation3D';
+import BiotechLabSimulation3D from '@/components/practice/individual/BiotechLabSimulation3D';
 
 export const metadata: Metadata = createGameMetadata('biotech-lab-simulation-3d');
 

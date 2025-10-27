@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
-import { RobotNavigation3DGame } from '@/components/games/individual/RobotNavigation3DGame';
+import { RobotNavigation3DGame } from '@/components/practice/individual/RobotNavigation3DGame';
 import ShareButton from '@/components/ShareButton';
 
 export default function RobotNavigation3DPage() {
@@ -191,7 +191,7 @@ export default function RobotNavigation3DPage() {
                     onClick={handleRestart}
                     className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-white transition-colors"
                   >
-                    🔄 Chơi lại cùng màn
+                    🔄 Practice again cùng màn
                   </button>
                   <button
                     onClick={handleBackToMenu}

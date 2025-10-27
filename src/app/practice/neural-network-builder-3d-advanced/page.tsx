@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 
 // Dynamic import for the game component
-const NeuralNetworkBuilder3D = dynamic(() => import('@/components/games/NeuralNetworkBuilder3D'), {
+const NeuralNetworkBuilder3D = dynamic(() => import('@/components/practice/NeuralNetworkBuilder3D'), {
   ssr: false,
   loading: () => (
     <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">

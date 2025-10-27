@@ -1,4 +1,4 @@
-import VirtualChemistryLab3DGame from '@/components/games/VirtualChemistryLab3DGame';
+import VirtualChemistryLab3DGame from '@/components/practice/VirtualChemistryLab3DGame';
 
 export default function VirtualChemistryLabPage() {
   return <VirtualChemistryLab3DGame />;

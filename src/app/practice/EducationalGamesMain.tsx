@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { EDUCATIONAL_GAMES_DATA } from '@/data/educationalGames';
-import { useEducationalGames, GameCard } from '@/components/games/EducationalGames';
+import { useEducationalGames, GameCard } from '@/components/practice/EducationalGames';
 import { PageTracker } from '@/components/gamification/VisitTracker';
-import { gameDataExternalPlatforms } from '@/data/games/gameDataExternalPlatforms';
+import { gameDataExternalPlatforms } from '@/data/practice/gameDataExternalPlatforms';
 import ExternalGameCard from './ExternalGameCard';
 import { GameCardSkeleton } from '@/components/LoadingSpinner';
 
@@ -43,7 +43,7 @@ export default function EducationalGamesMain() {
     if (newSearch) params.set('search', newSearch);
 
     const queryString = params.toString();
-    const newUrl = queryString ? `/games?${queryString}` : '/games';
+    const newUrl = queryString ? `/games?${queryString}` : '/practice';
 
     // Use replace instead of push to avoid creating too many history entries
     router.replace(newUrl, { scroll: false });

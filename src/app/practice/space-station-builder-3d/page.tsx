@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import SpaceStationBuilder3D from '@/components/games/SpaceStationBuilder3D';
+import SpaceStationBuilder3D from '@/components/practice/SpaceStationBuilder3D';
 import { createGameMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createGameMetadata('space-station-builder-3d');

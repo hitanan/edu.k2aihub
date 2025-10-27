@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import CareerDevelopmentVirtualMentor3D from '@/components/games/CareerDevelopmentVirtualMentor3D';
+import CareerDevelopmentVirtualMentor3D from '@/components/practice/CareerDevelopmentVirtualMentor3D';
 
 export const metadata: Metadata = createGameMetadata('career-development-virtual-mentor-3d');
 

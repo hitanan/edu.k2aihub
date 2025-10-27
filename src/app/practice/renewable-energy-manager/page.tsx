@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import RenewableEnergyManagerGame from '@/components/games/individual/RenewableEnergyManagerGame';
+import RenewableEnergyManagerGame from '@/components/practice/individual/RenewableEnergyManagerGame';
 
 export const metadata: Metadata = createGameMetadata('renewable-energy-manager');
 

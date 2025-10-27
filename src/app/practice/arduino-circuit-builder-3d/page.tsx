@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import ArduinoCircuitBuilder3D from '@/components/games/ArduinoCircuitBuilder3D';
+import ArduinoCircuitBuilder3D from '@/components/practice/ArduinoCircuitBuilder3D';
 import { createGameMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createGameMetadata('arduino-circuit-builder-3d');

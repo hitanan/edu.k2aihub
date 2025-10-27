@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import GovTechServiceDesigner from '@/components/games/GovTechServiceDesigner';
+import GovTechServiceDesigner from '@/components/practice/GovTechServiceDesigner';
 
 export const metadata: Metadata = createGameMetadata('gov-tech-service-designer');
 

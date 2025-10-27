@@ -1,4 +1,4 @@
-import FactoryAutomationSimulator3D from '@/components/games/FactoryAutomationSimulator3D';
+import FactoryAutomationSimulator3D from '@/components/practice/FactoryAutomationSimulator3D';
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
 

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import AIArtStudioGame from '@/components/games/individual/AIArtStudioGame';
+import AIArtStudioGame from '@/components/practice/individual/AIArtStudioGame';
 
 export const metadata: Metadata = createGameMetadata('ai-art-studio');
 

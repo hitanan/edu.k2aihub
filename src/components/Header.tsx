@@ -52,8 +52,8 @@ const Header: React.FC = () => {
 
   // Core modules - always visible
   const coreModules = [
-    { name: 'Trang Chủ', href: '/', icon: <Home className="w-4 h-4" /> },
-    { name: 'AI Của Tôi', href: '/ai', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'My AI', href: '/ai', icon: <Brain className="w-4 h-4" /> },
     {
       name: 'Interactive Practice',
       href: '/practice',
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
       icon: <FileText className="w-4 h-4" />,
     },
     {
-      name: 'Hồ Sơ',
+      name: 'Profile',
       href: '/profile',
       icon: <span className="w-4 h-4 text-center">👤</span>,
     },
@@ -74,7 +74,7 @@ const Header: React.FC = () => {
   // Add continue session to core modules if available
   if (continueSession) {
     coreModules.splice(1, 0, {
-      name: 'Tiếp tục học tập',
+      name: 'Continue Learning',
       href: continueSession.href,
       icon: <BookOpen className="w-4 h-4" />,
     });
@@ -197,7 +197,7 @@ const Header: React.FC = () => {
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 K2AI
               </span>
-              <p className="text-xs text-gray-500 -mt-1">Học tập thông minh</p>
+              <p className="text-xs text-gray-500 -mt-1">Smart Learning</p>
             </div>
           </Link>
 
@@ -301,7 +301,7 @@ const Header: React.FC = () => {
                             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl text-base group"
                             onClick={() => setIsLearningDropdownOpen(false)}
                           >
-                            📚 Tất Cả Khóa Học
+                            📚 All Courses
                             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
                           </Link>
                         </div>

@@ -210,7 +210,7 @@ Mỗi game đều có **relatedLessons** kết nối với:
 
 ### Dành Cho Học Sinh
 
-1. **Khám phá**: Thử nghiệm các game khác nhau để tìm sở thích
+1. **Khám phá**: Thử nghiệm các Practice khác nhau để tìm sở thích
 2. **Thực hành**: Chơi 15-30 phút mỗi ngày để phát triển kỹ năng
 3. **Thách thức**: Tham gia competitions và leaderboards
 4. **Chia sẻ**: Kết nối với bạn bè và học tập cùng nhau

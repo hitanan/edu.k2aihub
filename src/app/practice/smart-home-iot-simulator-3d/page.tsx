@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import SmartHomeIoTSimulator3D from '@/components/games/SmartHomeIoTSimulator3D';
+import SmartHomeIoTSimulator3D from '@/components/practice/SmartHomeIoTSimulator3D';
 
 export default function SmartHomeIoTSimulatorPage() {
   return (

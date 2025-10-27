@@ -2,7 +2,7 @@
 
 > **📚 Complete Documentation**: See [**K2AiHub.md**](./docs/K2AiHub.md) for comprehensive feature documentation, technical specifications, and development guidelines.
 
-A modern, professional Next.js educational platform featuring five comprehensive modules: **Vietnam Geography** (34 Provincial Administrative Units), **AI Của Tôi** (Practical AI Guide), **STEM Education** (Science, Technology, Engineering, Arts & Mathematics), **Arduino & IoT Programming**, and **Python Programming**.
+A modern, professional Next.js educational platform featuring five comprehensive modules: **AI Của Tôi** (Practical AI Guide), **STEM Education** (Science, Technology, Engineering, Arts & Mathematics), **Arduino & IoT Programming**, and **Python Programming**.
 
 ## 🚀 Quick Start
 
@@ -14,8 +14,8 @@ A modern, professional Next.js educational platform featuring five comprehensive
 ### Installation
 
 ```bash
-git clone https://github.com/[username]/k2aihub.git
-cd k2aihub
+git clone https://github.com/[username]/edu.k2aihub.git
+cd edu.k2aihub
 npm install
 npm run dev
 ```
@@ -23,14 +23,6 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) to view the application.
 
 ## 🌟 Key Features
-
-### 📍 Vietnam Geography Module
-
-- Interactive SVG map of 34 administrative units
-- Smart search with historical province names
-- SEO-optimized individual city pages
-- Comprehensive regional exploration (9 regions)
-- Share functionality and FAQ system
 
 ### 🤖 AI Guide Module
 
@@ -90,8 +82,6 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
 ## 🔗 Documentation Links
 
 - **📚 [K2AiHub.md](./docs/K2AiHub.md)** - Complete feature documentation and technical specifications
-- **📍 [34-cities.md](./docs/34-cities.md)** - List of Vietnamese administrative units
-- **📈 [34-cities-rank.md](./docs/34-cities-rank.md)** - Economic rankings and statistics
 
 ## 🌐 Live Demo
 

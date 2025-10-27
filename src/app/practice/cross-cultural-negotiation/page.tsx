@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import CrossCulturalNegotiation from '@/components/games/CrossCulturalNegotiation';
+import CrossCulturalNegotiation from '@/components/practice/CrossCulturalNegotiation';
 
 export const metadata: Metadata = createGameMetadata('cross-cultural-negotiation');
 

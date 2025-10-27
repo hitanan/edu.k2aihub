@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import NeuralNetworkBuilder3D from '@/components/games/NeuralNetworkBuilder3D';
+import NeuralNetworkBuilder3D from '@/components/practice/NeuralNetworkBuilder3D';
 import { createGameMetadata } from '@/utils/seo';
 
 export const metadata: Metadata = createGameMetadata('neural-network-builder-3d');

@@ -1,12 +1,12 @@
 ---
-title: "Hướng Dẫn Cải Thiện UX & Tối Ưu Mobile cho K2AiHub"
-description: "Hướng dẫn chi tiết về các cải tiến UX và tối ưu hóa mobile cho K2AiHub, bao gồm responsive design, analytics và gamification."
-date: "2025-01-20"
-author: "K2AiHub UX Team"
-category: "Hướng Dẫn"
-tags: ["UX/UI", "mobile optimization", "responsive design", "user experience", "K2AiHub"]
+title: 'Hướng Dẫn Cải Thiện UX & Tối Ưu Mobile cho K2AiHub'
+description: 'Hướng dẫn chi tiết về các cải tiến UX và tối ưu hóa mobile cho K2AiHub, bao gồm responsive design, analytics và gamification.'
+date: '2025-01-20'
+author: 'K2AiHub UX Team'
+category: 'Hướng Dẫn'
+tags: ['UX/UI', 'mobile optimization', 'responsive design', 'user experience', 'K2AiHub']
 featured: false
-readingTime: "15 phút đọc"
+readingTime: '15 phút đọc'
 ---
 
 # K2AiHub UX Enhancements & Mobile Optimization Guide
@@ -204,7 +204,7 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 
 #### **EducationalGames.tsx Component**
 
-**Location**: `/src/components/games/EducationalGames.tsx`
+**Location**: `/src/components/practice/EducationalGames.tsx`
 
 **Game Categories:**
 

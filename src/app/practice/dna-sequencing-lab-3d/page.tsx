@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import DNASequencingLab3D from '@/components/games/DNASequencingLab3D';
+import DNASequencingLab3D from '@/components/practice/DNASequencingLab3D';
 
 export default function DNASequencingLabPage() {
   return (

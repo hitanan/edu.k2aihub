@@ -22,7 +22,7 @@ import { ReactNode } from 'react';
 import { YoutubePlayer } from '@/components/media/YoutubePlayer';
 import DynamicBreadcrumbs from './DynamicBreadcrumbs';
 import { CareerConnectSection } from './CareerConnectSection';
-import { EducationalGamesShowcase } from '../games/EducationalGames';
+import { EducationalGamesShowcase } from '../practice/EducationalGames';
 import { InteractiveQuiz } from './InteractiveQuiz';
 import { InteractiveFAQ } from './InteractiveFAQ';
 import { LessonAnalytics } from './LessonAnalytics';

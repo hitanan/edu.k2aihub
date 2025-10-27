@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { createGameMetadata } from '@/utils/seo';
-import DroneCropMonitoring3D from '@/components/games/individual/DroneCropMonitoring3D';
+import DroneCropMonitoring3D from '@/components/practice/individual/DroneCropMonitoring3D';
 
 export const metadata: Metadata = createGameMetadata('drone-crop-monitoring-3d');
 
