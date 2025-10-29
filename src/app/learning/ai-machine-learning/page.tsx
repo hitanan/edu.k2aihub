@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
 import { ModuleData } from '@/types';
-import { aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
+import { aiMachineLearningLessons, aiMachineLearningModuleData } from '@/data/modules/ai-machine-learning';
 import { K2Module } from '@/data/k2-modules';
 import { createModuleMetadata } from '@/utils/seo';
 
@@ -144,5 +144,5 @@ export default function AIMachineLearningPage() {
     },
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={aiMachineLearningModuleData.lessons || []} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={aiMachineLearningLessons} />;
 }

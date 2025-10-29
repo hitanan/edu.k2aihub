@@ -467,7 +467,7 @@ export function LessonPageTemplate<T extends BaseLessonData>({ lessonId, config 
                   className="flex items-center justify-center sm:justify-start px-4 sm:px-6 py-3 bg-white/10 text-white rounded-xl hover:bg-white/20 transition-all duration-300 text-sm sm:text-base min-h-[44px]"
                 >
                   <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2 flex-shrink-0" />
-                  <span className="truncate">Bài trước</span>
+                  <span className="truncate">Previous Lesson</span>
                 </Link>
               ) : (
                 <div className="flex-1"></div>

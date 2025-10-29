@@ -253,7 +253,7 @@ export default async function PythonLessonPage({ params }: { params: Promise<{ l
             >
               <ChevronLeft className="w-5 h-5 text-green-400" />
               <div>
-                <div className="text-sm text-gray-400">Bài trước</div>
+                <div className="text-sm text-gray-400">Previous Lesson</div>
                 <div className="text-white font-medium">{previousLesson.title}</div>
               </div>
             </Link>

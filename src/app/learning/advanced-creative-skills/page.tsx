@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { createModuleMetadata } from '@/utils/seo';
 import ModulePageTemplate from '@/components/learning/ModulePageTemplate';
-import { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creative-skills';
+import advancedCreativeLessons, { advancedCreativeSkillsModuleData } from '@/data/modules/advanced-creative-skills';
 import { K2Module } from '@/data/k2-modules';
 import { ModuleData } from '@/types';
 
@@ -76,5 +76,5 @@ export default function AdvancedCreativeSkillsMainPage() {
     ],
   };
 
-  return <ModulePageTemplate moduleData={moduleData} lessons={advancedCreativeSkillsModuleData.lessons || []} />;
+  return <ModulePageTemplate moduleData={moduleData} lessons={advancedCreativeLessons } />;
 }

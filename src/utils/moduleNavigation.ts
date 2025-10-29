@@ -202,7 +202,7 @@ export function getNavigationConfig(navigation: ModuleNavigation, moduleBasePath
       ? {
           href: navigation.previous.href,
           title: navigation.previous.title,
-          label: `← Bài trước: ${navigation.previous.title}`,
+          label: `← Previous Lesson: ${navigation.previous.title}`,
         }
       : {
           href: moduleBasePath,

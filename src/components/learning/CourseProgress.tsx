@@ -223,7 +223,7 @@ export default function CourseProgress({
                 href={`/learning/${moduleSlug}/${lessons[currentLessonIndex - 1].id}`}
                 className={`flex-1 text-center py-2 px-3 bg-white/10 hover:bg-white/20 ${textColor} text-sm rounded-lg transition-colors`}
               >
-                ← Bài trước
+                ← Previous Lesson
               </Link>
             )}
             {currentLessonIndex < lessons.length - 1 && (

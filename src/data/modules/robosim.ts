@@ -59,10 +59,11 @@ export const robosimLessons: RobosimLessonType[] = [
       },
     ],
     resources: [
+      { title: 'Robosim', url: 'https://robosim.stemtown.com/download', type: 'Tool' },
       { title: 'VEXcode VR', url: 'https://vr.vex.com/', type: 'Tool' },
       {
         title: 'FIRST LEGO League Vietnam',
-        url: 'https://www.facebook.com/firstlegoleaguevietnam/',
+        url: 'https://steamsolutions.com.vn/playground/first-lego-league/?lang=en',
         type: 'Reference',
       },
     ],
