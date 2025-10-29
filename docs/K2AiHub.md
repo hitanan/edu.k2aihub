@@ -81,7 +81,7 @@ An advanced interactive educational tool covering Vietnam's administrative restr
   - Copy-to-clipboard fallback
   - Optimized share metadata
 
-- ✅ **Region Pages** (`src/app/region/`)
+- ✅ **Region Pages** (`src/app/city/region/`)
   - 9 comprehensive regional pages
   - Statistical aggregation by region
   - SEO-optimized with regional structured data

@@ -2,8 +2,9 @@
 
 'use client';
 import { useState, useEffect, useCallback } from 'react';
-import { Trophy, Clock, X, ArrowLeft, RotateCcw } from 'lucide-react';
+import { Trophy, Clock, X, ArrowLeft, RotateCcw, Play, Target, HelpCircle, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 import FullscreenButton from './FullscreenButton';
+import { splitIntoParagraphs } from '@/utils/textFormatting';
 import {
   GAME_DATA,
   STEMExperimentLabGameData,
@@ -130,6 +131,8 @@ interface MiniGameProps {
 }
 
 export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
+  const [showGameInfo, setShowGameInfo] = useState<boolean>(true);
+  const [expandedFAQs, setExpandedFAQs] = useState<Set<number>>(new Set());
   const [currentGameState, setCurrentGameState] = useState<string>('playing');
   const [timeLeft, setTimeLeft] = useState<number>(120); // 2 minutes per game
   const [score, setScore] = useState<number>(0);
@@ -147,6 +150,35 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
     const timePercentage = timeUsed / 120;
     return Math.max(0, Math.round(50 * (1 - timePercentage))); // Up to 50 bonus points
   }, [timeLeft]);
+
+  const toggleFAQ = (index: number) => {
+    setExpandedFAQs(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty) {
+      case 'Cơ bản':
+        return 'text-green-400 bg-green-500/20';
+      case 'Trung bình':
+        return 'text-yellow-400 bg-yellow-500/20';
+      case 'Nâng cao':
+        return 'text-red-400 bg-red-500/20';
+      default:
+        return 'text-blue-400 bg-blue-500/20';
+    }
+  };
+
+  const handleStartGame = () => {
+    setShowGameInfo(false);
+  };
 
   // Enhanced timer with visual feedback
   useEffect(() => {
@@ -632,6 +664,206 @@ export function MiniGamePlayer({ game, onComplete, onExit }: MiniGameProps) {
         return <div className="text-white">Game not implemented yet!</div>;
     }
   };
+
+  // Show game information screen before starting the game
+  if (showGameInfo) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-auto">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          {/* Back Button */}
+          <button
+            onClick={onExit}
+            className="inline-flex items-center text-purple-300 hover:text-white transition-colors mb-6"
+          >
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Quay lại
+          </button>
+
+          {/* Game Hero */}
+          <div className={`bg-gradient-to-r ${game.color} rounded-3xl p-1 mb-8`}>
+            <div className="bg-slate-900/90 rounded-3xl p-6 md:p-8">
+              <div className="flex items-center space-x-4 mb-4">
+                <span className="text-5xl md:text-6xl">{game.icon}</span>
+                <div className="flex-1">
+                  <h1 className="text-2xl md:text-4xl font-bold text-white mb-2">{game.title}</h1>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${getDifficultyColor(game.difficulty)}`}>
+                      {game.difficulty}
+                    </span>
+                    <span className="text-gray-300 text-sm flex items-center">
+                      <Clock className="w-4 h-4 mr-1" />
+                      {game.estimatedTime}
+                    </span>
+                    <span className="text-yellow-400 text-sm flex items-center">
+                      <Trophy className="w-4 h-4 mr-1" />
+                      {game.points} điểm
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div className="text-gray-300 text-base md:text-lg mb-6 space-y-3">
+                {splitIntoParagraphs(game.description, 3).map((paragraph, idx) => (
+                  <p key={idx} className="leading-relaxed">{paragraph}</p>
+                ))}
+              </div>
+
+              {/* Skills */}
+              <div className="mb-6">
+                <h3 className="text-white font-semibold mb-3">Kỹ năng phát triển:</h3>
+                <div className="flex flex-wrap gap-2">
+                  {game.skills?.map((skill, index) => (
+                    <span key={index} className="px-3 py-1 bg-white/10 text-white rounded-full text-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Start Game Button */}
+              <button
+                onClick={handleStartGame}
+                className="w-full md:w-auto bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-8 rounded-2xl font-semibold transition-all duration-300 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center"
+              >
+                <Play className="w-5 h-5 mr-3" />
+                Bắt đầu Practice
+              </button>
+            </div>
+          </div>
+
+          {/* Learning Objectives */}
+          {game.learningObjectives && game.learningObjectives.length > 0 && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center">
+                <BookOpen className="w-6 h-6 mr-3 text-green-400" />
+                Mục tiêu học tập chi tiết
+              </h2>
+              <div className="space-y-4">
+                {game.learningObjectives.map((objective, index) => (
+                  <div key={index} className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-4 md:p-6">
+                    <div className="flex items-start space-x-3 md:space-x-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-300 font-bold">
+                          {index + 1}
+                        </div>
+                      </div>
+                      <div className="flex-1 text-gray-300 text-sm md:text-base space-y-2">
+                        {splitIntoParagraphs(objective, 2).map((paragraph, pIdx) => (
+                          <p key={pIdx} className="leading-relaxed">{paragraph}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* FAQs */}
+          {game.faqs && game.faqs.length > 0 && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center">
+                <HelpCircle className="w-6 h-6 mr-3 text-yellow-400" />
+                Câu hỏi thường gặp (FAQs)
+              </h2>
+              <div className="space-y-4">
+                {game.faqs.map((faq, index) => (
+                  <div key={index} className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-xl overflow-hidden">
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="w-full text-left p-4 md:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+                    >
+                      <div className="flex items-start space-x-3 md:space-x-4 flex-1">
+                        <div className="flex-shrink-0">
+                          <div className="w-8 h-8 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-300 font-bold text-sm">
+                            Q{index + 1}
+                          </div>
+                        </div>
+                        <h3 className="text-white font-semibold text-base md:text-lg pr-4">{faq.question}</h3>
+                      </div>
+                      <div className="flex-shrink-0">
+                        {expandedFAQs.has(index) ? (
+                          <ChevronUp className="w-5 h-5 text-yellow-400" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-yellow-400" />
+                        )}
+                      </div>
+                    </button>
+                    {expandedFAQs.has(index) && (
+                      <div className="px-4 md:px-6 pb-4 md:pb-6 md:pl-[72px] pl-14">
+                        <div className="text-gray-300 text-sm md:text-base space-y-3 border-l-2 border-yellow-500/30 pl-4 md:pl-6">
+                          {splitIntoParagraphs(faq.answer, 2).map((paragraph, pIdx) => (
+                            <p key={pIdx} className="leading-relaxed">{paragraph}</p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Game Instructions */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-6 flex items-center">
+              <Target className="w-6 h-6 mr-3 text-purple-400" />
+              Hướng dẫn chơi
+            </h2>
+            <div className="text-gray-300 space-y-2 text-sm md:text-base">
+              {game.category.includes('quiz') && (
+                <>
+                  <p>• Đọc câu hỏi và chọn đáp án đúng</p>
+                  <p>• Mỗi câu hỏi có 4 lựa chọn</p>
+                  <p>• Hoàn thành tất cả câu hỏi để nhận điểm</p>
+                </>
+              )}
+              {game.category.includes('puzzle') && (
+                <>
+                  <p>• Sử dụng logic để giải các bài toán</p>
+                  <p>• Kéo thả để sắp xếp các phần tử</p>
+                  <p>• Hoàn thành càng nhanh càng nhiều điểm</p>
+                </>
+              )}
+              {game.category.includes('simulation') && (
+                <>
+                  <p>• Tương tác với giao diện mô phỏng</p>
+                  <p>• Thực hiện các thí nghiệm ảo</p>
+                  <p>• Quan sát và ghi nhận kết quả</p>
+                </>
+              )}
+              {game.category.includes('coding') && (
+                <>
+                  <p>• Viết code để giải quyết bài toán</p>
+                  <p>• Kiểm tra và sửa lỗi syntax</p>
+                  <p>• Chạy thử và xem kết quả</p>
+                </>
+              )}
+              {game.category.includes('3D') && (
+                <>
+                  <p>• Khám phá môi trường 3D tương tác</p>
+                  <p>• Sử dụng chuột/bàn phím để điều khiển</p>
+                  <p>• Hoàn thành các nhiệm vụ trong game</p>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <div className="text-center">
+            <button
+              onClick={handleStartGame}
+              className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 px-12 rounded-2xl font-bold text-lg transition-all duration-300 hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <Play className="w-6 h-6 mr-3" />
+              Bắt đầu Practice ngay
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (currentGameState === 'timeout') {
     return (

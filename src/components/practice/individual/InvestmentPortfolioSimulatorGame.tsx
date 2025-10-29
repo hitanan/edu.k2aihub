@@ -422,8 +422,8 @@ const InvestmentPortfolioSimulatorGame: React.FC<InvestmentPortfolioSimulatorPro
               {investments.slice(0, 6).map((investment) => (
                 <div key={investment.id} className="bg-white bg-opacity-10 rounded-lg p-4">
                   <div className="text-2xl mb-2">{investment.icon}</div>
-                  <h3 className="font-semibold text-white">{investment.name}</h3>
-                  <div className="text-sm text-green-100">
+                  <h3 className="font-semibold text-black">{investment.name}</h3>
+                  <div className="text-sm text-black-100">
                     <div>Expected Return: {investment.expectedReturn}%</div>
                     <div>Risk Level: {investment.risk}/10</div>
                   </div>

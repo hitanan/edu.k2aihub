@@ -190,7 +190,7 @@ export default function GameCompletionCelebration({
                 onClick={onNextGame}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
               >
-                ➡️ Game tiếp theo
+                ➡️ Next Practice
               </button>
             )}
 
@@ -198,7 +198,7 @@ export default function GameCompletionCelebration({
               onClick={onClose}
               className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105"
             >
-              {isGameComplete ? "🏠 Về trang chủ" : "📚 Tiếp tục học"}
+              {isGameComplete ? "🏠 Home" : "📚 Continue Learning"}
             </button>
           </div>
 

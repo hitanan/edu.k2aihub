@@ -6478,7 +6478,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'financial-literacy',
-        lessonId: 'investment-portfolio-building',
+        lessonId: 'personal-budgeting-fundamentals',
         title: 'Xây Dựng Portfolio Đầu Tư',
         connection: 'Practice portfolio building with realistic investment scenarios and market conditions',
       },

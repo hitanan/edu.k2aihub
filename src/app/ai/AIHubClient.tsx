@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { EducationalGame, ModuleNavigation, ModuleData } from '@/types';
 import { BookOpen, Cpu, Gamepad2, Sparkles, Wrench } from 'lucide-react';
+import { truncateText } from '@/utils/textFormatting';
 
 interface AIHubClientProps {
   lessons: (ModuleNavigation | ModuleData)[];
@@ -157,7 +158,7 @@ const AIHubClient: React.FC<AIHubClientProps> = ({ lessons, games }) => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">{game.title}</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">{game.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{truncateText(game.description)}</p>
                 <div className="flex items-center text-purple-600 dark:text-purple-400 font-semibold">
                   Practice
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>

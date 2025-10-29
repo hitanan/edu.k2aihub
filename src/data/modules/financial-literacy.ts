@@ -286,7 +286,7 @@ export const financialLiteracyModuleData: ModuleData = {
   level: 'Cơ bản đến Nâng cao',
   duration: '18-22 giờ',
   category: 'Finance & Technology',
-  color: 'green',
+  color: 'from-blue-400 to-indigo-400',
   heroImageUrl: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&h=600&fit=crop',
   features: [
     'Personal Finance Management và Budgeting',
