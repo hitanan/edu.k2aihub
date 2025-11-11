@@ -60,9 +60,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'stem',
-        lessonId: 'physics-experiments',
-        title: 'Physics Experiments',
-        connection: 'Conduct advanced physics experiments in 3D virtual laboratory',
+        lessonId: 'stem-introduction',
+        title: 'Giới Thiệu về Giáo dục STEM & STEAM',
+        connection: 'Conduct advanced science experiments using STEM methodology',
       },
     ],
   },
@@ -452,10 +452,10 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
     relatedLessons: [
       {
-        moduleId: 'physics',
-        lessonId: 'physics-experiments-lab',
-        title: 'Physics Experiments & Lab',
-        connection: 'Conduct physics experiments in safe 3D virtual laboratory environment',
+        moduleId: 'physics-in-life',
+        lessonId: 'vat-ly-trong-cong-nghe',
+        title: 'Vật Lý Trong Công Nghệ',
+        connection: 'Thực hành thí nghiệm vật lý trong môi trường phòng thí nghiệm 3D an toàn',
       },
     ],
   },
@@ -600,15 +600,15 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'climate-data-analysis-modeling',
+        lessonId: 'climate-data-analysis',
         title: 'Phân Tích Dữ Liệu Khí Hậu',
         connection: 'Áp dụng kiến thức địa lý trong phân tích dữ liệu khí hậu Việt Nam',
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Giải Pháp Môi Trường',
-        connection: 'Hiểu về địa lý tự nhiên và tác động môi trường của con người',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế giải pháp bảo vệ môi trường',
       },
       {
         moduleId: 'green-technology',
@@ -1206,9 +1206,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'fun-physics-experiments',
-        title: 'Thí Nghiệm Vật Lý Thú Vị',
-        connection: 'Khám phá các hiện tượng vật lý cơ bản dẫn đến lượng tử',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Áp dụng quy trình kỹ thuật để thử nghiệm và cải tiến thiết kế',
       },
       {
         moduleId: 'nanotechnology',
@@ -1274,9 +1274,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     ],
     relatedLessons: [
       {
-        moduleId: 'blockchain-defi',
-        lessonId: 'blockchain-fundamentals-cryptocurrency',
-        title: 'Cơ Bản Blockchain & Cryptocurrency',
+        moduleId: 'blockchain-technology',
+        lessonId: 'blockchain-fundamentals',
+        title: 'Cơ Bản Blockchain',
         connection: 'Hiểu nguyên lý hoạt động và cấu trúc của blockchain',
       },
       {
@@ -1350,7 +1350,7 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'climate-data-analysis-modeling',
+        lessonId: 'climate-data-analysis',
         title: 'Phân Tích & Mô Hình Dữ Liệu Khí Hậu',
         connection: 'Sử dụng dữ liệu khoa học để mô hình hóa biến đổi khí hậu',
       },
@@ -1362,9 +1362,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Giải Pháp Môi Trường',
-        connection: 'Nghiên cứu khoa học để tìm giải pháp cho vấn đề khí hậu',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế giải pháp cho vấn đề khí hậu',
       },
       {
         moduleId: 'climate-science',
@@ -1644,9 +1644,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'fun-physics-experiments',
-        title: 'Thí Nghiệm Vật Lý Thú Vị',
-        connection: 'Áp dụng nguyên lý vật lý trong việc khám phá vũ trụ',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế và xây dựng hệ thống khám phá không gian',
       },
       {
         moduleId: 'robotics',
@@ -1887,9 +1887,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'fun-physics-experiments',
-        title: 'Thí Nghiệm Vật Lý Thú Vị',
-        connection: 'Kết hợp hóa học với vật lý để hiểu tương tác phân tử',
+        lessonId: 'stem-introduction',
+        title: 'Giới Thiệu về Giáo dục STEM & STEAM',
+        connection: 'Kết hợp hóa học với vật lý theo phương pháp STEM',
       },
     ],
   },
@@ -1962,8 +1962,8 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'fun-physics-experiments',
-        title: 'Thí Nghiệm Vật Lý Thú Vị',
+        lessonId: 'stem-introduction',
+        title: 'Giới Thiệu về Giáo dục STEM & STEAM',
         connection: 'Kết hợp hóa học và vật lý trong thí nghiệm STEM',
       },
     ],
@@ -2037,9 +2037,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Giải Pháp Môi Trường',
-        connection: 'Nghiên cứu khoa học về hệ sinh thái và bảo vệ môi trường',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế giải pháp bảo vệ hệ sinh thái và môi trường',
       },
     ],
   },
@@ -3235,15 +3235,15 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'climate-data-analysis-modeling',
+        lessonId: 'climate-data-analysis',
         title: 'Phân Tích Dữ Liệu Khí Hậu và Mô Hình Hóa',
         connection: 'Xây dựng mô hình dự báo khí hậu chính xác',
       },
       {
         moduleId: 'environmental-data-science',
-        lessonId: 'gis-remote-sensing-applications',
-        title: 'Ứng Dụng GIS và Viễn Thám',
-        connection: 'Sử dụng GIS để phân tích không gian dữ liệu môi trường',
+        lessonId: 'satellite-remote-sensing',
+        title: 'Ứng Dụng Viễn Thám và GIS',
+        connection: 'Sử dụng viễn thám để phân tích không gian dữ liệu môi trường',
       },
     ],
   },
@@ -4957,9 +4957,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Environmental Solutions',
-        connection: 'Use technology solutions cho environmental monitoring và sustainable farming',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế giải pháp công nghệ cho nông nghiệp bền vững',
       },
     ],
   },
@@ -5125,9 +5125,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Environmental Solutions',
-        connection: 'Use environmental monitoring và sustainable practices trong aquaculture',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế hệ thống nuôi trồng thủy sản bền vững',
       },
     ],
   },
@@ -5214,9 +5214,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
       },
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Environmental Solutions',
-        connection: 'Apply environmental technology and sustainable solutions in urban planning',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Áp dụng thiết kế kỹ thuật cho quy hoạch đô thị bền vững',
       },
     ],
   },
@@ -5273,9 +5273,9 @@ export const EDUCATIONAL_GAMES_DATA: EducationalGame[] = [
     relatedLessons: [
       {
         moduleId: 'stem',
-        lessonId: 'environmental-solutions',
-        title: 'Environmental Solutions',
-        connection: 'Learn about marine conservation and ocean protection strategies',
+        lessonId: 'engineering-design-process',
+        title: 'Quy trình Thiết kế Kỹ thuật',
+        connection: 'Thiết kế giải pháp bảo tồn đại dương và bảo vệ sinh vật biển',
       },
       {
         moduleId: 'green-technology',
