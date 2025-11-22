@@ -14,7 +14,7 @@ const lessons: QuantumComputingLesson[] = [
       'Giới thiệu các khái niệm cơ bản của điện toán lượng tử, so sánh sự khác biệt giữa bit cổ điển và qubit, và khám phá tiềm năng cách mạng của công nghệ này.',
     duration: '120 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=IrbwR_j_sIQ',
+    videoUrl: 'https://www.youtube.com/watch?v=JhHMJCUmq28',
     imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được tại sao cần điện toán lượng tử.',
@@ -90,7 +90,7 @@ const lessons: QuantumComputingLesson[] = [
       'Đi sâu vào toán học của qubit, biểu diễn chúng trên khối cầu Bloch và tìm hiểu cách các cổng lượng tử (Pauli-X, Hadamard, CNOT) thao tác trên chúng.',
     duration: '150 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=9f-v_i543_c',
+    videoUrl: 'https://www.youtube.com/watch?v=QdNEtpqaLdw',
     imageUrl: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&h=600&fit=crop',
     objectives: [
       'Biểu diễn trạng thái qubit bằng vector và trên khối cầu Bloch.',
@@ -165,7 +165,7 @@ const lessons: QuantumComputingLesson[] = [
       'Khám phá "hành động ma quái ở khoảng cách xa" như Einstein đã mô tả. Tìm hiểu cách các qubit vướng víu được kết nối với nhau bất kể khoảng cách và ứng dụng trong dịch chuyển lượng tử.',
     duration: '130 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=ZzRcAk-2y_A',
+    videoUrl: 'https://www.youtube.com/watch?v=ZuvK-od647c',
     imageUrl: 'https://images.unsplash.com/photo-1504333638930-c8787321eee0?w=1200&h=600&fit=crop',
     objectives: [
       'Định nghĩa và nhận biết một trạng thái vướng víu.',
@@ -240,7 +240,7 @@ const lessons: QuantumComputingLesson[] = [
       'Tìm hiểu hai thuật toán lượng tử nổi tiếng nhất: Thuật toán Shor để phân tích số nguyên tố (đe dọa mã hóa RSA) và thuật toán Grover để tìm kiếm trong cơ sở dữ liệu không có cấu trúc.',
     duration: '180 phút',
     difficulty: 'Nâng cao',
-    videoUrl: 'https://www.youtube.com/watch?v=iTr3X5y2AgI',
+    videoUrl: 'https://www.youtube.com/watch?v=F_Riqjdh2oM',
     imageUrl: 'https://images.unsplash.com/photo-1605835613824-3c28a456b3a3?w=1200&h=600&fit=crop',
     objectives: [
       'Hiểu được vấn đề mà thuật toán Shor giải quyết và tại sao nó lại quan trọng.',
@@ -315,7 +315,7 @@ const lessons: QuantumComputingLesson[] = [
       'Hướng dẫn thực hành từng bước để bắt đầu lập trình lượng tử. Cài đặt môi trường, viết mạch lượng tử đầu tiên với Qiskit, và chạy nó trên cả trình giả lập và máy tính lượng tử thực của IBM.',
     duration: '200 phút',
     difficulty: 'Trung bình',
-    videoUrl: 'https://www.youtube.com/watch?v=a11bdY1i-wI',
+    videoUrl: 'https://www.youtube.com/watch?v=RrUTwq5jKM4',
     imageUrl: 'https://images.unsplash.com/photo-1614926852348-c778453a6a6a?w=1200&h=600&fit=crop',
     objectives: [
       'Cài đặt Python và Qiskit.',
