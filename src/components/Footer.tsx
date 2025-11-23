@@ -88,6 +88,12 @@ const Footer: React.FC = () => {
     { name: 'Về Chúng Tôi', href: '/about', icon: 'ℹ️' },
   ];
 
+  const k2aiApps = [
+    { name: 'K2AIHub', description: 'Khám phá các ứng dụng K2AI', href: 'https://k2aihub.com', icon: '🏠', color: 'from-blue-500 to-cyan-500' },
+    { name: 'Creator Studio', description: 'Tạo nội dung với AI', href: 'https://creator.k2aihub.com', icon: '✨', color: 'from-purple-500 to-pink-500' },
+    { name: 'Finance Tracker', description: 'Quản lý tài chính thông minh', href: 'https://finance.k2aihub.com', icon: '💰', color: 'from-emerald-500 to-teal-500' },
+  ];
+
   const stats = [
     { label: 'Learning Modules', value: `${moduleStats.totalModules}+`, icon: '📚' },
     { label: 'Interactive Lessons', value: `${moduleStats.totalLessons}+`, icon: '🎯' },
@@ -167,6 +173,39 @@ const Footer: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* K2AI Apps - Cross Platform Discovery */}
+        <div className="mb-8">
+          <h3 className="text-white font-semibold mb-4 flex items-center space-x-2">
+            <span>🚀</span>
+            <span>Khám phá ứng dụng K2AI</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {k2aiApps.map((app) => (
+              <a
+                key={app.name}
+                href={app.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                <div className="flex items-start space-x-3">
+                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${app.color} flex items-center justify-center text-xl group-hover:scale-110 transition-transform duration-300`}>
+                    {app.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition-colors">
+                      {app.name}
+                    </h4>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                      {app.description}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Quick links */}

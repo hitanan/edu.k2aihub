@@ -17,9 +17,14 @@ export function splitIntoParagraphs(text: string | undefined, sentencesPerParagr
   // Normalize whitespace
   const normalized = text.replace(/\s+/g, ' ').trim();
 
+  // Truncate very long text for better UX (show ~500 chars with ellipsis)
+  const maxLength = 500;
+  const shouldTruncate = normalized.length > maxLength;
+  const textToProcess = shouldTruncate ? normalized.slice(0, maxLength) : normalized;
+
   // Split by sentence endings (., !, ?) followed by space and capital letter
   // This regex preserves the punctuation
-  const sentences = normalized.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  const sentences = textToProcess.split(/(?<=[.!?])\s+(?=[A-Z])/);
 
   // Group sentences into paragraphs
   const paragraphs: string[] = [];
@@ -28,6 +33,12 @@ export function splitIntoParagraphs(text: string | undefined, sentencesPerParagr
     if (paragraph.trim()) {
       paragraphs.push(paragraph.trim());
     }
+  }
+
+  // Add ellipsis to last paragraph if text was truncated
+  if (shouldTruncate && paragraphs.length > 0) {
+    const lastIndex = paragraphs.length - 1;
+    paragraphs[lastIndex] = paragraphs[lastIndex].trimEnd() + '...';
   }
 
   return paragraphs;
