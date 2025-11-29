@@ -11,5 +11,6 @@ export const metadata: Metadata = {
 };
 
 export default function RegionRedirect() {
+  // Client-side redirect will handle /region/[anything] → https://k2aihub.com/city/region/[anything]
   return <Redirect to="https://k2aihub.com/city/region" statusCode={301} />;
 }
